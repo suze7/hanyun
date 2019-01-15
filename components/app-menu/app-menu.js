@@ -1,4 +1,4 @@
-Vue.component("app-menu", {
+Vue.component('app-menu', {
   data: function() {
     return {
       menuList: []
