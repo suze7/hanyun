@@ -4,15 +4,29 @@
     <meta charset="utf-8" />
     <title>华云集团-开发框架V1.8</title>
     <link href="../assets/js/element-ui/index.css" rel="stylesheet" />
+    <link href="../assets/css/base.css" rel="stylesheet" />
+    <link href="../assets/css/style.css" rel="stylesheet" />
   </head>
   <body>
-    <div id="homeIndex">{{ message }}
-      <app-menu></app-menu>
+    <div id="homeIndex" class="app">
+      <div class="loc-app-menu">
+        <div class="loc-logo-form"></div>
+        <div class="loc-menu-list">
+          <div
+            class="loc-menu-form com-hover"
+            v-for="menu of menuList"
+            :class="{active: menu.active}"
+          >
+            <img class="loc-menu-default" :src="menu.img + '.png'" />
+            <img class="loc-menu-active" :src="menu.img + '-active.png'" />
+            <span class="loc-menu-name com-txt-overflow">{{ menu.name }}</span>
+          </div>
+        </div>
+      </div>
     </div>
   </body>
   <script src="../assets/js/vue/vue.dev.js"></script>
   <script src="../assets/js/vue/vue-router.js"></script>
   <script src="../assets/js/element-ui/index.js"></script>
-  <script src="../components/app-menu/app-menu.js"></script>
   <script src="./index.js"></script>
 </html>

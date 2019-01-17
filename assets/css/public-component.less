@@ -1,0 +1,45 @@
+.loc-app-menu {
+    width: 100%;
+    height: 80px;
+    background: rgba(0, 0, 0, 0.45);
+    .loc-logo-form {
+      float: left;
+      width: 236px;
+      height: 100%;
+    }
+  
+    .loc-menu-list {
+      float: left;
+      height: 100%;
+    }
+  
+    .loc-menu-form {
+      float: left;
+      padding-top: 20px;
+      width: 84px;
+      height: 100%;
+      text-align: center;
+      font-size: 14px;
+      color: #fff;
+      .loc-menu-name {
+        margin-top: 4px;
+        display: block;
+      }
+      &:hover,
+      &.active {
+        background: rgba(16, 16, 16, 0.2);
+      }
+      &.active {
+        color: #66cdff;
+        .loc-menu-default {
+          display: none;
+        }
+        .loc-menu-active {
+          display: inline-block;
+        }
+      }
+      .loc-menu-active {
+        display: none;
+      }
+    }
+  }
