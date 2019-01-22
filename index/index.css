@@ -1,0 +1,89 @@
+.loc-div-menu {
+  line-height: 19px;
+}
+.loc-menu-btn {
+  position: relative;
+  float: right;
+}
+.loc-group-btn {
+  position: absolute;
+  top: 20px;
+  right: 0px;
+  z-index: 10;
+}
+.loc-line-form {
+  position: relative;
+  padding: 10px 20px;
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+.loc-line-form app-home-div-menu {
+  position: relative;
+  z-index: 5;
+  display: block;
+}
+.loc-line-form .loc-col-form {
+  position: relative;
+  flex-grow: 1;
+  flex-shrink: 0;
+  margin: 10px;
+  padding: 20px 20px 10px;
+  width: calc(50% - 30px);
+  height: 316px;
+  background: rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 0px 15px 0px rgba(14, 21, 42, 0.15);
+}
+.loc-line-form .loc-fill-form {
+  position: absolute;
+  top: 39px;
+  right: 0px;
+  bottom: 0;
+  left: 0px;
+}
+.loc-line-form .loc-fill-form .loc-chart {
+  width: 100%;
+  height: 100%;
+}
+.loc-line-form .loc-fill-form .loc-table {
+  margin: 20px 10px 16px;
+  padding: 0 10px;
+  height: calc(100% - 37px);
+  font-size: 12px;
+  overflow: auto;
+}
+.loc-no-data {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  left: 0;
+  transform: translateY('-50%');
+  text-align: center;
+  font-size: 12px;
+  color: #8190b8;
+}
+div.echarts {
+  width: 100%;
+  height: 100%;
+}
+.home-drop {
+  padding: 0;
+  background: #1d285d;
+  border: 0;
+}
+.home-drop.el-popper {
+  margin-top: 8px;
+}
+.home-drop .popper__arrow {
+  display: none;
+}
+.home-drop .el-dropdown-menu__item {
+  color: inherit;
+  line-height: 14px;
+  padding: 8px 12px;
+}
+.home-drop .el-dropdown-menu__item:focus,
+.home-drop .el-dropdown-menu__item:not(.is-disabled):hover {
+  background: rgba(0, 0, 0, 0.2);
+  color: inherit;
+}

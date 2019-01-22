@@ -26,6 +26,13 @@ body *::-webkit-scrollbar-track {
   border-radius: 2px;
   background: none;
 }
+* {
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+}
 .app {
   background: linear-gradient(-90deg, #4247ba, #4364bd);
   min-width: 1366px;
@@ -73,4 +80,40 @@ body *::-webkit-scrollbar-track {
 }
 .loc-app-menu .loc-menu-form .loc-menu-active {
   display: none;
+}
+.transparent-table.el-table {
+  color: inherit;
+  background: none;
+}
+.transparent-table.el-table::before {
+  display: none;
+}
+.transparent-table.el-table thead {
+  color: inherit;
+}
+.transparent-table.el-table .cell {
+  padding-left: 24px;
+}
+.transparent-table.el-table tr {
+  height: 40px;
+  background: none;
+}
+.transparent-table.el-table tr:nth-child(even):hover td,
+.transparent-table.el-table tr:nth-child(even) td {
+  background: rgba(0, 0, 0, 0.1);
+}
+.transparent-table.el-table tr:nth-child(odd):hover td,
+.transparent-table.el-table tr:nth-child(odd) td {
+  background: transparent;
+}
+.transparent-table.el-table tr td {
+  border: 0;
+}
+.transparent-table.el-table th {
+  height: 40px;
+  background: rgba(0, 0, 0, 0.3);
+  border-bottom: 0;
+}
+.transparent-table.el-table th.gutter {
+  background: transparent;
 }

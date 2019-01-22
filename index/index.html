@@ -6,6 +6,7 @@
     <link href="../assets/js/element-ui/index.css" rel="stylesheet" />
     <link href="../assets/css/base.css" rel="stylesheet" />
     <link href="../assets/css/style.css" rel="stylesheet" />
+    <link href="./index.css" rel="stylesheet" />
   </head>
   <body>
     <div id="homeIndex" class="app">
@@ -23,8 +24,59 @@
           </div>
         </div>
       </div>
+      <div class="loc-line-form">
+        <img
+          src="../assets/images/menu/group.png"
+          class="loc-group-btn com-hover"
+        />
+        <div
+          class="loc-col-form"
+          v-for="data of homeDataList"
+          :key="data.id"
+          v-if="data.show"
+          :style="data.style"
+        >
+          <div class="loc-div-menu">
+            <span class="loc-menu-name">{{ data.name }}</span>
+            <div class="loc-menu-btn">
+              <el-dropdown
+                trigger="click"
+                @command="changeHomeMenu($event, data)"
+              >
+                <span class="el-dropdown-link">
+                  <img src="../assets/images/icon/menu-list.png" />
+                </span>
+                <el-dropdown-menu slot="dropdown" class="home-drop">
+                  <el-dropdown-item
+                    :command="menu"
+                    v-for="menu of data.menuList"
+                    :key="menu"
+                    v-if="data.menuType !== menu"
+                    >{{ menu }}</el-dropdown-item
+                  >
+                </el-dropdown-menu>
+              </el-dropdown>
+            </div>
+          </div>
+          <div v-if="!data.noData" class="loc-fill-form">
+            <v-chart
+              :options="data.chart"
+              :autoresize="true"
+              v-if="data.menuType === '图表'"
+            ></v-chart>
+            <div class="loc-table" v-if="data.menuType === '列表'">
+              <el-table :data="data.tableData" size="mini" class="transparent-table" style="width: 100%" height="240">
+                <el-table-column v-for="col of data.tableCols" :key="col.header" :prop="col.field" :label="col.header" :min-width="col.width"></el-table-column>
+              </el-table>
+            </div>
+          </div>
+          <p v-if="data.noData" class="loc-no-data">暂无数据</p>
+        </div>
+      </div>
     </div>
   </body>
+  <script src="../assets/js/echart/echarts.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vue-echarts@4.0.0"></script>
   <script src="../assets/js/vue/vue.dev.js"></script>
   <script src="../assets/js/vue/vue-router.js"></script>
   <script src="../assets/js/element-ui/index.js"></script>
