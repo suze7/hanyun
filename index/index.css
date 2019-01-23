@@ -87,3 +87,21 @@ div.echarts {
   background: rgba(0, 0, 0, 0.2);
   color: inherit;
 }
+.loc-icon-circle {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+.loc-icon-circle.loc-icon-1 {
+  background: #ff5252;
+}
+.loc-icon-circle.loc-icon-2 {
+  background: #ff9e54;
+}
+.loc-icon-circle.loc-icon-3 {
+  background: #fff954;
+}
+.loc-icon-circle.loc-icon-4 {
+  background: #1cefef;
+}

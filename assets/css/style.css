@@ -3,7 +3,7 @@
   cursor: pointer;
 }
 .com-txt-center {
-  text-align: center;
+  text-align: center !important;
 }
 .com-txt-overflow {
   overflow: hidden;
@@ -30,7 +30,8 @@ body *::-webkit-scrollbar-track {
   box-sizing: border-box;
 }
 html,
-body {
+body,
+.app {
   height: 100%;
 }
 .app {
@@ -92,7 +93,7 @@ body {
   color: inherit;
 }
 .transparent-table.el-table .cell {
-  padding-left: 24px;
+  padding: 0 0 0 24px;
 }
 .transparent-table.el-table tr {
   height: 40px;
@@ -116,4 +117,39 @@ body {
 }
 .transparent-table.el-table th.gutter {
   background: transparent;
+}
+.transparent-table .com-txt-overflow .cell {
+  white-space: nowrap;
+}
+.transparent-table.gray-table {
+  color: rgba(255, 255, 255, 0.6);
+}
+.transparent-table.gray-table .cell {
+  padding: 0 16px 0 0;
+  line-height: 16px;
+}
+.transparent-table.gray-table th:nth-last-of-type(1) .cell,
+.transparent-table.gray-table td:nth-last-of-type(1) .cell {
+  padding: 0 0px 0 0;
+}
+.transparent-table.gray-table th {
+  background: transparent;
+  height: 30px;
+}
+.transparent-table.gray-table tr {
+  height: 30px;
+}
+.transparent-table.gray-table tr:nth-child(even):hover td,
+.transparent-table.gray-table tr:nth-child(even) td {
+  background: transparent;
+}
+.transparent-table.gray-table tr:nth-child(odd):hover td,
+.transparent-table.gray-table tr:nth-child(odd) td {
+  background: transparent;
+}
+.transparent-table.gray-table tr td {
+  border-top: 1px solid #8190b8;
+}
+.el-dropdown-link {
+  cursor: pointer;
 }

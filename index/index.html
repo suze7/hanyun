@@ -8,8 +8,8 @@
     <link href="../assets/css/style.css" rel="stylesheet" />
     <link href="./index.css" rel="stylesheet" />
   </head>
-  <body>
-    <div id="homeIndex" class="app">
+  <body class="app">
+    <div id="homeIndex">
       <div class="loc-app-menu">
         <div class="loc-logo-form"></div>
         <div class="loc-menu-list">
@@ -31,17 +31,15 @@
         />
         <div
           class="loc-col-form"
-          v-for="data of homeDataList"
-          :key="data.id"
-          v-if="data.show"
-          :style="data.style"
+          v-if="homeDataList[0].show"
+          :style="homeDataList[0].style"
         >
           <div class="loc-div-menu">
-            <span class="loc-menu-name">{{ data.name }}</span>
+            <span class="loc-menu-name">{{ homeDataList[0].name }}</span>
             <div class="loc-menu-btn">
               <el-dropdown
                 trigger="click"
-                @command="changeHomeMenu($event, data)"
+                @command="changeHomeMenu($event, homeDataList[0])"
               >
                 <span class="el-dropdown-link">
                   <img src="../assets/images/icon/menu-list.png" />
@@ -49,34 +47,404 @@
                 <el-dropdown-menu slot="dropdown" class="home-drop">
                   <el-dropdown-item
                     :command="menu"
-                    v-for="menu of data.menuList"
+                    v-for="menu of homeDataList[0].menuList"
                     :key="menu"
-                    v-if="data.menuType !== menu"
+                    v-if="homeDataList[0].menuType !== menu"
                     >{{ menu }}</el-dropdown-item
                   >
                 </el-dropdown-menu>
               </el-dropdown>
             </div>
           </div>
-          <div v-if="!data.noData" class="loc-fill-form">
+          <div v-if="!homeDataList[0].noData" class="loc-fill-form">
             <v-chart
-              :options="data.chart"
+              :options="homeDataList[0].chart"
               :autoresize="true"
-              v-if="data.menuType === '图表'"
+              v-if="homeDataList[0].menuType === '图表'"
             ></v-chart>
-            <div class="loc-table" v-if="data.menuType === '列表'">
-              <el-table :data="data.tableData" size="mini" class="transparent-table" style="width: 100%" height="240">
-                <el-table-column v-for="col of data.tableCols" :key="col.header" :prop="col.field" :label="col.header" :min-width="col.width"></el-table-column>
+            <div class="loc-table" v-if="homeDataList[0].menuType === '列表'">
+              <el-table
+                :data="homeDataList[0].tableData"
+                size="mini"
+                class="transparent-table"
+                style="width: 100%"
+                height="240"
+              >
+                <el-table-column
+                  v-for="col of homeDataList[0].tableCols"
+                  :key="col.header"
+                  :prop="col.field"
+                  :label="col.header"
+                  :min-width="col.width"
+                ></el-table-column>
               </el-table>
             </div>
           </div>
-          <p v-if="data.noData" class="loc-no-data">暂无数据</p>
+          <p v-if="homeDataList[0].noData" class="loc-no-data">暂无数据</p>
+        </div>
+        <div
+          class="loc-col-form"
+          v-if="homeDataList[1].show"
+          :style="homeDataList[1].style"
+        >
+          <div class="loc-div-menu">
+            <span class="loc-menu-name">{{ homeDataList[1].name }}</span>
+            <div class="loc-menu-btn">
+              <el-dropdown
+                trigger="click"
+                @command="changeHomeMenu($event, homeDataList[1])"
+              >
+                <span class="el-dropdown-link">
+                  <img src="../assets/images/icon/menu-list.png" />
+                </span>
+                <el-dropdown-menu slot="dropdown" class="home-drop">
+                  <el-dropdown-item
+                    :command="menu"
+                    v-for="menu of homeDataList[1].menuList"
+                    :key="menu"
+                    v-if="homeDataList[1].menuType !== menu"
+                    >{{ menu }}</el-dropdown-item
+                  >
+                </el-dropdown-menu>
+              </el-dropdown>
+            </div>
+          </div>
+          <div v-if="!homeDataList[1].noData" class="loc-fill-form">
+            <v-chart
+              :options="homeDataList[1].chart"
+              :autoresize="true"
+              v-if="homeDataList[1].menuType === '图表'"
+            ></v-chart>
+            <div class="loc-table" v-if="homeDataList[1].menuType === '列表'">
+              <el-table
+                :data="homeDataList[1].tableData"
+                size="mini"
+                class="transparent-table"
+                style="width: 100%"
+                height="240"
+              >
+                <el-table-column
+                  v-for="col of homeDataList[1].tableCols"
+                  :key="col.header"
+                  :prop="col.field"
+                  :label="col.header"
+                  :min-width="col.width"
+                ></el-table-column>
+              </el-table>
+            </div>
+          </div>
+          <p v-if="homeDataList[1].noData" class="loc-no-data">暂无数据</p>
+        </div>
+        <div
+          class="loc-col-form"
+          v-if="homeDataList[2].show"
+          :style="homeDataList[2].style"
+        >
+          <div class="loc-div-menu">
+            <span class="loc-menu-name">{{ homeDataList[2].name }}</span>
+            <div class="loc-menu-btn">
+              <el-dropdown
+                trigger="click"
+                @command="changeHomeMenu($event, homeDataList[2])"
+              >
+                <span class="el-dropdown-link">
+                  <img src="../assets/images/icon/menu-list.png" />
+                </span>
+                <el-dropdown-menu slot="dropdown" class="home-drop">
+                  <el-dropdown-item
+                    :command="menu"
+                    v-for="menu of homeDataList[2].menuList"
+                    :key="menu"
+                    v-if="homeDataList[2].menuType !== menu"
+                    >{{ menu }}</el-dropdown-item
+                  >
+                </el-dropdown-menu>
+              </el-dropdown>
+            </div>
+          </div>
+          <div v-if="!homeDataList[2].noData" class="loc-fill-form">
+            <v-chart
+              :options="homeDataList[2].chart"
+              :autoresize="true"
+              v-if="homeDataList[2].menuType === '图表'"
+            ></v-chart>
+          </div>
+          <p v-if="homeDataList[2].noData" class="loc-no-data">暂无数据</p>
+        </div>
+        <div
+          class="loc-col-form"
+          v-if="homeDataList[3].show"
+          :style="homeDataList[3].style"
+        >
+          <div class="loc-div-menu">
+            <span class="loc-menu-name">{{ homeDataList[3].name }}</span>
+            <div class="loc-menu-btn">
+              <el-dropdown
+                trigger="click"
+                @command="changeHomeMenu($event, homeDataList[3])"
+              >
+                <span class="el-dropdown-link">
+                  <img src="../assets/images/icon/menu-list.png" />
+                </span>
+                <el-dropdown-menu slot="dropdown" class="home-drop">
+                  <el-dropdown-item
+                    :command="menu"
+                    v-for="menu of homeDataList[3].menuList"
+                    :key="menu"
+                    v-if="homeDataList[3].menuType !== menu"
+                    >{{ menu }}</el-dropdown-item
+                  >
+                </el-dropdown-menu>
+              </el-dropdown>
+            </div>
+          </div>
+          <div v-if="!homeDataList[3].noData" class="loc-fill-form">
+            <div class="loc-table" v-if="homeDataList[3].menuType === '列表'">
+              <el-table
+                :data="homeDataList[3].tableData"
+                size="mini"
+                class="transparent-table gray-table"
+                style="width: 100%"
+                height="240"
+              >
+                <el-table-column
+                  class-name="com-txt-center"
+                  prop="level"
+                  label="告警级别"
+                  width="64px"
+                >
+                  <template slot-scope="scope">
+                    <span
+                      class="loc-icon-circle"
+                      :class="'loc-icon-' + scope.row.level"
+                    ></span>
+                  </template>
+                </el-table-column>
+                <el-table-column
+                  prop="name"
+                  label="告警名称"
+                  min-width="64px"
+                  class-name="com-txt-overflow"
+                ></el-table-column>
+                <el-table-column
+                  prop="original"
+                  label="告警源"
+                  min-width="64px"
+                  class-name="com-txt-overflow"
+                ></el-table-column>
+                <el-table-column
+                  prop="type"
+                  label="资源类型"
+                  min-width="64px"
+                  class-name="com-txt-overflow"
+                ></el-table-column>
+                <el-table-column
+                  prop="alarmType"
+                  label="告警类型"
+                  min-width="64px"
+                  class-name="com-txt-overflow"
+                ></el-table-column>
+                <el-table-column
+                  prop="status"
+                  label="告警状态"
+                  min-width="64px"
+                  class-name="com-txt-overflow"
+                ></el-table-column>
+                <el-table-column
+                  prop="date"
+                  label="产生时间"
+                  width="124px"
+                ></el-table-column>
+              </el-table>
+            </div>
+          </div>
+          <p v-if="homeDataList[3].noData" class="loc-no-data">暂无数据</p>
+        </div>
+        <div
+          class="loc-col-form"
+          v-if="homeDataList[4].show"
+          :style="homeDataList[4].style"
+        >
+          <div class="loc-div-menu">
+            <span class="loc-menu-name">{{ homeDataList[4].name }}</span>
+            <div class="loc-menu-btn">
+              <el-dropdown
+                trigger="click"
+                @command="changeHomeMenu($event, homeDataList[4])"
+              >
+                <span class="el-dropdown-link">
+                  <img src="../assets/images/icon/menu-list.png" />
+                </span>
+                <el-dropdown-menu slot="dropdown" class="home-drop">
+                  <el-dropdown-item
+                    :command="menu"
+                    v-for="menu of homeDataList[4].menuList"
+                    :key="menu"
+                    v-if="homeDataList[4].menuType !== menu"
+                    >{{ menu }}</el-dropdown-item
+                  >
+                </el-dropdown-menu>
+              </el-dropdown>
+            </div>
+          </div>
+          <div v-if="!homeDataList[4].noData" class="loc-fill-form"></div>
+          <p v-if="homeDataList[4].noData" class="loc-no-data">暂无数据</p>
+        </div>
+        <div
+          class="loc-col-form"
+          v-if="homeDataList[5].show"
+          :style="homeDataList[5].style"
+        >
+          <div class="loc-div-menu">
+            <span class="loc-menu-name">{{ homeDataList[5].name }}</span>
+            <div class="loc-menu-btn">
+              <el-dropdown
+                trigger="click"
+                @command="changeHomeMenu($event, homeDataList[5])"
+              >
+                <span class="el-dropdown-link">
+                  <img src="../assets/images/icon/menu-list.png" />
+                </span>
+                <el-dropdown-menu slot="dropdown" class="home-drop">
+                  <el-dropdown-item
+                    :command="menu"
+                    v-for="menu of homeDataList[5].menuList"
+                    :key="menu"
+                    v-if="homeDataList[5].menuType !== menu"
+                    >{{ menu }}</el-dropdown-item
+                  >
+                </el-dropdown-menu>
+              </el-dropdown>
+            </div>
+          </div>
+          <div v-if="!homeDataList[5].noData" class="loc-fill-form"></div>
+          <p v-if="homeDataList[5].noData" class="loc-no-data">暂无数据</p>
+        </div>
+        <div
+          class="loc-col-form"
+          v-if="homeDataList[6].show"
+          :style="homeDataList[6].style"
+        >
+          <div class="loc-div-menu">
+            <span class="loc-menu-name">{{ homeDataList[6].name }}</span>
+            <div class="loc-menu-btn">
+              <el-dropdown
+                trigger="click"
+                @command="changeHomeMenu($event, homeDataList[6])"
+              >
+                <span class="el-dropdown-link">
+                  <img src="../assets/images/icon/menu-list.png" />
+                </span>
+                <el-dropdown-menu slot="dropdown" class="home-drop">
+                  <el-dropdown-item
+                    :command="menu"
+                    v-for="menu of homeDataList[6].menuList"
+                    :key="menu"
+                    v-if="homeDataList[6].menuType !== menu"
+                    >{{ menu }}</el-dropdown-item
+                  >
+                </el-dropdown-menu>
+              </el-dropdown>
+            </div>
+          </div>
+          <div v-if="!homeDataList[6].noData" class="loc-fill-form">
+            <v-chart
+              :options="homeDataList[6].chart"
+              :autoresize="true"
+              v-if="homeDataList[6].menuType === '图表'"
+            ></v-chart>
+            <div class="loc-table" v-if="homeDataList[6].menuType === '列表'">
+              <el-table
+                :data="homeDataList[6].tableData"
+                size="mini"
+                class="transparent-table"
+                style="width: 100%"
+                height="240"
+              >
+                <el-table-column
+                  prop="name"
+                  label="资源名称"
+                  min-width="90"
+                  class-name="com-txt-overflow"
+                ></el-table-column>
+                <el-table-column
+                  prop="type"
+                  label="资源类型"
+                  min-width="80"
+                  class-name="com-txt-overflow"
+                ></el-table-column>
+                <el-table-column
+                  prop="address"
+                  label="IP地址"
+                  min-width="118"
+                  class-name="com-txt-overflow"
+                ></el-table-column>
+                <el-table-column prop="status1" label="通断状态" min-width="72">
+                  <template slot-scope="scope">
+                    <img
+                      :src="
+                      scope.row.status1 === 0
+                          ? '../assets/images/icon/normal.png'
+                          : '../assets/images/icon/warning.png'
+                      "
+                    /> </template
+                ></el-table-column>
+                <el-table-column prop="status2" label="通断状态" min-width="72"
+                  ><template slot-scope="scope">
+                    <img
+                      :src="
+                    scope.row.status2 === 0
+                        ? '../assets/images/icon/normal.png'
+                        : '../assets/images/icon/warning.png'
+                    "
+                    />
+                  </template>
+                </el-table-column>
+                <el-table-column prop="accross" label="IP地址" min-width="171"
+                  ><template slot-scope="scope">
+                    <el-progress :text-inside="true" :stroke-width="18" :percentage="scope.row.accross" :status="scope.row.accross < 70 ? 'success':'exception'"></el-progress>
+                  </template>
+                </el-table-column>
+              </el-table>
+            </div>
+          </div>
+          <p v-if="homeDataList[6].noData" class="loc-no-data">暂无数据</p>
+        </div>
+        <div
+          class="loc-col-form"
+          v-if="homeDataList[7].show"
+          :style="homeDataList[7].style"
+        >
+          <div class="loc-div-menu">
+            <span class="loc-menu-name">{{ homeDataList[7].name }}</span>
+            <div class="loc-menu-btn">
+              <el-dropdown
+                trigger="click"
+                @command="changeHomeMenu($event, homeDataList[7])"
+              >
+                <span class="el-dropdown-link">
+                  <img src="../assets/images/icon/menu-list.png" />
+                </span>
+                <el-dropdown-menu slot="dropdown" class="home-drop">
+                  <el-dropdown-item
+                    :command="menu"
+                    v-for="menu of homeDataList[7].menuList"
+                    :key="menu"
+                    v-if="homeDataList[7].menuType !== menu"
+                    >{{ menu }}</el-dropdown-item
+                  >
+                </el-dropdown-menu>
+              </el-dropdown>
+            </div>
+          </div>
+          <div v-if="!homeDataList[7].noData" class="loc-fill-form"></div>
+          <p v-if="homeDataList[7].noData" class="loc-no-data">暂无数据</p>
         </div>
       </div>
     </div>
   </body>
   <script src="../assets/js/echart/echarts.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/vue-echarts@4.0.0"></script>
+  <script src="../assets/js/echart/vue-echart.js"></script>
   <script src="../assets/js/vue/vue.dev.js"></script>
   <script src="../assets/js/vue/vue-router.js"></script>
   <script src="../assets/js/element-ui/index.js"></script>
