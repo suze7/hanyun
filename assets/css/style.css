@@ -35,9 +35,11 @@ body,
   height: 100%;
 }
 .app {
-  background: linear-gradient(-90deg, #4247ba, #4364bd);
   min-width: 1366px;
   min-height: 768px;
+}
+#homeIndex {
+  background: linear-gradient(334deg, #4247ba, #4364bd);
 }
 .loc-app-menu {
   width: 100%;
@@ -48,6 +50,45 @@ body,
   float: left;
   width: 236px;
   height: 100%;
+}
+.loc-app-menu .loc-logo-form img {
+  margin: 29px 16px;
+  vertical-align: middle;
+}
+.loc-app-menu .loc-user-form {
+  float: right;
+  padding: 0 24px 0 0;
+  height: 100%;
+  line-height: 80px;
+}
+.loc-app-menu .loc-user-form .loc-user,
+.loc-app-menu .loc-user-form .loc-alarm-form {
+  display: inline-block;
+}
+.loc-app-menu .loc-user-form .loc-alarm-form {
+  margin: 0 0 0 14px;
+  width: 46px;
+  height: 100%;
+  text-align: center;
+  border-left: 1px solid rgba(16, 31, 69, 0.1);
+  border-right: 1px solid rgba(16, 31, 69, 0.1);
+}
+.loc-app-menu .loc-user-form .loc-alarm-form > * {
+  vertical-align: middle;
+}
+.loc-app-menu .loc-user-form .loc-user-icon {
+  margin: 0 10px;
+  vertical-align: middle;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+}
+.loc-app-menu .loc-user-form .el-dropdown-link {
+  color: #8190b8;
+}
+.loc-app-menu .loc-user-form .el-dropdown-link > img {
+  vertical-align: middle;
+  margin: 0px 0 0 8px;
 }
 .loc-app-menu .loc-menu-list {
   float: left;
@@ -152,4 +193,39 @@ body,
 }
 .el-dropdown-link {
   cursor: pointer;
+}
+.blue-dialog .el-dialog {
+  background: #3c54b1;
+}
+.blue-dialog .el-dialog__header {
+  padding: 12px 30px;
+  background: rgba(0, 0, 0, 0.1);
+}
+.blue-dialog .el-dialog__title {
+  color: inherit;
+  font-size: 16px;
+}
+.blue-dialog .el-dialog__headerbtn {
+  top: 16px;
+}
+.blue-dialog .dialog-btn {
+  font-size: 12px;
+  padding: 7px 19px;
+}
+.blue-dialog .dialog-btn.cancel-btn {
+  color: #3760ff;
+  border: 1px solid #3760ff;
+  background: transparent;
+}
+.blue-dialog .dialog-btn.submit-btn {
+  border: 1px solid #3760ff;
+  background: #3760ff;
+}
+.blue-dialog .el-dialog__footer {
+  padding-top: 16px;
+  padding-bottom: 50px;
+}
+.blue-dialog .el-dialog__body {
+  padding: 16px 30px;
+  color: inherit;
 }

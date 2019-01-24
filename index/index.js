@@ -4,7 +4,10 @@ var app = new Vue({
   data: {
     message: 'Hello Vue!',
     menuList: [],
-    homeDataList: []
+    homeDataList: [],
+    dialogVisible: false,
+    newHomeDataList: [],
+    inDragDataId: null
   },
   created() {
     this.setMenuList();
@@ -203,7 +206,7 @@ var app = new Vue({
           id: 2,
           name: '资源类别告警分析',
           style: {
-            width: '864px'
+            'min-width': '864px'
           },
           show: true,
           menuList: ['图表', '列表', '移除'],
@@ -922,6 +925,35 @@ var app = new Vue({
         return;
       }
       data.menuType = cmd;
+    },
+    showDialog() {
+      this.dialogVisible = true;
+      this.newHomeDataList = _.cloneDeep(this.homeDataList);
+    },
+    handleClose() {
+      this.newHomeDataList = [];
+    },
+    submitDialog() {
+      this.homeDataList = this.newHomeDataList;
+      this.dialogVisible = false;
+    },
+    leftDrop(e, id) {
+      e.preventDefault();
+      if(id !== 0) {
+        this.newHomeDataList.forEach(e => {
+          if(e.id === this.inDragDataId) {
+            if (id === 1) {
+              e.show = false;
+            } else if (id === 2) {
+              e.show = true;
+            }
+          }
+        })
+      }
+      this.newHomeDataList = [...this.newHomeDataList];
+    },
+    dragStart(e, id) {
+      this.inDragDataId = id;
     }
   }
 });

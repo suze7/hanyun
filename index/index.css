@@ -129,3 +129,44 @@ div.echarts {
   margin-left: 100%;
   color: #69f0ae;
 }
+.home-content-form .loc-form {
+  vertical-align: top;
+  display: inline-block;
+  padding: 16px;
+  height: 460px;
+  font-size: 12px;
+  background: rgba(0, 0, 0, 0.2);
+}
+.home-content-form .loc-form .loc-form-title {
+  margin-bottom: 10px;
+  line-height: 16px;
+  text-align: center;
+}
+.home-content-form .loc-form .loc-drag-form {
+  overflow: auto;
+  padding: 0 20px;
+  max-height: calc(100% - 28px);
+  cursor: pointer;
+}
+.home-content-form .loc-form .loc-drag-form .loc-drag-bar {
+  display: inline-block;
+  text-align: center;
+  margin: 6px 12px;
+  height: 28px;
+  line-height: 28px;
+  border-radius: 4px;
+  background: rgba(0, 0, 0, 0.3);
+}
+.home-content-form .loc-left {
+  margin-right: 32px;
+  width: 284px;
+}
+.home-content-form .loc-left .loc-drag-bar {
+  width: calc(100% - 24px);
+}
+.home-content-form .loc-right {
+  width: 496px;
+}
+.home-content-form .loc-right .loc-drag-bar {
+  width: calc(50% - 24px);
+}

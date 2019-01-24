@@ -6,8 +6,46 @@
     float: left;
     width: 236px;
     height: 100%;
+    img {
+      margin: 29px 16px;
+      vertical-align: middle;
+    }
   }
-
+  .loc-user-form {
+    float: right;
+    padding: 0 24px 0 0;
+    height: 100%;
+    line-height: 80px;
+    .loc-user,
+    .loc-alarm-form {
+      display: inline-block;
+    }
+    .loc-alarm-form {
+      margin: 0 0 0 14px;
+      width: 46px;
+      height: 100%;
+      text-align: center;
+      border-left: 1px solid rgba(16, 31, 69, 0.1);
+      border-right: 1px solid rgba(16, 31, 69, 0.1);
+      > * {
+        vertical-align: middle;
+      }
+    }
+    .loc-user-icon {
+      margin: 0 10px;
+      vertical-align: middle;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+    }
+    .el-dropdown-link {
+      color: #8190b8;
+      > img {
+        vertical-align: middle;
+        margin: 0px 0 0 8px;
+      }
+    }
+  }
   .loc-menu-list {
     float: left;
     height: 100%;
@@ -129,4 +167,42 @@
 
 .el-dropdown-link {
   cursor: pointer;
+}
+
+.blue-dialog {
+  .el-dialog {
+    background: #3c54b1;
+  }
+  .el-dialog__header {
+    padding: 12px 30px;
+    background: rgba(0, 0, 0, 0.1);
+  }
+  .el-dialog__title {
+    color: inherit;
+    font-size: 16px;
+  }
+  .el-dialog__headerbtn {
+    top: 16px;
+  }
+  .dialog-btn {
+    font-size: 12px;
+    padding: 7px 19px;
+    &.cancel-btn {
+      color: #3760ff;
+      border: 1px solid #3760ff;
+      background: transparent;
+    }
+    &.submit-btn {
+      border: 1px solid #3760ff;
+      background: #3760ff;
+    }
+  }
+  .el-dialog__footer {
+    padding-top: 16px;
+    padding-bottom: 50px;
+  }
+  .el-dialog__body {
+    padding: 16px 30px;
+    color: inherit;
+  }
 }
