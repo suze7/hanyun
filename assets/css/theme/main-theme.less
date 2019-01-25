@@ -1,0 +1,35 @@
+.loc-app-menu {
+  background: rgba(0, 0, 0, 0.45);
+  .loc-user-form {
+    .loc-alarm-form {
+      border-left: 1px solid rgba(16, 31, 69, 0.1);
+      border-right: 1px solid rgba(16, 31, 69, 0.1);
+    }
+    .el-dropdown-link {
+      color: #8190b8;
+    }
+  }
+  .loc-menu-form {
+    &:hover,
+    &.active {
+      background: rgba(16, 16, 16, 0.2);
+    }
+    &.active {
+      color: #66cdff;
+      .loc-menu-default {
+        display: none;
+      }
+      .loc-menu-active {
+        display: inline-block;
+      }
+    }
+    .loc-menu-active {
+      display: none;
+    }
+  }
+}
+
+#homeIndex {
+  color: #fff;
+  background: linear-gradient(334deg, #4247ba, #4364bd);
+}
