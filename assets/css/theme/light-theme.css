@@ -29,5 +29,6 @@ body {
 }
 #homeIndex {
   color: #999;
+  min-height: 100%;
   background: #f2f2f2;
 }
