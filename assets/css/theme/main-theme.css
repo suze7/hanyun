@@ -1,3 +1,9 @@
+* {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+body {
+  color: #fff;
+}
 .loc-app-menu {
   background: rgba(0, 0, 0, 0.45);
 }
@@ -5,8 +11,14 @@
   border-left: 1px solid rgba(16, 31, 69, 0.1);
   border-right: 1px solid rgba(16, 31, 69, 0.1);
 }
+.loc-app-menu .loc-user-form .loc-alarm-form .loc-alarm-img {
+  background: url('../../images/icon/alarm.png') no-repeat center center;
+}
 .loc-app-menu .loc-user-form .el-dropdown-link {
   color: #8190b8;
+}
+.loc-app-menu .loc-user-form .el-dropdown-link .menu-drop-img {
+  background: url('../../images/icon/user-drop.png') no-repeat center center;
 }
 .loc-app-menu .loc-menu-form:hover,
 .loc-app-menu .loc-menu-form.active {
