@@ -1,0 +1,91 @@
+.aside-main {
+  color:#fff;
+  padding:20px 30px;
+  background:#435CBC;
+  width: 100%;
+  height:100%;
+  display: flex;
+  justify-content: space-around;
+  .aside-left, .aside-center, .aside-right {
+    >div {
+      background:#2E4182;
+      font-size:12px;
+      padding:20px;
+      height: 100%;
+      box-sizing: border-box;
+      >span {
+        display: inline-block;
+        font-size:14px;
+        font-weight: bold;
+        margin-bottom:20px;
+      }
+      .echarts {
+        width: 100%;
+        height: 90%;
+      }
+    }
+  }
+}
+.aside-left {
+  width: 402px;
+  height:314px;
+  .bus-response-speed, .bus-alarm-time {
+    width: 100%;
+    height:314px;
+  }
+}
+.group-btn {
+  position: absolute;
+  top: 20px;
+  right: 0px;
+  z-index: 999;
+}
+.aside-center {
+  width: 460px;
+  height:314px;
+  /* 业务健康 */
+  .bus-health {
+    width: 100%;
+    height:314px;
+  }
+  /* 业务运行情况 */
+  .bus-runing-state {
+    width: 100%;
+    height:314px;
+    table {
+      width:100%;
+      tr {
+        th {
+          padding:0 5px 10px;
+          border-bottom:1px solid #fff;
+        }
+        td {
+          padding:7px 5px;
+          border-bottom:1px solid #fff;
+        }
+        &:last-child {
+          td {
+            border-bottom:none;
+          }
+        }
+      }
+    }
+  }
+}
+.aside-right {
+  width: 402px;
+  height:650px;
+  /* 告警统计 */
+  .alarm-statics {
+    width:100%;
+    text-align: center;
+    // height:646px;
+    .toggle-btn {
+
+    }
+  }
+}
+.single-bar, .single-pie {
+  width: 100%;
+  height: 100%;
+}

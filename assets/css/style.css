@@ -214,3 +214,20 @@ body,
   padding: 16px 30px;
   color: inherit;
 }
+/* 新增表单 dialog table */
+.common-addForm-table .el-form-item .el-form-item__content table {
+  width: 100%;
+}
+.common-addForm-table .el-form-item .el-form-item__content table tr td {
+  padding: 8px 0;
+}
+.common-addForm-table .el-form-item .el-form-item__content table tr td input {
+  text-indent: 6px;
+  box-sizing: border-box;
+}
+.common-addForm-table .el-form-item .el-form-item__content table tr .text-right {
+  text-align: right;
+}
+.common-addForm-table .el-form-item .el-form-item__content table tr .text-center {
+  text-align: center;
+}
