@@ -1,0 +1,30 @@
+.res-manage-content {
+  padding: 20px;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.2);
+}
+.res-manage-content .loc-search-form {
+  display: flex;
+}
+.res-manage-content .loc-search-form .loc-query-form {
+  width: 160px;
+  margin-right: 32px;
+  font-size: 12px;
+}
+.res-manage-content .loc-search-form .loc-query-form .loc-query-name {
+  margin-bottom: 8px;
+  line-height: 16px;
+}
+.res-manage-content .loc-search-form .loc-query-btn {
+  margin: 28px 0 0 4px;
+}
+.res-manage-content .loc-search-form .loc-query-btn > button {
+  margin-left: 4px;
+}
+.res-manage-content .loc-opera-group {
+  margin: 16px 0;
+}
+.res-manage-content .loc-opera-group .el-button + .el-button {
+  margin-left: 4px;
+}

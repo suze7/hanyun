@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>华云集团-开发框架V1.8</title>
+    <link href="../assets/css/base.css" rel="stylesheet" />
+    <link href="../assets/js/element-ui/index.css" rel="stylesheet" />
+    <link href="../assets/css/style.css" rel="stylesheet" />
+    <link href="../assets/css/theme/main-theme.css" rel="stylesheet" />
+    <!-- <link href="../assets/css/theme/light-theme.css" rel="stylesheet" /> -->
+    <link href="./index.css" rel="stylesheet" />
+  </head>
+  <body class="app">
+    <div id="homeIndex" style="height: 100%;">
+      <div class="loc-app-menu">
+        <div class="loc-logo-form"><img src="../assets/images/logo.png" /></div>
+        <div class="loc-menu-list">
+          <div
+            class="loc-menu-form com-hover"
+            v-for="menu of menuList"
+            :class="{active: menu.active}"
+          >
+            <img class="loc-menu-default" :src="menu.img + '.png'" />
+            <img class="loc-menu-active" :src="menu.img + '-active.png'" />
+            <span class="loc-menu-name com-txt-overflow">{{ menu.name }}</span>
+          </div>
+        </div>
+        <div class="loc-user-form">
+          <div class="loc-alarm-form"><span class="loc-alarm-img"></span></div>
+          <div class="loc-user">
+            <img class="loc-user-icon" src="../assets/images/logo.png" />
+            <el-dropdown
+              trigger="click"
+              @command="changeHomeMenu($event, homeDataList[0])"
+            >
+              <span class="el-dropdown-link">
+                {{ 'Ronin' }} <span class="menu-drop-img"></span>
+              </span>
+              <el-dropdown-menu slot="dropdown" class="home-drop">
+              </el-dropdown-menu>
+            </el-dropdown>
+          </div>
+        </div>
+      </div>
+      <div class="loc-index-content">
+        <div class="loc-left-menu" :class="{'loc-menu-hide': !showMenu}">
+          <div class="loc-transform-left" @click="toggleShowMenu">
+            <i class="el-icon-caret-left"></i>
+            <i class="el-icon-caret-right"></i>
+          </div>
+          <el-menu
+            class="el-menu-vertical-demo"
+            default-active="2"
+            class="el-menu-vertical-demo"
+          >
+            <el-submenu index="1">
+              <template slot="title">
+                <i class="loc-left-icon menu-icon4-1"></i>
+                <span>自定义分组</span>
+              </template>
+              <el-menu-item-group>
+                <el-menu-item index="1-1">自定义</el-menu-item>
+                <el-menu-item index="1-2">自定义1</el-menu-item>
+                <el-menu-item index="1-3">自定义2</el-menu-item>
+              </el-menu-item-group>
+            </el-submenu>
+            <el-menu-item index="2">
+              <i class="loc-left-icon menu-icon4-2"></i>
+              <span slot="title">资源列表</span>
+            </el-menu-item>
+            <el-menu-item index="3">
+              <i class="loc-left-icon menu-icon4-3"></i>
+              <span slot="title">端口管理</span>
+            </el-menu-item>
+            <el-menu-item index="3">
+              <i class="loc-left-icon menu-icon4-4"></i>
+              <span slot="title">VLAN管理</span>
+            </el-menu-item>
+            <el-menu-item index="3">
+              <i class="loc-left-icon menu-icon4-5"></i>
+              <span slot="title">链路管理</span>
+            </el-menu-item>
+          </el-menu>
+        </div>
+        <div class="loc-right-content">
+          <div class="res-manage-content">
+            <div class="loc-search-form">
+              <div class="loc-query-form">
+                <p class="loc-query-name">资源名称</p>
+                <input
+                  placeholder="资源名称"
+                  class="loc-input"
+                  v-model="text1"
+                  :class="{'loc-input-active': text1}"
+                />
+              </div>
+              <div class="loc-query-form">
+                <p class="loc-query-name">IP地址</p>
+                <input placeholder="IP地址" class="loc-input" v-model="text1" />
+              </div>
+              <div class="loc-query-form">
+                <p class="loc-query-name">保障级别</p>
+                <el-select
+                  v-model="value"
+                  popper-class="loc-main-selectbox"
+                  class="loc-main-select"
+                  placeholder="-请选择-"
+                >
+                  <el-option
+                    v-for="item in options"
+                    :key="item.value"
+                    :label="item.label"
+                    :value="item.value"
+                  >
+                  </el-option>
+                </el-select>
+              </div>
+              <div class="loc-query-form">
+                <p class="loc-query-name">资源组</p>
+                <el-select
+                  v-model="value"
+                  popper-class="loc-main-selectbox"
+                  class="loc-main-select"
+                  placeholder="-请选择-"
+                >
+                  <el-option
+                    v-for="item in options"
+                    :key="item.value"
+                    :label="item.label"
+                    :value="item.value"
+                  >
+                  </el-option>
+                </el-select>
+              </div>
+              <div class="loc-query-form">
+                <p class="loc-query-name">管理域</p>
+                <el-select
+                  v-model="value"
+                  popper-class="loc-main-selectbox"
+                  class="loc-main-select"
+                  placeholder="-请选择-"
+                >
+                  <el-option
+                    v-for="item in options"
+                    :key="item.value"
+                    :label="item.label"
+                    :value="item.value"
+                  >
+                  </el-option>
+                </el-select>
+              </div>
+              <div class="loc-query-btn">
+                <el-button class="loc-btn submit-btn" type="primary"
+                  >搜索</el-button
+                >
+                <el-button class="loc-btn reset-btn" type="primary"
+                  >重置</el-button
+                >
+              </div>
+            </div>
+            <div class="loc-opera-group">
+              <el-button type="primary" class="loc-btn icon-btn"
+                ><img
+                  src="../assets/images/icon/btn-icon-1.png"
+                /><span>添加资源</span></el-button
+              >
+
+              <el-button type="primary" class="loc-btn icon-btn"
+                ><img
+                  src="../assets/images/icon/btn-icon-1.png"
+                /><span>加入资源组</span></el-button
+              >
+
+              <el-button type="primary" class="loc-btn icon-btn"
+                ><img
+                  src="../assets/images/icon/btn-icon-2.png"
+                /><span>开启</span></el-button
+              >
+              <el-button type="primary" class="loc-btn icon-btn"
+                ><img
+                  src="../assets/images/icon/btn-icon-3.png"
+                /><span>关闭</span></el-button
+              >
+              <el-button type="primary" class="loc-btn icon-btn"
+                ><img
+                  src="../assets/images/icon/btn-icon-4.png"
+                /><span>监控周期</span></el-button
+              >
+              <el-button type="primary" class="loc-btn icon-btn"
+                ><img
+                  src="../assets/images/icon/btn-icon-5.png"
+                /><span>保障策略</span></el-button
+              >
+              <el-button type="primary" class="loc-btn icon-btn"
+                ><img
+                  src="../assets/images/icon/btn-icon-6.png"
+                /><span>删除</span></el-button
+              >
+              <el-button type="primary" class="loc-btn icon-btn"
+                ><img
+                  src="../assets/images/icon/btn-icon-7.png"
+                /><span>重置资源类型</span></el-button
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <!-- <script src="../assets/js/lodash/lodash.js"></script> -->
+  <!-- <script src="../assets/js/echart/echarts.min.js"></script> -->
+  <script src="../assets/js/vue/vue.dev.js"></script>
+  <!-- <script src="../assets/js/echart/vue-echart.js"></script> -->
+  <script src="../assets/js/element-ui/index.js"></script>
+  <script src="./resource-manage.js"></script>
+</html>

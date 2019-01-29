@@ -4,6 +4,7 @@
 body {
     color: #fff;
 }
+// 页面头部菜单
 .loc-app-menu {
   background: rgba(0, 0, 0, 0.45);
   .loc-user-form {
@@ -43,5 +44,39 @@ body {
 
 #homeIndex {
   color: #fff;
+  min-height: 100%;
   background: linear-gradient(334deg, #4247ba, #4364bd);
+}
+
+.el-menu-vertical-demo {
+  .el-submenu__title,
+  .el-menu-item {
+    color: #fff;
+    &:hover {
+      background: rgba(0, 0, 0, 0.1);
+    }
+  }
+  .is-opened {
+    .el-submenu__title {
+      background: rgba(0, 0, 0, 0.1);
+    }
+  }
+  .is-active:not(.is-opened) {
+    background: rgba(0, 0, 0, 0.1);
+  }
+  .menu-icon4-1 {
+    background: url(../../images/menu/menu-4-1.png) center center no-repeat;
+  }
+  .menu-icon4-2 {
+    background: url(../../images/menu/menu-4-2.png) center center no-repeat;
+  }
+  .menu-icon4-3 {
+    background: url(../../images/menu/menu-4-3.png) center center no-repeat;
+  }
+  .menu-icon4-4 {
+    background: url(../../images/menu/menu-4-4.png) center center no-repeat;
+  }
+  .menu-icon4-5 {
+    background: url(../../images/menu/menu-4-5.png) center center no-repeat;
+  }
 }
