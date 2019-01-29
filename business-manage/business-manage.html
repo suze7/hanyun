@@ -41,9 +41,19 @@
       </div>
     </div>
 
-    <img src="../assets/images/menu/group-1.png" class="group-btn com-hover" @click="showAddDialog">
+    <img v-if="page_init" src="../assets/images/menu/group-1.png" usemap="switchBtn1" class="group-btn com-hover">
+    <img v-else src="../assets/images/menu/group--1.png" usemap="switchBtn2" class="group-btn com-hover">
+    <map id="switchBtn1" name="switchBtn1">
+      <area shape="rect" coords="0,0,44,40" @click="showDialog('dialog')" alt="">
+      <area shape="rect" coords="44,0,88,40" @click="showDialog('list')" alt="">
+    </map>
+    <map id="switchBtn2" name="switchBtn2">
+      <area shape="rect" coords="0,0,44,40" @click="showDialog('dialog')" alt="">
+      <area shape="rect" coords="44,0,88,40" @click="showDialog('charts')" alt="">
+    </map>
 
-    <div class="aside-main">
+    <!-- 图表 -->
+    <div class="aside-main" v-if="page_init">
       <div class="aside-left">
         <div class="bus-response-speed">
           <span>业务响应速度</span>
@@ -101,6 +111,11 @@
           </div>
         </div>
       </div>
+    </div>
+
+    <!-- 列表 -->
+    <div class="aside-main" v-else>
+      列表
     </div>
 
     <!-- dialog -->

@@ -3,6 +3,7 @@ var app = new Vue({
   el: '#homeIndex',
   data() {
     return {
+      page_init: false,
       menuList: [],
       runing_states: [
         { label: 'Openstack V3', health: '98%', status: '1', response: '37ms', busyness: '2%', using: '100%' },
@@ -101,9 +102,20 @@ var app = new Vue({
       }
       data.menuType = cmd;
     },
-    /* 新建业务 */
-    showAddDialog() {
-      this.addBusiDialog = true;
+    showDialog(str) {
+      /* 新建业务 */
+      console.log(str);
+      switch (str) {
+        case 'dialog':
+          this.addBusiDialog = true;
+          break;
+        case 'list':
+          this.page_init = false;
+          break;
+        case 'charts':
+          this.page_init = true;
+          break;
+      }
     },
     /* 确认新建业务 */
     confirmAddBus() {
