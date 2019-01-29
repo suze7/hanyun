@@ -371,48 +371,19 @@ body,
 .common-addForm-table .el-form-item .el-form-item__content table tr .text-center {
   text-align: center;
 }
-.el-menu-vertical-demo {
-  border-right: 0;
-  background: none;
-}
-.el-menu-vertical-demo .el-submenu,
-.el-menu-vertical-demo .el-menu-item {
-  margin: 5px 0;
-}
-.el-menu-vertical-demo .el-submenu__title,
-.el-menu-vertical-demo .el-menu-item {
-  padding-left: 24px !important;
-  height: 35px;
-  line-height: 34px;
-}
-.el-menu-vertical-demo .el-submenu__title .el-submenu__icon-arrow {
-  color: inherit;
-  font-size: 16px;
-}
-.el-menu-vertical-demo .el-menu--inline {
-  background: none;
-}
-.el-menu-vertical-demo .el-menu--inline .el-menu-item {
-  margin: 0;
-  padding-left: 48px !important;
-}
-.el-menu-vertical-demo .el-menu-item-group__title {
-  display: none;
-}
-.el-menu-vertical-demo .loc-left-icon {
-  display: inline-block;
-  margin-right: 6px;
-  width: 14px;
-  height: 14px;
-}
 .my-menu .my-menu-item {
   margin: 5px 0;
 }
 .my-menu .my-menu-item.is-open > .my-menu-content .loc-drop-icon {
   transform: rotate(90deg);
 }
+.my-menu .my-menu-item.is-open > .my-menu-content .loc-left-subicon {
+  top: -3px;
+  transform: rotate(90deg) scale(0.75);
+}
 .my-menu .my-menu-item.is-open > .my-submenu-item {
-  height: fit-content;
+  max-height: 1000px;
+  transition: max-height 3s ease-out;
 }
 .my-menu .my-menu-item .my-menu-content {
   cursor: pointer;
@@ -432,7 +403,8 @@ body,
 }
 .my-menu .my-menu-item .my-submenu-item {
   overflow: hidden;
-  height: 0;
+  max-height: 0;
+  transition: max-height 0.3s ease-in;
 }
 .my-menu .my-menu-item .my-submenu-item .my-menu-item {
   margin: 0;
@@ -443,6 +415,28 @@ body,
   margin-right: 6px;
   width: 14px;
   height: 14px;
+}
+.my-menu .loc-left-subicon {
+  position: relative;
+  top: -1px;
+  display: inline-block;
+  margin: 0 3px 0 -7px;
+  width: 16px;
+  height: 16px;
+  transform: scale(0.75);
+  text-align: center;
+  font-size: 12px;
+}
+.my-menu .my-menu-other {
+  float: right;
+  margin: 9px 8px;
+  width: 22px;
+  height: 16px;
+  line-height: 14px;
+  text-align: center;
+  font-size: 12px;
+  background: #69f0ae;
+  border-radius: 10px;
 }
 .my-menu .menu-icon4-1 {
   background: url(../images/menu/menu-4-1.png) center center no-repeat;

@@ -178,6 +178,7 @@ var app = new Vue({
         this.leftMenuList.selectMenu = menu;
       }
       if (menu.children) {
+        console.log(menu);
         if (this.leftMenuList.openMenu === menu.id) {
           let mList = this.leftMenuList.openMenu.split('-');
           if (mList.length > 1) {

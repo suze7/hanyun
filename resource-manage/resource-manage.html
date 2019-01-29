@@ -34,7 +34,7 @@
               @command="changeHomeMenu($event, homeDataList[0])"
             >
               <span class="el-dropdown-link">
-                {{ 'Ronin' }} <span class="menu-drop-img"></span>
+                {{ "Ronin" }} <span class="menu-drop-img"></span>
               </span>
               <el-dropdown-menu slot="dropdown" class="home-drop">
               </el-dropdown-menu>
@@ -65,26 +65,41 @@
                   v-if="menu.children"
                   class="loc-drop-icon el-icon-arrow-right"
                 ></i>
-                <!-- <i v-if="menu.children && menu.children.length" class="loc-drop-icon"></i> -->
-                <i></i>
               </div>
-              <transition name="fade">
-                <div class="my-submenu-item">
+              <div class="my-submenu-item">
+                <div
+                  class="my-menu-item"
+                  v-for="subMenu of menu.children"
+                  :class="{'is-open': leftMenuList.openMenu && (leftMenuList.openMenu === subMenu.id || leftMenuList.openMenu.indexOf(subMenu.id + '-') !== -1)}"
+                >
                   <div
-                    class="my-menu-item"
-                    v-for="subMenu of menu.children"
+                    class="my-menu-content"
+                    :class="{'is-active': leftMenuList.selectMenu && (leftMenuList.selectMenu === subMenu || leftMenuList.selectMenu.id.indexOf(subMenu.id + '-') !== -1)}"
+                    @click="selectedLeftMenu(subMenu)"
                   >
-                    <div
-                      class="my-menu-content"
-                      :class="{'is-active': leftMenuList.selectMenu && (leftMenuList.selectMenu === subMenu || leftMenuList.selectMenu.id.indexOf(subMenu.id + '-') !== -1)}"
-                      @click="selectedLeftMenu(subMenu)"
+                    <i class="loc-left-icon"></i>
+                    <span
+                      ><i class="loc-left-subicon el-icon-caret-right" v-if="subMenu.children"></i>{{ subMenu.name }}</span
                     >
-                      <i class="loc-left-icon" :class="subMenu.iconClass"></i>
-                      <span>{{ subMenu.name }}</span>
+                  </div>
+                  <div class="my-submenu-item">
+                    <div
+                      class="my-menu-item"
+                      v-for="mSubMenu of subMenu.children"
+                    >
+                      <div
+                        class="my-menu-content"
+                        :class="{'is-active': leftMenuList.selectMenu && (leftMenuList.selectMenu === mSubMenu || leftMenuList.selectMenu.id.indexOf(mSubMenu.id + '-') !== -1)}"
+                        @click="selectedLeftMenu(mSubMenu)"
+                      >
+                        <i class="loc-left-icon"></i>
+                        <span><i class="loc-left-subicon"></i>{{ mSubMenu.name }}</span>
+                        <div class="my-menu-other" v-if="mSubMenu.num">{{mSubMenu.num}}</div>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </transition>
+              </div>
             </div>
           </div>
           <!-- <el-menu
