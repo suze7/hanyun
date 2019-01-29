@@ -4,29 +4,36 @@ var app = new Vue({
     showMenu: true,
     menuList: [],
     text1: '',
-    options: [{
-      value: '选项1',
-      label: '黄金糕'
-    }, {
-      value: '选项2',
-      label: '双皮奶'
-    }, {
-      value: '选项3',
-      label: '蚵仔煎'
-    }, {
-      value: '选项4',
-      label: '龙须面'
-    }, {
-      value: '选项5',
-      label: '北京烤鸭'
-    }],
-    value: ''
+    options: [
+      {
+        value: '选项1',
+        label: '黄金糕'
+      },
+      {
+        value: '选项2',
+        label: '双皮奶'
+      },
+      {
+        value: '选项3',
+        label: '蚵仔煎'
+      },
+      {
+        value: '选项4',
+        label: '龙须面'
+      },
+      {
+        value: '选项5',
+        label: '北京烤鸭'
+      }
+    ],
+    value: '',
+    leftMenuList: null
   },
   created() {
     this.setMenuList();
+    this.setLeftMenuList();
   },
-  mounted() {
-  },
+  mounted() {},
   methods: {
     setMenuList: function() {
       this.menuList = [
@@ -86,6 +93,103 @@ var app = new Vue({
           active: false
         }
       ];
+    },
+    setLeftMenuList: function() {
+      this.leftMenuList = {
+        openMenu: null,
+        selectMenu: null,
+        list: [
+          {
+            id: '1',
+            name: '自定义分组',
+            iconClass: 'menu-icon4-1',
+            canTouch: false, //点开却不会选中
+            children: [
+              {
+                id: '1-1',
+                name: '自定义',
+                iconClass: '',
+                canTouch: true
+              },
+              {
+                id: '1-2',
+                name: '自定义1',
+                iconClass: '',
+                canTouch: true
+              }
+            ]
+          },
+          {
+            id: '2',
+            name: '资源列表',
+            iconClass: 'menu-icon4-2',
+            canTouch: true,
+            children: [
+              {
+                id: '2-1',
+                name: '全部资源',
+                iconClass: '',
+                canTouch: true
+              },
+              {
+                id: '2-2',
+                name: '网络设备',
+                iconClass: '',
+                canTouch: true,
+                children: [{
+                  id: '2-2-1',
+                  name: '网络设备1',
+                  iconClass: '',
+                  canTouch: true,
+                  num: ''
+                },{
+                  id: '2-2-2',
+                  name: '网络设备2',
+                  iconClass: '',
+                  canTouch: true,
+                  num: '1'
+                }]
+              }
+            ]
+          },
+          {
+            id: '3',
+            name: '端口管理',
+            iconClass: 'menu-icon4-3',
+            canTouch: true
+          },
+          {
+            id: '4',
+            name: 'VLAN管理',
+            iconClass: 'menu-icon4-4',
+            canTouch: true
+          },
+          {
+            id: '5',
+            name: '链路管理',
+            iconClass: 'menu-icon4-5',
+            canTouch: true
+          }
+        ]
+      };
+    },
+    selectedLeftMenu(menu) {
+      if (menu.canTouch) {
+        this.leftMenuList.selectMenu = menu;
+      }
+      if (menu.children) {
+        if (this.leftMenuList.openMenu === menu.id) {
+          let mList = this.leftMenuList.openMenu.split('-');
+          if (mList.length > 1) {
+            mList.pop();
+            this.leftMenuList.openMenu = mList.join('-');
+          } else {
+            this.leftMenuList.openMenu = null;
+          }
+        } else {
+          this.leftMenuList.openMenu = menu.id;
+        }
+      }
     },
     toggleShowMenu() {
       this.showMenu = !this.showMenu;
