@@ -102,6 +102,11 @@
     thead {
       color: inherit;
     }
+    .no-padding {
+      .cell {
+        padding: 0;
+      }  
+    }
     .cell {
       padding: 0 0 0 24px;
     }
@@ -138,6 +143,17 @@
       white-space: nowrap;
     }
   }
+  .caret-wrapper {
+    height: 28px;
+    .sort-caret {
+      &.ascending {
+        top: 2px;
+      }
+      &.descending {
+        bottom: 4px;
+      }
+    }
+  }
   &.gray-table {
     color: rgba(255, 255, 255, 0.6);
     .cell {
@@ -170,6 +186,122 @@
       }
       td {
         border-top: 1px solid #8190b8;
+      }
+    }
+  }
+}
+
+.transparent-white-table {
+  .my-table-special {
+    position: relative;
+    display: inline-block;
+    float: left;
+    margin: 7px 0 0 -16px;
+    width: 8px;
+    height: 8px;
+    background: url(../images/icon/star.png) center center no-repeat;
+  }
+  &.el-table tr:nth-child(even) {
+    &:hover td,
+    td {
+      background: rgba(255, 255, 255, 0.1);
+    }
+  }
+}
+
+// 分页
+.my-pagination-group {
+  .el-pagination {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0 -4px;
+    padding: 0;
+    .btn-prev,
+    .btn-next {
+      padding: 0 8px;
+      color: rgba(0, 0, 0, 0.6);
+      background: rgba(255, 255, 255, 0.6);
+      .el-icon {
+        font-weight: normal;
+      }
+    }
+    .btn-prev {
+      i::before {
+        content: '上一页'
+      }
+    }
+    .btn-next {
+      i::before {
+        content: '下一页'
+      }
+    }
+    .el-pager {
+      li {
+        margin: 0;
+        min-width: 22px;
+        color: rgba(0, 0, 0, 0.6);
+        border-radius: 0;
+        background: rgba(255, 255, 255, 0.6);
+        font-weight: normal;
+        &:not(.disabled).active {
+          color: #fff;
+          background: rgba(151, 156, 255, 0.6);
+        }
+      }
+    }
+  }
+  .my-pagination-btn {
+    display: inline-block;
+    vertical-align: middle;
+    padding: 0 8px;
+    height: 28px;
+    line-height: 28px;
+    color: rgba(0, 0, 0, 0.6);
+    background: rgba(255, 255, 255, 0.6);
+  }
+  .my-pagination-first {
+    border-radius: 4px 0 0 4px;
+  }
+  .my-pagination-last {
+    border-radius: 0 4px 4px 0;
+  }
+}
+
+// 下拉内容
+.my-popover-content {
+  padding: 0;
+  min-width: 82px;
+  background: #1d285d;
+  border: 0;
+  color: inherit;
+  &.el-popper {
+    margin-top: 17px;
+  }
+  .popper__arrow {
+    display: none;
+  }
+  .my-popover-item {
+    padding: 8px;
+    line-height: 16px;
+    font-size: 12px;
+  }
+  .my-content-checkbox {
+    float: right;
+    margin-right: 8px;
+    .el-checkbox__inner {
+      width: 10px;
+      height: 10px;
+      background: none;
+      border-radius: 0px;
+      border: 1px solid #fff;
+      &::after {
+        display: none;
+      }
+    }
+    .is-checked {
+      .el-checkbox__inner {
+        border: 0;
+        background: url(../images/icon/checkbox.png) center center no-repeat;
       }
     }
   }
@@ -222,20 +354,20 @@
   .el-form-item {
     .el-form-item__content {
       table {
-        width:100%;
+        width: 100%;
         tr {
           td {
-            padding:8px 0;
+            padding: 8px 0;
             input {
               text-indent: 6px;
               box-sizing: border-box;
             }
           }
           .text-right {
-            text-align:right;
+            text-align: right;
           }
           .text-center {
-            text-align:center;
+            text-align: center;
           }
         }
       }
@@ -269,7 +401,7 @@
       line-height: 34px;
       &.is-active,
       &:hover {
-        background: rgba(0, 0, 0, .1);
+        background: rgba(0, 0, 0, 0.1);
       }
       .loc-drop-icon {
         float: right;

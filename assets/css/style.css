@@ -40,6 +40,22 @@ body,
 .el-input {
   font-size: inherit;
 }
+input::-webkit-input-placeholder {
+  /* WebKit, Blink, Edge */
+  color: #ccc;
+}
+input:-moz-placeholder {
+  /* Mozilla Firefox 4 to 18 */
+  color: #ccc;
+}
+input::-moz-placeholder {
+  /* Mozilla Firefox 19+ */
+  color: #ccc;
+}
+input:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: #ccc;
+}
 .el-input__inner,
 .loc-input {
   padding: 8px;
@@ -73,6 +89,14 @@ body,
   /* Internet Explorer 10-11 */
   color: inherit;
   opacity: 0.6;
+}
+.my-checkbox .el-checkbox__inner:hover {
+  border-color: #5074ff;
+}
+.my-checkbox .cell .el-checkbox__input.is-indeterminate .el-checkbox__inner,
+.my-checkbox .cell .el-checkbox__input.is-checked .el-checkbox__inner {
+  background-color: #5074ff;
+  border-color: #5074ff;
 }
 .loc-btn {
   padding: 6px 16px;
@@ -177,6 +201,10 @@ body,
 .loc-opera-group .el-button + .el-button {
   margin-left: 4px;
 }
+.loc-pagination {
+  margin-top: 22px;
+  text-align: right;
+}
 .loc-app-menu {
   width: 100%;
   height: 80px;
@@ -258,6 +286,9 @@ body,
 .transparent-table.el-table thead {
   color: inherit;
 }
+.transparent-table.el-table .no-padding .cell {
+  padding: 0;
+}
 .transparent-table.el-table .cell {
   padding: 0 0 0 24px;
 }
@@ -287,6 +318,15 @@ body,
 .transparent-table .com-txt-overflow .cell {
   white-space: nowrap;
 }
+.transparent-table .caret-wrapper {
+  height: 28px;
+}
+.transparent-table .caret-wrapper .sort-caret.ascending {
+  top: 2px;
+}
+.transparent-table .caret-wrapper .sort-caret.descending {
+  bottom: 4px;
+}
 .transparent-table.gray-table {
   color: rgba(255, 255, 255, 0.6);
 }
@@ -315,6 +355,104 @@ body,
 }
 .transparent-table.gray-table tr td {
   border-top: 1px solid #8190b8;
+}
+.transparent-white-table .my-table-special {
+  position: relative;
+  display: inline-block;
+  float: left;
+  margin: 7px 0 0 -16px;
+  width: 8px;
+  height: 8px;
+  background: url(../images/icon/star.png) center center no-repeat;
+}
+.transparent-white-table.el-table tr:nth-child(even):hover td,
+.transparent-white-table.el-table tr:nth-child(even) td {
+  background: rgba(255, 255, 255, 0.1);
+}
+.my-pagination-group .el-pagination {
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0 -4px;
+  padding: 0;
+}
+.my-pagination-group .el-pagination .btn-prev,
+.my-pagination-group .el-pagination .btn-next {
+  padding: 0 8px;
+  color: rgba(0, 0, 0, 0.6);
+  background: rgba(255, 255, 255, 0.6);
+}
+.my-pagination-group .el-pagination .btn-prev .el-icon,
+.my-pagination-group .el-pagination .btn-next .el-icon {
+  font-weight: normal;
+}
+.my-pagination-group .el-pagination .btn-prev i::before {
+  content: '上一页';
+}
+.my-pagination-group .el-pagination .btn-next i::before {
+  content: '下一页';
+}
+.my-pagination-group .el-pagination .el-pager li {
+  margin: 0;
+  min-width: 22px;
+  color: rgba(0, 0, 0, 0.6);
+  border-radius: 0;
+  background: rgba(255, 255, 255, 0.6);
+  font-weight: normal;
+}
+.my-pagination-group .el-pagination .el-pager li:not(.disabled).active {
+  color: #fff;
+  background: rgba(151, 156, 255, 0.6);
+}
+.my-pagination-group .my-pagination-btn {
+  display: inline-block;
+  vertical-align: middle;
+  padding: 0 8px;
+  height: 28px;
+  line-height: 28px;
+  color: rgba(0, 0, 0, 0.6);
+  background: rgba(255, 255, 255, 0.6);
+}
+.my-pagination-group .my-pagination-first {
+  border-radius: 4px 0 0 4px;
+}
+.my-pagination-group .my-pagination-last {
+  border-radius: 0 4px 4px 0;
+}
+.my-popover-content {
+  padding: 0;
+  min-width: 82px;
+  background: #1d285d;
+  border: 0;
+  color: inherit;
+}
+.my-popover-content.el-popper {
+  margin-top: 17px;
+}
+.my-popover-content .popper__arrow {
+  display: none;
+}
+.my-popover-content .my-popover-item {
+  padding: 8px;
+  line-height: 16px;
+  font-size: 12px;
+}
+.my-popover-content .my-content-checkbox {
+  float: right;
+  margin-right: 8px;
+}
+.my-popover-content .my-content-checkbox .el-checkbox__inner {
+  width: 10px;
+  height: 10px;
+  background: none;
+  border-radius: 0px;
+  border: 1px solid #fff;
+}
+.my-popover-content .my-content-checkbox .el-checkbox__inner::after {
+  display: none;
+}
+.my-popover-content .my-content-checkbox .is-checked .el-checkbox__inner {
+  border: 0;
+  background: url(../images/icon/checkbox.png) center center no-repeat;
 }
 .el-dropdown-link {
   cursor: pointer;
