@@ -77,7 +77,7 @@
       </div>
       <div class="loc-right-content">
         <div class="loc-manage-content">
-          <div class="loc-search-form">
+          <div class="loc-search-form oper-search-form">
             <div class="loc-query-form">
               <p class="loc-query-name">资源名称</p>
               <input placeholder="资源名称" class="loc-input" v-model="text1" :class="{'loc-input-active': text1}" />
@@ -87,21 +87,14 @@
               <input placeholder="IP地址" class="loc-input" v-model="text1" />
             </div>
             <div class="loc-query-form">
-              <p class="loc-query-name">保障级别</p>
+              <p class="loc-query-name">资源类型</p>
               <el-select v-model="value" popper-class="loc-main-selectbox" class="loc-main-select" placeholder="-请选择-">
                 <el-option v-for="item in options" :key="item.value" :label="item.label" :value="item.value">
                 </el-option>
               </el-select>
             </div>
             <div class="loc-query-form">
-              <p class="loc-query-name">资源组</p>
-              <el-select v-model="value" popper-class="loc-main-selectbox" class="loc-main-select" placeholder="-请选择-">
-                <el-option v-for="item in options" :key="item.value" :label="item.label" :value="item.value">
-                </el-option>
-              </el-select>
-            </div>
-            <div class="loc-query-form">
-              <p class="loc-query-name">管理域</p>
+              <p class="loc-query-name">资源状态</p>
               <el-select v-model="value" popper-class="loc-main-selectbox" class="loc-main-select" placeholder="-请选择-">
                 <el-option v-for="item in options" :key="item.value" :label="item.label" :value="item.value">
                 </el-option>
@@ -112,70 +105,40 @@
               <el-button class="loc-btn reset-btn" type="primary">重置</el-button>
             </div>
           </div>
-          <div class="loc-opera-group">
-            <el-button type="primary" class="loc-btn icon-btn" @click="showDialog"><img src="../assets/images/icon/btn-icon-1.png" /><span>添加资源</span></el-button>
-
-            <el-button type="primary" class="loc-btn icon-btn"><img src="../assets/images/icon/btn-icon-1.png" /><span>加入资源组</span></el-button>
-
-            <el-button type="primary" class="loc-btn icon-btn"><img src="../assets/images/icon/btn-icon-2.png" /><span>开启</span></el-button>
-            <el-button type="primary" class="loc-btn icon-btn"><img src="../assets/images/icon/btn-icon-3.png" /><span>关闭</span></el-button>
-            <el-button type="primary" class="loc-btn icon-btn"><img src="../assets/images/icon/btn-icon-4.png" /><span>监控周期</span></el-button>
-            <el-button type="primary" class="loc-btn icon-btn"><img src="../assets/images/icon/btn-icon-5.png" /><span>保障策略</span></el-button>
-            <el-button type="primary" class="loc-btn icon-btn"><img src="../assets/images/icon/btn-icon-6.png" /><span>删除</span></el-button>
-            <el-button type="primary" class="loc-btn icon-btn"><img src="../assets/images/icon/btn-icon-7.png" /><span>重置资源类型</span></el-button>
-          </div>
-          <el-table :data="tableData" size="mini" class="transparent-table transparent-white-table" style="width: 100%">
-            <el-table-column class-name="my-checkbox" type="selection" width="46"></el-table-column>
-            <el-table-column prop="name" label="名称" sortable min-width="124px">
+          <el-table :data="tableData" size="mini" class="transparent-table transparent-white-table port-table" style="width: 100%">
+            <el-table-column class-name="com-txt-overflow" prop="name" label="名称" sortable min-width="161px">
               <template slot-scope="scope">
-                <i class="my-table-special" v-if="scope.row.spec"></i>
-                <p style="color: #97c1ff">{{ scope.row.name }}</p>
+                <p class="com-txt-overflow" style="color: #97c1ff">{{ scope.row.name }}</p>
               </template>
             </el-table-column>
-            <el-table-column prop="IP" label="IP" sortable min-width="119px">
+            <el-table-column class-name="com-txt-overflow" prop="portName" label="端口别名" sortable min-width="161px">
               <template slot-scope="scope">
-                <p style="color: #97c1ff">{{ scope.row.IP }}</p>
+                <p class="com-txt-overflow" style="color: #97c1ff">{{ scope.row.portName }}</p>
               </template>
             </el-table-column>
-            <el-table-column prop="type1" label="类别" sortable min-width="76px"></el-table-column>
-            <el-table-column prop="type2" label="类型" sortable min-width="90px"></el-table-column>
-            <el-table-column prop="level" label="保障等级" sortable min-width="97px"></el-table-column>
-            <el-table-column prop="area" label="管理域" sortable min-width="110px"></el-table-column>
-            <el-table-column prop="healthStatus" label="健康状态" min-width="81px" class-name="com-txt-center no-padding">
-              <template slot="header" slot-scope="scope">
-                <span>健康状态</span>
-                <el-popover placement="bottom-end" trigger="click" class="my-popover" popper-class="my-popover-content">
-                  <div>
-                    <div class="my-popover-item com-hover">全部</div>
-                    <div class="my-popover-item com-hover">正常
-                      <el-checkbox class="my-content-checkbox"></el-checkbox>
-                    </div>
-                  </div>
-                  <i slot="reference" class="com-hover el-icon-arrow-down"></i>
-                </el-popover>
-              </template>
+            <el-table-column class-name="com-txt-overflow" prop="resName" label="资源名称" min-width="100px">
               <template slot-scope="scope">
-                <img :src="scope.row.healthStatus === 0 ? '../assets/images/icon/normal.png' : scope.row.healthStatus === 1 ? '../assets/images/icon/warning.png' : '../assets/images/icon/error.png'" />
+                <p class="com-txt-overflow" style="color: #97c1ff">{{ scope.row.type1 }}</p>
               </template>
             </el-table-column>
+            <el-table-column class-name="com-txt-overflow" prop="type2" label="IP地址" min-width="95px">
+              <template slot-scope="scope">
+                <p class="com-txt-overflow" style="color: #97c1ff">{{ scope.row.type2 }}</p>
+              </template>
+            </el-table-column>
+            <el-table-column class-name="com-txt-overflow" prop="type1" label="资源类型" min-width="68px"></el-table-column>
+            <el-table-column class-name="com-txt-overflow" prop="type2" label="端口类型" min-width="76px"></el-table-column>
+            <el-table-column class-name="com-txt-overflow" prop="type3" label="端口类型" min-width="64px"></el-table-column>
+            <el-table-column class-name="com-txt-overflow" prop="MAC" label="MAC地址" min-width="160px"></el-table-column>
             <el-table-column prop="manageStatus" label="管理状态" min-width="81px" class-name="com-txt-center no-padding">
               <template slot="header" slot-scope="scope">
                 <span>管理状态</span>
-                <el-popover placement="bottom-end" trigger="click" class="my-popover" popper-class="my-popover-content">
-                  <div>
-                    <div class="my-popover-item com-hover">全部</div>
-                    <div class="my-popover-item com-hover">正常
-                      <el-checkbox class="my-content-checkbox"></el-checkbox>
-                    </div>
-                  </div>
-                  <i slot="reference" class="com-hover el-icon-arrow-down"></i>
-                </el-popover>
               </template>
               <template slot-scope="scope">
                 <img :src="scope.row.manageStatus === 0 ? '../assets/images/icon/normal.png' : scope.row.manageStatus === 1 ? '../assets/images/icon/warning.png' : '../assets/images/icon/error.png'" />
               </template>
             </el-table-column>
-            <el-table-column prop="accessStatus" label="通断状态" min-width="81px" class-name="com-txt-center no-padding">
+            <el-table-column prop="runStatus" label="运行状态" min-width="64px" class-name="com-txt-center no-padding">
               <template slot="header" slot-scope="scope">
                 <span>通断状态</span>
                 <el-popover placement="bottom-end" trigger="click" class="my-popover" popper-class="my-popover-content">
@@ -192,8 +155,7 @@
                 <img :src="scope.row.accessStatus === 0 ? '../assets/images/icon/normal.png' : scope.row.accessStatus === 1 ? '../assets/images/icon/warning.png' : '../assets/images/icon/error.png'" />
               </template>
             </el-table-column>
-            <el-table-column prop="time" label="轮询周期" min-width="100px"></el-table-column>
-            <el-table-column prop="" label="操作" min-width="98px">
+            <el-table-column prop="" label="操作" min-width="64px">
               <template slot-scope="scope">
                 <el-popover placement="bottom" trigger="click" class="my-popover" popper-class="my-popover-content my-popover-left">
                   <div>
@@ -229,116 +191,118 @@
       </div>
     </div>
 
-    <el-dialog title="资源添加" :visible.sync="dialogVisible" width="1080px" :show-close="false" :before-close="handleClose"
+    <el-dialog title="资源添加" :visible.sync="dialogVisible" width="1080px"
       class="blue-dialog my-edit-dialog">
       <div class="resource-dialog">
-        <div class="my-edit-form">
-          <p class="my-edit-title">资源分类</p>
-          <div class="my-edit-group">
-            <span class="my-group-title">资源类别</span>
-            <div class="my-group-content">
-              <el-select v-model="value" popper-class="loc-main-selectbox loc-white-selectbox" class="loc-main-select loc-white-select"
-                placeholder="-请选择-">
-                <el-option v-for="item in options" :key="item.value" :label="item.label" :value="item.value">
-                </el-option>
-              </el-select>
-            </div>
-          </div>
-          <div class="my-edit-group">
-            <span class="my-group-title">资源类型</span>
-            <div class="my-group-content">
-              <el-select v-model="value" popper-class="loc-main-selectbox loc-white-selectbox" class="loc-main-select loc-white-select"
-                placeholder="-请选择-">
-                <el-option v-for="item in options" :key="item.value" :label="item.label" :value="item.value">
-                </el-option>
-              </el-select>
-            </div>
+        <div class="my-edit-group">
+          <span class="my-group-title">所有资源</span>
+          <div class="my-group-content">
+            <input type="text" />
           </div>
         </div>
-        <div class="my-edit-form">
-          <p class="my-edit-title">基本信息</p>
-          <div class="my-edit-group">
-            <span class="my-group-title">资源名称</span>
-            <div class="my-group-content">
-              <input type="text" placeholder="资源名称" />
-            </div>
-          </div>
-          <div class="my-edit-group">
-            <span class="my-group-title">IP地址</span>
-            <div class="my-group-content">
-              <input type="text" placeholder="IP地址" />
-            </div>
-          </div>
-          <div class="my-edit-group">
-            <span class="my-group-title">管理域</span>
-            <div class="my-group-content">
-              <el-select v-model="value" popper-class="loc-main-selectbox loc-white-selectbox" class="loc-main-select loc-white-select"
-                placeholder="-请选择-">
-                <el-option v-for="item in options" :key="item.value" :label="item.label" :value="item.value">
-                </el-option>
-              </el-select>
-            </div>
-          </div>
-          <div class="my-edit-group">
-            <span class="my-group-title">资源组</span>
-            <div class="my-group-content">
-              <el-select v-model="value" popper-class="loc-main-selectbox loc-white-selectbox" class="loc-main-select loc-white-select"
-                placeholder="-请选择-">
-                <el-option v-for="item in options" :key="item.value" :label="item.label" :value="item.value">
-                </el-option>
-              </el-select>
-            </div>
-          </div>
-          <div class="my-edit-group">
-            <span class="my-group-title">监控周期</span>
-            <div class="my-group-content">
-              <el-select v-model="value" popper-class="loc-main-selectbox loc-white-selectbox" class="loc-main-select loc-white-select"
-                placeholder="-请选择-">
-                <el-option v-for="item in options" :key="item.value" :label="item.label" :value="item.value">
-                </el-option>
-              </el-select>
-            </div>
-            <div class="my-group-content">
-              <el-select v-model="value" popper-class="loc-main-selectbox loc-white-selectbox" class="loc-main-select loc-white-select"
-                placeholder="-请选择-">
-                <el-option v-for="item in options" :key="item.value" :label="item.label" :value="item.value">
-                </el-option>
-              </el-select>
-            </div>
+        <div class="my-edit-group">
+          <span class="my-group-title">资源IPD地址</span>
+          <div class="my-group-content">
+            <input type="text" />
           </div>
         </div>
-        <div class="my-edit-form">
-          <p class="my-edit-title">访问配置</p>
-          <div class="my-edit-group">
-            <span class="my-group-title">访问协议</span>
-            <div class="my-group-content">
-              <input type="text" placeholder="访问协议" />
-            </div>
+        <div class="my-edit-group">
+          <span class="my-group-title">端口名称</span>
+          <div class="my-group-content">
+            <input type="text" />
           </div>
-          <div class="my-edit-group">
-            <span class="my-group-title">SNMP端口</span>
-            <div class="my-group-content">
-              <input type="text" placeholder="SNMP端口" />
-            </div>
+        </div>
+        <div class="my-edit-group">
+          <span class="my-group-title">端口名称</span>
+          <div class="my-group-content">
+            <input type="text" />
           </div>
-          <div class="my-edit-group">
-            <span class="my-group-title">重试次数</span>
-            <div class="my-group-content">
-              <input type="text" placeholder="重试次数" />
-            </div>
+        </div>
+        <div class="my-edit-group">
+          <span class="my-group-title">端口描述</span>
+          <div class="my-group-content">
+            <input type="text" />
           </div>
-          <div class="my-edit-group">
-            <span class="my-group-title">访问协议</span>
-            <div class="my-group-content">
-              <input type="text" placeholder="访问协议" />
-            </div>
+        </div>
+        <div class="my-edit-group">
+          <span class="my-group-title">端口类型</span>
+          <div class="my-group-content">
+            <input type="text" />
+          </div>
+        </div>
+        <div class="my-edit-group">
+          <span class="my-group-title">MAC地址</span>
+          <div class="my-group-content">
+            <input type="text" />
+          </div>
+        </div>
+        <div class="my-edit-group">
+          <span class="my-group-title">进带宽</span>
+          <div class="my-group-content">
+            <input type="text" />
+          </div>
+        </div>
+        <div class="my-edit-group">
+          <span class="my-group-title">出带宽</span>
+          <div class="my-group-content">
+            <input type="text" />
+          </div>
+        </div>
+        <div class="my-edit-group">
+          <span class="my-group-title">进流量</span>
+          <div class="my-group-content">
+            <input type="text" />
+          </div>
+        </div>
+        <div class="my-edit-group">
+          <span class="my-group-title">出流量</span>
+          <div class="my-group-content">
+            <input type="text" />
+          </div>
+        </div>
+        <div class="my-edit-group">
+          <span class="my-group-title">出流量</span>
+          <div class="my-group-content opera-group-content">
+            <span class="img-form"><img src="../assets/images/icon/normal.png" /></span>
+          </div>
+        </div>
+        <div class="my-edit-group">
+          <span class="my-group-title">运行状态</span>
+          <div class="my-group-content opera-group-content">
+            <span class="img-form"><img src="../assets/images/icon/normal.png" /></span>
+          </div>
+        </div>
+        <div class="my-edit-group">
+          <span class="my-group-title">聚合端口</span>
+          <div class="my-group-content opera-group-content">
+            <span class="img-form"><el-checkbox class="my-checkbox" v-model="checked"></el-checkbox></span>
+          </div>
+        </div>
+        <div class="my-edit-group">
+          <span class="my-group-title">聚合端口号</span>
+          <div class="my-group-content opera-group-content">
+              <input type="text" />
+          </div>
+        </div>
+        <div class="my-edit-group">
+          <span class="my-group-title">物理端口</span>
+          <div class="my-group-content opera-group-content">
+            <span class="img-form"><el-checkbox class="my-checkbox" v-model="checked"></el-checkbox></span>
+          </div>
+        </div>
+        <div class="my-edit-group">
+          <span class="my-group-title">以太网端口</span>
+          <div class="my-group-content opera-group-content">
+            <span class="img-form"><el-checkbox class="my-checkbox" v-model="checked"></el-checkbox></span>
+          </div>
+        </div>
+        <div class="my-edit-group">
+          <span class="my-group-title"></span>
+          <div class="my-group-content opera-group-content">
+              <input type="text" />
           </div>
         </div>
       </div>
-      <span slot="footer" class="dialog-footer">
-        <el-button class="dialog-btn cancel-btn" @click="dialogVisible = false">取消</el-button>
-        <el-button class="dialog-btn submit-btn" type="primary" @click="submitDialog()">确认</el-button>
-      </span>
     </el-dialog>
   </div>
 </body>
@@ -347,6 +311,6 @@
 <script src="../assets/js/vue/vue.dev.js"></script>
 <!-- <script src="../assets/js/echart/vue-echart.js"></script> -->
 <script src="../assets/js/element-ui/index.js"></script>
-<script src="./resource-manage.js"></script>
+<script src="./port-manage/port-manage.js"></script>
 
 </html>

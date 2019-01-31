@@ -275,7 +275,11 @@
   border: 0;
   color: inherit;
   &.el-popper {
-    margin-top: 17px;
+    margin-top: 12px;
+  }
+  &.my-popover-left {
+    margin: -16px 0 0 0;
+    transform: translateX(-60%);
   }
   .popper__arrow {
     display: none;
@@ -318,6 +322,10 @@
   .el-dialog__header {
     padding: 12px 30px;
     background: rgba(0, 0, 0, 0.1);
+    .el-dialog__close {
+      color: #fff;
+      font-size: 22px;
+    }
   }
   .el-dialog__title {
     color: inherit;
@@ -340,12 +348,17 @@
     }
   }
   .el-dialog__footer {
-    padding-top: 16px;
-    padding-bottom: 50px;
+    padding: 16px 30px 50px;
   }
   .el-dialog__body {
     padding: 16px 30px;
     color: inherit;
+  }
+}
+
+.my-edit-dialog {
+  .el-dialog__body {
+    padding: 12px 0px;
   }
 }
 
@@ -471,6 +484,9 @@
   .el-input.is-focus .el-input__inner {
     border: 1px solid rgba(255, 255, 255, 0.6);
   }
+  .el-input--suffix .el-input__inner {
+    padding-left: 8px;
+  }
   .el-input__suffix-inner {
     i {
       line-height: 28px;
@@ -499,11 +515,57 @@
     background: none;
     color: inherit;
     font-size: 12px;
+    font-weight: normal;
     &:nth-last-child(1) {
       border-bottom: 0;
     }
+    &.selected,
     &.hover {
       background: rgba(255, 255, 255, 0.3);
+      border-color: transparent;
+    }
+  }
+}
+
+.loc-white-select {
+  color: #666;
+  .el-input--suffix {
+    .el-input__inner {
+      background: #fff;
+      &::-webkit-input-placeholder {
+        /* WebKit, Blink, Edge */
+        color: #ccc;
+      }
+      &:-moz-placeholder {
+        /* Mozilla Firefox 4 to 18 */
+        color: #ccc;
+      }
+      &::-moz-placeholder {
+        /* Mozilla Firefox 19+ */
+        color: #ccc;
+      }
+      &:-ms-input-placeholder {
+        /* Internet Explorer 10-11 */
+        color: #ccc;
+      }
+    }
+  }
+  .el-input .el-select__caret {
+    color: #666;
+  }
+}
+
+.loc-white-selectbox {
+  background: #fff;
+  color: #666;
+  .el-select-dropdown__item {
+    border-bottom: 1px solid #eee;
+    &:nth-last-child(1) {
+      border-bottom: 0;
+    }
+    &.selected,
+    &.hover {
+      background: #e7f1ff;
       border-color: transparent;
     }
   }

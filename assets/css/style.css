@@ -5,6 +5,9 @@
 .com-txt-center {
   text-align: center !important;
 }
+.com-txt-right {
+  text-align: right !important;
+}
 .com-txt-overflow {
   overflow: hidden;
   text-overflow: ellipsis;
@@ -40,25 +43,28 @@ body,
 .el-input {
   font-size: inherit;
 }
-input::-webkit-input-placeholder {
+input[type=text] {
+  padding: 6px 8px;
+}
+input[type=text]::-webkit-input-placeholder {
   /* WebKit, Blink, Edge */
   color: #ccc;
 }
-input:-moz-placeholder {
+input[type=text]:-moz-placeholder {
   /* Mozilla Firefox 4 to 18 */
   color: #ccc;
 }
-input::-moz-placeholder {
+input[type=text]::-moz-placeholder {
   /* Mozilla Firefox 19+ */
   color: #ccc;
 }
-input:-ms-input-placeholder {
+input[type=text]:-ms-input-placeholder {
   /* Internet Explorer 10-11 */
   color: #ccc;
 }
 .el-input__inner,
 .loc-input {
-  padding: 8px;
+  padding: 6px 8px;
   width: 100%;
   height: 28px;
   border-radius: 0;
@@ -177,6 +183,12 @@ input:-ms-input-placeholder {
   transition: width 0.3s;
   height: 100%;
 }
+.loc-index-content .loc-right-content .loc-manage-content {
+  padding: 20px;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.2);
+}
 .loc-search-form {
   display: flex;
 }
@@ -204,6 +216,40 @@ input:-ms-input-placeholder {
 .loc-pagination {
   margin-top: 22px;
   text-align: right;
+}
+.my-edit-form {
+  padding-top: 16px;
+  font-size: 12px;
+}
+.my-edit-form .my-edit-title {
+  padding: 0 30px;
+  font-weight: 700;
+}
+.my-edit-form .my-edit-group {
+  margin: 8px 11px 8px 0;
+}
+.my-edit-group {
+  display: inline-block;
+  margin: 12px 11px 12px 0;
+  font-size: 12px;
+}
+.my-edit-group .my-group-title {
+  vertical-align: middle;
+  margin-right: 4px;
+  display: inline-block;
+  min-width: 78px;
+  text-align: right;
+  opacity: 0.6;
+}
+.my-edit-group .my-group-content {
+  vertical-align: middle;
+  margin-right: 4px;
+  width: 180px;
+  min-height: 28px;
+  display: inline-block;
+}
+.my-edit-group .my-group-content > * {
+  width: 100%;
 }
 .loc-app-menu {
   width: 100%;
@@ -426,7 +472,11 @@ input:-ms-input-placeholder {
   color: inherit;
 }
 .my-popover-content.el-popper {
-  margin-top: 17px;
+  margin-top: 12px;
+}
+.my-popover-content.my-popover-left {
+  margin: -16px 0 0 0;
+  transform: translateX(-60%);
 }
 .my-popover-content .popper__arrow {
   display: none;
@@ -464,6 +514,10 @@ input:-ms-input-placeholder {
   padding: 12px 30px;
   background: rgba(0, 0, 0, 0.1);
 }
+.blue-dialog .el-dialog__header .el-dialog__close {
+  color: #fff;
+  font-size: 22px;
+}
 .blue-dialog .el-dialog__title {
   color: inherit;
   font-size: 16px;
@@ -485,12 +539,14 @@ input:-ms-input-placeholder {
   background: #3760ff;
 }
 .blue-dialog .el-dialog__footer {
-  padding-top: 16px;
-  padding-bottom: 50px;
+  padding: 16px 30px 50px;
 }
 .blue-dialog .el-dialog__body {
   padding: 16px 30px;
   color: inherit;
+}
+.my-edit-dialog .el-dialog__body {
+  padding: 12px 0px;
 }
 /* 新增表单 dialog table */
 .common-addForm-table .el-form-item .el-form-item__content table {
@@ -595,6 +651,9 @@ input:-ms-input-placeholder {
 .loc-main-select .el-input.is-focus .el-input__inner {
   border: 1px solid rgba(255, 255, 255, 0.6);
 }
+.loc-main-select .el-input--suffix .el-input__inner {
+  padding-left: 8px;
+}
 .loc-main-select .el-input__suffix-inner i {
   line-height: 28px;
   font-size: inherit;
@@ -620,11 +679,53 @@ input:-ms-input-placeholder {
   background: none;
   color: inherit;
   font-size: 12px;
+  font-weight: normal;
 }
 .loc-main-selectbox .el-select-dropdown__item:nth-last-child(1) {
   border-bottom: 0;
 }
+.loc-main-selectbox .el-select-dropdown__item.selected,
 .loc-main-selectbox .el-select-dropdown__item.hover {
   background: rgba(255, 255, 255, 0.3);
+  border-color: transparent;
+}
+.loc-white-select {
+  color: #666;
+}
+.loc-white-select .el-input--suffix .el-input__inner {
+  background: #fff;
+}
+.loc-white-select .el-input--suffix .el-input__inner::-webkit-input-placeholder {
+  /* WebKit, Blink, Edge */
+  color: #ccc;
+}
+.loc-white-select .el-input--suffix .el-input__inner:-moz-placeholder {
+  /* Mozilla Firefox 4 to 18 */
+  color: #ccc;
+}
+.loc-white-select .el-input--suffix .el-input__inner::-moz-placeholder {
+  /* Mozilla Firefox 19+ */
+  color: #ccc;
+}
+.loc-white-select .el-input--suffix .el-input__inner:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: #ccc;
+}
+.loc-white-select .el-input .el-select__caret {
+  color: #666;
+}
+.loc-white-selectbox {
+  background: #fff;
+  color: #666;
+}
+.loc-white-selectbox .el-select-dropdown__item {
+  border-bottom: 1px solid #eee;
+}
+.loc-white-selectbox .el-select-dropdown__item:nth-last-child(1) {
+  border-bottom: 0;
+}
+.loc-white-selectbox .el-select-dropdown__item.selected,
+.loc-white-selectbox .el-select-dropdown__item.hover {
+  background: #e7f1ff;
   border-color: transparent;
 }
