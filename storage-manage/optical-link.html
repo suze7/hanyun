@@ -77,28 +77,14 @@
       </div>
       <div class="loc-right-content">
         <div class="loc-manage-content">
-          <div class="loc-search-form oper-search-form">
+          <div class="loc-search-form sto-search-form">
             <div class="loc-query-form">
               <p class="loc-query-name">资源名称</p>
               <input placeholder="资源名称" class="loc-input" v-model="text1" :class="{'loc-input-active': text1}" />
             </div>
             <div class="loc-query-form">
               <p class="loc-query-name">IP地址</p>
-              <input placeholder="IP地址" class="loc-input" v-model="text1" />
-            </div>
-            <div class="loc-query-form">
-              <p class="loc-query-name">资源类型</p>
-              <el-select v-model="value" popper-class="loc-main-selectbox" class="loc-main-select" placeholder="-请选择-">
-                <el-option v-for="item in options" :key="item.value" :label="item.label" :value="item.value">
-                </el-option>
-              </el-select>
-            </div>
-            <div class="loc-query-form">
-              <p class="loc-query-name">资源状态</p>
-              <el-select v-model="value" popper-class="loc-main-selectbox" class="loc-main-select" placeholder="-请选择-">
-                <el-option v-for="item in options" :key="item.value" :label="item.label" :value="item.value">
-                </el-option>
-              </el-select>
+              <input placeholder="资源IP地址" class="loc-input" v-model="text1" />
             </div>
             <div class="loc-query-btn">
               <el-button class="loc-btn submit-btn" type="primary">搜索</el-button>
@@ -106,25 +92,14 @@
             </div>
           </div>
           <el-table :data="tableData" size="mini" class="transparent-table transparent-white-table" style="width: 100%">
-            <el-table-column class-name="com-txt-overflow" prop="number" label="VLAN号" sortable min-width="102px">
-              <template slot-scope="scope">
-                <p class="com-txt-overflow" style="color: #97c1ff">{{ scope.row.number }}</p>
-              </template>
-            </el-table-column>
-            <el-table-column class-name="com-txt-overflow" prop="name" label="VLAN名称" sortable min-width="102px">
-              <template slot-scope="scope">
-                <p class="com-txt-overflow" style="color: #97c1ff">{{ scope.row.name }}</p>
-              </template>
-            </el-table-column>
-            <el-table-column class-name="com-txt-overflow" prop="type" label="VLAN类型" min-width="104px"></el-table-column>
-            <el-table-column class-name="com-txt-overflow" prop="resName" label="资源名称" min-width="103px"></el-table-column>
-            <el-table-column class-name="com-txt-overflow" prop="IP" label="IP地址" min-width="110px"></el-table-column>
-            <el-table-column class-name="com-txt-overflow" prop="type" label="资源类型" min-width="85px"></el-table-column>
-            <el-table-column class-name="com-txt-overflow" prop="portIndex" label="端口索引" min-width="108px"></el-table-column>
-            <el-table-column class-name="com-txt-overflow" prop="portMode" label="端口模式" min-width="80px"></el-table-column>
-            <el-table-column class-name="com-txt-overflow" prop="tipMode" label="标签模式" min-width="79px"></el-table-column>
-            <el-table-column class-name="com-txt-overflow" prop="belong" label="VLAN所有者" min-width="108px"></el-table-column>
-            <el-table-column class-name="com-txt-overflow" prop="other" label="VLAN备注" min-width="125px"></el-table-column>
+            <el-table-column prop="name" label="链路名称" min-width="147px"></el-table-column>
+            <el-table-column prop="rename" label="链路别名" min-width="146px"></el-table-column>
+            <el-table-column prop="resName" label="所属资源名称" min-width="147px"></el-table-column>
+            <el-table-column prop="resIP" label="所属资源IP" min-width="146px"></el-table-column>
+            <el-table-column prop="OriWWN" label="源端口WWN" min-width="114px"></el-table-column>
+            <el-table-column prop="nodeWWN" label="源端口所属节点WWN" min-width="156px"></el-table-column>
+            <el-table-column prop="airmPort" label="目的端口" min-width="97px"></el-table-column>
+            <el-table-column prop="airmNode" label="目的端口所属节点" min-width="145px"></el-table-column>
           </el-table>
           <div class="loc-pagination">
             <div class="my-pagination-group">
@@ -144,6 +119,6 @@
 <script src="../assets/js/vue/vue.dev.js"></script>
 <!-- <script src="../assets/js/echart/vue-echart.js"></script> -->
 <script src="../assets/js/element-ui/index.js"></script>
-<script src="./VLAN-manage/VLAN-manage.js"></script>
+<script src="./optical-link/optical-link.js"></script>
 
 </html>

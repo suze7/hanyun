@@ -25,7 +25,8 @@ body,
   font-size: inherit;
 }
 
-input[type=text] {
+input[type='password'],
+input[type='text'] {
   padding: 6px 8px;
   &::-webkit-input-placeholder {
     /* WebKit, Blink, Edge */
@@ -116,6 +117,20 @@ input[type=text] {
       float: left;
       margin: 2px 4px 0 0;
     }
+  }
+}
+
+// tab切换按钮
+.my-tab-btn {
+  display: inline-block;
+  width: 82px;
+  height: 24px;
+  line-height: 24px;
+  border-radius: 12px;
+  background: rgba(0, 0, 0, 0.15);
+  &:hover,
+  &.active {
+    background: linear-gradient(270deg, #404fc2 0%, #2d42e3 100%);
   }
 }
 
@@ -231,11 +246,11 @@ input[type=text] {
   padding-top: 16px;
   font-size: 12px;
   .my-edit-title {
-    padding: 0 30px;
+    padding: 0 30px 8px;
     font-weight: 700;
   }
   .my-edit-group {
-    margin: 8px 11px 8px 0;  
+    margin: 8px 11px 8px 0;
   }
 }
 
@@ -249,7 +264,7 @@ input[type=text] {
     display: inline-block;
     min-width: 78px;
     text-align: right;
-    opacity: .6;
+    opacity: 0.6;
   }
   .my-group-content {
     vertical-align: middle;
@@ -259,7 +274,37 @@ input[type=text] {
     display: inline-block;
     > * {
       width: 100%;
-    } 
+    }
+  }
+}
+
+
+.loc-content-top {
+  margin: -20px -20px 16px;
+  padding: 24px 20px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  font-size: 12px;
+  .loc-top-group {
+    margin-right: 8px;
+    .loc-group-icon {
+      margin: 0 6px 0 16px;
+      display: inline-block;
+      width: 10px;
+      height: 10px;
+      border-radius: 2px;
+      &.loc-icon-red {
+        background: #ff5c54;
+      }
+      &.loc-icon-orange {
+        background: #ff9e54;
+      }
+      &.loc-icon-yellow {
+        background: #fff954;
+      }
+      &.loc-icon-blue {
+        background: #1cefef;
+      }
+    }
   }
 }
 

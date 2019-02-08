@@ -43,22 +43,27 @@ body,
 .el-input {
   font-size: inherit;
 }
-input[type=text] {
+input[type='password'],
+input[type='text'] {
   padding: 6px 8px;
 }
-input[type=text]::-webkit-input-placeholder {
+input[type='password']::-webkit-input-placeholder,
+input[type='text']::-webkit-input-placeholder {
   /* WebKit, Blink, Edge */
   color: #ccc;
 }
-input[type=text]:-moz-placeholder {
+input[type='password']:-moz-placeholder,
+input[type='text']:-moz-placeholder {
   /* Mozilla Firefox 4 to 18 */
   color: #ccc;
 }
-input[type=text]::-moz-placeholder {
+input[type='password']::-moz-placeholder,
+input[type='text']::-moz-placeholder {
   /* Mozilla Firefox 19+ */
   color: #ccc;
 }
-input[type=text]:-ms-input-placeholder {
+input[type='password']:-ms-input-placeholder,
+input[type='text']:-ms-input-placeholder {
   /* Internet Explorer 10-11 */
   color: #ccc;
 }
@@ -126,6 +131,18 @@ input[type=text]:-ms-input-placeholder {
 .loc-btn.icon-btn img {
   float: left;
   margin: 2px 4px 0 0;
+}
+.my-tab-btn {
+  display: inline-block;
+  width: 82px;
+  height: 24px;
+  line-height: 24px;
+  border-radius: 12px;
+  background: rgba(0, 0, 0, 0.15);
+}
+.my-tab-btn:hover,
+.my-tab-btn.active {
+  background: linear-gradient(270deg, #404fc2 0%, #2d42e3 100%);
 }
 .loc-index-content {
   width: 100%;
@@ -222,7 +239,7 @@ input[type=text]:-ms-input-placeholder {
   font-size: 12px;
 }
 .my-edit-form .my-edit-title {
-  padding: 0 30px;
+  padding: 0 30px 8px;
   font-weight: 700;
 }
 .my-edit-form .my-edit-group {
@@ -250,6 +267,34 @@ input[type=text]:-ms-input-placeholder {
 }
 .my-edit-group .my-group-content > * {
   width: 100%;
+}
+.loc-content-top {
+  margin: -20px -20px 16px;
+  padding: 24px 20px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  font-size: 12px;
+}
+.loc-content-top .loc-top-group {
+  margin-right: 8px;
+}
+.loc-content-top .loc-top-group .loc-group-icon {
+  margin: 0 6px 0 16px;
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 2px;
+}
+.loc-content-top .loc-top-group .loc-group-icon.loc-icon-red {
+  background: #ff5c54;
+}
+.loc-content-top .loc-top-group .loc-group-icon.loc-icon-orange {
+  background: #ff9e54;
+}
+.loc-content-top .loc-top-group .loc-group-icon.loc-icon-yellow {
+  background: #fff954;
+}
+.loc-content-top .loc-top-group .loc-group-icon.loc-icon-blue {
+  background: #1cefef;
 }
 .loc-app-menu {
   width: 100%;
