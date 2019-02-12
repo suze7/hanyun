@@ -25,6 +25,7 @@ body,
   font-size: inherit;
 }
 
+textarea,
 input[type='password'],
 input[type='text'] {
   padding: 6px 8px;
@@ -212,6 +213,7 @@ input[type='text'] {
 // 表格头部搜索布局
 .loc-search-form {
   display: flex;
+  flex-wrap: wrap;
   .loc-query-form {
     width: 160px;
     margin-right: 32px;
@@ -222,7 +224,7 @@ input[type='text'] {
     }
   }
   .loc-query-btn {
-    margin: 28px 0 0 4px;
+    margin: 26px 0 0 4px;
     > button {
       margin-left: 4px;
     }
@@ -258,13 +260,16 @@ input[type='text'] {
   display: inline-block;
   margin: 12px 11px 12px 0;
   font-size: 12px;
+  &.my-fill-line {
+    width: 100%;
+  }
   .my-group-title {
     vertical-align: middle;
     margin-right: 4px;
     display: inline-block;
     min-width: 78px;
     text-align: right;
-    opacity: 0.6;
+    color: rgba(255, 255, 255, 0.6);
   }
   .my-group-content {
     vertical-align: middle;
@@ -276,9 +281,12 @@ input[type='text'] {
       width: 100%;
     }
   }
+  .my-group-fill {
+    width: calc(100% - 90px);
+  }
 }
 
-
+// 表格头部图例布局
 .loc-content-top {
   margin: -20px -20px 16px;
   padding: 24px 20px;
@@ -306,5 +314,34 @@ input[type='text'] {
       }
     }
   }
+  .loc-right-icon {
+    margin-left: 16px;
+    float: right;
+  }
 }
 
+.loc-select-tip {
+  margin-bottom: 15px;
+  &.loc-select-tip-dialog {
+    margin-bottom: 0;
+    .loc-tip-form {
+      margin-bottom: 0;
+    }
+  }
+  .loc-tip-form {
+    margin-bottom: 1px;
+    // height: 32px;
+    font-size: 12px;
+    background: rgba(0, 0, 0, 0.2);
+    .loc-select-item {
+      display: inline-block;
+      padding: 0 16px;
+      // height: 100%;
+      line-height: 32px;
+      &.active,
+      &:hover {
+        background: rgba(0, 0, 0, 0.15);
+      }
+    }
+  }
+}

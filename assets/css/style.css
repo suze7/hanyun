@@ -43,25 +43,30 @@ body,
 .el-input {
   font-size: inherit;
 }
+textarea,
 input[type='password'],
 input[type='text'] {
   padding: 6px 8px;
 }
+textarea::-webkit-input-placeholder,
 input[type='password']::-webkit-input-placeholder,
 input[type='text']::-webkit-input-placeholder {
   /* WebKit, Blink, Edge */
   color: #ccc;
 }
+textarea:-moz-placeholder,
 input[type='password']:-moz-placeholder,
 input[type='text']:-moz-placeholder {
   /* Mozilla Firefox 4 to 18 */
   color: #ccc;
 }
+textarea::-moz-placeholder,
 input[type='password']::-moz-placeholder,
 input[type='text']::-moz-placeholder {
   /* Mozilla Firefox 19+ */
   color: #ccc;
 }
+textarea:-ms-input-placeholder,
 input[type='password']:-ms-input-placeholder,
 input[type='text']:-ms-input-placeholder {
   /* Internet Explorer 10-11 */
@@ -208,6 +213,7 @@ input[type='text']:-ms-input-placeholder {
 }
 .loc-search-form {
   display: flex;
+  flex-wrap: wrap;
 }
 .loc-search-form .loc-query-form {
   width: 160px;
@@ -219,7 +225,7 @@ input[type='text']:-ms-input-placeholder {
   line-height: 16px;
 }
 .loc-search-form .loc-query-btn {
-  margin: 28px 0 0 4px;
+  margin: 26px 0 0 4px;
 }
 .loc-search-form .loc-query-btn > button {
   margin-left: 4px;
@@ -250,13 +256,16 @@ input[type='text']:-ms-input-placeholder {
   margin: 12px 11px 12px 0;
   font-size: 12px;
 }
+.my-edit-group.my-fill-line {
+  width: 100%;
+}
 .my-edit-group .my-group-title {
   vertical-align: middle;
   margin-right: 4px;
   display: inline-block;
   min-width: 78px;
   text-align: right;
-  opacity: 0.6;
+  color: rgba(255, 255, 255, 0.6);
 }
 .my-edit-group .my-group-content {
   vertical-align: middle;
@@ -267,6 +276,9 @@ input[type='text']:-ms-input-placeholder {
 }
 .my-edit-group .my-group-content > * {
   width: 100%;
+}
+.my-edit-group .my-group-fill {
+  width: calc(100% - 90px);
 }
 .loc-content-top {
   margin: -20px -20px 16px;
@@ -295,6 +307,33 @@ input[type='text']:-ms-input-placeholder {
 }
 .loc-content-top .loc-top-group .loc-group-icon.loc-icon-blue {
   background: #1cefef;
+}
+.loc-content-top .loc-right-icon {
+  margin-left: 16px;
+  float: right;
+}
+.loc-select-tip {
+  margin-bottom: 15px;
+}
+.loc-select-tip.loc-select-tip-dialog {
+  margin-bottom: 0;
+}
+.loc-select-tip.loc-select-tip-dialog .loc-tip-form {
+  margin-bottom: 0;
+}
+.loc-select-tip .loc-tip-form {
+  margin-bottom: 1px;
+  font-size: 12px;
+  background: rgba(0, 0, 0, 0.2);
+}
+.loc-select-tip .loc-tip-form .loc-select-item {
+  display: inline-block;
+  padding: 0 16px;
+  line-height: 32px;
+}
+.loc-select-tip .loc-tip-form .loc-select-item.active,
+.loc-select-tip .loc-tip-form .loc-select-item:hover {
+  background: rgba(0, 0, 0, 0.15);
 }
 .loc-app-menu {
   width: 100%;
@@ -692,6 +731,19 @@ input[type='text']:-ms-input-placeholder {
 .my-menu .menu-icon4-5 {
   background: url(../images/menu/menu-4-5.png) center center no-repeat;
 }
+.loc-date-picker.el-input {
+  width: 100%;
+}
+.loc-date-picker.el-input .el-input__inner {
+  padding-left: 8px;
+}
+.loc-date-picker.el-input .el-input__prefix {
+  left: auto;
+  right: 5px;
+}
+.loc-date-picker.el-input .el-input__prefix .el-input__icon {
+  line-height: 26px;
+}
 .loc-main-select .el-input__inner:focus,
 .loc-main-select .el-input.is-focus .el-input__inner {
   border: 1px solid rgba(255, 255, 255, 0.6);
@@ -773,4 +825,55 @@ input[type='text']:-ms-input-placeholder {
 .loc-white-selectbox .el-select-dropdown__item.hover {
   background: #e7f1ff;
   border-color: transparent;
+}
+.my-simple-radio {
+  color: inherit;
+}
+.my-simple-radio .el-radio__input.is-checked .el-radio__inner {
+  background: #fff;
+  border-color: #3760ff;
+}
+.my-simple-radio .el-radio__input.is-checked + .el-radio__label {
+  color: inherit;
+}
+.my-simple-radio .el-radio__input,
+.my-simple-radio .el-radio__label {
+  vertical-align: top;
+}
+.my-simple-radio .el-radio__label {
+  padding-left: 4px;
+}
+.my-simple-radio .el-radio__inner::after {
+  width: 6px;
+  height: 6px;
+  background: #3760ff;
+}
+.my-collapse {
+  border: 0;
+  font-size: 12px;
+}
+.my-collapse .my-collapse-item {
+  margin: 10px 0;
+}
+.my-collapse .my-collapse-item .el-collapse-item__header {
+  padding-left: 16px;
+  height: auto;
+  min-height: 30px;
+  line-height: 28px;
+  border: 0;
+  color: inherit;
+  background: rgba(0, 0, 0, 0.1);
+}
+.my-collapse .my-collapse-item .el-collapse-item__header .el-collapse-item__arrow::before {
+  content: "\e613";
+  font-size: 16px;
+}
+.my-collapse .my-collapse-item .el-collapse-item__wrap {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background: none;
+  color: inherit;
+}
+.my-collapse .my-collapse-item .el-collapse-item__wrap .el-collapse-item__content {
+  padding: 8px 16px;
+  color: inherit;
 }

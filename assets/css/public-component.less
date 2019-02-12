@@ -478,6 +478,21 @@
   }
 }
 
+// 时间选择框样式
+.loc-date-picker.el-input {
+  width: 100%;
+  .el-input__inner {
+    padding-left: 8px;
+  }
+  .el-input__prefix {
+    left: auto;
+    right: 5px;
+    .el-input__icon {
+      line-height: 26px;
+    }
+  }
+}
+
 // 下拉框样式
 .loc-main-select {
   .el-input__inner:focus,
@@ -570,3 +585,60 @@
     }
   }
 }
+// 单选框样式
+.my-simple-radio {
+  color: inherit;
+  .el-radio__input.is-checked {
+    .el-radio__inner {
+      background: #fff;
+      border-color: #3760ff;
+    }
+    + .el-radio__label {
+      color: inherit;
+    }
+  }
+  .el-radio__input,
+  .el-radio__label {
+    vertical-align: top;
+  }
+  .el-radio__label {
+    padding-left: 4px;
+  }
+  .el-radio__inner::after {
+    width: 6px;
+    height: 6px;
+    background: #3760ff;
+  }
+}
+
+// 折叠面包
+.my-collapse {
+  border: 0;
+  font-size: 12px;
+  .my-collapse-item {
+    margin: 10px 0;
+    .el-collapse-item__header {
+      padding-left: 16px;
+      height: auto;
+      min-height: 30px;
+      line-height: 28px;
+      border: 0;
+      color: inherit;
+      background: rgba(0, 0, 0, 0.1);
+      .el-collapse-item__arrow::before {
+        content: "\e613";
+        font-size: 16px;
+      }
+    }
+    .el-collapse-item__wrap {
+      border: 1px solid rgba(0, 0, 0, 0.1);
+      background: none;
+      color: inherit;
+      .el-collapse-item__content {
+        padding: 8px 16px;
+        color: inherit;
+      }
+    }
+  }
+}
+
