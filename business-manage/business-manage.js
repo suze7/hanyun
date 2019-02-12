@@ -3,7 +3,7 @@ var app = new Vue({
   el: '#homeIndex',
   data() {
     return {
-      page_init: false,
+      page_init: true,
       menuList: [],
       runing_states: [
         { label: 'Openstack V3', health: '98%', status: '1', response: '37ms', busyness: '2%', using: '100%' },
@@ -13,6 +13,28 @@ var app = new Vue({
         { label: '阿里云', health: '98%', status: '0', response: '37ms', busyness: '2%', using: '100%' },
         { label: '京东云', health: '98%', status: '1', response: '37ms', busyness: '2%', using: '100%' },
         { label: '华三云', health: '98%', status: '2', response: '37ms', busyness: '2%', using: '100%' },
+      ],
+      resource_list: [
+        { label1: '系统-监控点的数据库', value1: '', label2: '服务核心', value2: '' },
+        { label1: '服务采集', value1: '', label2: 'web服务器', value2: '' },
+        { label1: 'web服务器', value1: '', label2: '系统-监控点的服务库', value2: '' },
+        { label1: 'FTP', value1: '', label2: '服务器测试', value2: '' },
+        { label1: 'Apache的服务', value1: '', label2: '维也纳-测试1', value2: '' },
+        { label1: '维也纳-测试2', value1: '', label2: '维也纳-测试3', value2: '' },
+        { label1: '维也纳-测试4', value1: '', label2: '47.98.213.184', value2: '' },
+      ],
+      health_levels: [
+        { label1: '严重', value1: '', label2: '重要', value2: '' },
+        { label1: '次要', value1: '', label2: '重要', value2: '' }
+      ],
+      business_tableData: [
+        { label: 'Openstack V3', healthy: '98%', status: '1', response: '37ms', busyness: '2%', using: '100%', downtime_cs: '0', downtime_sc: '16分23秒', mttr: '16分23秒', mtbf: '16分23秒', used_capacity: '58.31GB/339.99GB', calc_capacity: '33%'},
+        { label: 'vCenter5.5', healthy: '98%', status: '1', response: '37ms', busyness: '2%', using: '100%', downtime_cs: '0', downtime_sc: '16分23秒', mttr: '16分23秒', mtbf: '16分23秒', used_capacity: '58.31GB/339.99GB', calc_capacity: '33%'},
+        { label: 'vCenter6.0', healthy: '98%', status: '0', response: '37ms', busyness: '2%', using: '100%', downtime_cs: '0', downtime_sc: '16分23秒', mttr: '16分23秒', mtbf: '16分23秒', used_capacity: '58.31GB/339.99GB', calc_capacity: '33%'},
+        { label: 'SDN', healthy: '98%', status: '1', response: '37ms', busyness: '2%', using: '100%', downtime_cs: '0', downtime_sc: '16分23秒', mttr: '16分23秒', mtbf: '16分23秒', used_capacity: '58.31GB/339.99GB', calc_capacity: '33%'},
+        { label: '阿里云', healthy: '98%', status: '2', response: '37ms', busyness: '2%', using: '100%', downtime_cs: '0', downtime_sc: '16分23秒', mttr: '16分23秒', mtbf: '16分23秒', used_capacity: '58.31GB/339.99GB', calc_capacity: '33%'},
+        { label: '京东云', healthy: '98%', status: '1', response: '37ms', busyness: '2%', using: '100%', downtime_cs: '0', downtime_sc: '16分23秒', mttr: '16分23秒', mtbf: '16分23秒', used_capacity: '58.31GB/339.99GB', calc_capacity: '33%'},
+        { label: '华三云', healthy: '98%', status: '1', response: '37ms', busyness: '2%', using: '100%', downtime_cs: '0', downtime_sc: '16分23秒', mttr: '16分23秒', mtbf: '16分23秒', used_capacity: '58.31GB/339.99GB', calc_capacity: '33%'},
       ],
       radio1: '储存容量',
       bus_responseSpeed: null,
@@ -121,14 +143,19 @@ var app = new Vue({
     confirmAddBus() {
       console.log('确认新增');
     },
+    openWindow(obj) {
+      console.log(obj);
+      let title = '业务资源详情';
+      
+    },
     /* 业务响应速度 */
     getResponse() {
       this.bus_responseSpeed = {
         tooltip: {
           trigger: 'axis',
-          axisPointer: {
-            type: 'shadow'
-          }
+          // axisPointer: {
+          //   type: 'shadow'
+          // }
         },
         grid: {
           left: '0',
@@ -141,6 +168,8 @@ var app = new Vue({
         xAxis: {
           data: ['Openstack V3', 'vCenter5.5', 'vCenter6.0', 'SDN', '阿里云'],
           axisLabel: {
+            // interval: 0,
+            rotate: 40,
             textStyle: {
               color: '#eee'
             }
@@ -273,7 +302,6 @@ var app = new Vue({
     },
     /* 告警统计 */
     toggleBtn() {
-      /*  */
       let data = [];
       this.runing_states.forEach((v, i) => {
         data.push({

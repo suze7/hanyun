@@ -65,8 +65,27 @@
         </div>
       </div>
       <div class="aside-center">
-        <div class="bus-health">
+        <div class="bus-health" style="padding:0px;">
           <span>业务健康</span>
+          <div>
+            <div class="big-cicle">
+              <ul>
+                <li style="transform: translate(-15px, 40px);">1</li>
+                <li style="transform: translate(66px, -5px);">2</li>
+                <li style="transform: translate(122px, -15px);">3</li>
+                <li style="transform: translate(187.5px, -20px);">4</li>
+                <li style="transform: translate(253.5px, -15px);">5</li>
+                <li style="transform: translate(319px, -5px);">6</li>
+                <li style="transform: translate(385px, 40px);">7</li>
+                <li style="transform: translate(280px, 100px);">8</li>
+                <li style="transform: translate(187.5px, 105px);">9</li>
+                <li style="transform: translate(93px, 100px);">10</li>
+              </ul>
+              <div class="inline-cicle">
+                <!-- 140 * Math.PI -->
+              </div>
+            </div>
+          </div>
         </div>
         <div style="margin-top:20px;" class="bus-runing-state">
           <span>业务运行情况</span>
@@ -80,7 +99,7 @@
               <th>可用率</th>
             </tr>
             <tr v-for="state in runing_states">
-              <td>{{state.label}}</td>
+              <td><a @click="openWindow(state)" style="color:#fff;text-decoration: none;" href="./business-overview.html" target="_blank">{{state.label}}</a></td>
               <td>{{state.health}}</td>
               <td>
                 <img v-if="state.status === '1'" src="../assets/images/icon/normal.png" />
@@ -114,8 +133,51 @@
     </div>
 
     <!-- 列表 -->
-    <div class="aside-main" v-else>
-      列表
+    <div v-else style="padding:20px;">
+      <div class="table-list">
+        <el-table :data="business_tableData" size="mini" class="transparent-table transparent-white-table" style="width: 100%">
+          <el-table-column class-name="my-checkbox" type="selection" width="42px"></el-table-column>
+          <el-table-column prop="label" label="业务名称" class-name="com-txt-overflow"></el-table-column>
+          <el-table-column prop="healthy" label="健康度" class-name="com-txt-overflow"></el-table-column>
+          <el-table-column label="健康状态" class-name="com-txt-overflow">
+            <template slot-scope="scope">
+              <img v-if="scope.row.status === '1'" src="../assets/images/icon/normal.png" />
+              <img v-if="scope.row.status === '2'" src="../assets/images/icon/warning.png" />
+              <img v-if="scope.row.status === '0'" src="../assets/images/icon/error.png" />
+            </template>
+          </el-table-column>
+          <el-table-column prop="response" label="响应时间" class-name="com-txt-overflow"></el-table-column>
+          <el-table-column prop="busyness" label="繁忙度" class-name="com-txt-overflow"></el-table-column>
+          <el-table-column prop="using" label="可用率" class-name="com-txt-overflow"></el-table-column>
+          <el-table-column label="宕机次数" class-name="com-txt-overflow">
+            <template slot-scope="scope">
+              <span>{{scope.row.downtime_cs}}</span>次
+            </template>
+          </el-table-column>
+          <el-table-column prop="downtime_sc" label="宕机时长" class-name="com-txt-overflow" </el-table-column>
+            <el-table-column prop="mttr" label="MTTR" class-name="com-txt-overflow"></el-table-column>
+          <el-table-column prop="mtbf" label="MTBF" class-name="com-txt-overflow"></el-table-column>
+          <el-table-column prop="used_capacity" label="存储容量/已用" class-name="com-txt-overflow"></el-table-column>
+          <el-table-column prop="calc_capacity" label="计算容量" class-name="com-txt-overflow"></el-table-column>
+          <el-table-column label="操作" class-name="com-txt-overflow">
+            <template slot-scope="scope">
+              <span style="cursor:pointer;"><img src="../assets/images/icon/opera.png" alt=""></span>
+            </template>
+          </el-table-column>
+        </el-table>
+        <div class="loc-pagination">
+          <div class="my-pagination-group">
+            <div class="my-pagination-btn my-pagination-first com-hover">
+              首页
+            </div>
+            <el-pagination :pager-count="5" layout="prev, pager, next" :total="1000">
+            </el-pagination>
+            <div class="my-pagination-btn my-pagination-last com-hover">
+              尾页
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
 
     <!-- dialog -->
@@ -157,123 +219,22 @@
         </el-form-item>
         <el-form-item>
           <table>
-            <tr>
-              <td class="text-right">系统-监控点的数据库</td>
+            <tr v-for="resource in resource_list">
+              <td class="text-right">{{resource.label1}}</td>
               <td width="32"></td>
               <td>权值</td>
               <td width="8"></td>
               <td>
-                <input v-model="business_form.name" placeholder="权值">
+                <input v-model="resource.value1" placeholder="权值">
+                <!-- <input v-model="business_form.name" placeholder="权值"> -->
               </td>
               <td width="120"></td>
-              <td class="text-right">服务核心</td>
+              <td class="text-right">{{resource.label2}}</td>
               <td width="32"></td>
               <td>权值</td>
               <td width="8"></td>
               <td>
-                <input v-model="business_form.name" placeholder="权值">
-              </td>
-            </tr>
-            <tr>
-              <td class="text-right">服务采集</td>
-              <td width="32"></td>
-              <td>权值</td>
-              <td width="8"></td>
-              <td>
-                <input v-model="business_form.name" placeholder="权值">
-              </td>
-              <td width="120"></td>
-              <td class="text-right">web服务器</td>
-              <td width="32"></td>
-              <td>权值</td>
-              <td width="8"></td>
-              <td>
-                <input v-model="business_form.name" placeholder="权值">
-              </td>
-            </tr>
-            <tr>
-              <td class="text-right">web服务器</td>
-              <td width="32"></td>
-              <td>权值</td>
-              <td width="8"></td>
-              <td>
-                <input v-model="business_form.name" placeholder="权值">
-              </td>
-              <td width="120"></td>
-              <td class="text-right">系统-监控点的服务库</td>
-              <td width="32"></td>
-              <td>权值</td>
-              <td width="8"></td>
-              <td>
-                <input v-model="business_form.name" placeholder="权值">
-              </td>
-            </tr>
-            <tr>
-              <td class="text-right">FTP</td>
-              <td width="32"></td>
-              <td>权值</td>
-              <td width="8"></td>
-              <td>
-                <input v-model="business_form.name" placeholder="权值">
-              </td>
-              <td width="120"></td>
-              <td class="text-right">服务器测试</td>
-              <td width="32"></td>
-              <td>权值</td>
-              <td width="8"></td>
-              <td>
-                <input v-model="business_form.name" placeholder="权值">
-              </td>
-            </tr>
-            <tr>
-              <td class="text-right">Apache的服务</td>
-              <td width="32"></td>
-              <td>权值</td>
-              <td width="8"></td>
-              <td>
-                <input v-model="business_form.name" placeholder="权值">
-              </td>
-              <td width="120"></td>
-              <td class="text-right">维也纳-测试1</td>
-              <td width="32"></td>
-              <td>权值</td>
-              <td width="8"></td>
-              <td>
-                <input v-model="business_form.name" placeholder="权值">
-              </td>
-            </tr>
-            <tr>
-              <td class="text-right">维也纳-测试2</td>
-              <td width="32"></td>
-              <td>权值</td>
-              <td width="8"></td>
-              <td>
-                <input v-model="business_form.name" placeholder="权值">
-              </td>
-              <td width="120"></td>
-              <td class="text-right">维也纳-测试3</td>
-              <td width="32"></td>
-              <td>权值</td>
-              <td width="8"></td>
-              <td>
-                <input v-model="business_form.name" placeholder="权值">
-              </td>
-            </tr>
-            <tr>
-              <td class="text-right">维也纳-测试4</td>
-              <td width="32"></td>
-              <td>权值</td>
-              <td width="8"></td>
-              <td>
-                <input v-model="business_form.name" placeholder="权值">
-              </td>
-              <td width="120"></td>
-              <td class="text-right">47.98.213.184</td>
-              <td width="32"></td>
-              <td>权值</td>
-              <td width="8"></td>
-              <td>
-                <input v-model="business_form.name" placeholder="权值">
+                <input v-model="resource.value2" placeholder="权值">
               </td>
             </tr>
           </table>
@@ -283,38 +244,21 @@
         </el-form-item>
         <el-form-item label="">
           <table>
-            <tr>
-              <td class="text-center">严重</td>
+            <tr v-for="level in health_levels">
+              <td class="text-center">{{level.label1}}</td>
               <td width="32"></td>
               <td>健康度小于</td>
               <td width="8"></td>
               <td>
-                <input v-model="business_form.name" placeholder="严重"> %
+                <input v-model="level.value1" :placeholder="level.label1"> %
               </td>
               <td width="120"></td>
-              <td class="text-center">重要</td>
+              <td class="text-center">{{level.label2}}</td>
               <td width="32"></td>
               <td>健康小于</td>
               <td width="8"></td>
               <td>
-                <input v-model="business_form.name" placeholder="重要"> %
-              </td>
-            </tr>
-            <tr>
-              <td class="text-center">次要</td>
-              <td width="32"></td>
-              <td>健康度小于</td>
-              <td width="8"></td>
-              <td>
-                <input v-model="business_form.name" placeholder="次要"> %
-              </td>
-              <td width="120"></td>
-              <td class="text-center">重要</td>
-              <td width="32"></td>
-              <td>健康小于</td>
-              <td width="8"></td>
-              <td>
-                <input v-model="business_form.name" placeholder="重要"> %
+                <input v-model="level.value2" :placeholder="level.label2"> %
               </td>
             </tr>
           </table>
@@ -329,7 +273,7 @@
   </div>
 </body>
 <script src="../assets/js/vue/vue.dev.js"></script>
-<script src="../assets/js/vue/vue-router.js"></script>
+<!-- <script src="../assets/js/vue/vue-router.js"></script> -->
 <script src="../assets/js/echart/echarts.min.js"></script>
 <script src="../assets/js/echart/vue-echart.js"></script>
 <script src="../assets/js/element-ui/index.js"></script>
