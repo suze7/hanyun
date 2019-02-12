@@ -34,32 +34,19 @@
   display: flex;
   justify-content: space-around;
 }
-.my-collapse {
-  border: 0;
+.patrol-input {
+  width: 120px;
+  height: 24px;
+}
+.patrol-min-input {
+  width: 48px;
+}
+.patrol-table-radio .my-simple-radio .el-radio__label {
   font-size: 12px;
 }
-.my-collapse .my-collapse-item {
-  margin: 10px 0;
+.patrol-table-radio .my-simple-radio + .my-simple-radio {
+  margin-left: 10px;
 }
-.my-collapse .my-collapse-item .el-collapse-item__header {
-  padding-left: 16px;
-  height: auto;
-  min-height: 30px;
-  line-height: 28px;
-  border: 0;
-  color: inherit;
-  background: rgba(0, 0, 0, 0.1);
-}
-.my-collapse .my-collapse-item .el-collapse-item__header .el-collapse-item__arrow::before {
-  content: "\e613";
-  font-size: 16px;
-}
-.my-collapse .my-collapse-item .el-collapse-item__wrap {
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  background: none;
-  color: inherit;
-}
-.my-collapse .my-collapse-item .el-collapse-item__wrap .el-collapse-item__content {
-  padding: 8px 16px;
-  color: inherit;
+.patrol-top-margin {
+  margin-top: 0;
 }

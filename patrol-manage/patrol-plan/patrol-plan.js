@@ -4,7 +4,7 @@ var app = new Vue({
     showMenu: true,
     menuList: [],
     text1: '',
-    value1: null,
+    radio: '1',
     options: [
       {
         value: '选项1',
@@ -30,108 +30,56 @@ var app = new Vue({
     value: '',
     leftMenuList: null,
     dialogVisible: false,
-    dialogFlag: 1,
+    checked: false,
     tableData: [{
-      name: '巡检报告',
-      people: '演示用户',
-      reportTime: '2018-10-17 00:44:20',
+      name: '每月巡检',
       creater: '系统管理员',
-      planName: '每月巡检',
+      patroler: '演示用户',
       time: '2018-10-17 00:44:20',
-      status: '已提交'
+      lastTime: '2018-10-17 00:44:20',
+      describe: 'xxxxxxxxxxxx',
+      status: 1
     },{
-      name: '巡检报告',
-      people: '演示用户',
-      reportTime: '2018-10-17 00:44:20',
+      name: '每月巡检',
       creater: '系统管理员',
-      planName: '每月巡检',
+      patroler: '演示用户',
       time: '2018-10-17 00:44:20',
-      status: '待提交'
+      lastTime: '2018-10-17 00:44:20',
+      describe: 'xxxxxxxxxxxx',
+      status: 1
     },{
-      name: '巡检报告',
-      people: '演示用户',
-      reportTime: '2018-10-17 00:44:20',
+      name: '每月巡检',
       creater: '系统管理员',
-      planName: '每月巡检',
+      patroler: '演示用户',
       time: '2018-10-17 00:44:20',
-      status: '已提交'
+      lastTime: '2018-10-17 00:44:20',
+      describe: 'xxxxxxxxxxxx',
+      status: 1
     },{
-      name: '巡检报告',
-      people: '演示用户',
-      reportTime: '2018-10-17 00:44:20',
+      name: '每月巡检',
       creater: '系统管理员',
-      planName: '每月巡检',
+      patroler: '演示用户',
       time: '2018-10-17 00:44:20',
-      status: '已提交'
+      lastTime: '2018-10-17 00:44:20',
+      describe: 'xxxxxxxxxxxx',
+      status: 1
     },{
-      name: '巡检报告',
-      people: '演示用户',
-      reportTime: '2018-10-17 00:44:20',
+      name: '每月巡检',
       creater: '系统管理员',
-      planName: '每月巡检',
+      patroler: '演示用户',
       time: '2018-10-17 00:44:20',
-      status: '已提交'
+      lastTime: '2018-10-17 00:44:20',
+      describe: 'xxxxxxxxxxxx',
+      status: 1
     },{
-      name: '巡检报告',
-      people: '演示用户',
-      reportTime: '2018-10-17 00:44:20',
+      name: '每月巡检',
       creater: '系统管理员',
-      planName: '每月巡检',
+      patroler: '演示用户',
       time: '2018-10-17 00:44:20',
-      status: '已提交'
-    },{
-      name: '巡检报告',
-      people: '演示用户',
-      reportTime: '2018-10-17 00:44:20',
-      creater: '系统管理员',
-      planName: '每月巡检',
-      time: '2018-10-17 00:44:20',
-      status: '已提交'
-    },{
-      name: '巡检报告',
-      people: '演示用户',
-      reportTime: '2018-10-17 00:44:20',
-      creater: '系统管理员',
-      planName: '每月巡检',
-      time: '2018-10-17 00:44:20',
-      status: '已提交'
-    },{
-      name: '巡检报告',
-      people: '演示用户',
-      reportTime: '2018-10-17 00:44:20',
-      creater: '系统管理员',
-      planName: '每月巡检',
-      time: '2018-10-17 00:44:20',
-      status: '已提交'
-    },{
-      name: '巡检报告',
-      people: '演示用户',
-      reportTime: '2018-10-17 00:44:20',
-      creater: '系统管理员',
-      planName: '每月巡检',
-      time: '2018-10-17 00:44:20',
-      status: '已提交'
+      lastTime: '2018-10-17 00:44:20',
+      describe: 'xxxxxxxxxxxx',
+      status: 1
     }],
-    activeNames: ['1'],
-    dialogTable: [{
-      name: '温度',
-      describe: '机房温度，预置检查项',
-      reference: '~',
-      value: '',
-      unit: '',
-      type: '人工巡检',
-      detail: '',
-      result: 1
-    },{
-      name: '温度',
-      describe: '机房温度，预置检查项',
-      reference: '~',
-      value: '',
-      unit: '',
-      type: '人工巡检',
-      detail: '',
-      result: 2
-    }]
   },
   created() {
     this.setMenuList();
@@ -179,12 +127,12 @@ var app = new Vue({
         {
           name: '智能工具',
           img: '../assets/images/menu/menu-8',
-          active: false
+          active: true
         },
         {
           name: '巡检管理',
           img: '../assets/images/menu/menu-9',
-          active: true
+          active: false
         },
         {
           name: '报表管理',
@@ -239,19 +187,6 @@ var app = new Vue({
     },
     toggleShowMenu() {
       this.showMenu = !this.showMenu;
-    },
-    showDialog(num) {
-      this.dialogVisible = true;
-      this.dialogFlag = num;
-    },
-    handleClose() {
-
-    },
-    submitDialog() {
-      this.dialogVisible = false;
-    },
-    handleChange(val) {
-      console.log(val);
     }
   }
 });
