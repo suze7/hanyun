@@ -5,15 +5,6 @@ var app = new Vue({
     return {
       page_init: true,
       menuList: [],
-      runing_states: [
-        { label: 'Openstack V3', health: '98%', status: '1', response: '37ms', busyness: '2%', using: '100%' },
-        { label: 'vCenter5.5', health: '98%', status: '0', response: '37ms', busyness: '2%', using: '100%' },
-        { label: 'vCenter6.0', health: '98%', status: '2', response: '37ms', busyness: '2%', using: '100%' },
-        { label: 'SDN', health: '98%', status: '1', response: '37ms', busyness: '2%', using: '100%' },
-        { label: '阿里云', health: '98%', status: '0', response: '37ms', busyness: '2%', using: '100%' },
-        { label: '京东云', health: '98%', status: '1', response: '37ms', busyness: '2%', using: '100%' },
-        { label: '华三云', health: '98%', status: '2', response: '37ms', busyness: '2%', using: '100%' },
-      ],
       resource_list: [
         { label1: '系统-监控点的数据库', value1: '', label2: '服务核心', value2: '' },
         { label1: '服务采集', value1: '', label2: 'web服务器', value2: '' },
@@ -28,13 +19,13 @@ var app = new Vue({
         { label1: '次要', value1: '', label2: '重要', value2: '' }
       ],
       business_tableData: [
-        { label: 'Openstack V3', healthy: '98%', status: '1', response: '37ms', busyness: '2%', using: '100%', downtime_cs: '0', downtime_sc: '16分23秒', mttr: '16分23秒', mtbf: '16分23秒', used_capacity: '58.31GB/339.99GB', calc_capacity: '33%'},
-        { label: 'vCenter5.5', healthy: '98%', status: '1', response: '37ms', busyness: '2%', using: '100%', downtime_cs: '0', downtime_sc: '16分23秒', mttr: '16分23秒', mtbf: '16分23秒', used_capacity: '58.31GB/339.99GB', calc_capacity: '33%'},
-        { label: 'vCenter6.0', healthy: '98%', status: '0', response: '37ms', busyness: '2%', using: '100%', downtime_cs: '0', downtime_sc: '16分23秒', mttr: '16分23秒', mtbf: '16分23秒', used_capacity: '58.31GB/339.99GB', calc_capacity: '33%'},
-        { label: 'SDN', healthy: '98%', status: '1', response: '37ms', busyness: '2%', using: '100%', downtime_cs: '0', downtime_sc: '16分23秒', mttr: '16分23秒', mtbf: '16分23秒', used_capacity: '58.31GB/339.99GB', calc_capacity: '33%'},
-        { label: '阿里云', healthy: '98%', status: '2', response: '37ms', busyness: '2%', using: '100%', downtime_cs: '0', downtime_sc: '16分23秒', mttr: '16分23秒', mtbf: '16分23秒', used_capacity: '58.31GB/339.99GB', calc_capacity: '33%'},
-        { label: '京东云', healthy: '98%', status: '1', response: '37ms', busyness: '2%', using: '100%', downtime_cs: '0', downtime_sc: '16分23秒', mttr: '16分23秒', mtbf: '16分23秒', used_capacity: '58.31GB/339.99GB', calc_capacity: '33%'},
-        { label: '华三云', healthy: '98%', status: '1', response: '37ms', busyness: '2%', using: '100%', downtime_cs: '0', downtime_sc: '16分23秒', mttr: '16分23秒', mtbf: '16分23秒', used_capacity: '58.31GB/339.99GB', calc_capacity: '33%'},
+        { business_id: '11', label: 'Openstack V3', healthy: '98%', status: '1', response: '37ms', busyness: '2%', using: '100%', downtime_cs: '0', downtime_sc: '16分23秒', mttr: '16分23秒', mtbf: '16分23秒', used_capacity: '58.31GB/339.99GB', calc_capacity: '33%' },
+        { business_id: '22', label: 'vCenter5.5', healthy: '98%', status: '1', response: '37ms', busyness: '2%', using: '100%', downtime_cs: '0', downtime_sc: '16分23秒', mttr: '16分23秒', mtbf: '16分23秒', used_capacity: '58.31GB/339.99GB', calc_capacity: '33%' },
+        { business_id: '33', label: 'vCenter6.0', healthy: '98%', status: '0', response: '37ms', busyness: '2%', using: '100%', downtime_cs: '0', downtime_sc: '16分23秒', mttr: '16分23秒', mtbf: '16分23秒', used_capacity: '58.31GB/339.99GB', calc_capacity: '33%' },
+        { business_id: '44', label: 'SDN', healthy: '98%', status: '1', response: '37ms', busyness: '2%', using: '100%', downtime_cs: '0', downtime_sc: '16分23秒', mttr: '16分23秒', mtbf: '16分23秒', used_capacity: '58.31GB/339.99GB', calc_capacity: '33%' },
+        { business_id: '55', label: '阿里云', healthy: '98%', status: '2', response: '37ms', busyness: '2%', using: '100%', downtime_cs: '0', downtime_sc: '16分23秒', mttr: '16分23秒', mtbf: '16分23秒', used_capacity: '58.31GB/339.99GB', calc_capacity: '33%' },
+        { business_id: '66', label: '京东云', healthy: '98%', status: '1', response: '37ms', busyness: '2%', using: '100%', downtime_cs: '0', downtime_sc: '16分23秒', mttr: '16分23秒', mtbf: '16分23秒', used_capacity: '58.31GB/339.99GB', calc_capacity: '33%' },
+        { business_id: '77', label: '华三云', healthy: '98%', status: '1', response: '37ms', busyness: '2%', using: '100%', downtime_cs: '0', downtime_sc: '16分23秒', mttr: '16分23秒', mtbf: '16分23秒', used_capacity: '58.31GB/339.99GB', calc_capacity: '33%' },
       ],
       radio1: '储存容量',
       bus_responseSpeed: null,
@@ -143,19 +134,40 @@ var app = new Vue({
     confirmAddBus() {
       console.log('确认新增');
     },
-    openWindow(obj) {
+    openNewWindow(obj) {
       console.log(obj);
+      sessionStorage.setItem('businessData', JSON.stringify(obj));
+      console.log(sessionStorage.getItem('businessData'));
       let title = '业务资源详情';
-      
+      let screenWidth = window.screen.width;
+      let screenHeight = window.screen.height;
+      let url = `./business-overview.html?id=${obj.business_id}`;
+      if (screenHeight <= 768) {
+        // if (url) {
+        window.open(url, title, `width=${screenWidth}, height=${screenHeight} - 50,top=20,left=30,toolbar=no,menubar=no,scrollbars=no,resizable=no,location=no,status=no`);
+        // }
+      } else {
+        let height = 790;
+        let width = 1300;
+        let top = (screenHeight - height) / 2 * 0.8;
+        if (top < 0) {
+          top = 0;
+        }
+        let left = (screenWidth - width) / 2;
+        if (left < 0) {
+          left = 0;
+        }
+        // if (url) {
+        window.open(url, title, `height=${height},width=${width},top=20,left=30,toolbar=no,menubar=no,scrollbars=no,resizable=no,location=no,status=no`);
+        // window.open(url, title, `height=${height},width=${width},top=${top},left=${left},toolbar=no,menubar=no,scrollbars=no,resizable=no,location=no,status=no`);
+        // }
+      }
     },
     /* 业务响应速度 */
     getResponse() {
       this.bus_responseSpeed = {
         tooltip: {
           trigger: 'axis',
-          // axisPointer: {
-          //   type: 'shadow'
-          // }
         },
         grid: {
           left: '0',
@@ -303,7 +315,7 @@ var app = new Vue({
     /* 告警统计 */
     toggleBtn() {
       let data = [];
-      this.runing_states.forEach((v, i) => {
+      this.business_tableData.forEach((v, i) => {
         data.push({
           name: v.label,
           value: i * 10 + 5

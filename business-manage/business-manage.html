@@ -98,8 +98,10 @@
               <th>繁忙度</th>
               <th>可用率</th>
             </tr>
-            <tr v-for="state in runing_states">
-              <td><a @click="openWindow(state)" style="color:#fff;text-decoration: none;" href="./business-overview.html" target="_blank">{{state.label}}</a></td>
+            <tr v-for="state in business_tableData">
+              <td>
+                <span style="cursor:pointer;" @click="openNewWindow(state)">{{state.label}}</span>
+              </td>
               <td>{{state.health}}</td>
               <td>
                 <img v-if="state.status === '1'" src="../assets/images/icon/normal.png" />

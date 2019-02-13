@@ -1,74 +1,148 @@
+Vue.component('v-chart', VueECharts);
 var app = new Vue({
   el: '#homeIndex',
   data() {
     return {
-      menuList: [],
       radio1: '业务总览',
+      business_data: null,
+      alarm_statics: null,
+      business_using: null,
+      alarm_object: [
+        { name: '监控系统数据库', status: '0' },
+        { name: '核心服务', status: '1' },
+        { name: '采集服务', status: '2' },
+        { name: 'WEB数据库', status: '1' },
+        { name: '监控数据服务器', status: '1' },
+        { name: '测试服务器', status: '0' }
+      ],
     }
   },
-  mounted() {
-    this.setMenuList();
+  created() {
+    this.business_data = JSON.parse(sessionStorage.getItem('businessData'));
+    console.log(this.business_data);
+    this.getAlarmStatics();
+    this.getBusinessUsing();
   },
   methods: {
-    setMenuList: function () {
-      this.menuList = [
-        {
-          name: '首页',
-          img: '../assets/images/menu/menu-1',
-          active: false
+    getAlarmStatics() {
+      this.alarm_statics = {
+        color: ['#FFE259'],
+        tooltip: {
+          trigger: 'item',
+          formatter: function (params) {
+            var res = params.name + ' : ' + params.percent + '%';
+            return res;
+          }
         },
-        {
-          name: '拓扑管理',
-          img: '../assets/images/menu/menu-2',
-          active: false
-        },
-        {
-          name: '业务管理',
-          img: '../assets/images/menu/menu-3',
-          active: true
-        },
-        {
-          name: '资源管理',
-          img: '../assets/images/menu/menu-4',
-          active: false
-        },
-        {
-          name: '虚拟化',
-          img: '../assets/images/menu/menu-5',
-          active: false
-        },
-        {
-          name: '存储管理',
-          img: '../assets/images/menu/menu-6',
-          active: false
-        },
-        {
-          name: '告警管理',
-          img: '../assets/images/menu/menu-7',
-          active: false
-        },
-        {
-          name: '智能工具',
-          img: '../assets/images/menu/menu-8',
-          active: false
-        },
-        {
-          name: '巡检管理',
-          img: '../assets/images/menu/menu-9',
-          active: false
-        },
-        {
-          name: '报表管理',
-          img: '../assets/images/menu/menu-10',
-          active: false
-        },
-        {
-          name: '系统管理',
-          img: '../assets/images/menu/menu-11',
-          active: false
+        xAxis: [{
+          show: false
+        }],
+        yAxis: [{
+          show: false
+        }],
+        series: {
+          name: '',
+          center: 80,
+          radius: [48, 60],
+          type: 'pie',
+          labelLine: {
+            normal: {
+              show: false
+            }
+          },
+          data: [{
+            value: 35,
+            name: '告警',
+            label: {
+              normal: {
+                formatter: '{d} %',
+                position: 'center',
+                show: true,
+                textStyle: {
+                  fontSize: '16',
+                  fontWeight: 'bold',
+                }
+              }
+            }
+          }, {
+            value: 65,
+            name: '',
+            tooltip: { show: false },
+            itemStyle: {
+              normal: {
+                color: '#aaa'
+              },
+              emphasis: {
+                color: '#aaa'
+              }
+            },
+            hoverAnimation: false
+          }]
         }
-      ];
+      }
     },
+    getBusinessUsing() {
+      this.business_using = {
+        tooltip: {
+          trigger: 'item',
+          formatter: "{b}%"
+        },
+        series: [{
+          name: '',
+          type: 'pie',
+          radius: '65%',
+          center: ['50%', '35%'],
+          calculable: true,
+          clockwise: true,
+          data: [
+            {
+              value: 35,
+              name: '业务可用率',
+              itemStyle: {
+                color: {
+                  type: 'linear',
+                  x: 0,
+                  y: 0,
+                  x2: 0,
+                  y2: 1,
+                  colorStops: [
+                    { offset: 0, color: '#54E8FF' },
+                    { offset: 1, color: '#2A7D80' }
+                  ],
+                }
+              },
+            },
+            {
+              value: 65,
+              label: {
+                show: false,
+              },
+              name: '',
+              itemStyle: {
+                color: '#101E43'
+              }
+            },
+          ],
+          label: {
+            normal: {
+              formatter: '{c}%',
+              position: 'inner',
+              textStyle: {
+                color: '#fff',
+                fontSize: 12,
+              }
+            }
+          },
+          labelLine: {
+            normal: {
+              show: false
+            }
+          }
+        }],
+        color: ['#0aa', '#101E43'],
+      }
+    },
+    /* tab切换 */
     toggleBtn(evt) {
       console.log(evt);
     }
