@@ -32,8 +32,8 @@
     padding: 20px 20px 10px;
     width: calc(50% - 30px);
     height: 316px;
-    background: rgba(0, 0, 0, 0.3);
-    box-shadow: 0px 0px 15px 0px rgba(14, 21, 42, 0.15);
+    // background: rgba(0, 0, 0, 0.3);
+    // box-shadow: 0px 0px 15px 0px rgba(14, 21, 42, 0.15);
   }
   .loc-fill-form {
     position: absolute;
@@ -67,7 +67,6 @@
   transform: translateY('-50%');
   text-align: center;
   font-size: 12px;
-  color: #8190b8;
 }
 div.echarts {
   width: 100%;
@@ -75,8 +74,8 @@ div.echarts {
 }
 
 .home-drop {
+  overflow: hidden;
   padding: 0;
-  background: #1d285d;
   border: 0;
   &.el-popper {
     margin-top: 8px;
@@ -88,6 +87,7 @@ div.echarts {
     color: inherit;
     line-height: 14px;
     padding: 8px 12px;
+    white-space: nowrap;
     &:focus, 
     &:not(.is-disabled):hover {
       background: rgba(0, 0, 0, 0.2);
@@ -131,16 +131,13 @@ div.echarts {
   }
   &.is-exception {
     .el-progress-bar__inner {
-      background: linear-gradient(to right, #ff9e54 , #ff8529);
       text-align: center;
     }
   }
   &.is-success {
     .el-progress-bar__inner {
-      background: #69f0ae;
       .el-progress-bar__innerText {
         margin-left: 100%;
-        color: #69f0ae;
       }
     }
   }
@@ -153,7 +150,6 @@ div.echarts {
     padding: 16px;
     height: 460px;
     font-size: 12px;
-    background: rgba(0, 0, 0, 0.2);
     .loc-form-title {
       margin-bottom: 10px;
       line-height: 16px;
@@ -171,7 +167,6 @@ div.echarts {
         height: 28px;
         line-height: 28px;
         border-radius: 4px;
-        background: rgba(0, 0, 0, 0.3);
       }
     }
   }

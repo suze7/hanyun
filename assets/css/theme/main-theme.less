@@ -4,6 +4,21 @@
 body {
     color: #fff;
 }
+
+// 输入框
+.el-input__inner,
+.loc-input {
+  border: 1px solid rgba(255, 255, 255, 0.6);
+}
+
+// 下拉框样式
+.loc-main-select {
+  .el-input__inner:focus,
+  .el-input.is-focus .el-input__inner {
+    border: 1px solid rgba(255, 255, 255, 0.6);
+  }
+}
+
 // 页面头部菜单
 .loc-app-menu {
   background: rgba(0, 0, 0, 0.45);
@@ -65,3 +80,136 @@ body {
     background: rgba(0, 0, 0, 0.1);
   }
 }
+
+.transparent-table {
+  &.el-table {
+    tr {
+      &:nth-child(even) {
+        &:hover td,
+        td {
+          background: rgba(0, 0, 0, 0.1);
+        }
+      }
+    }
+    th {
+      background: rgba(0, 0, 0, 0.3);
+    }
+  }
+  &.gray-table {
+    color: rgba(255, 255, 255, 0.6); 
+    th {
+      background: transparent;
+    }
+    tr {
+      &:nth-child(even) {
+        &:hover td,
+        td {
+          background: transparent;
+        }
+      }
+      &:nth-child(odd) {
+        &:hover td,
+        td {
+          background: transparent;
+        }
+      }
+      td {
+        border-top: 1px solid #8190b8;
+      }
+    }
+  }
+}
+
+.transparent-white-table {
+  &.el-table tr:nth-child(even) {
+    &:hover td,
+    td {
+      background: rgba(255, 255, 255, 0.1);
+    }
+  }
+}
+
+// 分页
+.my-pagination-group {
+  .el-pager {
+    li {
+      &:not(.disabled).active {
+        background: rgba(151, 156, 255, 0.6);
+      }
+    }
+  }
+}
+
+.loc-no-data {
+  color: #8190b8;
+}
+
+.blue-dialog {
+  .el-dialog {
+    background: #3c54b1;
+  }
+  .el-dialog__header {
+    background: rgba(0, 0, 0, 0.1);
+    .el-dialog__close {
+      color: #fff;
+    }
+  }
+  .dialog-btn {
+    &.cancel-btn {
+      color: #3760ff;
+      border: 1px solid #3760ff;
+      background: transparent;
+    }
+    &.submit-btn {
+      border: 1px solid #3760ff;
+      background: #3760ff;
+    }
+  }
+}
+
+.loc-index-content {
+  .loc-left-menu {
+    background: rgba(0, 0, 0, 0.3);
+  }
+  .loc-transform-left {
+    background: linear-gradient(
+      90deg,
+      transparent 80%,
+      rgba(0, 0, 0, 0.3) 80%,
+      rgba(0, 0, 0, 0.3) 100%
+    );
+  }
+  .loc-right-content {
+    .loc-manage-content {
+      background: rgba(0, 0, 0, 0.2);
+    }
+  }
+}
+
+.loc-opera-group {
+  color: #fff;
+}
+
+.loc-btn {
+  &.icon-btn {
+    border: 1px solid #5074ff;
+    background: #5074ff;
+  }
+}
+
+.my-edit-group {
+  .my-group-title {
+    color: rgba(255, 255, 255, 0.6);
+  }
+}
+
+// tab切换按钮
+.my-tab-btn {
+  line-height: 24px;
+  background: rgba(0, 0, 0, 0.15);
+  &:hover,
+  &.active {
+    background: linear-gradient(-270deg, #404fc2 0%, #2d42e3 100%);
+  }
+}
+

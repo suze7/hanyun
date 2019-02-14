@@ -113,12 +113,6 @@
     tr {
       height: 40px;
       background: none;
-      &:nth-child(even) {
-        &:hover td,
-        td {
-          background: rgba(0, 0, 0, 0.1);
-        }
-      }
       &:nth-child(odd) {
         &:hover td,
         td {
@@ -131,7 +125,6 @@
     }
     th {
       height: 40px;
-      background: rgba(0, 0, 0, 0.3);
       border-bottom: 0;
       &.gutter {
         background: transparent;
@@ -155,7 +148,6 @@
     }
   }
   &.gray-table {
-    color: rgba(255, 255, 255, 0.6);
     .cell {
       padding: 0 16px 0 0;
       line-height: 16px;
@@ -167,26 +159,10 @@
       }
     }
     th {
-      background: transparent;
       height: 30px;
     }
     tr {
       height: 30px;
-      &:nth-child(even) {
-        &:hover td,
-        td {
-          background: transparent;
-        }
-      }
-      &:nth-child(odd) {
-        &:hover td,
-        td {
-          background: transparent;
-        }
-      }
-      td {
-        border-top: 1px solid #8190b8;
-      }
     }
   }
 }
@@ -200,12 +176,6 @@
     width: 8px;
     height: 8px;
     background: url(../images/icon/star.png) center center no-repeat;
-  }
-  &.el-table tr:nth-child(even) {
-    &:hover td,
-    td {
-      background: rgba(255, 255, 255, 0.1);
-    }
   }
 }
 
@@ -245,7 +215,6 @@
         font-weight: normal;
         &:not(.disabled).active {
           color: #fff;
-          background: rgba(151, 156, 255, 0.6);
         }
       }
     }
@@ -316,14 +285,9 @@
 }
 // 弹出框样式
 .blue-dialog {
-  .el-dialog {
-    background: #3c54b1;
-  }
   .el-dialog__header {
     padding: 12px 30px;
-    background: rgba(0, 0, 0, 0.1);
     .el-dialog__close {
-      color: #fff;
       font-size: 22px;
     }
   }
@@ -337,15 +301,6 @@
   .dialog-btn {
     font-size: 12px;
     padding: 7px 19px;
-    &.cancel-btn {
-      color: #3760ff;
-      border: 1px solid #3760ff;
-      background: transparent;
-    }
-    &.submit-btn {
-      border: 1px solid #3760ff;
-      background: #3760ff;
-    }
   }
   .el-dialog__footer {
     padding: 16px 30px 50px;
@@ -495,10 +450,6 @@
 
 // 下拉框样式
 .loc-main-select {
-  .el-input__inner:focus,
-  .el-input.is-focus .el-input__inner {
-    border: 1px solid rgba(255, 255, 255, 0.6);
-  }
   .el-input--suffix .el-input__inner {
     padding-left: 8px;
   }

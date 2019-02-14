@@ -2,6 +2,7 @@ Vue.component('v-chart', VueECharts);
 var app = new Vue({
   el: '#homeIndex',
   data: {
+    theme: false,
     message: 'Hello Vue!',
     menuList: [],
     homeDataList: [],
@@ -99,7 +100,7 @@ var app = new Vue({
               itemHeight: 6,
               icon: 'circle',
               textStyle: {
-                color: '#fff',
+                color: this.theme ? '#fff' : '#c5cfd5',
                 padding: [2, 14, 2, 4]
               },
               formatter: name => {
@@ -226,7 +227,7 @@ var app = new Vue({
               itemHeight: 6,
               itemGap: 32,
               textStyle: {
-                color: '#fff',
+                color: this.theme ? '#fff' : '#c5cfd5',
                 padding: [0, 0, 0, 2]
               }
             },
@@ -247,12 +248,12 @@ var app = new Vue({
               ],
               axisLine: {
                 lineStyle: {
-                  color: '#8190b8'
+                  color: this.theme ? '#8190b8' : '#f4f4f4'
                 }
               },
               axisLabel: {
                 interval: 0,
-                color: 'rgba(255,255,255,0.6)',
+                color: this.theme ? 'rgba(255,255,255,0.6)' : '#c5cfd5',
                 formatter: data => {
                   const array = data.split('');
                   let index = Math.floor(array.length / 2);
@@ -273,7 +274,7 @@ var app = new Vue({
               minInterval: 5,
               axisLabel: {
                 formatter: '{value}次',
-                color: 'rgba(255,255,255,0.6)'
+                color: this.theme ? 'rgba(255,255,255,0.6)' : '#c5cfd5'
               },
               axisLine: {
                 show: false
@@ -283,8 +284,8 @@ var app = new Vue({
               },
               splitLine: {
                 lineStyle: {
-                  color: '#8190b8',
-                  opacity: 0.3
+                  color: this.theme ? '#8190b8' : '#f4f4f4',
+                  opacity: this.theme ? 0.3 : 1
                 }
               }
             },
@@ -441,12 +442,12 @@ var app = new Vue({
               ],
               axisLine: {
                 lineStyle: {
-                  color: '#8190b8'
+                  color: this.theme ? '#8190b8' : '#f4f4f4'
                 }
               },
               axisLabel: {
                 interval: 0,
-                color: 'rgba(255,255,255,0.6)',
+                color: this.theme ? 'rgba(255,255,255,0.6)' : '#8190b8',
                 lineHeight: 14
               },
               axisTick: {
@@ -456,7 +457,7 @@ var app = new Vue({
             yAxis: {
               boundaryGap: ['0%', '20%'],
               axisLabel: {
-                color: 'rgba(255,255,255,0.6)'
+                color: this.theme ? 'rgba(255,255,255,0.6)' : '#8190b8'
               },
               axisLine: {
                 show: false
@@ -466,8 +467,8 @@ var app = new Vue({
               },
               splitLine: {
                 lineStyle: {
-                  color: '#8190b8',
-                  opacity: 0.3
+                  color: this.theme ? '#8190b8' : '#f4f4f4',
+                  opacity: this.theme ? 0.3 : 1
                 }
               }
             },
@@ -492,11 +493,11 @@ var app = new Vue({
                     colorStops: [
                       {
                         offset: 0,
-                        color: '#1cefef'
+                        color: this.theme ? '#1cefef' : '#8cd481'
                       },
                       {
                         offset: 1,
-                        color: '#14abab'
+                        color: this.theme ? '#14abab' : '#8cd481'
                       }
                     ],
                     globalCoord: false
@@ -626,12 +627,12 @@ var app = new Vue({
               data: ['test', 'WEB服务器', '维也纳-测试4'],
               axisLine: {
                 lineStyle: {
-                  color: '#8190b8'
+                  color: this.theme ? '#8190b8' : '#f4f4f4'
                 }
               },
               axisLabel: {
                 interval: 0,
-                color: 'rgba(255,255,255,0.6)',
+                color: this.theme ? 'rgba(255,255,255,0.6)' : '#c5cfd5',
                 lineHeight: 14
               },
               axisTick: {
@@ -643,7 +644,7 @@ var app = new Vue({
               min: 0,
               splitNumber: 5,
               axisLabel: {
-                color: 'rgba(255,255,255,0.6)',
+                color: this.theme ? 'rgba(255,255,255,0.6)' : '#c5cfd5',
                 formatter: data => {
                   return data + '%';
                 }
@@ -656,8 +657,8 @@ var app = new Vue({
               },
               splitLine: {
                 lineStyle: {
-                  color: '#8190b8',
-                  opacity: 0.3
+                  color: this.theme ? '#8190b8' : '#f4f4f4',
+                  opacity: this.theme ? 0.3 : 1
                 }
               }
             },
@@ -682,11 +683,11 @@ var app = new Vue({
                     colorStops: [
                       {
                         offset: 0,
-                        color: '#545fff'
+                        color: this.theme ? '#545fff' : '#3498db'
                       },
                       {
                         offset: 1,
-                        color: '#546cbc'
+                        color: this.theme ? '#545fff' : '#3498db'
                       }
                     ],
                     globalCoord: false
@@ -755,12 +756,12 @@ var app = new Vue({
               ],
               axisLine: {
                 lineStyle: {
-                  color: '#8190b8'
+                  color: this.theme ? '#8190b8' : '#f4f4f4'
                 }
               },
               axisLabel: {
                 interval: 0,
-                color: 'rgba(255,255,255,0.6)',
+                color: this.theme ? 'rgba(255,255,255,0.6)' : '#c5cfd5',
                 lineHeight: 14
               },
               axisTick: {
@@ -772,7 +773,7 @@ var app = new Vue({
               min: 0,
               splitNumber: 5,
               axisLabel: {
-                color: 'rgba(255,255,255,0.6)',
+                color: this.theme ? 'rgba(255,255,255,0.6)' : '#c5cfd5',
                 formatter: data => {
                   return data + '%';
                 }
@@ -785,8 +786,8 @@ var app = new Vue({
               },
               splitLine: {
                 lineStyle: {
-                  color: '#8190b8',
-                  opacity: 0.3
+                  color: this.theme ? '#8190b8' : '#f4f4f4',
+                  opacity: this.theme ? 0.3 : 1
                 }
               }
             },
@@ -811,11 +812,11 @@ var app = new Vue({
                     colorStops: [
                       {
                         offset: 0,
-                        color: '#ffd754'
+                        color: this.theme ? '#ffd754' : '#f8c968'
                       },
                       {
                         offset: 1,
-                        color: '#bc9d54'
+                        color: this.theme ? '#bc9d54' : '#f8c968'
                       }
                     ],
                     globalCoord: false

@@ -31,8 +31,6 @@
   padding: 20px 20px 10px;
   width: calc(50% - 30px);
   height: 316px;
-  background: rgba(0, 0, 0, 0.3);
-  box-shadow: 0px 0px 15px 0px rgba(14, 21, 42, 0.15);
 }
 .loc-line-form .loc-fill-form {
   position: absolute;
@@ -60,15 +58,14 @@
   transform: translateY('-50%');
   text-align: center;
   font-size: 12px;
-  color: #8190b8;
 }
 div.echarts {
   width: 100%;
   height: 100%;
 }
 .home-drop {
+  overflow: hidden;
   padding: 0;
-  background: #1d285d;
   border: 0;
 }
 .home-drop.el-popper {
@@ -81,6 +78,7 @@ div.echarts {
   color: inherit;
   line-height: 14px;
   padding: 8px 12px;
+  white-space: nowrap;
 }
 .home-drop .el-dropdown-menu__item:focus,
 .home-drop .el-dropdown-menu__item:not(.is-disabled):hover {
@@ -119,15 +117,10 @@ div.echarts {
   background: rgba(0, 0, 0, 0.2);
 }
 .home-progress.is-exception .el-progress-bar__inner {
-  background: linear-gradient(to right, #ff9e54, #ff8529);
   text-align: center;
-}
-.home-progress.is-success .el-progress-bar__inner {
-  background: #69f0ae;
 }
 .home-progress.is-success .el-progress-bar__inner .el-progress-bar__innerText {
   margin-left: 100%;
-  color: #69f0ae;
 }
 .home-content-form .loc-form {
   vertical-align: top;
@@ -135,7 +128,6 @@ div.echarts {
   padding: 16px;
   height: 460px;
   font-size: 12px;
-  background: rgba(0, 0, 0, 0.2);
 }
 .home-content-form .loc-form .loc-form-title {
   margin-bottom: 10px;
@@ -155,7 +147,6 @@ div.echarts {
   height: 28px;
   line-height: 28px;
   border-radius: 4px;
-  background: rgba(0, 0, 0, 0.3);
 }
 .home-content-form .loc-left {
   margin-right: 32px;

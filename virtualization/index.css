@@ -19,7 +19,6 @@
   margin: 10px;
   width: calc(33% - 20px);
   height: calc(50% - 20px);
-  background: rgba(0, 0, 0, 0.2);
 }
 .loc-right-content.vir-right-content .vir-chart-form .vir-chart-title {
   margin: 20px 20px 0;

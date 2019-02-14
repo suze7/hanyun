@@ -4,6 +4,14 @@
 body {
   color: #fff;
 }
+.el-input__inner,
+.loc-input {
+  border: 1px solid rgba(255, 255, 255, 0.6);
+}
+.loc-main-select .el-input__inner:focus,
+.loc-main-select .el-input.is-focus .el-input__inner {
+  border: 1px solid rgba(255, 255, 255, 0.6);
+}
 .loc-app-menu {
   background: rgba(0, 0, 0, 0.45);
 }
@@ -55,18 +63,82 @@ body {
 .el-menu-vertical-demo .is-active:not(.is-opened) {
   background: rgba(0, 0, 0, 0.1);
 }
-.el-menu-vertical-demo .menu-icon4-1 {
-  background: url(../../images/menu/menu-4-1.png) center center no-repeat;
+.transparent-table.el-table tr:nth-child(even):hover td,
+.transparent-table.el-table tr:nth-child(even) td {
+  background: rgba(0, 0, 0, 0.1);
 }
-.el-menu-vertical-demo .menu-icon4-2 {
-  background: url(../../images/menu/menu-4-2.png) center center no-repeat;
+.transparent-table.el-table th {
+  background: rgba(0, 0, 0, 0.3);
 }
-.el-menu-vertical-demo .menu-icon4-3 {
-  background: url(../../images/menu/menu-4-3.png) center center no-repeat;
+.transparent-table.gray-table {
+  color: rgba(255, 255, 255, 0.6);
 }
-.el-menu-vertical-demo .menu-icon4-4 {
-  background: url(../../images/menu/menu-4-4.png) center center no-repeat;
+.transparent-table.gray-table th {
+  background: transparent;
 }
-.el-menu-vertical-demo .menu-icon4-5 {
-  background: url(../../images/menu/menu-4-5.png) center center no-repeat;
+.transparent-table.gray-table tr:nth-child(even):hover td,
+.transparent-table.gray-table tr:nth-child(even) td {
+  background: transparent;
+}
+.transparent-table.gray-table tr:nth-child(odd):hover td,
+.transparent-table.gray-table tr:nth-child(odd) td {
+  background: transparent;
+}
+.transparent-table.gray-table tr td {
+  border-top: 1px solid #8190b8;
+}
+.transparent-white-table.el-table tr:nth-child(even):hover td,
+.transparent-white-table.el-table tr:nth-child(even) td {
+  background: rgba(255, 255, 255, 0.1);
+}
+.my-pagination-group .el-pager li:not(.disabled).active {
+  background: rgba(151, 156, 255, 0.6);
+}
+.loc-no-data {
+  color: #8190b8;
+}
+.blue-dialog .el-dialog {
+  background: #3c54b1;
+}
+.blue-dialog .el-dialog__header {
+  background: rgba(0, 0, 0, 0.1);
+}
+.blue-dialog .el-dialog__header .el-dialog__close {
+  color: #fff;
+}
+.blue-dialog .dialog-btn.cancel-btn {
+  color: #3760ff;
+  border: 1px solid #3760ff;
+  background: transparent;
+}
+.blue-dialog .dialog-btn.submit-btn {
+  border: 1px solid #3760ff;
+  background: #3760ff;
+}
+.loc-index-content .loc-left-menu {
+  background: rgba(0, 0, 0, 0.3);
+}
+.loc-index-content .loc-transform-left {
+  background: linear-gradient(90deg, transparent 80%, rgba(0, 0, 0, 0.3) 80%, rgba(0, 0, 0, 0.3) 100%);
+}
+.loc-index-content .loc-right-content .loc-manage-content {
+  background: rgba(0, 0, 0, 0.2);
+}
+.loc-opera-group {
+  color: #fff;
+}
+.loc-btn.icon-btn {
+  border: 1px solid #5074ff;
+  background: #5074ff;
+}
+.my-edit-group .my-group-title {
+  color: rgba(255, 255, 255, 0.6);
+}
+.my-tab-btn {
+  line-height: 24px;
+  background: rgba(0, 0, 0, 0.15);
+}
+.my-tab-btn:hover,
+.my-tab-btn.active {
+  background: linear-gradient(-270deg, #404fc2 0%, #2d42e3 100%);
 }

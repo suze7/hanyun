@@ -3,7 +3,31 @@
 }
 body {
   color: #999;
+  * {
+    &::-webkit-scrollbar-thumb {
+      background: #666;
+    }
+  }
 }
+
+input {
+  border: 1px solid #e7e7e7;
+}
+
+// 输入框
+.el-input__inner,
+.loc-input {
+  border: 1px solid #e7e7e7;
+}
+
+// 下拉框样式
+.loc-main-select {
+  .el-input__inner:focus,
+  .el-input.is-focus .el-input__inner {
+    border: 1px solid #e7e7e7;
+  }
+}
+
 // 页面头部菜单
 .loc-app-menu {
   background: #376aac;
@@ -46,4 +70,162 @@ body {
   color: #999;
   min-height: 100%;
   background: #f2f2f2;
+}
+
+
+.transparent-table {
+  &.el-table {
+    tr {
+      &:nth-child(even) {
+        &:hover td,
+        td {
+          background: #f8f8f8;
+        }
+      }
+    }
+    th {
+      background: #ededed;
+    }
+  }
+  &.gray-table {
+    color: #666; 
+    th {
+      background: transparent;
+      color: #999;
+    }
+    tr {
+      &:nth-child(even) {
+        &:hover td,
+        td {
+          background: transparent;
+        }
+      }
+      &:nth-child(odd) {
+        &:hover td,
+        td {
+          background: transparent;
+        }
+      }
+      td {
+        border-top: 1px solid #e7e7e7;
+      }
+    }
+  }
+}
+
+.transparent-white-table {
+  td {
+    color: #666;
+  }
+  &.el-table tr:nth-child(even) {
+    &:hover td,
+    td {
+      background: #f8f8f8;
+    }
+  }
+}
+
+// 分页
+.my-pagination-group {
+  .btn-prev,
+  .btn-next,
+  .number,
+  .btn-quicknext,
+  .my-pagination-btn {
+    border: 1px solid #ededed;
+    border-left: 0;
+  }
+  .my-pagination-first {
+    border-left: 1px solid #ededed;
+  }
+  .el-pager {
+    li {
+      &:not(.disabled).active {
+        background: #3498db;
+      }
+    }
+  }
+}
+
+.loc-no-data {
+  color: #8190b8;
+}
+
+.blue-dialog {
+  .el-dialog {
+    background: #fff;
+  }
+  .el-dialog__header {
+    background: #e7e7e7;
+    color: #666;
+    .el-dialog__close {
+      color: #fff;
+    }
+  }
+  .dialog-btn {
+    &.cancel-btn {
+      color: #666;
+      border: 1px solid #e7e7e7;
+      background: transparent;
+    }
+    &.submit-btn {
+      border: 1px solid #3498db;
+      background: #3498db;
+    }
+  }
+}
+
+.loc-index-content {
+  .loc-left-menu {
+    background: #487cbf;
+    color: #fff;
+  }
+  .loc-transform-left {
+    background: linear-gradient(
+      90deg,
+      transparent 80%,
+      #487cbf 80%,
+      #487cbf 100%
+    );
+  }
+  .loc-right-content {
+    .loc-manage-content {
+      background: #ffffff;
+      box-shadow: 0px 0px 15px 0px rgba(14, 21, 42, 0.15);
+    }
+  }
+}
+
+.loc-opera-group {
+  color: #fff;
+}
+
+.loc-btn {
+  &.icon-btn {
+    border: 1px solid #3498db;
+    background: #3498db;
+  }
+}
+
+.my-edit-form {
+  .my-edit-title {
+    color: #666;
+  }
+}
+
+.my-edit-group {
+  .my-group-title {
+    color: rgba(102, 102, 102, 0.8);
+  }
+}
+
+.my-tab-btn {
+  line-height: 22px;
+  border: solid 1px #3498db;
+  color: #3498db;
+  &:hover,
+  &.active {
+    color: #fff;
+    background:  #3498db;
+  }
 }
