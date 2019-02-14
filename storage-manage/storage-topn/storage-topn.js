@@ -130,6 +130,7 @@ var app = new Vue({
   created() {
     this.setMenuList();
     this.setLeftMenuList();
+    this.leftMenuList.selectMenu = this.leftMenuList.list[3];
   },
   mounted() {},
   methods: {
@@ -138,7 +139,7 @@ var app = new Vue({
         {
           name: '首页',
           img: '../assets/images/menu/menu-1',
-          active: true
+          active: false
         },
         {
           name: '拓扑管理',
@@ -163,7 +164,7 @@ var app = new Vue({
         {
           name: '存储管理',
           img: '../assets/images/menu/menu-6',
-          active: false
+          active: true
         },
         {
           name: '告警管理',
@@ -200,20 +201,20 @@ var app = new Vue({
           {
             id: '1',
             name: '存储总览',
-            iconClass: 'menu-icon4-2',
+            iconClass: 'menu-icon4-6',
             canTouch: true, //点开却不会选中
           },
           {
             id: '2',
             name: '存储拓扑',
-            iconClass: 'menu-icon4-4',
+            iconClass: 'menu-icon4-6',
             canTouch: true
           },
           {
             id: '3',
             name: '存储列表',
-            iconClass: 'menu-icon4-2',
-            canTouch: true,
+            iconClass: 'menu-icon4-7',
+            canTouch: false,
             children: [
               {
                 id: '3-1',
@@ -238,7 +239,7 @@ var app = new Vue({
           {
             id: '4',
             name: '虚拟化TOPN',
-            iconClass: 'menu-icon4-5',
+            iconClass: 'menu-icon4-8',
             canTouch: true
           }
         ]
@@ -247,9 +248,9 @@ var app = new Vue({
     selectedLeftMenu(menu) {
       if (menu.canTouch) {
         this.leftMenuList.selectMenu = menu;
+        this.afterSelect(menu);
       }
       if (menu.children) {
-        console.log(menu);
         if (this.leftMenuList.openMenu === menu.id) {
           let mList = this.leftMenuList.openMenu.split('-');
           if (mList.length > 1) {
@@ -261,6 +262,21 @@ var app = new Vue({
         } else {
           this.leftMenuList.openMenu = menu.id;
         }
+      }
+    },
+    afterSelect(menu) {
+      if (menu.id === '1') {
+        window.location.href = './storage-manage.html';
+      } else if (menu.id === '2') {
+        window.location.href = './storage-topology.html';
+      } else if (menu.id === '3-1') {
+        window.location.href = './optical-switches.html';
+      } else if (menu.id === '3-2') {
+        window.location.href = './storage-equip.html';
+      } else if (menu.id === '3-3') {
+        window.location.href = './optical-link.html';
+      } else if (menu.id === '4') {
+        window.location.href = './storage-topn.html';
       }
     },
     toggleShowMenu() {

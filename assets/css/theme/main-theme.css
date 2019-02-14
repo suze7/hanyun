@@ -4,6 +4,30 @@
 body {
   color: #fff;
 }
+.loc-txt-red {
+  color: #ff5c54;
+}
+.loc-txt-orange {
+  color: #ff9e54;
+}
+.loc-txt-yellow {
+  color: #fff954;
+}
+.loc-txt-blue {
+  color: #1cefef;
+}
+.loc-icon-red {
+  background: #ff5c54;
+}
+.loc-icon-orange {
+  background: #ff9e54;
+}
+.loc-icon-yellow {
+  background: #fff954;
+}
+.loc-icon-blue {
+  background: #1cefef;
+}
 .el-input__inner,
 .loc-input {
   border: 1px solid rgba(255, 255, 255, 0.6);
@@ -11,6 +35,24 @@ body {
 .loc-main-select .el-input__inner:focus,
 .loc-main-select .el-input.is-focus .el-input__inner {
   border: 1px solid rgba(255, 255, 255, 0.6);
+}
+.my-checkbox .el-checkbox__inner:hover {
+  border-color: #5074ff;
+}
+.my-checkbox .cell .el-checkbox__input.is-indeterminate .el-checkbox__inner,
+.my-checkbox .cell .el-checkbox__input.is-checked .el-checkbox__inner {
+  background-color: #5074ff;
+  border-color: #5074ff;
+}
+.loc-main-selectbox {
+  background: #abb4cd;
+}
+.loc-main-selectbox .el-select-dropdown__item {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+.loc-main-selectbox .el-select-dropdown__item.selected,
+.loc-main-selectbox .el-select-dropdown__item.hover {
+  background: rgba(255, 255, 255, 0.3);
 }
 .loc-app-menu {
   background: rgba(0, 0, 0, 0.45);
@@ -62,6 +104,9 @@ body {
 }
 .el-menu-vertical-demo .is-active:not(.is-opened) {
   background: rgba(0, 0, 0, 0.1);
+}
+.loc-table-color {
+  color: #97c1ff;
 }
 .transparent-table.el-table tr:nth-child(even):hover td,
 .transparent-table.el-table tr:nth-child(even) td {
@@ -131,6 +176,14 @@ body {
   border: 1px solid #5074ff;
   background: #5074ff;
 }
+.loc-btn.submit-btn {
+  border: 1px solid #3760ff;
+  background: #3760ff;
+}
+.loc-btn.reset-btn {
+  border: 1px solid #ffb950;
+  background: #ffb950;
+}
 .my-edit-group .my-group-title {
   color: rgba(255, 255, 255, 0.6);
 }
@@ -141,4 +194,23 @@ body {
 .my-tab-btn:hover,
 .my-tab-btn.active {
   background: linear-gradient(-270deg, #404fc2 0%, #2d42e3 100%);
+}
+.my-popover-content {
+  background: #1d285d;
+}
+.my-popover-content .my-content-checkbox .el-checkbox__inner {
+  border: 1px solid #fff;
+}
+.loc-select-tip .loc-tip-form {
+  background: rgba(0, 0, 0, 0.2);
+}
+.loc-select-tip .loc-tip-form .loc-select-item.active,
+.loc-select-tip .loc-tip-form .loc-select-item:hover {
+  background: rgba(0, 0, 0, 0.15);
+}
+.my-simple-radio .el-radio__input.is-checked .el-radio__inner {
+  border-color: #3760ff;
+}
+.my-simple-radio .el-radio__inner::after {
+  background: #3760ff;
 }

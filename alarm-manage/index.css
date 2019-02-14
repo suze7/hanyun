@@ -16,18 +16,6 @@
   height: 10px;
   border-radius: 2px;
 }
-.alarm-tip.loc-icon-1 {
-  background: #ff5c54;
-}
-.alarm-tip.loc-icon-2 {
-  background: #ff9e54;
-}
-.alarm-tip.loc-icon-3 {
-  background: #fff954;
-}
-.alarm-tip.loc-icon-4 {
-  background: #1cefef;
-}
 .alarm-dialog {
   padding: 12px 24px;
 }

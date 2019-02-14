@@ -105,28 +105,12 @@ input[type='text']:-ms-input-placeholder {
   color: inherit;
   opacity: 0.6;
 }
-.my-checkbox .el-checkbox__inner:hover {
-  border-color: #5074ff;
-}
-.my-checkbox .cell .el-checkbox__input.is-indeterminate .el-checkbox__inner,
-.my-checkbox .cell .el-checkbox__input.is-checked .el-checkbox__inner {
-  background-color: #5074ff;
-  border-color: #5074ff;
-}
 .loc-btn {
   padding: 6px 16px;
   min-width: 64px;
   line-height: 14px;
   font-size: 12px;
   color: inherit;
-}
-.loc-btn.submit-btn {
-  border: 1px solid #3760ff;
-  background: #3760ff;
-}
-.loc-btn.reset-btn {
-  border: 1px solid #ffb950;
-  background: #ffb950;
 }
 .loc-btn.icon-btn img {
   float: left;
@@ -282,18 +266,6 @@ input[type='text']:-ms-input-placeholder {
   height: 10px;
   border-radius: 2px;
 }
-.loc-content-top .loc-top-group .loc-group-icon.loc-icon-red {
-  background: #ff5c54;
-}
-.loc-content-top .loc-top-group .loc-group-icon.loc-icon-orange {
-  background: #ff9e54;
-}
-.loc-content-top .loc-top-group .loc-group-icon.loc-icon-yellow {
-  background: #fff954;
-}
-.loc-content-top .loc-top-group .loc-group-icon.loc-icon-blue {
-  background: #1cefef;
-}
 .loc-content-top .loc-right-icon {
   margin-left: 16px;
   float: right;
@@ -310,16 +282,11 @@ input[type='text']:-ms-input-placeholder {
 .loc-select-tip .loc-tip-form {
   margin-bottom: 1px;
   font-size: 12px;
-  background: rgba(0, 0, 0, 0.2);
 }
 .loc-select-tip .loc-tip-form .loc-select-item {
   display: inline-block;
   padding: 0 16px;
   line-height: 32px;
-}
-.loc-select-tip .loc-tip-form .loc-select-item.active,
-.loc-select-tip .loc-tip-form .loc-select-item:hover {
-  background: rgba(0, 0, 0, 0.15);
 }
 .loc-app-menu {
   width: 100%;
@@ -512,7 +479,6 @@ input[type='text']:-ms-input-placeholder {
 .my-popover-content {
   padding: 0;
   min-width: 82px;
-  background: #1d285d;
   border: 0;
   color: inherit;
 }
@@ -540,7 +506,6 @@ input[type='text']:-ms-input-placeholder {
   height: 10px;
   background: none;
   border-radius: 0px;
-  border: 1px solid #fff;
 }
 .my-popover-content .my-content-checkbox .el-checkbox__inner::after {
   display: none;
@@ -663,6 +628,10 @@ input[type='text']:-ms-input-placeholder {
   background: #69f0ae;
   border-radius: 10px;
 }
+.my-menu .menu-icon4 {
+  background: url(../images/menu/menu-4.png) center center no-repeat;
+  background-size: 14px 13px;
+}
 .my-menu .menu-icon4-1 {
   background: url(../images/menu/menu-4-1.png) center center no-repeat;
 }
@@ -677,6 +646,36 @@ input[type='text']:-ms-input-placeholder {
 }
 .my-menu .menu-icon4-5 {
   background: url(../images/menu/menu-4-5.png) center center no-repeat;
+}
+.my-menu .menu-icon4-6 {
+  background: url(../images/menu/menu-4-6.png) center center no-repeat;
+}
+.my-menu .menu-icon4-7 {
+  background: url(../images/menu/menu-4-7.png) center center no-repeat;
+}
+.my-menu .menu-icon4-8 {
+  background: url(../images/menu/menu-4-8.png) center center no-repeat;
+}
+.my-menu .menu-icon4-9 {
+  background: url(../images/menu/menu-4-9.png) center center no-repeat;
+}
+.my-menu .menu-icon4-a {
+  background: url(../images/menu/menu-4-a.png) center center no-repeat;
+}
+.my-menu .menu-icon4-b {
+  background: url(../images/menu/menu-4-b.png) center center no-repeat;
+}
+.my-menu .menu-icon4-c {
+  background: url(../images/menu/menu-4-c.png) center center no-repeat;
+}
+.my-menu .menu-icon4-d {
+  background: url(../images/menu/menu-4-d.png) center center no-repeat;
+}
+.my-menu .menu-icon4-e {
+  background: url(../images/menu/menu-4-e.png) center center no-repeat;
+}
+.my-menu .menu-icon4-f {
+  background: url(../images/menu/menu-4-f.png) center center no-repeat;
 }
 .loc-date-picker.el-input {
   width: 100%;
@@ -701,7 +700,6 @@ input[type='text']:-ms-input-placeholder {
 .loc-main-selectbox {
   border: 0;
   border-radius: 0;
-  background: #abb4cd;
 }
 .loc-main-selectbox.el-popper {
   margin-top: 5px;
@@ -715,7 +713,6 @@ input[type='text']:-ms-input-placeholder {
 .loc-main-selectbox .el-select-dropdown__item {
   height: 32px;
   line-height: 32px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
   background: none;
   color: inherit;
   font-size: 12px;
@@ -726,7 +723,6 @@ input[type='text']:-ms-input-placeholder {
 }
 .loc-main-selectbox .el-select-dropdown__item.selected,
 .loc-main-selectbox .el-select-dropdown__item.hover {
-  background: rgba(255, 255, 255, 0.3);
   border-color: transparent;
 }
 .loc-white-select {
@@ -774,7 +770,6 @@ input[type='text']:-ms-input-placeholder {
 }
 .my-simple-radio .el-radio__input.is-checked .el-radio__inner {
   background: #fff;
-  border-color: #3760ff;
 }
 .my-simple-radio .el-radio__input.is-checked + .el-radio__label {
   color: inherit;
@@ -789,7 +784,6 @@ input[type='text']:-ms-input-placeholder {
 .my-simple-radio .el-radio__inner::after {
   width: 6px;
   height: 6px;
-  background: #3760ff;
 }
 .my-collapse {
   border: 0;

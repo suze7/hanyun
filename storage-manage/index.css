@@ -7,7 +7,6 @@
   margin: 10px;
   width: calc(50% - 20px);
   height: calc(50% - 20px);
-  background: rgba(0, 0, 0, 0.2);
 }
 .loc-right-content.sto-right-content .sto-chart-form .sto-chart-title {
   margin: 20px 20px 0;
@@ -54,32 +53,4 @@
 }
 .sto-topn-table.el-table .cell {
   padding: 0 0 0 10px;
-}
-.loc-content-top {
-  margin: -20px -20px 16px;
-  padding: 24px 20px;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-  font-size: 12px;
-}
-.loc-content-top .loc-top-group {
-  margin-right: 8px;
-}
-.loc-content-top .loc-top-group .loc-group-icon {
-  margin: 0 6px 0 16px;
-  display: inline-block;
-  width: 10px;
-  height: 10px;
-  border-radius: 2px;
-}
-.loc-content-top .loc-top-group .loc-group-icon.loc-icon-red {
-  background: #ff5c54;
-}
-.loc-content-top .loc-top-group .loc-group-icon.loc-icon-orange {
-  background: #ff9e54;
-}
-.loc-content-top .loc-top-group .loc-group-icon.loc-icon-yellow {
-  background: #fff954;
-}
-.loc-content-top .loc-top-group .loc-group-icon.loc-icon-blue {
-  background: #1cefef;
 }

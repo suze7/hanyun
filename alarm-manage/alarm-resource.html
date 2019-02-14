@@ -6,8 +6,8 @@
     <link href="../assets/css/base.css" rel="stylesheet" />
     <link href="../assets/js/element-ui/index.css" rel="stylesheet" />
     <link href="../assets/css/style.css" rel="stylesheet" />
-    <link href="../assets/css/theme/main-theme.css" rel="stylesheet" />
-    <!-- <link href="../assets/css/theme/light-theme.css" rel="stylesheet" /> -->
+    <!-- <link href="../assets/css/theme/main-theme.css" rel="stylesheet" /> -->
+    <link href="../assets/css/theme/light-theme.css" rel="stylesheet" />
     <link href="./index.css" rel="stylesheet" />
   </head>
 
@@ -141,17 +141,17 @@
               <el-button
                 type="primary"
                 class="loc-btn icon-btn"
-                ><img src="../assets/images/icon/btn-icon-1.png" /><span
+                ><img src="../assets/images/icon/btn-icon-a.png" /><span
                   >批量关联</span
                 ></el-button
               >
               <el-button type="primary" class="loc-btn icon-btn"
-                ><img src="../assets/images/icon/btn-icon-6.png" /><span
+                ><img src="../assets/images/icon/btn-icon-a.png" /><span
                   >批量配置阈值</span
                 ></el-button
               >
               <el-button type="primary" class="loc-btn icon-btn"
-                ><img src="../assets/images/icon/btn-icon-6.png" /><span
+                ><img src="../assets/images/icon/btn-icon-9.png" /><span
                   >清除资源策略</span
                 ></el-button
               >
@@ -165,7 +165,7 @@
               <el-table-column
                 class-name="my-checkbox"
                 type="selection"
-                width="36px"
+                width="38px"
               ></el-table-column>
               <el-table-column
                 prop="name"
@@ -174,7 +174,7 @@
                 class-name="com-txt-overflow"
               >
                 <template slot-scope="scope">
-                  <span style="color: #97c1ff">{{scope.row.name}}</span>
+                  <span class="loc-table-color">{{scope.row.name}}</span>
                 </template>
               </el-table-column>
               <el-table-column
@@ -184,7 +184,7 @@
                 min-width="166px"
               >
                 <template slot-scope="scope">
-                  <span style="color: #97c1ff">{{scope.row.IP}}</span>
+                  <span class="loc-table-color">{{scope.row.IP}}</span>
                 </template>
               </el-table-column>
               <el-table-column

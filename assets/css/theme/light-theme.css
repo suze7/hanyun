@@ -7,16 +7,60 @@ body {
 body *::-webkit-scrollbar-thumb {
   background: #666;
 }
+.loc-txt-red {
+  color: #df5640;
+}
+.loc-txt-orange {
+  color: #f8c968;
+}
+.loc-txt-yellow {
+  color: #fff954;
+}
+.loc-txt-blue {
+  color: #3498db;
+}
+.loc-icon-red {
+  background: #df5640;
+}
+.loc-icon-orange {
+  background: #f8c968;
+}
+.loc-icon-yellow {
+  background: #fff954;
+}
+.loc-icon-blue {
+  background: #3498db;
+}
 input {
   border: 1px solid #e7e7e7;
 }
+textarea,
 .el-input__inner,
 .loc-input {
   border: 1px solid #e7e7e7;
 }
+.my-checkbox .el-checkbox__inner:hover {
+  border-color: #3498db;
+}
+.my-checkbox .cell .el-checkbox__input.is-indeterminate .el-checkbox__inner,
+.my-checkbox .cell .el-checkbox__input.is-checked .el-checkbox__inner {
+  background-color: #3498db;
+  border-color: #3498db;
+}
 .loc-main-select .el-input__inner:focus,
 .loc-main-select .el-input.is-focus .el-input__inner {
   border: 1px solid #e7e7e7;
+}
+.loc-main-selectbox {
+  background: #fff;
+  box-shadow: 0px 0px 15px 0px rgba(14, 21, 42, 0.15);
+}
+.loc-main-selectbox .el-select-dropdown__item {
+  border-bottom: 1px solid #e7e7e7;
+}
+.loc-main-selectbox .el-select-dropdown__item.selected,
+.loc-main-selectbox .el-select-dropdown__item.hover {
+  background: rgba(0, 0, 0, 0.1);
 }
 .loc-app-menu {
   background: #376aac;
@@ -46,6 +90,9 @@ input {
   min-height: 100%;
   background: #f2f2f2;
 }
+.loc-table-color {
+  color: #3498db;
+}
 .transparent-table.el-table tr:nth-child(even):hover td,
 .transparent-table.el-table tr:nth-child(even) td {
   background: #f8f8f8;
@@ -53,7 +100,7 @@ input {
 .transparent-table.el-table th {
   background: #ededed;
 }
-.transparent-table.gray-table {
+.transparent-table.el-table td {
   color: #666;
 }
 .transparent-table.gray-table th {
@@ -70,9 +117,6 @@ input {
 }
 .transparent-table.gray-table tr td {
   border-top: 1px solid #e7e7e7;
-}
-.transparent-white-table td {
-  color: #666;
 }
 .transparent-white-table.el-table tr:nth-child(even):hover td,
 .transparent-white-table.el-table tr:nth-child(even) td {
@@ -132,6 +176,16 @@ input {
   border: 1px solid #3498db;
   background: #3498db;
 }
+.loc-btn.submit-btn {
+  color: #fff;
+  border: 1px solid #3498db;
+  background: #3498db;
+}
+.loc-btn.reset-btn {
+  color: #fff;
+  border: 1px solid #8cd481;
+  background: #8cd481;
+}
 .my-edit-form .my-edit-title {
   color: #666;
 }
@@ -146,5 +200,34 @@ input {
 .my-tab-btn:hover,
 .my-tab-btn.active {
   color: #fff;
+  background: #3498db;
+}
+.my-popover-content {
+  background: #fff;
+  box-shadow: 0px 0px 15px 0px rgba(14, 21, 42, 0.15);
+}
+.my-popover-content .my-content-checkbox .el-checkbox__inner {
+  border: 1px solid #e7e7e7;
+}
+.loc-search-form .loc-query-form .loc-query-name {
+  color: #666;
+}
+.loc-content-top {
+  color: #666;
+}
+.loc-select-tip {
+  color: #666;
+}
+.loc-select-tip .loc-tip-form {
+  background: rgba(151, 193, 255, 0.2);
+}
+.loc-select-tip .loc-tip-form .loc-select-item.active,
+.loc-select-tip .loc-tip-form .loc-select-item:hover {
+  background: rgba(151, 193, 255, 0.3);
+}
+.my-simple-radio .el-radio__input.is-checked .el-radio__inner {
+  border-color: #3498db;
+}
+.my-simple-radio .el-radio__inner::after {
   background: #3498db;
 }

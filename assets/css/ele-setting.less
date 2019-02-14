@@ -77,24 +77,6 @@ input[type='text'] {
   }
 }
 
-// checkbox样式
-.my-checkbox {
-  .el-checkbox__inner:hover {
-    border-color: #5074ff;
-  }
-  .cell {
-    .el-checkbox__input {
-      &.is-indeterminate,
-      &.is-checked {
-        .el-checkbox__inner {
-          background-color: #5074ff;
-          border-color: #5074ff;
-        }
-      }
-    }
-  }
-}
-
 // 按钮
 .loc-btn {
   padding: 6px 16px;
@@ -102,14 +84,6 @@ input[type='text'] {
   line-height: 14px;
   font-size: 12px;
   color: inherit;
-  &.submit-btn {
-    border: 1px solid #3760ff;
-    background: #3760ff;
-  }
-  &.reset-btn {
-    border: 1px solid #ffb950;
-    background: #ffb950;
-  }
   &.icon-btn {
     img {
       float: left;
@@ -283,18 +257,6 @@ input[type='text'] {
       width: 10px;
       height: 10px;
       border-radius: 2px;
-      &.loc-icon-red {
-        background: #ff5c54;
-      }
-      &.loc-icon-orange {
-        background: #ff9e54;
-      }
-      &.loc-icon-yellow {
-        background: #fff954;
-      }
-      &.loc-icon-blue {
-        background: #1cefef;
-      }
     }
   }
   .loc-right-icon {
@@ -315,16 +277,11 @@ input[type='text'] {
     margin-bottom: 1px;
     // height: 32px;
     font-size: 12px;
-    background: rgba(0, 0, 0, 0.2);
     .loc-select-item {
       display: inline-block;
       padding: 0 16px;
       // height: 100%;
       line-height: 32px;
-      &.active,
-      &:hover {
-        background: rgba(0, 0, 0, 0.15);
-      }
     }
   }
 }

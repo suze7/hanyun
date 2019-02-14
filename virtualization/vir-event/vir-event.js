@@ -59,6 +59,7 @@ var app = new Vue({
   created() {
     this.setMenuList();
     this.setLeftMenuList();
+    this.leftMenuList.selectMenu = this.leftMenuList.list[2];
   },
   mounted() {},
   methods: {
@@ -129,7 +130,7 @@ var app = new Vue({
           {
             id: '1',
             name: '虚拟化资源',
-            iconClass: 'menu-icon4-2',
+            iconClass: 'menu-icon4',
             canTouch: false, //点开却不会选中
             children: [
               {
@@ -143,7 +144,7 @@ var app = new Vue({
           {
             id: '2',
             name: '虚拟化拓扑',
-            iconClass: 'menu-icon4-2',
+            iconClass: 'menu-icon4',
             canTouch: true,
             children: [
               {
@@ -172,6 +173,7 @@ var app = new Vue({
     selectedLeftMenu(menu) {
       if (menu.canTouch) {
         this.leftMenuList.selectMenu = menu;
+        this.afterSelect(menu);
       }
       if (menu.children) {
         if (this.leftMenuList.openMenu === menu.id) {
@@ -185,6 +187,15 @@ var app = new Vue({
         } else {
           this.leftMenuList.openMenu = menu.id;
         }
+      }
+    },
+    afterSelect(menu) {
+      if (menu.id === '1-1') {
+        window.location.href = './virtualization.html';
+      } else if (menu.id === '3') {
+        window.location.href = './vir-event.html';
+      } else if (menu.id === '4') {
+        window.location.href = './vir-topn.html';
       }
     },
     toggleShowMenu() {

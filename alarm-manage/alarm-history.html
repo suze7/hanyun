@@ -6,8 +6,8 @@
     <link href="../assets/css/base.css" rel="stylesheet" />
     <link href="../assets/js/element-ui/index.css" rel="stylesheet" />
     <link href="../assets/css/style.css" rel="stylesheet" />
-    <link href="../assets/css/theme/main-theme.css" rel="stylesheet" />
-    <!-- <link href="../assets/css/theme/light-theme.css" rel="stylesheet" /> -->
+    <!-- <link href="../assets/css/theme/main-theme.css" rel="stylesheet" /> -->
+    <link href="../assets/css/theme/light-theme.css" rel="stylesheet" />
     <link href="./index.css" rel="stylesheet" />
   </head>
 
@@ -268,8 +268,10 @@
                 min-width="48px"
               >
                 <template slot-scope="scope">
-                  <i class="alarm-tip" :class="'loc-icon-'+scope.row.level"></i>
-                </template>
+                  <i
+                    class="alarm-tip"
+                    :class="'loc-icon-' + (scope.row.level === 1 ? 'red' : scope.row.level === 2 ? 'orange' : scope.row.level === 3 ? 'yellow' : 'blue')"
+                  ></i>                </template>
               </el-table-column>
               <el-table-column
                 prop="name"
