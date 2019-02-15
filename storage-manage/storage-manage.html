@@ -21,6 +21,7 @@
             class="loc-menu-form com-hover"
             v-for="menu of menuList"
             :class="{active: menu.active}"
+            @click="toRoute(menu)"
           >
             <img class="loc-menu-default" :src="menu.img + '.png'" />
             <img class="loc-menu-active" :src="menu.img + '-active.png'" />

@@ -214,3 +214,17 @@ body {
 .my-simple-radio .el-radio__inner::after {
   background: #3760ff;
 }
+.loc-equip-bread {
+  color: rgba(255, 255, 255, 0.6);
+}
+.loc-main-background {
+  background: rgba(0, 0, 0, 0.2);
+}
+.my-switch .el-switch.is-checked .el-switch__core {
+  border-color: #69f0ae;
+  background-color: #69f0ae;
+}
+.my-switch .el-switch .el-switch__core {
+  border-color: #242a66;
+  background-color: #242a66;
+}

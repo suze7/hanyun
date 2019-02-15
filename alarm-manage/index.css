@@ -1,6 +1,7 @@
 .alarm-search-form {
   margin-bottom: 4px;
 }
+.alarm-search-form .loc-query-btn,
 .alarm-search-form .loc-query-form {
   margin-bottom: 16px;
 }

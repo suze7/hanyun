@@ -6,8 +6,8 @@
     <link href="../assets/css/base.css" rel="stylesheet" />
     <link href="../assets/js/element-ui/index.css" rel="stylesheet" />
     <link href="../assets/css/style.css" rel="stylesheet" />
-    <link href="../assets/css/theme/main-theme.css" rel="stylesheet" />
-    <!-- <link href="../assets/css/theme/light-theme.css" rel="stylesheet" /> -->
+    <!-- <link href="../assets/css/theme/main-theme.css" rel="stylesheet" /> -->
+    <link href="../assets/css/theme/light-theme.css" rel="stylesheet" />
     <link href="./index.css" rel="stylesheet" />
   </head>
 
@@ -20,6 +20,7 @@
             class="loc-menu-form com-hover"
             v-for="menu of menuList"
             :class="{active: menu.active}"
+            @click="toRoute(menu)"
           >
             <img class="loc-menu-default" :src="menu.img + '.png'" />
             <img class="loc-menu-active" :src="menu.img + '-active.png'" />
@@ -175,10 +176,9 @@
                 <template slot-scope="scope">
                   <el-switch
                     v-model="scope.row.status"
-                    active-color="#69f0ae"
-                    inactive-color="#242a66"
                     :active-value="1"
                     :inactive-value="2"
+                    class="my-switch"
                   >
                   </el-switch>
                 </template>

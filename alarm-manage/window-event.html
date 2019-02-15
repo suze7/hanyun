@@ -7,8 +7,8 @@
   <link href="../assets/css/base.css" rel="stylesheet" />
   <link href="../assets/js/element-ui/index.css" rel="stylesheet" />
   <link href="../assets/css/style.css" rel="stylesheet" />
-  <link href="../assets/css/theme/main-theme.css" rel="stylesheet" />
-  <!-- <link href="../assets/css/theme/light-theme.css" rel="stylesheet" /> -->
+  <!-- <link href="../assets/css/theme/main-theme.css" rel="stylesheet" /> -->
+  <link href="../assets/css/theme/light-theme.css" rel="stylesheet" />
   <link href="./index.css" rel="stylesheet" />
 </head>
 
@@ -17,7 +17,8 @@
     <div class="loc-app-menu">
       <div class="loc-logo-form"><img src="../assets/images/logo.png" /></div>
       <div class="loc-menu-list">
-        <div class="loc-menu-form com-hover" v-for="menu of menuList" :class="{active: menu.active}">
+        <div class="loc-menu-form com-hover" v-for="menu of menuList" :class="{active: menu.active}" 
+ @click="toRoute(menu)" >
           <img class="loc-menu-default" :src="menu.img + '.png'" />
           <img class="loc-menu-active" :src="menu.img + '-active.png'" />
           <span class="loc-menu-name com-txt-overflow">{{ menu.name }}</span>
@@ -123,9 +124,7 @@
               <p class="loc-query-name">无关键字</p>
               <input placeholder="无关键字" class="loc-input" v-model="text1" :class="{'loc-input-active': text1}" />
             </div>
-            <div class="loc-query-form"></div>
-            <div class="loc-query-form"></div>
-            <div class="loc-query-btn">
+            <div class="loc-query-btn com-float-right">
               <el-button class="loc-btn submit-btn" type="primary">搜索</el-button>
               <el-button class="loc-btn reset-btn" type="primary">重置</el-button>
             </div>

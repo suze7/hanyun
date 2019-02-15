@@ -20,15 +20,14 @@
 .equip-search-form + .loc-opera-group {
   margin-top: 0;
 }
-.loc-index-content .equip-bread {
+.loc-index-content .loc-equip-bread {
   margin-bottom: 16px;
   font-size: 12px;
-  color: rgba(255, 255, 255, 0.6);
 }
-.loc-index-content .equip-bread .equip-bread-split {
+.loc-index-content .loc-equip-bread .equip-bread-split {
   transform: scale(0.8);
 }
-.loc-index-content .equip-bread + div.loc-manage-content {
+.loc-index-content .loc-equip-bread + div.loc-manage-content {
   height: calc(100% - 32px);
 }
 .equip-group-content {
@@ -42,4 +41,5 @@
   padding-left: 4px;
   min-width: 40px;
   line-height: 28px;
+  color: rgba(255, 255, 255, 0.6);
 }

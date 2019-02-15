@@ -6,8 +6,8 @@
     <link href="../assets/css/base.css" rel="stylesheet" />
     <link href="../assets/js/element-ui/index.css" rel="stylesheet" />
     <link href="../assets/css/style.css" rel="stylesheet" />
-    <link href="../assets/css/theme/main-theme.css" rel="stylesheet" />
-    <!-- <link href="../assets/css/theme/light-theme.css" rel="stylesheet" /> -->
+    <!-- <link href="../assets/css/theme/main-theme.css" rel="stylesheet" /> -->
+    <link href="../assets/css/theme/light-theme.css" rel="stylesheet" />
     <link href="./index.css" rel="stylesheet" />
   </head>
 
@@ -20,6 +20,7 @@
             class="loc-menu-form com-hover"
             v-for="menu of menuList"
             :class="{active: menu.active}"
+            @click="toRoute(menu)"
           >
             <img class="loc-menu-default" :src="menu.img + '.png'" />
             <img class="loc-menu-active" :src="menu.img + '-active.png'" />
@@ -114,7 +115,7 @@
           </div>
         </div>
         <div class="loc-right-content">
-          <div class="equip-bread">
+          <div class="loc-equip-bread">
             <span class="equip-bread-name">配置组</span>
             <span class="equip-bread-split el-icon-arrow-right"></span>
             <span class="equip-bread-name">test</span>
@@ -201,13 +202,13 @@
               >
 
               <el-button type="primary" class="loc-btn icon-btn"
-                ><img src="../assets/images/icon/btn-icon-1.png" /><span
+                ><img src="../assets/images/icon/btn-icon-6.png" /><span
                   >从配置组移除</span
                 ></el-button
               >
 
               <el-button type="primary" class="loc-btn icon-btn"
-                ><img src="../assets/images/icon/btn-icon-2.png" /><span
+                ><img src="../assets/images/icon/btn-icon-e.png" /><span
                   >清除设备基准</span
                 ></el-button
               >

@@ -6,8 +6,8 @@
     <link href="../assets/css/base.css" rel="stylesheet" />
     <link href="../assets/js/element-ui/index.css" rel="stylesheet" />
     <link href="../assets/css/style.css" rel="stylesheet" />
-    <link href="../assets/css/theme/main-theme.css" rel="stylesheet" />
-    <!-- <link href="../assets/css/theme/light-theme.css" rel="stylesheet" /> -->
+    <!-- <link href="../assets/css/theme/main-theme.css" rel="stylesheet" /> -->
+    <link href="../assets/css/theme/light-theme.css" rel="stylesheet" />
     <link href="./index.css" rel="stylesheet" />
   </head>
 
@@ -20,6 +20,7 @@
             class="loc-menu-form com-hover"
             v-for="menu of menuList"
             :class="{active: menu.active}"
+            @click="toRoute(menu)"
           >
             <img class="loc-menu-default" :src="menu.img + '.png'" />
             <img class="loc-menu-active" :src="menu.img + '-active.png'" />
@@ -130,7 +131,7 @@
                 ></el-button
               >
               <el-button type="primary" class="loc-btn icon-btn"
-                ><img src="../assets/images/icon/btn-icon-6.png" /><span
+                ><img src="../assets/images/icon/btn-icon-b.png" /><span
                   >附加用户管理</span
                 ></el-button
               >
@@ -144,7 +145,7 @@
               <el-table-column
                 class-name="my-checkbox"
                 type="selection"
-                width="36px"
+                width="38px"
               ></el-table-column>
               <el-table-column
                 prop="name"

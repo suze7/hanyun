@@ -6,8 +6,8 @@
     <link href="../assets/css/base.css" rel="stylesheet" />
     <link href="../assets/js/element-ui/index.css" rel="stylesheet" />
     <link href="../assets/css/style.css" rel="stylesheet" />
-    <link href="../assets/css/theme/main-theme.css" rel="stylesheet" />
-    <!-- <link href="../assets/css/theme/light-theme.css" rel="stylesheet" /> -->
+    <!-- <link href="../assets/css/theme/main-theme.css" rel="stylesheet" /> -->
+    <link href="../assets/css/theme/light-theme.css" rel="stylesheet" />
     <link href="./index.css" rel="stylesheet" />
   </head>
 
@@ -20,6 +20,7 @@
             class="loc-menu-form com-hover"
             v-for="menu of menuList"
             :class="{active: menu.active}"
+            @click="toRoute(menu)"
           >
             <img class="loc-menu-default" :src="menu.img + '.png'" />
             <img class="loc-menu-active" :src="menu.img + '-active.png'" />
@@ -120,12 +121,12 @@
                 type="primary"
                 class="loc-btn icon-btn"
                 @click="showDialog"
-                ><img src="../assets/images/icon/btn-icon-1.png" /><span
+                ><img src="../assets/images/icon/btn-icon-6.png" /><span
                   >批量释放</span
                 ></el-button
               >
               <el-button type="primary" class="loc-btn icon-btn"
-                ><img src="../assets/images/icon/btn-icon-6.png" /><span
+                ><img src="../assets/images/icon/btn-icon-d.png" /><span
                   >设置</span
                 ></el-button
               >
@@ -257,7 +258,7 @@
       </div>
 
       <el-dialog
-        title="资源添加"
+        title="老化时间周期配置"
         :visible.sync="dialogVisible"
         width="1080px"
         :show-close="false"
