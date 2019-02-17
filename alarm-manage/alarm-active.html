@@ -33,7 +33,6 @@
             <img class="loc-user-icon" src="../assets/images/logo.png" />
             <el-dropdown
               trigger="click"
-              @command="changeHomeMenu($event, homeDataList[0])"
             >
               <span class="el-dropdown-link">
                 {{ 'Ronin' }} <span class="menu-drop-img"></span>
@@ -167,14 +166,14 @@
                 min-width="96px"
               >
                 <template slot-scope="scope">
-                  <img
-                    class="com-hover"
-                    src="../assets/images/icon/btn-icon-6.png"
-                  />
-                  <img
-                    class="com-hover"
-                    src="../assets/images/icon/btn-icon-6.png"
-                  />
+                  <div
+                    style="margin: 6px 0 0 2px;"
+                    class="com-hover loc-img-form loc-write-img"
+                  ></div>
+                  <div
+                    style="margin: 6px 0 0 2px;"
+                    class="com-hover loc-img-form loc-del-img"
+                  ></div>
                 </template>
               </el-table-column>
             </el-table>
@@ -241,7 +240,8 @@
             </div>
           </div>
           <div class="alarm-table-form">
-            <el-table v-if="tabNum === 1"
+            <el-table
+              v-if="tabNum === 1"
               :data="dialogTable"
               size="mini"
               class="transparent-table transparent-white-table"
@@ -288,7 +288,8 @@
               >
               </el-table-column>
             </el-table>
-            <el-table v-if="tabNum === 2"
+            <el-table
+              v-if="tabNum === 2"
               :data="dialogTable"
               size="mini"
               class="transparent-table transparent-white-table"

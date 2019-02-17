@@ -120,7 +120,7 @@ var app = new Vue({
   created() {
     this.setMenuList();
     this.setLeftMenuList();
-    this.leftMenuList.selectMenu = this.leftMenuList.list[3].children[1];
+    this.leftMenuList.selectMenu = this.leftMenuList.list[3].children[0];
     this.leftMenuList.openMenu = this.leftMenuList.list[3].id;
   },
   mounted() {},

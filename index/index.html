@@ -7,10 +7,10 @@
   <link href="../assets/css/base.css" rel="stylesheet" />
   <link href="../assets/js/element-ui/index.css" rel="stylesheet" />
   <link href="../assets/css/style.css" rel="stylesheet" />
-  <!-- <link href="../assets/css/theme/main-theme.css" rel="stylesheet" />
-  <link href="./theme/main-theme.css" rel="stylesheet" /> -->
-  <link href="../assets/css/theme/light-theme.css" rel="stylesheet" />
-  <link href="./theme/light-theme.css" rel="stylesheet" />
+  <link href="../assets/css/theme/main-theme.css" rel="stylesheet" />
+  <link href="./theme/main-theme.css" rel="stylesheet" />
+  <!-- <link href="../assets/css/theme/light-theme.css" rel="stylesheet" />
+  <link href="./theme/light-theme.css" rel="stylesheet" /> -->
   <link href="./index.css" rel="stylesheet" />
 </head>
 
@@ -31,18 +31,21 @@
         </div>
         <div class="loc-user">
           <img class="loc-user-icon" src="../assets/images/logo.png" />
-          <el-dropdown trigger="click" @command="changeHomeMenu($event, homeDataList[0])">
+          <el-dropdown trigger="click">
             <span class="el-dropdown-link">
               {{'Ronin'}} <span class="menu-drop-img"></span>
             </span>
             <el-dropdown-menu slot="dropdown" class="home-drop">
+              <el-dropdown-item>黄金糕黄金糕</el-dropdown-item>
             </el-dropdown-menu>
           </el-dropdown>
         </div>
       </div>
     </div>
     <div class="loc-line-form">
-      <img @click="showDialog" src="../assets/images/menu/group.png" class="loc-group-btn com-hover" />
+      <div @click="showDialog" class="loc-home-img loc-group-btn com-hover">
+        <img src="../assets/images/menu/group.png"/>
+      </div>
       <div class="loc-col-form" v-if="homeDataList[0].show" :style="homeDataList[0].style">
         <div class="loc-div-menu">
           <span class="loc-menu-name">{{ homeDataList[0].name }}</span>

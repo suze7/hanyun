@@ -122,6 +122,11 @@ input[type='text']:-ms-input-placeholder {
   float: left;
   margin: 2px 4px 0 0;
 }
+.loc-img-form {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+}
 .my-tab-btn {
   display: inline-block;
   width: 82px;
@@ -690,6 +695,12 @@ input[type='text']:-ms-input-placeholder {
 .my-menu .menu-icon4-i {
   background: url(../images/menu/menu-4-i.png) center center no-repeat;
 }
+.my-menu .menu-icon4-j {
+  background: url(../images/menu/menu-4-j.png) center center no-repeat;
+}
+.my-menu .menu-icon4-k {
+  background: url(../images/menu/menu-4-k.png) center center no-repeat;
+}
 .loc-date-picker.el-input {
   width: 100%;
 }
@@ -825,5 +836,27 @@ input[type='text']:-ms-input-placeholder {
 }
 .my-collapse .my-collapse-item .el-collapse-item__wrap .el-collapse-item__content {
   padding: 8px 16px;
+  color: inherit;
+}
+.home-drop {
+  overflow: hidden;
+  padding: 0;
+  border: 0;
+}
+.home-drop.el-popper {
+  margin-top: 8px;
+}
+.home-drop .popper__arrow {
+  display: none;
+}
+.home-drop .el-dropdown-menu__item {
+  color: inherit;
+  line-height: 14px;
+  padding: 8px 12px;
+  white-space: nowrap;
+}
+.home-drop .el-dropdown-menu__item:focus,
+.home-drop .el-dropdown-menu__item:not(.is-disabled):hover {
+  background: rgba(0, 0, 0, 0.2);
   color: inherit;
 }

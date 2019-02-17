@@ -6,8 +6,8 @@
     <link href="../assets/css/base.css" rel="stylesheet" />
     <link href="../assets/js/element-ui/index.css" rel="stylesheet" />
     <link href="../assets/css/style.css" rel="stylesheet" />
-    <!-- <link href="../assets/css/theme/main-theme.css" rel="stylesheet" /> -->
-    <link href="../assets/css/theme/light-theme.css" rel="stylesheet" />
+    <link href="../assets/css/theme/main-theme.css" rel="stylesheet" />
+    <!-- <link href="../assets/css/theme/light-theme.css" rel="stylesheet" /> -->
     <link href="./index.css" rel="stylesheet" />
   </head>
 
@@ -31,13 +31,10 @@
           <div class="loc-alarm-form"><span class="loc-alarm-img"></span></div>
           <div class="loc-user">
             <img class="loc-user-icon" src="../assets/images/logo.png" />
-            <el-dropdown
-              trigger="click"
-              @command="changeHomeMenu($event, homeDataList[0])"
-            >
-              <span class="el-dropdown-link">
-                {{ 'Ronin' }} <span class="menu-drop-img"></span>
-              </span>
+            <el-dropdown trigger="click">
+            <span class="el-dropdown-link">
+              {{'Ronin'}} <span class="menu-drop-img"></span>
+            </span>
               <el-dropdown-menu slot="dropdown" class="home-drop">
               </el-dropdown-menu>
             </el-dropdown>
@@ -194,14 +191,14 @@
                 min-width="90px"
               >
                 <template slot-scope="scope">
-                  <img
-                    class="com-hover"
-                    src="../assets/images/icon/btn-icon-6.png"
-                  />
-                  <img
-                    class="com-hover"
-                    src="../assets/images/icon/btn-icon-6.png"
-                  />
+                  <div
+                    style="margin: 6px 0 0 2px;"
+                    class="com-hover loc-img-form loc-write-img"
+                  ></div>
+                  <div
+                    style="margin: 6px 0 0 2px;"
+                    class="com-hover loc-img-form loc-del-img"
+                  ></div>
                 </template>
               </el-table-column>
             </el-table>
@@ -283,33 +280,69 @@
           <div class="my-edit-group my-fill-line">
             <span class="my-group-title">描述</span>
             <div class="my-group-content my-group-fill alarm-radio-content">
-              <el-radio class="my-simple-radio" v-model="radio" label="1">容量</el-radio>
-              <el-radio class="my-simple-radio" v-model="radio" label="2">包速率</el-radio>
-              <el-radio class="my-simple-radio" v-model="radio" label="3">数值</el-radio>
-              <el-radio class="my-simple-radio" v-model="radio" label="4">数值/时间</el-radio>
-              <el-radio class="my-simple-radio" v-model="radio" label="5">时间</el-radio>
-              <el-radio class="my-simple-radio" v-model="radio" label="6">百分比</el-radio>
-              <el-radio class="my-simple-radio" v-model="radio" label="7">摄氏度</el-radio>
-              <el-radio class="my-simple-radio" v-model="radio" label="8">字符串</el-radio>
-              <el-radio class="my-simple-radio" v-model="radio" label="9">状态</el-radio>
+              <el-radio class="my-simple-radio" v-model="radio" label="1"
+                >容量</el-radio
+              >
+              <el-radio class="my-simple-radio" v-model="radio" label="2"
+                >包速率</el-radio
+              >
+              <el-radio class="my-simple-radio" v-model="radio" label="3"
+                >数值</el-radio
+              >
+              <el-radio class="my-simple-radio" v-model="radio" label="4"
+                >数值/时间</el-radio
+              >
+              <el-radio class="my-simple-radio" v-model="radio" label="5"
+                >时间</el-radio
+              >
+              <el-radio class="my-simple-radio" v-model="radio" label="6"
+                >百分比</el-radio
+              >
+              <el-radio class="my-simple-radio" v-model="radio" label="7"
+                >摄氏度</el-radio
+              >
+              <el-radio class="my-simple-radio" v-model="radio" label="8"
+                >字符串</el-radio
+              >
+              <el-radio class="my-simple-radio" v-model="radio" label="9"
+                >状态</el-radio
+              >
             </div>
           </div>
           <div class="my-edit-group my-fill-line alarm-edit-group">
             <span class="my-group-title">规则</span>
             <div class="my-group-content">
-              <el-select v-model="value" popper-class="loc-main-selectbox loc-white-selectbox" class="loc-main-select loc-white-select"
-                placeholder="请选择">
-                <el-option v-for="item in options" :key="item.value" :label="item.label" :value="item.value">
+              <el-select
+                v-model="value"
+                popper-class="loc-main-selectbox loc-white-selectbox"
+                class="loc-main-select loc-white-select"
+                placeholder="请选择"
+              >
+                <el-option
+                  v-for="item in options"
+                  :key="item.value"
+                  :label="item.label"
+                  :value="item.value"
+                >
                 </el-option>
               </el-select>
             </div>
             <div class="my-group-content">
-              <input type="text"/>
+              <input type="text" />
             </div>
             <div class="my-group-content">
-              <el-select v-model="value" popper-class="loc-main-selectbox loc-white-selectbox" class="loc-main-select loc-white-select"
-                placeholder="请选择">
-                <el-option v-for="item in options" :key="item.value" :label="item.label" :value="item.value">
+              <el-select
+                v-model="value"
+                popper-class="loc-main-selectbox loc-white-selectbox"
+                class="loc-main-select loc-white-select"
+                placeholder="请选择"
+              >
+                <el-option
+                  v-for="item in options"
+                  :key="item.value"
+                  :label="item.label"
+                  :value="item.value"
+                >
                 </el-option>
               </el-select>
             </div>
@@ -320,19 +353,37 @@
           <div class="my-edit-group my-fill-line alarm-edit-group">
             <span class="my-group-title"></span>
             <div class="my-group-content">
-              <el-select v-model="value" popper-class="loc-main-selectbox loc-white-selectbox" class="loc-main-select loc-white-select"
-                placeholder="请选择">
-                <el-option v-for="item in options" :key="item.value" :label="item.label" :value="item.value">
+              <el-select
+                v-model="value"
+                popper-class="loc-main-selectbox loc-white-selectbox"
+                class="loc-main-select loc-white-select"
+                placeholder="请选择"
+              >
+                <el-option
+                  v-for="item in options"
+                  :key="item.value"
+                  :label="item.label"
+                  :value="item.value"
+                >
                 </el-option>
               </el-select>
             </div>
             <div class="my-group-content">
-              <input type="text"/>
+              <input type="text" />
             </div>
             <div class="my-group-content">
-              <el-select v-model="value" popper-class="loc-main-selectbox loc-white-selectbox" class="loc-main-select loc-white-select"
-                placeholder="请选择">
-                <el-option v-for="item in options" :key="item.value" :label="item.label" :value="item.value">
+              <el-select
+                v-model="value"
+                popper-class="loc-main-selectbox loc-white-selectbox"
+                class="loc-main-select loc-white-select"
+                placeholder="请选择"
+              >
+                <el-option
+                  v-for="item in options"
+                  :key="item.value"
+                  :label="item.label"
+                  :value="item.value"
+                >
                 </el-option>
               </el-select>
             </div>
@@ -343,19 +394,37 @@
           <div class="my-edit-group my-fill-line alarm-edit-group">
             <span class="my-group-title"></span>
             <div class="my-group-content">
-              <el-select v-model="value" popper-class="loc-main-selectbox loc-white-selectbox" class="loc-main-select loc-white-select"
-                placeholder="请选择">
-                <el-option v-for="item in options" :key="item.value" :label="item.label" :value="item.value">
+              <el-select
+                v-model="value"
+                popper-class="loc-main-selectbox loc-white-selectbox"
+                class="loc-main-select loc-white-select"
+                placeholder="请选择"
+              >
+                <el-option
+                  v-for="item in options"
+                  :key="item.value"
+                  :label="item.label"
+                  :value="item.value"
+                >
                 </el-option>
               </el-select>
             </div>
             <div class="my-group-content">
-              <input type="text"/>
+              <input type="text" />
             </div>
             <div class="my-group-content">
-              <el-select v-model="value" popper-class="loc-main-selectbox loc-white-selectbox" class="loc-main-select loc-white-select"
-                placeholder="请选择">
-                <el-option v-for="item in options" :key="item.value" :label="item.label" :value="item.value">
+              <el-select
+                v-model="value"
+                popper-class="loc-main-selectbox loc-white-selectbox"
+                class="loc-main-select loc-white-select"
+                placeholder="请选择"
+              >
+                <el-option
+                  v-for="item in options"
+                  :key="item.value"
+                  :label="item.label"
+                  :value="item.value"
+                >
                 </el-option>
               </el-select>
             </div>
@@ -366,19 +435,37 @@
           <div class="my-edit-group my-fill-line alarm-edit-group">
             <span class="my-group-title"></span>
             <div class="my-group-content">
-              <el-select v-model="value" popper-class="loc-main-selectbox loc-white-selectbox" class="loc-main-select loc-white-select"
-                placeholder="请选择">
-                <el-option v-for="item in options" :key="item.value" :label="item.label" :value="item.value">
+              <el-select
+                v-model="value"
+                popper-class="loc-main-selectbox loc-white-selectbox"
+                class="loc-main-select loc-white-select"
+                placeholder="请选择"
+              >
+                <el-option
+                  v-for="item in options"
+                  :key="item.value"
+                  :label="item.label"
+                  :value="item.value"
+                >
                 </el-option>
               </el-select>
             </div>
             <div class="my-group-content">
-              <input type="text"/>
+              <input type="text" />
             </div>
             <div class="my-group-content">
-              <el-select v-model="value" popper-class="loc-main-selectbox loc-white-selectbox" class="loc-main-select loc-white-select"
-                placeholder="请选择">
-                <el-option v-for="item in options" :key="item.value" :label="item.label" :value="item.value">
+              <el-select
+                v-model="value"
+                popper-class="loc-main-selectbox loc-white-selectbox"
+                class="loc-main-select loc-white-select"
+                placeholder="请选择"
+              >
+                <el-option
+                  v-for="item in options"
+                  :key="item.value"
+                  :label="item.label"
+                  :value="item.value"
+                >
                 </el-option>
               </el-select>
             </div>
@@ -389,19 +476,37 @@
           <div class="my-edit-group my-fill-line alarm-edit-group">
             <span class="my-group-title"></span>
             <div class="my-group-content">
-              <el-select v-model="value" popper-class="loc-main-selectbox loc-white-selectbox" class="loc-main-select loc-white-select"
-                placeholder="请选择">
-                <el-option v-for="item in options" :key="item.value" :label="item.label" :value="item.value">
+              <el-select
+                v-model="value"
+                popper-class="loc-main-selectbox loc-white-selectbox"
+                class="loc-main-select loc-white-select"
+                placeholder="请选择"
+              >
+                <el-option
+                  v-for="item in options"
+                  :key="item.value"
+                  :label="item.label"
+                  :value="item.value"
+                >
                 </el-option>
               </el-select>
             </div>
             <div class="my-group-content">
-              <input type="text"/>
+              <input type="text" />
             </div>
             <div class="my-group-content">
-              <el-select v-model="value" popper-class="loc-main-selectbox loc-white-selectbox" class="loc-main-select loc-white-select"
-                placeholder="请选择">
-                <el-option v-for="item in options" :key="item.value" :label="item.label" :value="item.value">
+              <el-select
+                v-model="value"
+                popper-class="loc-main-selectbox loc-white-selectbox"
+                class="loc-main-select loc-white-select"
+                placeholder="请选择"
+              >
+                <el-option
+                  v-for="item in options"
+                  :key="item.value"
+                  :label="item.label"
+                  :value="item.value"
+                >
                 </el-option>
               </el-select>
             </div>

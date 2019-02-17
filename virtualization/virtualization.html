@@ -6,8 +6,8 @@
     <link href="../assets/css/base.css" rel="stylesheet" />
     <link href="../assets/js/element-ui/index.css" rel="stylesheet" />
     <link href="../assets/css/style.css" rel="stylesheet" />
-    <!-- <link href="../assets/css/theme/main-theme.css" rel="stylesheet" /> -->
-    <link href="../assets/css/theme/light-theme.css" rel="stylesheet" />
+    <link href="../assets/css/theme/main-theme.css" rel="stylesheet" />
+    <!-- <link href="../assets/css/theme/light-theme.css" rel="stylesheet" /> -->
     <link href="./index.css" rel="stylesheet" />
   </head>
   <body class="app">
@@ -32,13 +32,10 @@
           </div>
           <div class="loc-user">
             <img class="loc-user-icon" src="../assets/images/logo.png" />
-            <el-dropdown
-              trigger="click"
-              @command="changeHomeMenu($event, homeDataList[0])"
-            >
-              <span class="el-dropdown-link">
-                {{ 'Ronin' }} <span class="menu-drop-img"></span>
-              </span>
+            <el-dropdown trigger="click">
+            <span class="el-dropdown-link">
+              {{'Ronin'}} <span class="menu-drop-img"></span>
+            </span>
               <el-dropdown-menu slot="dropdown" class="home-drop">
               </el-dropdown-menu>
             </el-dropdown>
@@ -409,12 +406,7 @@
                         </el-popover>
                       </div>
                     </div>
-                    <img
-                      slot="reference"
-                      class="com-hover"
-                      style="margin: 6px 0 0 2px;"
-                      src="../assets/images/icon/opera.png"
-                    />
+                    <div slot="reference" style="margin: 6px 0 0 2px;" class="com-hover loc-img-form loc-opera-img"></div>
                   </el-popover>
                 </template>
               </el-table-column>

@@ -472,6 +472,12 @@
   .menu-icon4-i {
     background: url(../images/menu/menu-4-i.png) center center no-repeat;
   }
+  .menu-icon4-j {
+    background: url(../images/menu/menu-4-j.png) center center no-repeat;
+  }
+  .menu-icon4-k {
+    background: url(../images/menu/menu-4-k.png) center center no-repeat;
+  }
 }
 
 // 时间选择框样式
@@ -629,3 +635,25 @@
   }
 }
 
+.home-drop {
+  overflow: hidden;
+  padding: 0;
+  border: 0;
+  &.el-popper {
+    margin-top: 8px;
+  }
+  .popper__arrow {
+    display: none;
+  }
+  .el-dropdown-menu__item {
+    color: inherit;
+    line-height: 14px;
+    padding: 8px 12px;
+    white-space: nowrap;
+    &:focus, 
+    &:not(.is-disabled):hover {
+      background: rgba(0, 0, 0, 0.2);
+      color: inherit;
+    }
+  }
+}

@@ -34,13 +34,10 @@
           </div>
           <div class="loc-user">
             <img class="loc-user-icon" src="../assets/images/logo.png" />
-            <el-dropdown
-              trigger="click"
-              @command="changeHomeMenu($event, homeDataList[0])"
-            >
-              <span class="el-dropdown-link">
-                {{ 'Ronin' }} <span class="menu-drop-img"></span>
-              </span>
+            <el-dropdown trigger="click">
+            <span class="el-dropdown-link">
+              {{'Ronin'}} <span class="menu-drop-img"></span>
+            </span>
               <el-dropdown-menu slot="dropdown" class="home-drop">
               </el-dropdown-menu>
             </el-dropdown>

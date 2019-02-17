@@ -34,7 +34,12 @@
             <img class="loc-user-icon" src="../assets/images/logo.png"/>
             <el-dropdown
               trigger="click"
-              @command="changeHomeMenu($event, homeDataList[0])"
+             <el-dropdown
+              trigger="click"
+            >
+              <span class="el-dropdown-link">
+                {{ 'Ronin' }} <span class="menu-drop-img"></span>
+              </span>
             >
               <span class="el-dropdown-link">
                 {{'Ronin'}} <span class="menu-drop-img"></span>

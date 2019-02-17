@@ -6,8 +6,8 @@
     <link href="../assets/css/base.css" rel="stylesheet" />
     <link href="../assets/js/element-ui/index.css" rel="stylesheet" />
     <link href="../assets/css/style.css" rel="stylesheet" />
-    <!-- <link href="../assets/css/theme/main-theme.css" rel="stylesheet" /> -->
-    <link href="../assets/css/theme/light-theme.css" rel="stylesheet" />
+    <link href="../assets/css/theme/main-theme.css" rel="stylesheet" />
+    <!-- <link href="../assets/css/theme/light-theme.css" rel="stylesheet" /> -->
     <link href="./index.css" rel="stylesheet" />
   </head>
 
@@ -31,13 +31,10 @@
           <div class="loc-alarm-form"><span class="loc-alarm-img"></span></div>
           <div class="loc-user">
             <img class="loc-user-icon" src="../assets/images/logo.png" />
-            <el-dropdown
-              trigger="click"
-              @command="changeHomeMenu($event, homeDataList[0])"
-            >
-              <span class="el-dropdown-link">
-                {{ 'Ronin' }} <span class="menu-drop-img"></span>
-              </span>
+            <el-dropdown trigger="click">
+            <span class="el-dropdown-link">
+              {{'Ronin'}} <span class="menu-drop-img"></span>
+            </span>
               <el-dropdown-menu slot="dropdown" class="home-drop">
               </el-dropdown-menu>
             </el-dropdown>
@@ -132,14 +129,14 @@
               <span class="loc-top-group"
                 ><i class="loc-group-icon loc-icon-blue"></i>提示告警 18次</span
               >
-              <img
-                class="loc-right-icon"
-                src="../assets/images/icon/btn-icon-1.png"
-              />
-              <img
-                class="loc-right-icon"
-                src="../assets/images/icon/btn-icon-1.png"
-              />
+              <div
+                style="margin: 0 0 0 16px;"
+                class="com-hover com-float-right loc-img-form loc-line-img"
+              ></div>
+              <div
+                style="margin: 0 0 0 16px;"
+                class="com-hover com-float-right loc-img-form loc-pie-img"
+              ></div>
             </div>
             <div class="loc-select-tip">
               <div class="loc-tip-form">
