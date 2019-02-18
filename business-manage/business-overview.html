@@ -25,22 +25,22 @@
     <div v-if="radio1==='业务总览'">
       <div class="overview-header">
         <span>
-          业务名称: {{business_data.label}}
+          业务名称 : {{business_data.label}}
         </span>
         <span>
-          当前健康等级:
+          当前健康等级 :
           <img v-if="business_data.status === '1'" src="../assets/images/icon/normal.png" />
           <img v-if="business_data.status === '2'" src="../assets/images/icon/warning.png" />
           <img v-if="business_data.status === '0'" src="../assets/images/icon/error.png" />
         </span>
         <span>
-          宕机次数: {{business_data.label}}
+          宕机次数 : {{business_data.label}}
         </span>
         <span>
-          MTTR: {{business_data.mttr}}
+          MTTR : {{business_data.mttr}}
         </span>
         <span>
-          MTBF: {{business_data.mtbf}}
+          MTBF : {{business_data.mtbf}}
         </span>
       </div>
       <div class="aside-statics">
@@ -49,7 +49,7 @@
           <div style="display:flex;">
             <v-chart style="width:65%; height:204px" :options="alarm_statics"></v-chart>
             <ul>
-              <li v-for="item in alarm_object">
+              <li v-for="item in alarm_object" @click="openNewPage(item)">
                 <img v-if="item.status === '1'" src="../assets/images/icon/normal.png" />
                 <img v-if="item.status === '2'" src="../assets/images/icon/warning.png" />
                 <img v-if="item.status === '0'" src="../assets/images/icon/error.png" />
@@ -81,7 +81,7 @@
       </div>
       <div class="aside-bottom" style="margin-top:20px;">
         <div class="title" style="display:flex;">
-          <p class="p-title" style="margin:0;">告警统计</p>
+          <p class="p-title" style="margin:0 20px 0 0;">告警统计</p>
           <button @click="alarmToggle('healthy');" :class="{active: isActice === '0'}">健康度</button>
           <button @click="alarmToggle('storage');" :class="{active: isActice === '1'}">储存容量</button>
         </div>
@@ -95,8 +95,9 @@
                 <img v-if="business_data.status === '0'" src="../assets/images/icon/error.png" />
               </li>
               <li>
-                当前健康等级：1 < 1 < 1 < 1 </li> <li>
-                  当前值：0%
+                当前健康等级：1 &lt; 1 &lt; 1 &lt; 1 </li>
+              <li>
+                当前值：0%
               </li>
               <li>
                 最新采集时间：2018-11-05 15:33:22
@@ -120,11 +121,28 @@
     </div>
 
     <div v-else-if="radio1==='资源告警'">
-      资源告警
+      <el-table :data="alarm_tableData" size="mini" class="transparent-table transparent-white-table" style="width: 100%">
+        <el-table-column label="级别" sortable class-name="com-txt-overflow" width="88px">
+          <template slot-scope="scope">
+            <img v-if="scope.row.alarm_status === '1'" src="../assets/images/icon/normal.png" />
+            <img v-if="scope.row.alarm_status === '2'" src="../assets/images/icon/warning.png" />
+            <img v-if="scope.row.alarm_status === '0'" src="../assets/images/icon/error.png" />
+          </template>
+        </el-table-column>
+        <el-table-column prop="alarm_name" sortable sortable label="告警名称" class-name="com-txt-overflow"></el-table-column>
+        <el-table-column prop="alarm_type" sortable label="告警类型" class-name="com-txt-overflow"></el-table-column>
+        <el-table-column prop="alarm_status" sortable label="告警状态" class-name="com-txt-overflow"></el-table-column>
+        <el-table-column prop="safety_level" sortable label="保障等级" class-name="com-txt-overflow"></el-table-column>
+        <el-table-column prop="product_time" sortable label="产生时间" class-name="com-txt-overflow"></el-table-column>
+        <el-table-column prop="continued_time" sortable label="已持续时间" class-name="com-txt-overflow"></el-table-column>
+        <el-table-column prop="confirmor" sortable label="确认人" class-name="com-txt-overflow"></el-table-column>
+        <el-table-column prop="confirm_time" sortable label="确认时间" class-name="com-txt-overflow"></el-table-column>
+        <el-table-column prop="alarm_content" label="告警内容" class-name="com-txt-overflow"></el-table-column>
+      </el-table>
     </div>
 
     <div v-else>
-      业务拓扑
+      <!-- <iframe src="http://47.98.213.184:8080/net-server/business2?id=1#/topo" frameborder="0"></iframe> -->
     </div>
   </div>
 

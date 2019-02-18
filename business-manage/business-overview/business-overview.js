@@ -24,7 +24,15 @@ var app = new Vue({
         now: +new Date(2018, 5, 3),
         oneDay: 12 * 3600 * 1000,
         value: Math.random() * 1000
-      }
+      },
+      alarm_tableData: [
+        { alarm_id: '11', alarm_name: '2物理内存使用率异常', levle: '1', alarm_type: '资源负载检测', alarm_status: '1', safety_level: '2', product_time: '2019-02-04', continued_time: '16分23秒', confirmor: '16', confirm_time: '2019-02-05', alarm_content: '百分比 大于等于 50% 触发 严重' },
+        { alarm_id: '11', alarm_name: '物理内存使用率异常', levle: '1', alarm_type: '资源负载检测', alarm_status: '1', safety_level: '2', product_time: '2019-02-04', continued_time: '16分23秒', confirmor: '16', confirm_time: '2019-02-05', alarm_content: '百分比 大于等于 50% 触发 严重' },
+        { alarm_id: '11', alarm_name: '1物理内存使用率异常', levle: '0', alarm_type: '资源负载检测', alarm_status: '1', safety_level: '2', product_time: '2019-02-04', continued_time: '16分23秒', confirmor: '16', confirm_time: '2019-02-05', alarm_content: '百分比 大于等于 50% 触发 严重' },
+        { alarm_id: '11', alarm_name: '物理内存使用率异常', levle: '1', alarm_type: '资源负载检测', alarm_status: '1', safety_level: '2', product_time: '2019-02-04', continued_time: '16分23秒', confirmor: '16', confirm_time: '2019-02-05', alarm_content: '百分比 大于等于 50% 触发 严重' },
+        { alarm_id: '11', alarm_name: '3物理内存使用率异常', levle: '1', alarm_type: '资源负载检测', alarm_status: '1', safety_level: '2', product_time: '2019-02-04', continued_time: '16分23秒', confirmor: '16', confirm_time: '2019-02-05', alarm_content: '百分比 大于等于 50% 触发 严重' },
+        { alarm_id: '11', alarm_name: '物理内存使用率异常', levle: '2', alarm_type: '资源负载检测', alarm_status: '1', safety_level: '2', product_time: '2019-02-04', continued_time: '16分23秒', confirmor: '16', confirm_time: '2019-02-05', alarm_content: '百分比 大于等于 50% 触发 严重' },
+      ],
     }
   },
   created() {
@@ -260,7 +268,7 @@ var app = new Vue({
       this.multiple_pie.pie3 = {
         color: ['#54E8FF'],
         grid: {
-          left: '50',
+          left: '150',
           right: '50',
           top: '50',
           bottom: '50'
@@ -317,6 +325,31 @@ var app = new Vue({
           [this.pie3.now.getFullYear(), this.pie3.now.getMonth() + 1, this.pie3.now.getDate()].join('/'),
           Math.round(this.pie3.value)
         ]
+      }
+    },
+    openNewPage(obj) {
+      console.log(obj);
+      switch (obj) {
+        case '监控系统数据库':
+          
+          break;
+        case '核心服务':
+
+          break;
+        case '采集服务':
+
+          break;
+        case 'WEB数据库':
+
+          break;
+        case '监控数据服务器':
+
+          break;
+        case '测试服务器':
+
+          break;
+        default:
+          break;
       }
     },
     /* tab切换 */
