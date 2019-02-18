@@ -78,42 +78,63 @@
       </div>
       <div class="loc-right-content">
         <div class="loc-manage-content">
-          <div class="loc-search-form">
+          <div class="loc-search-form report-only-search">
             <div class="loc-query-form">
-              <p class="loc-query-name">资源名称</p>
-              <input placeholder="资源名称" class="loc-input" v-model="text1" :class="{'loc-input-active': text1}" />
-            </div>
-            <div class="loc-query-form">
-              <p class="loc-query-name">IP地址</p>
-              <input placeholder="IP地址" class="loc-input" v-model="text1" />
-            </div>
-            <div class="loc-query-form">
-              <p class="loc-query-name">保障级别</p>
+              <p class="loc-query-name">资源类别</p>
               <el-select v-model="value" popper-class="loc-main-selectbox" class="loc-main-select" placeholder="-请选择-">
                 <el-option v-for="item in options" :key="item.value" :label="item.label" :value="item.value">
                 </el-option>
               </el-select>
             </div>
             <div class="loc-query-form">
-              <p class="loc-query-name">资源组</p>
+              <p class="loc-query-name">资源类型</p>
               <el-select v-model="value" popper-class="loc-main-selectbox" class="loc-main-select" placeholder="-请选择-">
                 <el-option v-for="item in options" :key="item.value" :label="item.label" :value="item.value">
                 </el-option>
               </el-select>
             </div>
             <div class="loc-query-form">
-              <p class="loc-query-name">管理域</p>
+              <p class="loc-query-name">资源</p>
+              <input placeholder="资源" class="loc-input" v-model="text1" />
+            </div>
+            <div class="loc-query-form">
+              <p class="loc-query-name">子资源类型</p>
               <el-select v-model="value" popper-class="loc-main-selectbox" class="loc-main-select" placeholder="-请选择-">
                 <el-option v-for="item in options" :key="item.value" :label="item.label" :value="item.value">
                 </el-option>
               </el-select>
             </div>
-            <div class="loc-query-btn">
-              <el-button class="loc-btn submit-btn" type="primary">搜索</el-button>
-              <el-button class="loc-btn reset-btn" type="primary">重置</el-button>
+            <div class="loc-query-form">
+              <p class="loc-query-name">资源类型</p>
+              <el-select v-model="value" popper-class="loc-main-selectbox" class="loc-main-select" placeholder="-请选择-">
+                <el-option v-for="item in options" :key="item.value" :label="item.label" :value="item.value">
+                </el-option>
+              </el-select>
+            </div>
+            <div class="loc-query-form">
+              <p class="loc-query-name">时间范围</p>
+              <el-select v-model="value" popper-class="loc-main-selectbox" class="loc-main-select" placeholder="-请选择-">
+                <el-option v-for="item in options" :key="item.value" :label="item.label" :value="item.value">
+                </el-option>
+              </el-select>
+            </div>
+            <div class="loc-query-form">
+              <p class="loc-query-name">开始时间</p>
+              <el-date-picker
+                class="loc-date-picker"
+                v-model="value1"
+                type="datetime"
+                :clearable='false'
+                placeholder="选择日期时间">
+              </el-date-picker>
+            </div>
+
+            <div class="loc-query-btn com-float-right">
+              <el-button class="loc-btn submit-btn" type="primary">生成报表</el-button>
+              <el-button class="loc-btn reset-btn" type="primary">导出</el-button>
             </div>
           </div>
-          <div class="loc-opera-group">
+          <!-- <div class="loc-opera-group">
             <el-button type="primary" class="loc-btn icon-btn" @click="showDialog"><img src="../assets/images/icon/btn-icon-1.png" /><span>添加资源</span></el-button>
 
             <el-button type="primary" class="loc-btn icon-btn"><img src="../assets/images/icon/btn-icon-1.png" /><span>加入资源组</span></el-button>
@@ -124,8 +145,8 @@
             <el-button type="primary" class="loc-btn icon-btn"><img src="../assets/images/icon/btn-icon-5.png" /><span>保障策略</span></el-button>
             <el-button type="primary" class="loc-btn icon-btn"><img src="../assets/images/icon/btn-icon-6.png" /><span>删除</span></el-button>
             <el-button type="primary" class="loc-btn icon-btn"><img src="../assets/images/icon/btn-icon-7.png" /><span>重置资源类型</span></el-button>
-          </div>
-          <el-table :data="tableData" size="mini" class="transparent-table transparent-white-table" style="width: 100%">
+          </div> -->
+          <!-- <el-table :data="tableData" size="mini" class="transparent-table transparent-white-table" style="width: 100%">
             <el-table-column class-name="my-checkbox" type="selection" width="46"></el-table-column>
             <el-table-column prop="name" label="名称" sortable min-width="124px">
               <template slot-scope="scope">
@@ -217,7 +238,7 @@
                 </el-popover>
               </template>
             </el-table-column>
-          </el-table>
+          </el-table> -->
           <div class="loc-pagination">
             <div class="my-pagination-group">
               <div class="my-pagination-btn my-pagination-first com-hover">首页</div>

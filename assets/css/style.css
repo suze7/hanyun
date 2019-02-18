@@ -701,6 +701,24 @@ input[type='text']:-ms-input-placeholder {
 .my-menu .menu-icon4-k {
   background: url(../images/menu/menu-4-k.png) center center no-repeat;
 }
+.my-menu .menu-icon4-l {
+  background: url(../images/menu/menu-4-l.png) center center no-repeat;
+}
+.my-menu .menu-icon4-m {
+  background: url(../images/menu/menu-4-m.png) center center no-repeat;
+}
+.my-menu .menu-icon4-n {
+  background: url(../images/menu/menu-4-n.png) center center no-repeat;
+}
+.my-menu .menu-icon4-o {
+  background: url(../images/menu/menu-4-o.png) center center no-repeat;
+}
+.my-menu .menu-icon4-p {
+  background: url(../images/menu/menu-4-p.png) center center no-repeat;
+}
+.my-menu .menu-icon4-q {
+  background: url(../images/menu/menu-4-q.png) center center no-repeat;
+}
 .loc-date-picker.el-input {
   width: 100%;
 }
@@ -713,6 +731,16 @@ input[type='text']:-ms-input-placeholder {
 }
 .loc-date-picker.el-input .el-input__prefix .el-input__icon {
   line-height: 26px;
+}
+.loc-date-picker.el-input .el-icon-date,
+.loc-date-picker.el-input .el-icon-time {
+  background: url(../images/icon/icon-date.png) center center no-repeat;
+}
+.loc-date-picker.el-input .el-icon-date::before,
+.loc-date-picker.el-input .el-icon-time::before,
+.loc-date-picker.el-input .el-icon-date::after,
+.loc-date-picker.el-input .el-icon-time::after {
+  display: none;
 }
 .loc-main-select .el-input--suffix .el-input__inner {
   padding-left: 8px;

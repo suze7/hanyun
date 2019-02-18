@@ -4,6 +4,7 @@ var app = new Vue({
     showMenu: true,
     menuList: [],
     text1: '',
+    value1: null,
     options: [
       {
         value: '选项1',
@@ -237,74 +238,99 @@ var app = new Vue({
         list: [
           {
             id: '1',
-            name: '自定义分组',
-            iconClass: 'menu-icon4-1',
+            name: '性能分析列表',
+            iconClass: 'menu-icon4-l',
             canTouch: false, //点开却不会选中
-            children: [
-              {
-                id: '1-1',
-                name: '自定义',
-                iconClass: '',
-                canTouch: true
-              },
-              {
-                id: '1-2',
-                name: '自定义1',
-                iconClass: '',
-                canTouch: true
-              }
-            ]
           },
           {
             id: '2',
-            name: '资源列表',
+            name: '报告分类管理',
             iconClass: 'menu-icon4-2',
-            canTouch: true,
+            canTouch: true
+          },
+          {
+            id: '3',
+            name: '可用性报告',
+            iconClass: 'menu-icon4-m',
+            canTouch: false,
             children: [
               {
-                id: '2-1',
-                name: '全部资源',
+                id: '3-1',
+                name: '网络设备可用状态',
                 iconClass: '',
                 canTouch: true
-              },
-              {
-                id: '2-2',
-                name: '网络设备',
-                iconClass: '',
-                canTouch: true,
-                children: [{
-                  id: '2-2-1',
-                  name: '网络设备1',
-                  iconClass: '',
-                  canTouch: true,
-                  num: ''
-                },{
-                  id: '2-2-2',
-                  name: '网络设备2',
-                  iconClass: '',
-                  canTouch: true,
-                  num: '1'
-                }]
               }
             ]
           },
           {
-            id: '3',
-            name: '端口管理',
-            iconClass: 'menu-icon4-3',
-            canTouch: true
-          },
-          {
             id: '4',
-            name: 'VLAN管理',
-            iconClass: 'menu-icon4-4',
-            canTouch: true
+            name: '告警统计报告',
+            iconClass: 'menu-icon4-n',
+            canTouch: false,
+            children: [
+              {
+                id: '4-1',
+                name: '资源告警统计',
+                iconClass: '',
+                canTouch: true
+              }
+            ]
           },
           {
             id: '5',
-            name: '链路管理',
-            iconClass: 'menu-icon4-5',
-            canTouch: true
+            name: 'TOPN报告',
+            iconClass: 'menu-icon4-o',
+            canTouch: false,
+            children: [
+              {
+                id: '5-1',
+                name: '网络设备TOPN',
+                iconClass: '',
+                canTouch: true
+              }
+            ]
+          },
+          {
+            id: '6',
+            name: '类别报告',
+            iconClass: 'menu-icon4-g',
+            canTouch: false,
+            children: [
+              {
+                id: '6-1',
+                name: '测试',
+                iconClass: '',
+                canTouch: true
+              }
+            ]
+          },
+          {
+            id: '7',
+            name: '资源性能报告',
+            iconClass: 'menu-icon4-p',
+            canTouch: false,
+            children: [
+              {
+                id: '7-1',
+                name: '维也纳测试',
+                iconClass: '',
+                canTouch: true
+              }
+            ]
+          },
+          {
+            id: '8',
+            name: '业务报告',
+            iconClass: 'menu-icon4-q',
+            canTouch: false,
+            children: [
+              {
+                id: '8-1',
+                name: '维也纳测试',
+                iconClass: '',
+                canTouch: true
+              }
+            ]
           }
         ]
       };
