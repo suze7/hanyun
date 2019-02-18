@@ -37,3 +37,45 @@
 .aside-left ul li img {
   margin: 0px 3px -2px 0px;
 }
+.aside-right .two-pie {
+  display: flex;
+}
+.aside-right .two-pie:last-child {
+  margin-top: 20px;
+}
+.aside-right .two-pie > ul li {
+  color: #8190B8;
+}
+.aside-bottom {
+  background: #2E4182;
+  padding: 20px;
+}
+.aside-bottom .title .p-title {
+  font-size: 14px;
+  margin: 0 0 50px 0;
+}
+.aside-bottom .title button {
+  width: 62px;
+  height: 20px;
+  font-size: 10px;
+  background: transparent;
+  border: 1px solid #52E5FB;
+  border-radius: 10px;
+  color: #52E5FB;
+  cursor: pointer;
+}
+.aside-bottom .title button.active {
+  background: linear-gradient(to bottom, #54E8FF, #2A7D80);
+  color: #fff;
+  border: 1px solid #2A7D80;
+}
+.aside-bottom .bottom-text ul {
+  margin-top: 44px;
+  text-indent: 30px;
+}
+.aside-bottom .bottom-text ul li {
+  margin: 16px 0;
+}
+.aside-bottom .bottom-text ul li > img {
+  margin: 0 0 -3px 6px;
+}

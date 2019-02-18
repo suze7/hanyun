@@ -149,9 +149,9 @@ var app = new Vue({
       console.log('确认新增');
     },
     openNewWindow(obj) {
-      console.log(obj);
-      sessionStorage.setItem('businessData', JSON.stringify(obj));
-      console.log(sessionStorage.getItem('businessData'));
+      // console.log(obj);
+      // sessionStorage.setItem('businessData', JSON.stringify(obj));
+      // console.log(sessionStorage.getItem('businessData'));
       let title = '业务资源详情';
       let screenWidth = window.screen.width;
       let screenHeight = window.screen.height;
