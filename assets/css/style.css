@@ -742,6 +742,9 @@ input[type='text']:-ms-input-placeholder {
 .loc-date-picker.el-input .el-icon-time::after {
   display: none;
 }
+.loc-date-drop .el-input__inner {
+  border: 1px solid #c0c4cc;
+}
 .loc-main-select .el-input--suffix .el-input__inner {
   padding-left: 8px;
 }

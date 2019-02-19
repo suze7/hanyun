@@ -4,7 +4,6 @@ var app = new Vue({
     showMenu: true,
     menuList: [],
     text1: '',
-    value1: null,
     options: [
       {
         value: '选项1',
@@ -30,126 +29,80 @@ var app = new Vue({
     value: '',
     leftMenuList: null,
     tableData: [{
-      spec: true,
-      name: '1监控系统数据库',
-      IP: '172.16.154.122',
-      type1: '2数据库',
-      type2: 'MySql',
-      level: '三级保障',
-      area: '默认管理域',
-      healthStatus: 0,
-      manageStatus: 1,
-      accessStatus: 2,
-      time: '5分钟'
+      name: '名称名称名称',
+      describe: 'ceve',
+      status: 1,
+      type: '未订阅',
+      createTime: '2018-10-17 00:44:20',
+      time: '2018-10-17 00:44:20'
     },{
-      spec: false,
-      name: '2监控系统数据库',
-      IP: '172.16.154.122',
-      type1: '1数据库',
-      type2: 'MySql',
-      level: '三级保障',
-      area: '默认管理域',
-      healthStatus: 1,
-      manageStatus: 2,
-      accessStatus: 0,
-      time: '5分钟'
+      name: '名称名称名称',
+      describe: 'ceve',
+      status: 0,
+      type: '未订阅',
+      createTime: '2018-10-17 00:44:20',
+      time: '2018-10-17 00:44:20'
     },{
-      spec: false,
-      name: '3监控系统数据库',
-      IP: '172.16.154.122',
-      type1: '3数据库',
-      type2: 'MySql',
-      level: '三级保障',
-      area: '默认管理域',
-      healthStatus: 2,
-      manageStatus: 0,
-      accessStatus: 1,
-      time: '5分钟'
+      name: '名称名称名称',
+      describe: 'ceve',
+      status: 0,
+      type: '未订阅',
+      createTime: '2018-10-17 00:44:20',
+      time: '2018-10-17 00:44:20'
     },{
-      spec: true,
-      name: '1监控系统数据库',
-      IP: '172.16.154.122',
-      type1: '2数据库',
-      type2: 'MySql',
-      level: '三级保障',
-      area: '默认管理域',
-      healthStatus: 0,
-      manageStatus: 1,
-      accessStatus: 2,
-      time: '5分钟'
+      name: '名称名称名称',
+      describe: 'ceve',
+      status: 0,
+      type: '未订阅',
+      createTime: '2018-10-17 00:44:20',
+      time: '2018-10-17 00:44:20'
     },{
-      spec: false,
-      name: '2监控系统数据库',
-      IP: '172.16.154.122',
-      type1: '1数据库',
-      type2: 'MySql',
-      level: '三级保障',
-      area: '默认管理域',
-      healthStatus: 1,
-      manageStatus: 2,
-      accessStatus: 0,
-      time: '5分钟'
+      name: '名称名称名称',
+      describe: 'ceve',
+      status: 0,
+      type: '未订阅',
+      createTime: '2018-10-17 00:44:20',
+      time: '2018-10-17 00:44:20'
     },{
-      spec: false,
-      name: '3监控系统数据库',
-      IP: '172.16.154.122',
-      type1: '3数据库',
-      type2: 'MySql',
-      level: '三级保障',
-      area: '默认管理域',
-      healthStatus: 2,
-      manageStatus: 0,
-      accessStatus: 1,
-      time: '5分钟'
+      name: '名称名称名称',
+      describe: 'ceve',
+      status: 0,
+      type: '未订阅',
+      createTime: '2018-10-17 00:44:20',
+      time: '2018-10-17 00:44:20'
     },{
-      spec: true,
-      name: '1监控系统数据库',
-      IP: '172.16.154.122',
-      type1: '2数据库',
-      type2: 'MySql',
-      level: '三级保障',
-      area: '默认管理域',
-      healthStatus: 0,
-      manageStatus: 1,
-      accessStatus: 2,
-      time: '5分钟'
+      name: '名称名称名称',
+      describe: 'ceve',
+      status: 0,
+      type: '未订阅',
+      createTime: '2018-10-17 00:44:20',
+      time: '2018-10-17 00:44:20'
     },{
-      spec: false,
-      name: '2监控系统数据库',
-      IP: '172.16.154.122',
-      type1: '1数据库',
-      type2: 'MySql',
-      level: '三级保障',
-      area: '默认管理域',
-      healthStatus: 1,
-      manageStatus: 2,
-      accessStatus: 0,
-      time: '5分钟'
+      name: '名称名称名称',
+      describe: 'ceve',
+      status: 0,
+      type: '未订阅',
+      createTime: '2018-10-17 00:44:20',
+      time: '2018-10-17 00:44:20'
     },{
-      spec: false,
-      name: '3监控系统数据库',
-      IP: '172.16.154.122',
-      type1: '3数据库',
-      type2: 'MySql',
-      level: '三级保障',
-      area: '默认管理域',
-      healthStatus: 2,
-      manageStatus: 0,
-      accessStatus: 1,
-      time: '5分钟'
+      name: '名称名称名称',
+      describe: 'ceve',
+      status: 0,
+      type: '未订阅',
+      createTime: '2018-10-17 00:44:20',
+      time: '2018-10-17 00:44:20'
     },{
-      spec: false,
-      name: '3监控系统数据库',
-      IP: '172.16.154.122',
-      type1: '3数据库',
-      type2: 'MySql',
-      level: '三级保障',
-      area: '默认管理域',
-      healthStatus: 2,
-      manageStatus: 0,
-      accessStatus: 1,
-      time: '5分钟'
+      name: '名称名称名称',
+      describe: 'ceve',
+      status: 0,
+      type: '未订阅',
+      createTime: '2018-10-17 00:44:20',
+      time: '2018-10-17 00:44:20'
     }],
+    showDetail: true,
+    checked: false,
+    tabNum: 0,
+    radio: null
   },
   created() {
     this.setMenuList();
@@ -355,6 +308,12 @@ var app = new Vue({
     },
     toggleShowMenu() {
       this.showMenu = !this.showMenu;
+    },
+    setShowDetail(flag) {
+      this.showDetail = flag;
+    },
+    changeTab(num) {
+      this.tabNum = num;
     }
   }
 });
