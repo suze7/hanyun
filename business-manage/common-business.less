@@ -40,6 +40,7 @@
 }
 .left-img-right-text {
   display: flex;
+  margin: 0 0 20px 0;
   >img {
     margin-right:8px;
   }
@@ -49,3 +50,36 @@
     }
   }
 }
+/* 时间选择 */
+.time-toggle {
+  display: inline-block;
+  border-left:1px solid #54E8FF;
+  >span {
+    display: inline-block;
+    padding:6px 7px;
+    border:1px solid #54E8FF;
+    border-width:1px 1px 1px 0;
+    cursor: pointer;
+    &.active {
+      background:linear-gradient(to bottom, #54E8FF, #2D3982);
+      color:#fff;
+    }
+  }
+}
+.left-right-table {
+  tr {
+    td {
+      padding:8px;
+      border-bottom:1px solid #2D3982;
+     &:first-child {
+       width:30%;
+       color:#8190B8;
+       background:#1B2352;
+     }
+     &:last-child {
+       background:#222B66;
+     }
+    }
+  }
+}
+

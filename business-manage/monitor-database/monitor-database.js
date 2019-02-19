@@ -9,14 +9,43 @@ var app = new Vue({
         pie: null
       },
       options: [
-        { value: '选项1', label: '黄金糕' },
-        { value: '选项2', label: '双皮奶' },
-        { value: '选项3', label: '蚵仔煎' },
-        { value: '选项4', label: '龙须面' },
-        { value: '选项5', label: '北京烤鸭' }
+        { value: '打开链接数', label: '打开链接数' },
+        { value: '主键命中率', label: '主键命中率' },
+        { value: '已用键缓冲区大小', label: '已用键缓冲区大小' },
+        { value: '键缓存大小', label: '键缓存大小' },
+        { value: '查询缓存命中率', label: '查询缓存命中率' },
+        { value: '每秒接收请求数', label: '每秒接收请求数' },
+        { value: '等待后获取表锁失败次数', label: '等待后获取表锁失败次数' },
+        { value: '激活线程数', label: '激活线程数' },
+        { value: '响应时长', label: '响应时长' }
       ],
       value: '',
       radio2: '1H',
+      database_array: [
+        { id: '1', label: 'INFORMATION_SCHEMA', count: 62, size: '163.23MB' },
+        { id: '2', label: 'MySQL', count: 62, size: '163.23KB' },
+        { id: '3', label: '网络', count: 62, size: '163.23MB' },
+        { id: '4', label: 'performance_schema', count: 62, size: '163.23GB' },
+        { id: '5', label: 'SYS', count: 62, size: '0.00B' },
+      ],
+      editTimeDialog: false,
+      time: {
+        value1: '',
+        value2: ''
+      },
+      time_array: [
+        { name: '1H', value: '1H' },
+        { name: '6H', value: '6H' },
+        { name: '1D', value: '1D' },
+        { name: '7D', value: '7D' },
+        { name: '30D', value: '30D' },
+        { name: '自定义', value: '自定义' },
+      ],
+      isActice: '1H',
+      signal_info: {
+        baseInfo: { status: '0', version: '2021-03-20', start_time: '23天', main_name: 'qingta', setup_folder: 'd:/kugou', system: 'windows' },
+        linePool: {  },
+      },
     }
   },
   created() {
@@ -26,6 +55,14 @@ var app = new Vue({
   methods: {
     toggleTime(evt) {
       console.log(evt);
+      this.isActice = evt;
+      switch (evt) {
+        case '自定义':
+          this.editTimeDialog = true;
+          break;
+        default:
+          break;
+      }
     },
     /* 业务可用率 */
     getBusinessUsingRight() {
@@ -52,11 +89,6 @@ var app = new Vue({
               color: '#fff'
             }
           },
-          splitLine: {
-            lineStyle: {
-              color: ['#ccc']
-            }
-          },
           axisTick: {
             show: false
           }
@@ -65,7 +97,7 @@ var app = new Vue({
           type: 'value',
           axisLabel: {
             fontSize: 12,
-            formatter: '{value} %'
+            formatter: '{value}'
           },
           axisLine: {
             show: false,
@@ -75,7 +107,7 @@ var app = new Vue({
           },
           splitLine: {
             lineStyle: {
-              color: ['#ccc']
+              color: ['#eee']
             }
           },
           axisTick: {
