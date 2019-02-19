@@ -8,9 +8,9 @@
   <title>瀚云智能运维管理平台</title>
   <link href="../assets/css/base.css" rel="stylesheet" />
   <link href="../assets/js/element-ui/index.css" rel="stylesheet" />
-  <link href="../assets/css/style.css" rel="stylesheet" />
   <link href="../assets/css/theme/main-theme.css" rel="stylesheet" />
   <!-- <link href="../assets/css/theme/light-theme.css" rel="stylesheet" /> -->
+  <link rel="stylesheet" href="./common-business.css">
   <link href="./business-overview/business-overview.css" rel="stylesheet" />
 </head>
 
@@ -29,9 +29,9 @@
         </span>
         <span>
           当前健康等级 :
-          <img v-if="business_data.status === '1'" src="../assets/images/icon/normal.png" />
-          <img v-if="business_data.status === '2'" src="../assets/images/icon/warning.png" />
-          <img v-if="business_data.status === '0'" src="../assets/images/icon/error.png" />
+          <img v-if="business_data.safety_level === '1'" src="../assets/images/icon/normal.png" />
+          <img v-if="business_data.safety_level === '2'" src="../assets/images/icon/warning.png" />
+          <img v-if="business_data.safety_level === '0'" src="../assets/images/icon/error.png" />
         </span>
         <span>
           宕机次数 : {{business_data.label}}

@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>瀚云智能运维管理平台</title>
+  <link href="../assets/css/base.css" rel="stylesheet" />
+  <link href="../assets/js/element-ui/index.css" rel="stylesheet" />
+  <link href="../assets/css/theme/main-theme.css" rel="stylesheet" />
+  <!-- <link href="../assets/css/theme/light-theme.css" rel="stylesheet" /> -->
+  <link rel="stylesheet" href="./common-business.css">
+  <link href="./monitor-database/monitor-database.css" rel="stylesheet" />
+</head>
+
+<body class="app">
+  <div id="homeIndex" style="height: 100%;">
+    <el-radio-group v-model="radio1" size="small">
+      <el-radio-button label="业务总览"></el-radio-button>
+    </el-radio-group>
+
+    <div>
+      <div class="overview-header">
+        <div>
+          <span>
+            业务名称 : {{business_data.label}}
+          </span>
+          <span>
+            当前健康等级 :
+            <img v-if="business_data.safety_level === '1'" src="../assets/images/icon/normal.png" />
+            <img v-if="business_data.safety_level === '2'" src="../assets/images/icon/warning.png" />
+            <img v-if="business_data.safety_level === '0'" src="../assets/images/icon/error.png" />
+          </span>
+          <span>
+            宕机次数 : {{business_data.label}}
+          </span>
+          <span>
+            MTTR : {{business_data.mttr}}
+          </span>
+          <span>
+            MTBF : {{business_data.mtbf}}
+          </span>
+        </div>
+        <div>
+          <span>
+            业务名称 : {{business_data.label}}
+          </span>
+          <span>
+            当前健 :
+            <img v-if="business_data.safety_level === '1'" src="../assets/images/icon/normal.png" />
+            <img v-if="business_data.safety_level === '2'" src="../assets/images/icon/warning.png" />
+            <img v-if="business_data.safety_level === '0'" src="../assets/images/icon/error.png" />
+          </span>
+          <span>
+            宕机次 : {{business_data.label}}
+          </span>
+          <span>
+            MTTR : {{business_data.mttr}}
+          </span>
+          <span>
+            MTBF : {{business_data.mtbf}}
+          </span>
+        </div>
+      </div>
+
+      <el-row :gutter="20">
+        <el-col :span="8">
+          <div class="grid-content bg-purple">
+            11
+          </div>
+        </el-col>
+        <el-col :span="8">
+          <div class="grid-content bg-purple">
+            22
+          </div>
+        </el-col>
+        <el-col :span="8">
+          <div class="grid-content bg-purple">
+            33
+          </div>
+        </el-col>
+      </el-row>
+      <el-row :gutter="20">
+        <el-col :span="12">
+          <div class="grid-content bg-purple">
+            <div style="margin-bottom:20px;">
+              <el-select v-model="value" popper-class="loc-main-selectbox" size="mini" class="loc-main-select"
+                placeholder="请选择">
+                <el-option v-for="item in options" :key="item.value" :label="item.label" :value="item.value">
+                </el-option>
+              </el-select>
+              <el-radio-group v-model="radio2" @change="toggleTime" size="mini">
+                <el-radio-button label="1H"></el-radio-button>
+                <el-radio-button label="6H"></el-radio-button>
+                <el-radio-button label="1D"></el-radio-button>
+                <el-radio-button label="7D"></el-radio-button>
+                <el-radio-button label="30D"></el-radio-button>
+                <el-radio-button label="自定义"></el-radio-button>
+              </el-radio-group>
+            </div>
+            <v-chart style="width:100%; height:200px" :options="multiple_pie.pie"></v-chart>
+          </div>
+        </el-col>
+        <el-col :span="12">
+          <div class="grid-content bg-purple">
+            <p class="p-title">提示信息</p>
+            <el-row :gutter="20">
+              <el-col :span="8">
+                <div class="left-img-right-text">
+                  <img src="../assets/images/icon/database.png" />
+                  <ul>
+                    <li>INFORMATION_SCHEMA</li>
+                    <li>表数据 : 64</li>
+                    <li>大小 : 260.00KB</li>
+                  </ul>
+                </div>
+              </el-col>
+              <el-col :span="8">
+                <div class="left-img-right-text">
+                  <img src="../assets/images/icon/database.png" />
+                  <ul>
+                    <li>INFORMATION_SCHEMA</li>
+                    <li>表数据 : 64</li>
+                    <li>大小 : 260.00KB</li>
+                  </ul>
+                </div>
+              </el-col>
+              <el-col :span="8">
+                <div class="left-img-right-text">
+                  <img src="../assets/images/icon/database.png" />
+                  <ul>
+                    <li>INFORMATION_SCHEMA</li>
+                    <li>表数据 : 64</li>
+                    <li>大小 : 260.00KB</li>
+                  </ul>
+                </div>
+              </el-col>
+              <el-col :span="8">
+                <div class="left-img-right-text">
+                  <img src="../assets/images/icon/database.png" />
+                  <ul>
+                    <li>INFORMATION_SCHEMA</li>
+                    <li>表数据 : 64</li>
+                    <li>大小 : 260.00KB</li>
+                  </ul>
+                </div>
+              </el-col>
+              <el-col :span="8">
+                <div class="left-img-right-text">
+                  <img src="../assets/images/icon/database.png" />
+                  <ul>
+                    <li>INFORMATION_SCHEMA</li>
+                    <li>表数据 : 64</li>
+                    <li>大小 : 260.00KB</li>
+                  </ul>
+                </div>
+              </el-col>
+            </el-row>
+            <!-- <el-row :gutter="20">
+              <el-col :span="8">
+                <div class="left-img-right-text">
+                  <img src="../assets/images/icon/database.png" />
+                  <ul>
+                    <li>INFORMATION_SCHEMA</li>
+                    <li>表数据 : 64</li>
+                    <li>大小 : 260.00KB</li>
+                  </ul>
+                </div>
+              </el-col>
+              <el-col :span="8">
+                <div class="left-img-right-text">
+                  <img src="../assets/images/icon/database.png" />
+                  <ul>
+                    <li>INFORMATION_SCHEMA</li>
+                    <li>表数据 : 64</li>
+                    <li>大小 : 260.00KB</li>
+                  </ul>
+                </div>
+              </el-col>
+            </el-row> -->
+          </div>
+        </el-col>
+      </el-row>
+    </div>
+  </div>
+</body>
+<script src="../assets/js/vue/vue.dev.js"></script>
+<script src="../assets/js/echart/echarts.min.js"></script>
+<script src="../assets/js/echart/vue-echart.js"></script>
+<script src="../assets/js/element-ui/index.js"></script>
+<script src="./monitor-database/monitor-database.js"></script>
+
+</html>

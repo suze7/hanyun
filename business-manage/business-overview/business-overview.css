@@ -8,6 +8,8 @@
   margin: 20px 0;
   background: #2D3982;
   padding: 16px 20px;
+  justify-content: space-around;
+  display: flex;
   box-sizing: border-box;
 }
 .overview-header > span {
