@@ -121,6 +121,18 @@
             <div class="loc-query-form">
               <p class="loc-query-name">开始时间</p>
               <el-date-picker
+                popper-class="loc-date-drop"
+                class="loc-date-picker"
+                v-model="value1"
+                type="datetime"
+                :clearable='false'
+                placeholder="选择日期时间">
+              </el-date-picker>
+            </div>
+            <div class="loc-query-form">
+              <p class="loc-query-name">结束时间</p>
+              <el-date-picker
+                popper-class="loc-date-drop"
                 class="loc-date-picker"
                 v-model="value1"
                 type="datetime"
@@ -134,18 +146,6 @@
               <el-button class="loc-btn reset-btn" type="primary">导出</el-button>
             </div>
           </div>
-          <!-- <div class="loc-opera-group">
-            <el-button type="primary" class="loc-btn icon-btn" @click="showDialog"><img src="../assets/images/icon/btn-icon-1.png" /><span>添加资源</span></el-button>
-
-            <el-button type="primary" class="loc-btn icon-btn"><img src="../assets/images/icon/btn-icon-1.png" /><span>加入资源组</span></el-button>
-
-            <el-button type="primary" class="loc-btn icon-btn"><img src="../assets/images/icon/btn-icon-2.png" /><span>开启</span></el-button>
-            <el-button type="primary" class="loc-btn icon-btn"><img src="../assets/images/icon/btn-icon-3.png" /><span>关闭</span></el-button>
-            <el-button type="primary" class="loc-btn icon-btn"><img src="../assets/images/icon/btn-icon-4.png" /><span>监控周期</span></el-button>
-            <el-button type="primary" class="loc-btn icon-btn"><img src="../assets/images/icon/btn-icon-5.png" /><span>保障策略</span></el-button>
-            <el-button type="primary" class="loc-btn icon-btn"><img src="../assets/images/icon/btn-icon-6.png" /><span>删除</span></el-button>
-            <el-button type="primary" class="loc-btn icon-btn"><img src="../assets/images/icon/btn-icon-7.png" /><span>重置资源类型</span></el-button>
-          </div> -->
           <!-- <el-table :data="tableData" size="mini" class="transparent-table transparent-white-table" style="width: 100%">
             <el-table-column class-name="my-checkbox" type="selection" width="46"></el-table-column>
             <el-table-column prop="name" label="名称" sortable min-width="124px">
@@ -250,118 +250,6 @@
         </div>
       </div>
     </div>
-
-    <el-dialog title="资源添加" :visible.sync="dialogVisible" width="1080px" :show-close="false" :before-close="handleClose"
-      class="blue-dialog my-edit-dialog">
-      <div class="resource-dialog">
-        <div class="my-edit-form">
-          <p class="my-edit-title">资源分类</p>
-          <div class="my-edit-group">
-            <span class="my-group-title">资源类别</span>
-            <div class="my-group-content">
-              <el-select v-model="value" popper-class="loc-main-selectbox loc-white-selectbox" class="loc-main-select loc-white-select"
-                placeholder="-请选择-">
-                <el-option v-for="item in options" :key="item.value" :label="item.label" :value="item.value">
-                </el-option>
-              </el-select>
-            </div>
-          </div>
-          <div class="my-edit-group">
-            <span class="my-group-title">资源类型</span>
-            <div class="my-group-content">
-              <el-select v-model="value" popper-class="loc-main-selectbox loc-white-selectbox" class="loc-main-select loc-white-select"
-                placeholder="-请选择-">
-                <el-option v-for="item in options" :key="item.value" :label="item.label" :value="item.value">
-                </el-option>
-              </el-select>
-            </div>
-          </div>
-        </div>
-        <div class="my-edit-form">
-          <p class="my-edit-title">基本信息</p>
-          <div class="my-edit-group">
-            <span class="my-group-title">资源名称</span>
-            <div class="my-group-content">
-              <input type="text" placeholder="资源名称" />
-            </div>
-          </div>
-          <div class="my-edit-group">
-            <span class="my-group-title">IP地址</span>
-            <div class="my-group-content">
-              <input type="text" placeholder="IP地址" />
-            </div>
-          </div>
-          <div class="my-edit-group">
-            <span class="my-group-title">管理域</span>
-            <div class="my-group-content">
-              <el-select v-model="value" popper-class="loc-main-selectbox loc-white-selectbox" class="loc-main-select loc-white-select"
-                placeholder="-请选择-">
-                <el-option v-for="item in options" :key="item.value" :label="item.label" :value="item.value">
-                </el-option>
-              </el-select>
-            </div>
-          </div>
-          <div class="my-edit-group">
-            <span class="my-group-title">资源组</span>
-            <div class="my-group-content">
-              <el-select v-model="value" popper-class="loc-main-selectbox loc-white-selectbox" class="loc-main-select loc-white-select"
-                placeholder="-请选择-">
-                <el-option v-for="item in options" :key="item.value" :label="item.label" :value="item.value">
-                </el-option>
-              </el-select>
-            </div>
-          </div>
-          <div class="my-edit-group">
-            <span class="my-group-title">监控周期</span>
-            <div class="my-group-content">
-              <el-select v-model="value" popper-class="loc-main-selectbox loc-white-selectbox" class="loc-main-select loc-white-select"
-                placeholder="-请选择-">
-                <el-option v-for="item in options" :key="item.value" :label="item.label" :value="item.value">
-                </el-option>
-              </el-select>
-            </div>
-            <div class="my-group-content">
-              <el-select v-model="value" popper-class="loc-main-selectbox loc-white-selectbox" class="loc-main-select loc-white-select"
-                placeholder="-请选择-">
-                <el-option v-for="item in options" :key="item.value" :label="item.label" :value="item.value">
-                </el-option>
-              </el-select>
-            </div>
-          </div>
-        </div>
-        <div class="my-edit-form">
-          <p class="my-edit-title">访问配置</p>
-          <div class="my-edit-group">
-            <span class="my-group-title">访问协议</span>
-            <div class="my-group-content">
-              <input type="text" placeholder="访问协议" />
-            </div>
-          </div>
-          <div class="my-edit-group">
-            <span class="my-group-title">SNMP端口</span>
-            <div class="my-group-content">
-              <input type="text" placeholder="SNMP端口" />
-            </div>
-          </div>
-          <div class="my-edit-group">
-            <span class="my-group-title">重试次数</span>
-            <div class="my-group-content">
-              <input type="text" placeholder="重试次数" />
-            </div>
-          </div>
-          <div class="my-edit-group">
-            <span class="my-group-title">访问协议</span>
-            <div class="my-group-content">
-              <input type="text" placeholder="访问协议" />
-            </div>
-          </div>
-        </div>
-      </div>
-      <span slot="footer" class="dialog-footer">
-        <el-button class="dialog-btn cancel-btn" @click="dialogVisible = false">取消</el-button>
-        <el-button class="dialog-btn submit-btn" type="primary" @click="submitDialog()">确认</el-button>
-      </span>
-    </el-dialog>
   </div>
 </body>
 <!-- <script src="../assets/js/lodash/lodash.js"></script> -->
