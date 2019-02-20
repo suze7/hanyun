@@ -25,8 +25,8 @@
 
 .loc-index-content .loc-right-content {
   .report-manage-content {
+    position: relative;
     padding-top: 0;
-
     .my-edit-form {
       padding: 24px 0 0 0;
 
@@ -67,7 +67,6 @@
 .my-show-list-form {
   margin: 16px 0 8px;
   padding: 12px 14px;
-
   .my-show-item {
     position: relative;
     display: inline-block;
@@ -77,7 +76,6 @@
     line-height: 30px;
     background: #9DB1FF;
     font-size: 12px;
-
     .my-show-icon {
       position: absolute;
       top: 8px;
@@ -87,9 +85,40 @@
   }
 }
 
+.loc-progress-form {
+  padding: 20px 0 4px 0;
+  font-size: 12px;
+  .loc-progress-group {
+    margin: 8px 0;
+    .loc-progress-name,
+    .loc-progress-content,
+    .loc-progress-detail {
+      vertical-align: middle;
+      display: inline-block;
+    }
+    .loc-progress-name {
+      margin-right: 10px;
+      width: 200px;
+      color: rgba(255, 255, 255, .6);
+      text-align: right;
+    }
+    .loc-progress-content {
+      width: calc(100% - 323px);
+    }
+  }
+}
+
+.my-progress {
+  .el-progress-bar__inner {
+    background: linear-gradient(270deg, #54e8ff 0%, #3760ff 100%);
+  }
+  .el-progress-bar__outer {
+    background: rgba(0, 0, 0, .2);
+  }
+}
+
 .report-tab-form {
   padding-top: 8px;
-
   .my-tab-btn {
     margin-right: 4px;
     width: 70px;
@@ -155,4 +184,58 @@
 
 .report-input {
   border-radius: 4px;
+}
+
+.report-inactive {
+  opacity: 0.7;
+}
+
+.report-ava-reset {
+  vertical-align: middle;
+  margin-left: 36px; 
+}
+
+.report-dialog-table {
+  margin: 16px 20px 0;
+}
+
+.report-ava-footer {
+  position: absolute;
+  right: 30px;
+  bottom: 32px;
+}
+
+.report-relative {
+  position: relative;
+}
+
+.loc-index-content {
+  .report-top-content {
+    margin-bottom: 10px;
+    padding-top: 16px;
+    height: 60px;
+    .report-btn-form {
+      float: right;
+      .el-button+.el-button {
+        margin-left: 6px;
+      }
+    }
+    .loc-query-form {
+      margin-right: 20px;
+      display: inline-block;
+      font-size: 12px;
+      .loc-query-name {
+        margin-right: 6px;
+        display: inline-block;
+        min-width: 68px;
+        text-align: right;
+      }
+      .report-content {
+        width: 160px;
+      }
+    }
+    + .loc-manage-content {
+      height: calc(100% - 70px);
+    }
+  }
 }
