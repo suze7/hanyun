@@ -137,6 +137,7 @@ input[type='text']:-ms-input-placeholder {
 .loc-index-content {
   width: 100%;
   height: calc(100% - 80px);
+  overflow: auto;
 }
 .loc-index-content .loc-left-menu {
   position: relative;
@@ -182,6 +183,7 @@ input[type='text']:-ms-input-placeholder {
   transform: scale(0.76);
 }
 .loc-index-content .loc-right-content {
+  overflow: auto;
   vertical-align: top;
   float: right;
   padding: 20px;
