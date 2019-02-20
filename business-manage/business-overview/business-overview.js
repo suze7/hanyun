@@ -393,12 +393,18 @@ var app = new Vue({
     },
     openNewPage(obj) {
       console.log(obj);
-      switch (obj) {
+      let title = '业务资源详情';
+      let screenWidth = window.screen.width;
+      let screenHeight = window.screen.height;
+      let url = '';
+      switch (obj.name) {
         case '监控系统数据库':
-
+          url = `./monitor-database.html?page=${obj.name}`;
+          window.open(url, title, `width=${screenWidth}, height=${screenHeight} + 200,top=20,left=30,toolbar=no,menubar=no,location=no,status=no`);
           break;
         case '核心服务':
-
+        url = `./core-service.html?page=${obj.name}`;
+        window.open(url, title, `width=${screenWidth}, height=${screenHeight} + 200,top=20,left=30,toolbar=no,menubar=no,location=no,status=no`);
           break;
         case '采集服务':
 

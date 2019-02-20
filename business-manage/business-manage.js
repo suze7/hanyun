@@ -161,8 +161,8 @@ var app = new Vue({
         window.open(url, title, `width=${screenWidth}, height=${screenHeight} - 50,top=20,left=30,toolbar=no,menubar=no,scrollbars=no,resizable=no,location=no,status=no`);
         // }
       } else {
-        let height = 790;
-        let width = 1300;
+        let height = 850;
+        let width = 1366;
         let top = (screenHeight - height) / 2 * 0.8;
         if (top < 0) {
           top = 0;
