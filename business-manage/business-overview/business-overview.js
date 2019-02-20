@@ -27,16 +27,16 @@ var app = new Vue({
       },
       alarm_tableData: [
         { alarm_id: '11', alarm_name: '2物理内存使用率异常', levle: '1', alarm_type: '资源负载检测', alarm_status: '1', safety_level: '2', product_time: '2019-02-04', continued_time: '16分23秒', confirmor: '16', confirm_time: '2019-02-05', alarm_content: '百分比 大于等于 50% 触发 严重' },
-        { alarm_id: '11', alarm_name: '物理内存使用率异常', levle: '1', alarm_type: '资源负载检测', alarm_status: '1', safety_level: '2', product_time: '2019-02-04', continued_time: '16分23秒', confirmor: '16', confirm_time: '2019-02-05', alarm_content: '百分比 大于等于 50% 触发 严重' },
+        { alarm_id: '11', alarm_name: '物理内存使用率异常', levle: '1', alarm_type: '资源负载检测', alarm_status: '1', safety_level: '1', product_time: '2019-02-04', continued_time: '16分23秒', confirmor: '16', confirm_time: '2019-02-05', alarm_content: '百分比 大于等于 50% 触发 严重' },
         { alarm_id: '11', alarm_name: '1物理内存使用率异常', levle: '0', alarm_type: '资源负载检测', alarm_status: '1', safety_level: '2', product_time: '2019-02-04', continued_time: '16分23秒', confirmor: '16', confirm_time: '2019-02-05', alarm_content: '百分比 大于等于 50% 触发 严重' },
-        { alarm_id: '11', alarm_name: '物理内存使用率异常', levle: '1', alarm_type: '资源负载检测', alarm_status: '1', safety_level: '2', product_time: '2019-02-04', continued_time: '16分23秒', confirmor: '16', confirm_time: '2019-02-05', alarm_content: '百分比 大于等于 50% 触发 严重' },
+        { alarm_id: '11', alarm_name: '物理内存使用率异常', levle: '1', alarm_type: '资源负载检测', alarm_status: '1', safety_level: '0', product_time: '2019-02-04', continued_time: '16分23秒', confirmor: '16', confirm_time: '2019-02-05', alarm_content: '百分比 大于等于 50% 触发 严重' },
         { alarm_id: '11', alarm_name: '3物理内存使用率异常', levle: '1', alarm_type: '资源负载检测', alarm_status: '1', safety_level: '2', product_time: '2019-02-04', continued_time: '16分23秒', confirmor: '16', confirm_time: '2019-02-05', alarm_content: '百分比 大于等于 50% 触发 严重' },
         { alarm_id: '11', alarm_name: '物理内存使用率异常', levle: '2', alarm_type: '资源负载检测', alarm_status: '1', safety_level: '2', product_time: '2019-02-04', continued_time: '16分23秒', confirmor: '16', confirm_time: '2019-02-05', alarm_content: '百分比 大于等于 50% 触发 严重' },
       ],
     }
   },
   created() {
-    this.business_data = { business_id: '11', label: 'Openstack V3', healthy: '98%', status: '1', response: '37ms', busyness: '2%', using: '100%', downtime_cs: '0', downtime_sc: '16分23秒', mttr: '16分23秒', mtbf: '16分23秒', used_capacity: '58.31GB/339.99GB', calc_capacity: '33%' }
+    this.business_data = { business_id: '11', label: 'Openstack V3', healthy: '98%', status: '1', safety_level: '2', response: '37ms', busyness: '2%', using: '100%', downtime_cs: '0', downtime_sc: '16分23秒', mttr: '16分23秒', mtbf: '16分23秒', used_capacity: '58.31GB/339.99GB', calc_capacity: '33%' }
     // this.business_data = JSON.parse(sessionStorage.getItem('businessData'));
     console.log(this.business_data);
     this.getAlarmStatics();
@@ -267,54 +267,118 @@ var app = new Vue({
       }
       this.multiple_pie.pie3 = {
         color: ['#54E8FF'],
-        grid: {
-          left: '150',
-          right: '50',
-          top: '50',
-          bottom: '50'
-        },
         tooltip: {
-          trigger: 'axis',
-          formatter: function (params) {
-            params = params[0];
-            var date = new Date(params.name);
-            return date.getDate() + '/' + (date.getMonth() + 1) + '/' + date.getFullYear() + ' : ' + params.value[1];
-          },
-          axisPointer: {
-            animation: false
-          }
+          trigger: 'axis'
+        },
+        grid: {
+          left: '120',
+          right: '20',
+          top: '20',
+          bottom: '20'
         },
         xAxis: {
-          type: 'time',
-          splitLine: {
-            show: false
+          type: 'category',
+          boundaryGap: false,
+          data: ['00:00', '02:33', '03:33', '04:33', '05:33', '06:33', '08:33'],
+          axisLabel: {
+            fontSize: 12
           },
           axisLine: {
             lineStyle: {
               color: '#fff'
             }
+          },
+          splitLine: {
+            lineStyle: {
+              color: ['#ccc']
+            }
+          },
+          axisTick: {
+            show: false
           }
         },
         yAxis: {
           type: 'value',
-          boundaryGap: [0, '100%'],
-          splitLine: {
-            show: false
+          axisLabel: {
+            fontSize: 12,
+            formatter: '{value} %'
           },
           axisLine: {
+            show: false,
             lineStyle: {
               color: '#fff'
             }
+          },
+          splitLine: {
+            lineStyle: {
+              color: ['#ccc']
+            }
+          },
+          axisTick: {
+            show: false
           }
         },
-        series: [{
-          name: '模拟数据',
-          type: 'line',
-          showSymbol: false,
-          hoverAnimation: false,
-          data: data
-        }]
+        series: [
+          {
+            name: '模拟数据',
+            type: 'line',
+            areaStyle: {
+              color: '#304C8E'
+            },
+            data: [11, 31, 15, 23, 52, 16, 20]
+          }
+        ]
       };
+      // this.multiple_pie.pie3 = {
+      //   color: ['#54E8FF'],
+      //   grid: {
+      //     left: '150',
+      //     right: '50',
+      //     top: '50',
+      //     bottom: '50'
+      //   },
+      //   tooltip: {
+      //     trigger: 'axis',
+      //     formatter: function (params) {
+      //       params = params[0];
+      //       var date = new Date(params.name);
+      //       return date.getDate() + '/' + (date.getMonth() + 1) + '/' + date.getFullYear() + ' : ' + params.value[1];
+      //     },
+      //     axisPointer: {
+      //       animation: false
+      //     }
+      //   },
+      //   xAxis: {
+      //     type: 'time',
+      //     splitLine: {
+      //       show: false
+      //     },
+      //     axisLine: {
+      //       lineStyle: {
+      //         color: '#fff'
+      //       }
+      //     }
+      //   },
+      //   yAxis: {
+      //     type: 'value',
+      //     boundaryGap: [0, '100%'],
+      //     splitLine: {
+      //       show: false
+      //     },
+      //     axisLine: {
+      //       lineStyle: {
+      //         color: '#fff'
+      //       }
+      //     }
+      //   },
+      //   series: [{
+      //     name: '模拟数据',
+      //     type: 'line',
+      //     showSymbol: false,
+      //     hoverAnimation: false,
+      //     data: data
+      //   }]
+      // };
     },
     randomData() {
       this.pie3.now = new Date(+this.pie3.now + this.pie3.oneDay);
@@ -331,7 +395,7 @@ var app = new Vue({
       console.log(obj);
       switch (obj) {
         case '监控系统数据库':
-          
+
           break;
         case '核心服务':
 
