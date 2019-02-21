@@ -9,6 +9,7 @@ var app = new Vue({
       radio3: '总览',
       business_data: null,
       multiple_pie: {
+        gauge: null,
         pie: null
       },
       options: [
@@ -74,6 +75,8 @@ var app = new Vue({
   },
   created() {
     this.business_data = { business_id: '11', label: 'Openstack V3', healthy: '98%', status: '1', safety_level: '2', response: '37ms', busyness: '2%', using: '100%', downtime_cs: '0', downtime_sc: '16分23秒', mttr: '16分23秒', mtbf: '16分23秒', used_capacity: '58.31GB/339.99GB', calc_capacity: '33%' }
+  },
+  mounted() {
     this.getBusinessUsingRight();
     this.drawWaveBall();
   },
@@ -123,7 +126,6 @@ var app = new Vue({
         if (percent1 == 58) {
           clearInterval(interval1);
         }
-        console.log(percent1);
       }, 30);
       // interval2 = setInterval(function () {
       //   percent2++;
@@ -148,6 +150,28 @@ var app = new Vue({
     },
     /* 业务可用率 */
     getBusinessUsingRight() {
+      // cpu使用率
+      this.multiple_pie.gauge = {
+        tooltip: {
+          formatter: "{a} <br/>{b} : {c}%"
+        },
+        series: [
+          {
+            name: '业务指标',
+            type: 'gauge',
+            startAngle: -180,
+            endAngle: 180,
+            axisLine: {
+              show: false,
+            },
+            axisTick: {
+              show: false,
+            },
+            detail: { formatter: '{value}%' },
+            data: [{ value: 50, name: '完成率' }]
+          }
+        ]
+      };
       this.multiple_pie.pie = {
         color: ['#54E8FF'],
         tooltip: {

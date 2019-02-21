@@ -65,7 +65,7 @@
           <el-col :span="8">
             <div class="grid-content bg-purple" style="height:285px;">
               <p class="p-title" style="margin-bottom:20px;">CPU使用率</p>
-
+              <v-chart style="width:100%; height:200px" :options="multiple_pie.gauge"></v-chart>
             </div>
           </el-col>
           <el-col :span="8">
@@ -138,115 +138,75 @@
                   </tr>
                 </table>
 
+                <p style="margin:8px 0;">用户请求</p>
+                <table class="left-right-table" border="1" width="100%">
+                  <tr>
+                    <td>最大应答时间</td>
+                    <td>1分5秒</td>
+                  </tr>
+                  <tr>
+                    <td>平均应答时间</td>
+                    <td>50.11000061035156毫秒</td>
+                  </tr>
+                  <tr>
+                    <td>总请求次数</td>
+                    <td>105467</td>
+                  </tr>
+                  <tr>
+                    <td>请求次数（秒）</td>
+                    <td>0</td>
+                  </tr>
+                  <tr>
+                    <td>发送字节数（秒）</td>
+                    <td>0</td>
+                  </tr>
+                  <tr>
+                    <td>接收字节数（秒）</td>
+                    <td>0</td>
+                  </tr>
+                  <tr>
+                    <td>总发送字节数</td>
+                    <td>319.15MB</td>
+                  </tr>
+                  <tr>
+                    <td>总接收字节数</td>
+                    <td>864.36KB</td>
+                  </tr>
+                </table>
+
                 <p style="margin:8px 0;">线程池</p>
                 <table class="left-right-table" border="1" width="100%">
                   <tr>
-                    <td>当前线程数</td>
+                    <td>活动线程数</td>
                     <td>0</td>
                   </tr>
                   <tr>
-                    <td>处理请求线程数</td>
+                    <td>线程峰值</td>
                     <td>0</td>
                   </tr>
                   <tr>
-                    <td>缓存线程数</td>
+                    <td>守护线程数</td>
                     <td>0</td>
                   </tr>
                   <tr>
-                    <td>缓存大小</td>
-                    <td>0</td>
-                  </tr>
-                </table>
-
-                <p style="margin:8px 0;">表锁统计</p>
-                <table class="left-right-table" border="1" width="100%">
-                  <tr>
-                    <td>直接锁</td>
-                    <td>0</td>
-                  </tr>
-                  <tr>
-                    <td>等待锁</td>
-                    <td>0</td>
-                  </tr>
-                  <tr>
-                    <td>获取行锁平均时间</td>
-                    <td>0</td>
-                  </tr>
-                  <tr>
-                    <td>获取行锁最大时间</td>
-                    <td>0</td>
-                  </tr>
-                  <tr>
-                    <td>行锁等待次数</td>
-                    <td>0</td>
+                    <td>总线程数</td>
+                    <td>138970</td>
                   </tr>
                 </table>
 
-                <p style="margin:8px 0;">缓冲池</p>
+                <p style="margin:8px 0;">类</p>
                 <table class="left-right-table" border="1" width="100%">
                   <tr>
-                    <td>缓冲池总页数</td>
+                    <td>已装入数</td>
+                    <td>13443</td>
+                  </tr>
+                  <tr>
+                    <td>已经卸载总数</td>
                     <td>0</td>
                   </tr>
                   <tr>
-                    <td>缓冲池数据页</td>
-                    <td>0</td>
-                  </tr>
-                  <tr>
-                    <td>缓冲池脏数据页</td>
-                    <td>0</td>
-                  </tr>
-                  <tr>
-                    <td>缓冲池剩余空间页</td>
-                    <td>0</td>
-                  </tr>
-                </table>
-
-                <p style="margin:8px 0;">查询统计</p>
-                <table class="left-right-table" border="1" width="100%">
-                  <tr>
-                    <td>删除的查询数/分</td>
-                    <td>0</td>
-                  </tr>
-                  <tr>
-                    <td>插入的查询数/分</td>
-                    <td>0</td>
-                  </tr>
-                  <tr>
-                    <td>选择的查询数/分</td>
-                    <td>0</td>
-                  </tr>
-                  <tr>
-                    <td>更新的查询数/分</td>
-                    <td>0</td>
-                  </tr>
-                </table>
-
-                <p style="margin:8px 0;">连接统计</p>
-                <table class="left-right-table" border="1" width="100%">
-                  <tr>
-                    <td>打开连接数/分</td>
-                    <td>0</td>
-                  </tr>
-                  <tr>
-                    <td>失败连接数/分</td>
-                    <td>0</td>
-                  </tr>
-                  <tr>
-                    <td>中断客户端连接数/分</td>
-                    <td>0</td>
-                  </tr>
-                </table>
-
-                <p style="margin:8px 0;">事务处理</p>
-                <table class="left-right-table" border="1" width="100%">
-                  <tr>
-                    <td>提交事务数/分</td>
-                    <td>0</td>
-                  </tr>
-                  <tr>
-                    <td>回滚事务数/分</td>
-                    <td>0</td>
+                    <td>已装入总数</td>
+                    <td>16565</td>
                   </tr>
                 </table>
               </div>
@@ -361,7 +321,7 @@
   </div>
 </body>
 <script src="../assets/js/vue/vue.dev.js"></script>
-<script src="../assets/js/echart/echarts.min.js"></script>
+<script src="../assets/js/echart/echarts.new.js"></script>
 <script src="../assets/js/echart/vue-echart.js"></script>
 <script src="../assets/js/element-ui/index.js"></script>
 <script src="./core-service/core-service.js"></script>
