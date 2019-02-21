@@ -14,40 +14,45 @@
 .loc-index-content .loc-equip-bread + div.loc-manage-content {
   height: calc(100% - 32px);
 }
-.loc-index-content .loc-right-content .report-manage-content {
+.loc-index-content .loc-right-content div.report-manage-content {
   position: relative;
   padding-top: 0;
 }
-.loc-index-content .loc-right-content .report-manage-content .my-edit-form {
+.loc-index-content .loc-right-content div.report-manage-content.report-auto-height {
+  padding-bottom: 100px;
+  height: auto;
+  min-height: calc(100% - 32px);
+}
+.loc-index-content .loc-right-content div.report-manage-content .my-edit-form {
   padding: 24px 0 0 0;
 }
-.loc-index-content .loc-right-content .report-manage-content .my-edit-form .my-edit-title {
+.loc-index-content .loc-right-content div.report-manage-content .my-edit-form .my-edit-title {
   padding: 0 0 8px;
 }
-.loc-index-content .loc-right-content .report-manage-content .my-edit-group {
+.loc-index-content .loc-right-content div.report-manage-content .my-edit-group {
   margin: 8px 40px 8px 0;
 }
-.loc-index-content .loc-right-content .report-manage-content .my-edit-group .my-group-title {
+.loc-index-content .loc-right-content div.report-manage-content .my-edit-group .my-group-title {
   min-width: auto;
   color: #fff;
 }
-.loc-index-content .loc-right-content .report-manage-content .my-edit-group .my-group-content {
+.loc-index-content .loc-right-content div.report-manage-content .my-edit-group .my-group-content {
   margin: 0;
   width: 160px;
   line-height: 28px;
 }
-.loc-index-content .loc-right-content .report-manage-content .my-edit-group .my-group-content .report-checkbox {
+.loc-index-content .loc-right-content div.report-manage-content .my-edit-group .my-group-content .report-checkbox {
   margin-left: 8px;
 }
-.loc-index-content .loc-right-content .report-manage-content .my-edit-group .my-long-content {
+.loc-index-content .loc-right-content div.report-manage-content .my-edit-group .my-long-content {
   width: 320px;
 }
-.loc-index-content .loc-right-content .report-manage-content .report-opera-group {
+.loc-index-content .loc-right-content div.report-manage-content .report-opera-group {
   margin: 8px 0;
 }
 .my-show-list-form {
   margin: 16px 0 8px;
-  padding: 12px 14px;
+  padding: 12px 10px 12px 14px;
 }
 .my-show-list-form .my-show-item {
   position: relative;
@@ -66,11 +71,16 @@
   font-size: 16px;
 }
 .loc-progress-form {
-  padding: 20px 0 4px 0;
+  margin: 20px 0;
+  padding: 20px 0 10px 0;
   font-size: 12px;
 }
+.loc-progress-form .loc-progress-title {
+  padding: 0 0 18px 20px;
+}
 .loc-progress-form .loc-progress-group {
-  margin: 8px 0;
+  padding: 9px 0;
+  color: rgba(255, 255, 255, 0.6);
 }
 .loc-progress-form .loc-progress-group .loc-progress-name,
 .loc-progress-form .loc-progress-group .loc-progress-content,
@@ -81,11 +91,14 @@
 .loc-progress-form .loc-progress-group .loc-progress-name {
   margin-right: 10px;
   width: 200px;
-  color: rgba(255, 255, 255, 0.6);
   text-align: right;
 }
 .loc-progress-form .loc-progress-group .loc-progress-content {
   width: calc(100% - 323px);
+}
+.loc-progress-form .loc-progress-group .loc-progress-detail {
+  margin-left: 12px;
+  min-width: 50px;
 }
 .my-progress .el-progress-bar__inner {
   background: linear-gradient(270deg, #54e8ff 0%, #3760ff 100%);
@@ -98,11 +111,17 @@
 }
 .report-tab-form .my-tab-btn {
   margin-right: 4px;
-  width: 70px;
+  padding: 0 12px;
+  width: auto;
+  min-width: 70px;
+}
+.report-tab-form.report-tab-div {
+  padding-bottom: 8px;
 }
 .report-edit-left {
+  vertical-align: top;
+  display: inline-block;
   width: 80px;
-  float: left;
   line-height: 24px;
 }
 .report-edit-left .report-checkbox {
@@ -113,8 +132,8 @@
   font-size: 12px;
 }
 .report-edit-right {
-  float: left;
-  width: calc(100% - 80px);
+  display: inline-block;
+  width: calc(100% - 90px);
 }
 .report-edit-content {
   margin-bottom: 20px;
@@ -194,4 +213,41 @@
 }
 .loc-index-content .report-top-content + .loc-manage-content {
   height: calc(100% - 70px);
+}
+.report-margin-div {
+  margin: 0 20px 10px;
+}
+.report-progress-select {
+  margin-left: 30px;
+  width: 160px;
+}
+.loc-pagination {
+  margin-top: 14px;
+}
+.report-margin-table {
+  margin: 8px 0 16px;
+}
+.report-margin-table input[type="text"] {
+  width: 64px;
+  height: 24px;
+}
+.report-type-table {
+  margin-bottom: 20px;
+}
+.report-select-tip {
+  margin: 0;
+  padding: 8px 0;
+}
+.report-checkbox-div .report-checkbox-form {
+  display: inline-block;
+  margin: 10px 0;
+  width: 143px;
+}
+.report-checkbox-div .report-checkbox-form .report-checkbox {
+  color: inherit;
+  font-size: 12px;
+}
+.report-checkbox-div .report-checkbox-form .report-checkbox .el-checkbox__label {
+  padding-left: 8px;
+  font-size: 100%;
 }

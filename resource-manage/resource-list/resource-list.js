@@ -153,7 +153,7 @@ var app = new Vue({
   created() {
     this.setMenuList();
     this.setLeftMenuList();
-    this.leftMenuList.selectMenu = this.leftMenuList.list[0];
+    this.leftMenuList.selectMenu = this.leftMenuList.list[1];
   },
   mounted() {},
   methods: {
@@ -325,9 +325,6 @@ var app = new Vue({
       }
     },
     afterSelect(menu) {
-      if (this.leftMenuList.selectMenu.id.indexOf(menu.id) === 0) {
-        return;
-      }
       if (menu.id === '1' || menu.id.indexOf('1-') === 0) {
         window.location.href = './resource-manage.html';
       } else if (menu.id === '2' || menu.id.indexOf('2-') === 0) {
