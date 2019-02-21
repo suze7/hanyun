@@ -12,89 +12,89 @@
   <link href="../assets/css/style.css" rel="stylesheet" />
   <!-- <link href="../assets/css/theme/light-theme.css" rel="stylesheet" /> -->
   <link rel="stylesheet" href="./common-business.css">
-  <link href="./monitor-database/monitor-database.css" rel="stylesheet" />
+  <link href="./core-service/core-service.css" rel="stylesheet" />
 </head>
 
 <body class="app">
   <div id="homeIndex" style="height: 100%;">
     <div v-if="overview">
-      <el-radio-group v-model="radio1" size="small">
+      <el-radio-group v-model="radio1" @change="toggleBtn" size="small">
         <el-radio-button label="业务总览"></el-radio-button>
+        <el-radio-button label="WEB应用"></el-radio-button>
+        <el-radio-button label="连接器"></el-radio-button>
       </el-radio-group>
-      <div>
+      <div v-if="radio1==='业务总览'">
         <div class="overview-header">
           <div>
             <span>
-              业务名称 : {{business_data.label}}
+              资源名称 : {{business_data.label}}
             </span>
             <span>
-              当前健康等级 :
-              <img v-if="business_data.safety_level === '1'" src="../assets/images/icon/normal.png" />
-              <img v-if="business_data.safety_level === '2'" src="../assets/images/icon/warning.png" />
-              <img v-if="business_data.safety_level === '0'" src="../assets/images/icon/error.png" />
+              资源类型 : Tomcat的
             </span>
             <span>
-              宕机次数 : {{business_data.label}}
+              资源类型 : {{business_data.label}}
             </span>
             <span>
-              MTTR : {{business_data.mttr}}
-            </span>
-            <span>
-              MTBF : {{business_data.mtbf}}
+              监控周期 : {{business_data.mttr}}
             </span>
           </div>
           <div>
             <span>
-              业务名称 : {{business_data.label}}
-            </span>
-            <span>
-              当前健 :
+              管理状态 :
               <img v-if="business_data.safety_level === '1'" src="../assets/images/icon/normal.png" />
               <img v-if="business_data.safety_level === '2'" src="../assets/images/icon/warning.png" />
               <img v-if="business_data.safety_level === '0'" src="../assets/images/icon/error.png" />
             </span>
             <span>
-              宕机次 : {{business_data.label}}
+              通断状态 :
+              <img v-if="business_data.safety_level === '1'" src="../assets/images/icon/normal.png" />
+              <img v-if="business_data.safety_level === '2'" src="../assets/images/icon/warning.png" />
+              <img v-if="business_data.safety_level === '0'" src="../assets/images/icon/error.png" />
             </span>
             <span>
-              MTTR : {{business_data.mttr}}
+              所属域 : {{business_data.label}}
             </span>
             <span>
-              MTBF : {{business_data.mtbf}}
+              最后采集时间 : {{business_data.mttr}}
             </span>
           </div>
         </div>
 
         <el-row :gutter="20">
           <el-col :span="8">
-            <div class="grid-content bg-purple" style="height:285px; text-align: center;">
-              <div class="image-font">
-                <div class="top-font">接收（秒）1.29KB</div>
-                <img src="../assets/images/icon/zygj.png" alt="">
-                <div class="middle-font">
-                  <p>总接收字节：2.54GB</p>
-                  <p>总发送字节：3.39GB</p>
-                </div>
-                <div class="bottom-font">
-                  <p>发送（秒）：3.39GB</p>
-                </div>
-              </div>
+            <div class="grid-content bg-purple" style="height:285px;">
+              <p class="p-title" style="margin-bottom:20px;">CPU使用率</p>
+              <v-chart style="width:100%; height:200px" :options="multiple_pie.gauge"></v-chart>
             </div>
           </el-col>
           <el-col :span="8">
-            <div class="grid-content bg-purple" style="height:285px; text-align: center;">
-              <el-row :gutter="20" style="margin-top:83px;">
-                <el-col :span="8">
-                  <div class="circle bg-green">55</div>
-                  <p class="bottom-text">数据库总数</p>
-                </el-col>
-                <el-col :span="8">
-                  <div class="circle bg-orange">3.0G</div>
-                  <p class="bottom-text">数据库大小</p>
-                </el-col>
-                <el-col :span="8">
-                  <div class="circle bg-skyblue">77</div>
-                  <p class="bottom-text">表总数</p>
+            <div class="grid-content bg-purple" style="height:285px;">
+              <el-row :gutter="20" style="margin-top:50px;">
+                <el-col :span="12">
+                  <svg x="0px" y="0px" style="display: none;">
+                    <symbol id="wave1">
+                      <path d="M420,20c21.5-0.4,38.8-2.5,51.1-4.5c13.4-2.2,26.5-5.2,27.3-5.4C514,6.5,518,4.7,528.5,2.7c7.1-1.3,17.9-2.8,31.5-2.7c0,0,0,0,0,0v20H420z"></path>
+                      <path d="M420,20c-21.5-0.4-38.8-2.5-51.1-4.5c-13.4-2.2-26.5-5.2-27.3-5.4C326,6.5,322,4.7,311.5,2.7C304.3,1.4,293.6-0.1,280,0c0,0,0,0,0,0v20H420z"></path>
+                      <path d="M140,20c21.5-0.4,38.8-2.5,51.1-4.5c13.4-2.2,26.5-5.2,27.3-5.4C234,6.5,238,4.7,248.5,2.7c7.1-1.3,17.9-2.8,31.5-2.7c0,0,0,0,0,0v20H140z"></path>
+                      <path d="M140,20c-21.5-0.4-38.8-2.5-51.1-4.5c-13.4-2.2-26.5-5.2-27.3-5.4C46,6.5,42,4.7,31.5,2.7C24.3,1.4,13.6-0.1,0,0c0,0,0,0,0,0l0,20H140z"></path>
+                    </symbol>
+                  </svg>
+                  <!-- 波浪水球 -->
+                  <div class="wave-box">
+                    <div class="percent">
+                      <div class="percentNum" id="count1">0</div>
+                      <div class="percentB">%</div>
+                    </div>
+                    <div id="water1" class="water">
+                      <svg viewBox="0 0 560 20" class="water_wave water_wave_back">
+                        <use xlink:href="#wave1"></use>
+                      </svg>
+                      <svg viewBox="0 0 560 20" class="water_wave water_wave_front">
+                        <use xlink:href="#wave1"></use>
+                      </svg>
+                    </div>
+                  </div>
                 </el-col>
               </el-row>
             </div>
@@ -117,132 +117,96 @@
                     <td>{{signal_info.baseInfo.version}}</td>
                   </tr>
                   <tr>
-                    <td>启动时长</td>
+                    <td>JVM版本</td>
                     <td>{{signal_info.baseInfo.start_time}}</td>
-                  </tr>
-                  <tr>
-                    <td>主机名</td>
-                    <td>{{signal_info.baseInfo.main_name}}</td>
-                  </tr>
-                  <tr>
-                    <td>安装目录</td>
-                    <td>{{signal_info.baseInfo.setup_folder}}</td>
                   </tr>
                   <tr>
                     <td>操作系统</td>
                     <td>{{signal_info.baseInfo.system}}</td>
+                  </tr>
+                  <tr>
+                    <td>持续运行</td>
+                    <td>{{signal_info.baseInfo.main_name}}</td>
+                  </tr>
+                  <tr>
+                    <td>启动时间</td>
+                    <td>{{signal_info.baseInfo.setup_folder}}</td>
+                  </tr>
+                  <tr>
+                    <td>当前会话数</td>
+                    <td>{{signal_info.baseInfo.system}}</td>
+                  </tr>
+                </table>
+
+                <p style="margin:8px 0;">用户请求</p>
+                <table class="left-right-table" border="1" width="100%">
+                  <tr>
+                    <td>最大应答时间</td>
+                    <td>1分5秒</td>
+                  </tr>
+                  <tr>
+                    <td>平均应答时间</td>
+                    <td>50.11000061035156毫秒</td>
+                  </tr>
+                  <tr>
+                    <td>总请求次数</td>
+                    <td>105467</td>
+                  </tr>
+                  <tr>
+                    <td>请求次数（秒）</td>
+                    <td>0</td>
+                  </tr>
+                  <tr>
+                    <td>发送字节数（秒）</td>
+                    <td>0</td>
+                  </tr>
+                  <tr>
+                    <td>接收字节数（秒）</td>
+                    <td>0</td>
+                  </tr>
+                  <tr>
+                    <td>总发送字节数</td>
+                    <td>319.15MB</td>
+                  </tr>
+                  <tr>
+                    <td>总接收字节数</td>
+                    <td>864.36KB</td>
                   </tr>
                 </table>
 
                 <p style="margin:8px 0;">线程池</p>
                 <table class="left-right-table" border="1" width="100%">
                   <tr>
-                    <td>当前线程数</td>
+                    <td>活动线程数</td>
                     <td>0</td>
                   </tr>
                   <tr>
-                    <td>处理请求线程数</td>
+                    <td>线程峰值</td>
                     <td>0</td>
                   </tr>
                   <tr>
-                    <td>缓存线程数</td>
+                    <td>守护线程数</td>
                     <td>0</td>
                   </tr>
                   <tr>
-                    <td>缓存大小</td>
-                    <td>0</td>
-                  </tr>
-                </table>
-
-                <p style="margin:8px 0;">表锁统计</p>
-                <table class="left-right-table" border="1" width="100%">
-                  <tr>
-                    <td>直接锁</td>
-                    <td>0</td>
-                  </tr>
-                  <tr>
-                    <td>等待锁</td>
-                    <td>0</td>
-                  </tr>
-                  <tr>
-                    <td>获取行锁平均时间</td>
-                    <td>0</td>
-                  </tr>
-                  <tr>
-                    <td>获取行锁最大时间</td>
-                    <td>0</td>
-                  </tr>
-                  <tr>
-                    <td>行锁等待次数</td>
-                    <td>0</td>
+                    <td>总线程数</td>
+                    <td>138970</td>
                   </tr>
                 </table>
 
-                <p style="margin:8px 0;">缓冲池</p>
+                <p style="margin:8px 0;">类</p>
                 <table class="left-right-table" border="1" width="100%">
                   <tr>
-                    <td>缓冲池总页数</td>
+                    <td>已装入数</td>
+                    <td>13443</td>
+                  </tr>
+                  <tr>
+                    <td>已经卸载总数</td>
                     <td>0</td>
                   </tr>
                   <tr>
-                    <td>缓冲池数据页</td>
-                    <td>0</td>
-                  </tr>
-                  <tr>
-                    <td>缓冲池脏数据页</td>
-                    <td>0</td>
-                  </tr>
-                  <tr>
-                    <td>缓冲池剩余空间页</td>
-                    <td>0</td>
-                  </tr>
-                </table>
-
-                <p style="margin:8px 0;">查询统计</p>
-                <table class="left-right-table" border="1" width="100%">
-                  <tr>
-                    <td>删除的查询数/分</td>
-                    <td>0</td>
-                  </tr>
-                  <tr>
-                    <td>插入的查询数/分</td>
-                    <td>0</td>
-                  </tr>
-                  <tr>
-                    <td>选择的查询数/分</td>
-                    <td>0</td>
-                  </tr>
-                  <tr>
-                    <td>更新的查询数/分</td>
-                    <td>0</td>
-                  </tr>
-                </table>
-
-                <p style="margin:8px 0;">连接统计</p>
-                <table class="left-right-table" border="1" width="100%">
-                  <tr>
-                    <td>打开连接数/分</td>
-                    <td>0</td>
-                  </tr>
-                  <tr>
-                    <td>失败连接数/分</td>
-                    <td>0</td>
-                  </tr>
-                  <tr>
-                    <td>中断客户端连接数/分</td>
-                    <td>0</td>
-                  </tr>
-                </table>
-
-                <p style="margin:8px 0;">事务处理</p>
-                <table class="left-right-table" border="1" width="100%">
-                  <tr>
-                    <td>提交事务数/分</td>
-                    <td>0</td>
-                  </tr>
-                  <tr>
-                    <td>回滚事务数/分</td>
-                    <td>0</td>
+                    <td>已装入总数</td>
+                    <td>16565</td>
                   </tr>
                 </table>
               </div>
@@ -271,11 +235,15 @@
               <el-row :gutter="20">
                 <el-col :span="8" v-for="(item, index) in database_array" :key="index">
                   <div class="left-img-right-text">
-                    <img src="../assets/images/icon/database.png" />
+                    <div>
+                      <img src="../assets/images/icon/database.png" />
+                    </div>
                     <ul>
                       <li>{{item.label}}</li>
-                      <li>表数据 : {{item.count}}</li>
-                      <li>大小 : {{item.size}}</li>
+                      <li>路径 : {{item.count}}</li>
+                      <li>主机名 : {{item.size}}</li>
+                      <li>当前会话数 : {{item.size}}</li>
+                      <li>Servlet总数 : {{item.size}}</li>
                     </ul>
                   </div>
                 </el-col>
@@ -284,7 +252,29 @@
           </el-col>
         </el-row>
       </div>
+      <div v-if="radio1==='WEB应用'" style="margin-top:20px;">
+        <el-table :data="web_tableData" size="mini" class="transparent-table transparent-white-table" style="width: 100%">
+          <el-table-column prop="name" sortable sortable label="名称" class-name="com-txt-overflow"></el-table-column>
+          <el-table-column prop="host_name" sortable label="Host Name" class-name="com-txt-overflow"></el-table-column>
+          <el-table-column prop="route" sortable label="路径" class-name="com-txt-overflow"></el-table-column>
+          <el-table-column prop="servlet" sortable label="Servlet总数" class-name="com-txt-overflow"></el-table-column>
+        </el-table>
+      </div>
+      <div v-if="radio1==='连接器'" style="margin-top:20px;">
+        <el-table :data="connect_tableData" size="mini" class="transparent-table transparent-white-table" style="width: 100%">
+          <el-table-column prop="name" sortable sortable label="名称" class-name="com-txt-overflow"></el-table-column>
+          <el-table-column prop="ip" sortable label="绑定ip地址" class-name="com-txt-overflow"></el-table-column>
+          <el-table-column prop="port" sortable label="端口" class-name="com-txt-overflow"></el-table-column>
+          <el-table-column prop="agreement" sortable label="协议" class-name="com-txt-overflow"></el-table-column>
+          <el-table-column prop="operator" sortable label="执行者" class-name="com-txt-overflow"></el-table-column>
+          <el-table-column prop="plan" sortable label="方案" class-name="com-txt-overflow"></el-table-column>
+          <el-table-column prop="status" sortable label="状态" class-name="com-txt-overflow"></el-table-column>
+          <el-table-column prop="busy_line" sortable label="正忙线程数" class-name="com-txt-overflow"></el-table-column>
+          <el-table-column prop="current_line" sortable label="当前线程数" class-name="com-txt-overflow"></el-table-column>
+        </el-table>
+      </div>
     </div>
+
     <div v-else>
       <el-table :data="alarm_tableData" size="mini" class="transparent-table transparent-white-table" style="width: 100%">
         <el-table-column label="级别" sortable class-name="com-txt-overflow" width="88px">
@@ -305,6 +295,7 @@
         <el-table-column prop="alarm_content" label="告警内容" class-name="com-txt-overflow"></el-table-column>
       </el-table>
     </div>
+
     <div>
       <el-radio-group v-model="radio3" @change="togglePage">
         <el-radio-button label="总览"></el-radio-button>
@@ -326,12 +317,13 @@
         <el-button type="primary" size="small">确 认</el-button>
       </span>
     </el-dialog>
+
   </div>
 </body>
 <script src="../assets/js/vue/vue.dev.js"></script>
-<script src="../assets/js/echart/echarts.min.js"></script>
+<script src="../assets/js/echart/echarts.new.js"></script>
 <script src="../assets/js/echart/vue-echart.js"></script>
 <script src="../assets/js/element-ui/index.js"></script>
-<script src="./monitor-database/monitor-database.js"></script>
+<script src="./core-service/core-service.js"></script>
 
 </html>
