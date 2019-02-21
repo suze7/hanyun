@@ -100,183 +100,169 @@ var app = new Vue({
       type: '未订阅',
       createTime: '2018-10-17 00:44:20',
       time: '2018-10-17 00:44:20'
+    },{
+      name: '名称名称名称',
+      describe: 'ceve',
+      status: 0,
+      type: '未订阅',
+      createTime: '2018-10-17 00:44:20',
+      time: '2018-10-17 00:44:20'
+    },{
+      name: '名称名称名称',
+      describe: 'ceve',
+      status: 0,
+      type: '未订阅',
+      createTime: '2018-10-17 00:44:20',
+      time: '2018-10-17 00:44:20'
     }],
     tableData1: [{
-      name: '未阅',
-      cycle: '日报告',
-      analyse: '否',
-      time: '2018-11-13 00:01:00',
-      startTime: '2018-11-13 00:01:00',
-      endTime: '2018-11-13 00:01:00'
+      name: 'WEB服务器',
+      attr: '资源负载检测',
+      topn: 10,
+      max: false,
+      min: false,
+      maxAvg: false,
+      minAvg: false
     },{
-      name: '未阅',
-      cycle: '日报告',
-      analyse: '否',
-      time: '2018-11-13 00:01:00',
-      startTime: '2018-11-13 00:01:00',
-      endTime: '2018-11-13 00:01:00'
+      name: 'WEB服务器',
+      attr: '资源负载检测',
+      topn: 10,
+      max: false,
+      min: false,
+      maxAvg: false,
+      minAvg: false
     },{
-      name: '未阅',
-      cycle: '日报告',
-      analyse: '否',
-      time: '2018-11-13 00:01:00',
-      startTime: '2018-11-13 00:01:00',
-      endTime: '2018-11-13 00:01:00'
+      name: 'WEB服务器',
+      attr: '资源负载检测',
+      topn: 10,
+      max: false,
+      min: false,
+      maxAvg: false,
+      minAvg: false
     },{
-      name: '未阅',
-      cycle: '日报告',
-      analyse: '否',
-      time: '2018-11-13 00:01:00',
-      startTime: '2018-11-13 00:01:00',
-      endTime: '2018-11-13 00:01:00'
+      name: 'WEB服务器',
+      attr: '资源负载检测',
+      topn: 10,
+      max: false,
+      min: false,
+      maxAvg: false,
+      minAvg: false
     },{
-      name: '未阅',
-      cycle: '日报告',
-      analyse: '否',
-      time: '2018-11-13 00:01:00',
-      startTime: '2018-11-13 00:01:00',
-      endTime: '2018-11-13 00:01:00'
+      name: 'WEB服务器',
+      attr: '资源负载检测',
+      topn: 10,
+      max: false,
+      min: false,
+      maxAvg: false,
+      minAvg: false
     },{
-      name: '未阅',
-      cycle: '日报告',
-      analyse: '否',
-      time: '2018-11-13 00:01:00',
-      startTime: '2018-11-13 00:01:00',
-      endTime: '2018-11-13 00:01:00'
-    },{
-      name: '未阅',
-      cycle: '日报告',
-      analyse: '否',
-      time: '2018-11-13 00:01:00',
-      startTime: '2018-11-13 00:01:00',
-      endTime: '2018-11-13 00:01:00'
-    },{
-      name: '未阅',
-      cycle: '日报告',
-      analyse: '否',
-      time: '2018-11-13 00:01:00',
-      startTime: '2018-11-13 00:01:00',
-      endTime: '2018-11-13 00:01:00'
-    },{
-      name: '未阅',
-      cycle: '日报告',
-      analyse: '否',
-      time: '2018-11-13 00:01:00',
-      startTime: '2018-11-13 00:01:00',
-      endTime: '2018-11-13 00:01:00'
-    },{
-      name: '未阅',
-      cycle: '日报告',
-      analyse: '否',
-      time: '2018-11-13 00:01:00',
-      startTime: '2018-11-13 00:01:00',
-      endTime: '2018-11-13 00:01:00'
+      name: 'WEB服务器',
+      attr: '资源负载检测',
+      topn: 10,
+      max: false,
+      min: false,
+      maxAvg: false,
+      minAvg: false
     }],
     tableData2: [{
-      name: '维也纳-测试4',
-      address: '118.126.110.58',
-      endDate: '0秒',
-      useable: '100.000%',
-      endTime: 0,
-      mttr: 0,
-      mtbf: 0
+      name: 'WEB服务器',
+      attr: '资源负载检测',
+      topn: 10,
+      max: false,
+      min: false,
+      maxAvg: false,
+      minAvg: false
     },{
-      name: '维也纳-测试4',
-      address: '118.126.110.58',
-      endDate: '0秒',
-      useable: '100.000%',
-      endTime: 0,
-      mttr: 0,
-      mtbf: 0
+      name: 'WEB服务器',
+      attr: '资源负载检测',
+      topn: 10,
+      max: false,
+      min: false,
+      maxAvg: false,
+      minAvg: false
     },{
-      name: '维也纳-测试4',
-      address: '118.126.110.58',
-      endDate: '0秒',
-      useable: '100.000%',
-      endTime: 0,
-      mttr: 0,
-      mtbf: 0
+      name: 'WEB服务器',
+      attr: '资源负载检测',
+      topn: 10,
+      max: false,
+      min: false,
+      maxAvg: false,
+      minAvg: false
     },{
-      name: '维也纳-测试4',
-      address: '118.126.110.58',
-      endDate: '0秒',
-      useable: '100.000%',
-      endTime: 0,
-      mttr: 0,
-      mtbf: 0
+      name: 'WEB服务器',
+      attr: '资源负载检测',
+      topn: 10,
+      max: false,
+      min: false,
+      maxAvg: false,
+      minAvg: false
     },{
-      name: '维也纳-测试4',
-      address: '118.126.110.58',
-      endDate: '0秒',
-      useable: '100.000%',
-      endTime: 0,
-      mttr: 0,
-      mtbf: 0
+      name: 'WEB服务器',
+      attr: '资源负载检测',
+      topn: 10,
+      max: false,
+      min: false,
+      maxAvg: false,
+      minAvg: false
     },{
-      name: '维也纳-测试4',
-      address: '118.126.110.58',
-      endDate: '0秒',
-      useable: '100.000%',
-      endTime: 0,
-      mttr: 0,
-      mtbf: 0
+      name: 'WEB服务器',
+      attr: '资源负载检测',
+      topn: 10,
+      max: false,
+      min: false,
+      maxAvg: false,
+      minAvg: false
     },{
-      name: '维也纳-测试4',
-      address: '118.126.110.58',
-      endDate: '0秒',
-      useable: '100.000%',
-      endTime: 0,
-      mttr: 0,
-      mtbf: 0
+      name: 'WEB服务器',
+      attr: '资源负载检测',
+      topn: 10,
+      max: false,
+      min: false,
+      maxAvg: false,
+      minAvg: false
     },{
-      name: '维也纳-测试4',
-      address: '118.126.110.58',
-      endDate: '0秒',
-      useable: '100.000%',
-      endTime: 0,
-      mttr: 0,
-      mtbf: 0
+      name: 'WEB服务器',
+      attr: '资源负载检测',
+      topn: 10,
+      max: false,
+      min: false,
+      maxAvg: false,
+      minAvg: false
     },{
-      name: '维也纳-测试4',
-      address: '118.126.110.58',
-      endDate: '0秒',
-      useable: '100.000%',
-      endTime: 0,
-      mttr: 0,
-      mtbf: 0
+      name: 'WEB服务器',
+      attr: '资源负载检测',
+      topn: 10,
+      max: false,
+      min: false,
+      maxAvg: false,
+      minAvg: false
     },{
-      name: '维也纳-测试4',
-      address: '118.126.110.58',
-      endDate: '0秒',
-      useable: '100.000%',
-      endTime: 0,
-      mttr: 0,
-      mtbf: 0
-    },{
-      name: '维也纳-测试4',
-      address: '118.126.110.58',
-      endDate: '0秒',
-      useable: '100.000%',
-      endTime: 0,
-      mttr: 0,
-      mtbf: 0
-    },{
-      name: '维也纳-测试4',
-      address: '118.126.110.58',
-      endDate: '0秒',
-      useable: '100.000%',
-      endTime: 0,
-      mttr: 0,
-      mtbf: 0
-    },{
-      name: '维也纳-测试4',
-      address: '118.126.110.58',
-      endDate: '0秒',
-      useable: '100.000%',
-      endTime: 0,
-      mttr: 0,
-      mtbf: 0
+      name: 'WEB服务器',
+      attr: '资源负载检测',
+      topn: 10,
+      max: false,
+      min: false,
+      maxAvg: false,
+      minAvg: false
     }],
+    tableData3: [{
+      name: 'WEB服务器',
+      attr: '资源负载检测',
+      topn: 10,
+      max: false,
+      min: false,
+      maxAvg: false,
+      minAvg: false
+    },{
+      name: 'WEB服务器',
+      attr: '资源负载检测',
+      topn: 10,
+      max: false,
+      min: false,
+      maxAvg: false,
+      minAvg: false
+    }],
+    
     dialogTableData: [{
       name: '核心服务',
       IP: '172.16.154.125',
@@ -358,6 +344,7 @@ var app = new Vue({
     checked4: false,
     checked5: false,
     tabNum: 0,
+    tabNum1: 0,
     radio: null,
     radio1: null,
     radio2: null,
@@ -585,6 +572,9 @@ var app = new Vue({
     },
     changeTab(num) {
       this.tabNum = num;
+    },
+    changeTab1(num) {
+      this.tabNum1 = num;
     }
   }
 });

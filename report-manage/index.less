@@ -24,9 +24,14 @@
 }
 
 .loc-index-content .loc-right-content {
-  .report-manage-content {
+  div.report-manage-content {
     position: relative;
     padding-top: 0;
+    &.report-auto-height {
+      padding-bottom: 100px;
+      height: auto;
+      min-height: calc(100% - 32px);
+    }
     .my-edit-form {
       padding: 24px 0 0 0;
 
@@ -66,7 +71,7 @@
 
 .my-show-list-form {
   margin: 16px 0 8px;
-  padding: 12px 14px;
+  padding: 12px 10px 12px 14px;
   .my-show-item {
     position: relative;
     display: inline-block;
@@ -86,10 +91,15 @@
 }
 
 .loc-progress-form {
-  padding: 20px 0 4px 0;
+  margin: 20px 0;
+  padding: 20px 0 10px 0;
   font-size: 12px;
+  .loc-progress-title {
+    padding: 0 0 18px 20px;
+  }
   .loc-progress-group {
-    margin: 8px 0;
+    padding: 9px 0;
+    color: rgba(255, 255, 255, .6);
     .loc-progress-name,
     .loc-progress-content,
     .loc-progress-detail {
@@ -99,11 +109,15 @@
     .loc-progress-name {
       margin-right: 10px;
       width: 200px;
-      color: rgba(255, 255, 255, .6);
       text-align: right;
     }
     .loc-progress-content {
       width: calc(100% - 323px);
+    }
+    .loc-progress-detail {
+      margin-left: 12px;
+      min-width: 50px;
+
     }
   }
 }
@@ -121,15 +135,20 @@
   padding-top: 8px;
   .my-tab-btn {
     margin-right: 4px;
-    width: 70px;
+    padding: 0 12px;
+    width: auto;
+    min-width: 70px;
+  }
+  &.report-tab-div {
+    padding-bottom: 8px;
   }
 }
 
 .report-edit-left {
+  vertical-align: top;
+  display: inline-block;
   width: 80px;
-  float: left;
   line-height: 24px;
-
   .report-checkbox {
     color: #fff;
 
@@ -141,8 +160,8 @@
 }
 
 .report-edit-right {
-  float: left;
-  width: calc(100% - 80px);
+  display: inline-block;
+  width: calc(100% - 90px);
 }
 
 .report-edit-content {
@@ -236,6 +255,52 @@
     }
     + .loc-manage-content {
       height: calc(100% - 70px);
+    }
+  }
+}
+
+.report-margin-div {
+  margin: 0 20px 10px;
+}
+
+.report-progress-select {
+  margin-left: 30px;
+  width: 160px;
+}
+
+.loc-pagination {
+  margin-top: 14px;
+}
+
+.report-margin-table {
+  margin: 8px 0 16px;
+  input[type="text"] {
+    width: 64px;
+    height: 24px;
+  }
+}
+
+.report-type-table {
+  margin-bottom: 20px; 
+}
+
+.report-select-tip {
+  margin: 0;
+  padding: 8px 0;
+}
+
+.report-checkbox-div {
+  .report-checkbox-form {
+    display: inline-block;
+    margin: 10px 0;
+    width: 143px;
+    .report-checkbox {
+      color: inherit;
+      font-size: 12px;
+      .el-checkbox__label {
+        padding-left: 8px;
+        font-size: 100%;
+      }
     }
   }
 }

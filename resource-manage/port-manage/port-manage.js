@@ -156,6 +156,7 @@ var app = new Vue({
   created() {
     this.setMenuList();
     this.setLeftMenuList();
+    this.leftMenuList.selectMenu = this.leftMenuList.list[2];
   },
   mounted() {},
   methods: {
@@ -232,18 +233,16 @@ var app = new Vue({
         }
       ];
     },
-    setLeftMenuList: function() {
+    setLeftMenuList: function () {
       this.leftMenuList = {
         openMenu: null,
         selectMenu: null,
-        list: [
-          {
+        list: [{
             id: '1',
             name: '自定义分组',
             iconClass: 'menu-icon4-1',
-            canTouch: false, //点开却不会选中
-            children: [
-              {
+            canTouch: true, //点开却不会选中
+            children: [{
                 id: '1-1',
                 name: '自定义',
                 iconClass: '',
@@ -262,8 +261,7 @@ var app = new Vue({
             name: '资源列表',
             iconClass: 'menu-icon4-2',
             canTouch: true,
-            children: [
-              {
+            children: [{
                 id: '2-1',
                 name: '全部资源',
                 iconClass: '',
@@ -280,7 +278,7 @@ var app = new Vue({
                   iconClass: '',
                   canTouch: true,
                   num: ''
-                },{
+                }, {
                   id: '2-2-2',
                   name: '网络设备2',
                   iconClass: '',
@@ -314,9 +312,9 @@ var app = new Vue({
     selectedLeftMenu(menu) {
       if (menu.canTouch) {
         this.leftMenuList.selectMenu = menu;
+        this.afterSelect(menu);
       }
       if (menu.children) {
-        console.log(menu);
         if (this.leftMenuList.openMenu === menu.id) {
           let mList = this.leftMenuList.openMenu.split('-');
           if (mList.length > 1) {
@@ -328,6 +326,19 @@ var app = new Vue({
         } else {
           this.leftMenuList.openMenu = menu.id;
         }
+      }
+    },
+    afterSelect(menu) {
+      if (menu.id === '1' || menu.id.indexOf('1-') === 0) {
+        window.location.href = './resource-manage.html';
+      } else if (menu.id === '2' || menu.id.indexOf('2-') === 0) {
+        window.location.href = './resource-list.html';
+      } else if (menu.id === '3') {
+        window.location.href = './port-manage.html';
+      } else if (menu.id === '4') {
+        window.location.href = './VLAN-manage.html';
+      } else if (menu.id === '5') {
+        window.location.href = './link-manage.html';
       }
     },
     toggleShowMenu() {

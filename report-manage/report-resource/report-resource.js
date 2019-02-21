@@ -3,33 +3,7 @@ var app = new Vue({
   data: {
     showMenu: true,
     menuList: [],
-    text1: '',
-    value1: '',
-    options: [
-      {
-        value: '选项1',
-        label: '黄金糕'
-      },
-      {
-        value: '选项2',
-        label: '双皮奶'
-      },
-      {
-        value: '选项3',
-        label: '蚵仔煎'
-      },
-      {
-        value: '选项4',
-        label: '龙须面'
-      },
-      {
-        value: '选项5',
-        label: '北京烤鸭'
-      }
-    ],
-    value: '',
     leftMenuList: null,
-    dialogVisible: false,
     tableData: [{
       name: '名称名称名称',
       describe: 'ceve',
@@ -100,270 +74,21 @@ var app = new Vue({
       type: '未订阅',
       createTime: '2018-10-17 00:44:20',
       time: '2018-10-17 00:44:20'
-    }],
-    tableData1: [{
-      name: '未阅',
-      cycle: '日报告',
-      analyse: '否',
-      time: '2018-11-13 00:01:00',
-      startTime: '2018-11-13 00:01:00',
-      endTime: '2018-11-13 00:01:00'
     },{
-      name: '未阅',
-      cycle: '日报告',
-      analyse: '否',
-      time: '2018-11-13 00:01:00',
-      startTime: '2018-11-13 00:01:00',
-      endTime: '2018-11-13 00:01:00'
+      name: '名称名称名称',
+      describe: 'ceve',
+      status: 0,
+      type: '未订阅',
+      createTime: '2018-10-17 00:44:20',
+      time: '2018-10-17 00:44:20'
     },{
-      name: '未阅',
-      cycle: '日报告',
-      analyse: '否',
-      time: '2018-11-13 00:01:00',
-      startTime: '2018-11-13 00:01:00',
-      endTime: '2018-11-13 00:01:00'
-    },{
-      name: '未阅',
-      cycle: '日报告',
-      analyse: '否',
-      time: '2018-11-13 00:01:00',
-      startTime: '2018-11-13 00:01:00',
-      endTime: '2018-11-13 00:01:00'
-    },{
-      name: '未阅',
-      cycle: '日报告',
-      analyse: '否',
-      time: '2018-11-13 00:01:00',
-      startTime: '2018-11-13 00:01:00',
-      endTime: '2018-11-13 00:01:00'
-    },{
-      name: '未阅',
-      cycle: '日报告',
-      analyse: '否',
-      time: '2018-11-13 00:01:00',
-      startTime: '2018-11-13 00:01:00',
-      endTime: '2018-11-13 00:01:00'
-    },{
-      name: '未阅',
-      cycle: '日报告',
-      analyse: '否',
-      time: '2018-11-13 00:01:00',
-      startTime: '2018-11-13 00:01:00',
-      endTime: '2018-11-13 00:01:00'
-    },{
-      name: '未阅',
-      cycle: '日报告',
-      analyse: '否',
-      time: '2018-11-13 00:01:00',
-      startTime: '2018-11-13 00:01:00',
-      endTime: '2018-11-13 00:01:00'
-    },{
-      name: '未阅',
-      cycle: '日报告',
-      analyse: '否',
-      time: '2018-11-13 00:01:00',
-      startTime: '2018-11-13 00:01:00',
-      endTime: '2018-11-13 00:01:00'
-    },{
-      name: '未阅',
-      cycle: '日报告',
-      analyse: '否',
-      time: '2018-11-13 00:01:00',
-      startTime: '2018-11-13 00:01:00',
-      endTime: '2018-11-13 00:01:00'
-    }],
-    tableData2: [{
-      name: '维也纳-测试4',
-      address: '118.126.110.58',
-      endDate: '0秒',
-      useable: '100.000%',
-      endTime: 0,
-      mttr: 0,
-      mtbf: 0
-    },{
-      name: '维也纳-测试4',
-      address: '118.126.110.58',
-      endDate: '0秒',
-      useable: '100.000%',
-      endTime: 0,
-      mttr: 0,
-      mtbf: 0
-    },{
-      name: '维也纳-测试4',
-      address: '118.126.110.58',
-      endDate: '0秒',
-      useable: '100.000%',
-      endTime: 0,
-      mttr: 0,
-      mtbf: 0
-    },{
-      name: '维也纳-测试4',
-      address: '118.126.110.58',
-      endDate: '0秒',
-      useable: '100.000%',
-      endTime: 0,
-      mttr: 0,
-      mtbf: 0
-    },{
-      name: '维也纳-测试4',
-      address: '118.126.110.58',
-      endDate: '0秒',
-      useable: '100.000%',
-      endTime: 0,
-      mttr: 0,
-      mtbf: 0
-    },{
-      name: '维也纳-测试4',
-      address: '118.126.110.58',
-      endDate: '0秒',
-      useable: '100.000%',
-      endTime: 0,
-      mttr: 0,
-      mtbf: 0
-    },{
-      name: '维也纳-测试4',
-      address: '118.126.110.58',
-      endDate: '0秒',
-      useable: '100.000%',
-      endTime: 0,
-      mttr: 0,
-      mtbf: 0
-    },{
-      name: '维也纳-测试4',
-      address: '118.126.110.58',
-      endDate: '0秒',
-      useable: '100.000%',
-      endTime: 0,
-      mttr: 0,
-      mtbf: 0
-    },{
-      name: '维也纳-测试4',
-      address: '118.126.110.58',
-      endDate: '0秒',
-      useable: '100.000%',
-      endTime: 0,
-      mttr: 0,
-      mtbf: 0
-    },{
-      name: '维也纳-测试4',
-      address: '118.126.110.58',
-      endDate: '0秒',
-      useable: '100.000%',
-      endTime: 0,
-      mttr: 0,
-      mtbf: 0
-    },{
-      name: '维也纳-测试4',
-      address: '118.126.110.58',
-      endDate: '0秒',
-      useable: '100.000%',
-      endTime: 0,
-      mttr: 0,
-      mtbf: 0
-    },{
-      name: '维也纳-测试4',
-      address: '118.126.110.58',
-      endDate: '0秒',
-      useable: '100.000%',
-      endTime: 0,
-      mttr: 0,
-      mtbf: 0
-    },{
-      name: '维也纳-测试4',
-      address: '118.126.110.58',
-      endDate: '0秒',
-      useable: '100.000%',
-      endTime: 0,
-      mttr: 0,
-      mtbf: 0
-    }],
-    dialogTableData: [{
-      name: '核心服务',
-      IP: '172.16.154.125',
-      resType: '标准服务监控',
-      reportType: 'Tomcat的',
-      healthStatus: 1,
-      manageStatus: 1,
-      accessStatus: 2
-    },{
-      name: '核心服务',
-      IP: '172.16.154.125',
-      resType: '标准服务监控',
-      reportType: 'Tomcat的',
-      healthStatus: 1,
-      manageStatus: 1,
-      accessStatus: 2
-    },{
-      name: '核心服务',
-      IP: '172.16.154.125',
-      resType: '标准服务监控',
-      reportType: 'Tomcat的',
-      healthStatus: 1,
-      manageStatus: 1,
-      accessStatus: 2
-    },{
-      name: '核心服务',
-      IP: '172.16.154.125',
-      resType: '标准服务监控',
-      reportType: 'Tomcat的',
-      healthStatus: 1,
-      manageStatus: 1,
-      accessStatus: 2
-    },{
-      name: '核心服务',
-      IP: '172.16.154.125',
-      resType: '标准服务监控',
-      reportType: 'Tomcat的',
-      healthStatus: 1,
-      manageStatus: 1,
-      accessStatus: 2
-    },{
-      name: '核心服务',
-      IP: '172.16.154.125',
-      resType: '标准服务监控',
-      reportType: 'Tomcat的',
-      healthStatus: 1,
-      manageStatus: 1,
-      accessStatus: 2
-    },{
-      name: '核心服务',
-      IP: '172.16.154.125',
-      resType: '标准服务监控',
-      reportType: 'Tomcat的',
-      healthStatus: 1,
-      manageStatus: 1,
-      accessStatus: 2
-    },{
-      name: '核心服务',
-      IP: '172.16.154.125',
-      resType: '标准服务监控',
-      reportType: 'Tomcat的',
-      healthStatus: 1,
-      manageStatus: 1,
-      accessStatus: 2
-    },{
-      name: '核心服务',
-      IP: '172.16.154.125',
-      resType: '标准服务监控',
-      reportType: 'Tomcat的',
-      healthStatus: 0,
-      manageStatus: 1,
-      accessStatus: 2
-    }],
-    showDetail: 0,
-    checked: false,
-    checked1: false,
-    checked2: false,
-    checked3: false,
-    checked4: false,
-    checked5: false,
-    tabNum: 0,
-    radio: null,
-    radio1: null,
-    radio2: null,
-    radio3: null,
-    radio4: null,
-    radio5: null
+      name: '名称名称名称',
+      describe: 'ceve',
+      status: 0,
+      type: '未订阅',
+      createTime: '2018-10-17 00:44:20',
+      time: '2018-10-17 00:44:20'
+    }]
   },
   created() {
     this.setMenuList();
@@ -569,22 +294,6 @@ var app = new Vue({
     },
     toggleShowMenu() {
       this.showMenu = !this.showMenu;
-    },
-    showDialog() {
-      this.dialogVisible = true;
-      
-    },
-    handleClose() {
-      
-    },
-    submitDialog() {
-      this.dialogVisible = false;
-    },
-    setShowDetail(flag) {
-      this.showDetail = flag;
-    },
-    changeTab(num) {
-      this.tabNum = num;
     }
   }
 });

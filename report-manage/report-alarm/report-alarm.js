@@ -174,108 +174,74 @@ var app = new Vue({
     }],
     tableData2: [{
       name: '维也纳-测试4',
-      address: '118.126.110.58',
-      endDate: '0秒',
-      useable: '100.000%',
-      endTime: 0,
-      mttr: 0,
-      mtbf: 0
+      cycle: '118.126.110.58',
+      alarm: 1,
+      alarm1: 1,
+      alarm2: 1,
+      alarm3: 1
     },{
       name: '维也纳-测试4',
-      address: '118.126.110.58',
-      endDate: '0秒',
-      useable: '100.000%',
-      endTime: 0,
-      mttr: 0,
-      mtbf: 0
+      cycle: '118.126.110.58',
+      alarm: 1,
+      alarm1: 1,
+      alarm2: 1,
+      alarm3: 1
     },{
       name: '维也纳-测试4',
-      address: '118.126.110.58',
-      endDate: '0秒',
-      useable: '100.000%',
-      endTime: 0,
-      mttr: 0,
-      mtbf: 0
+      cycle: '118.126.110.58',
+      alarm: 1,
+      alarm1: 1,
+      alarm2: 1,
+      alarm3: 1
     },{
       name: '维也纳-测试4',
-      address: '118.126.110.58',
-      endDate: '0秒',
-      useable: '100.000%',
-      endTime: 0,
-      mttr: 0,
-      mtbf: 0
+      cycle: '118.126.110.58',
+      alarm: 1,
+      alarm1: 1,
+      alarm2: 1,
+      alarm3: 1
     },{
       name: '维也纳-测试4',
-      address: '118.126.110.58',
-      endDate: '0秒',
-      useable: '100.000%',
-      endTime: 0,
-      mttr: 0,
-      mtbf: 0
+      cycle: '118.126.110.58',
+      alarm: 1,
+      alarm1: 1,
+      alarm2: 1,
+      alarm3: 1
     },{
       name: '维也纳-测试4',
-      address: '118.126.110.58',
-      endDate: '0秒',
-      useable: '100.000%',
-      endTime: 0,
-      mttr: 0,
-      mtbf: 0
+      cycle: '118.126.110.58',
+      alarm: 1,
+      alarm1: 1,
+      alarm2: 1,
+      alarm3: 1
     },{
       name: '维也纳-测试4',
-      address: '118.126.110.58',
-      endDate: '0秒',
-      useable: '100.000%',
-      endTime: 0,
-      mttr: 0,
-      mtbf: 0
+      cycle: '118.126.110.58',
+      alarm: 1,
+      alarm1: 1,
+      alarm2: 1,
+      alarm3: 1
     },{
       name: '维也纳-测试4',
-      address: '118.126.110.58',
-      endDate: '0秒',
-      useable: '100.000%',
-      endTime: 0,
-      mttr: 0,
-      mtbf: 0
+      cycle: '118.126.110.58',
+      alarm: 1,
+      alarm1: 1,
+      alarm2: 1,
+      alarm3: 1
     },{
       name: '维也纳-测试4',
-      address: '118.126.110.58',
-      endDate: '0秒',
-      useable: '100.000%',
-      endTime: 0,
-      mttr: 0,
-      mtbf: 0
+      cycle: '118.126.110.58',
+      alarm: 1,
+      alarm1: 1,
+      alarm2: 1,
+      alarm3: 1
     },{
       name: '维也纳-测试4',
-      address: '118.126.110.58',
-      endDate: '0秒',
-      useable: '100.000%',
-      endTime: 0,
-      mttr: 0,
-      mtbf: 0
-    },{
-      name: '维也纳-测试4',
-      address: '118.126.110.58',
-      endDate: '0秒',
-      useable: '100.000%',
-      endTime: 0,
-      mttr: 0,
-      mtbf: 0
-    },{
-      name: '维也纳-测试4',
-      address: '118.126.110.58',
-      endDate: '0秒',
-      useable: '100.000%',
-      endTime: 0,
-      mttr: 0,
-      mtbf: 0
-    },{
-      name: '维也纳-测试4',
-      address: '118.126.110.58',
-      endDate: '0秒',
-      useable: '100.000%',
-      endTime: 0,
-      mttr: 0,
-      mtbf: 0
+      cycle: '118.126.110.58',
+      alarm: 1,
+      alarm1: 1,
+      alarm2: 1,
+      alarm3: 1
     }],
     dialogTableData: [{
       name: '核心服务',
@@ -350,7 +316,7 @@ var app = new Vue({
       manageStatus: 1,
       accessStatus: 2
     }],
-    showDetail: 0,
+    showDetail: 3,
     checked: false,
     checked1: false,
     checked2: false,

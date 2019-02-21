@@ -80,8 +80,8 @@
           <div class="loc-opera-group report-margin-top">
             <el-button type="primary" class="loc-btn icon-btn" @click="setShowDetail(1)"><img src="../assets/images/icon/btn-icon-1.png" /><span>新建报告策略</span></el-button>
             <el-button type="primary" class="loc-btn icon-btn"><img src="../assets/images/icon/btn-icon-6.png" /><span>删除</span></el-button>
-            <el-button type="primary" class="loc-btn icon-btn"><img src="../assets/images/icon/btn-icon-2.png" /><span>启用所有</span></el-button>
-            <el-button type="primary" class="loc-btn icon-btn"><img src="../assets/images/icon/btn-icon-3.png" /><span>停用所有</span></el-button>
+            <el-button type="primary" class="loc-btn icon-btn"><img src="../assets/images/icon/btn-icon-2.png" /><span>启用策略</span></el-button>
+            <el-button type="primary" class="loc-btn icon-btn"><img src="../assets/images/icon/btn-icon-3.png" /><span>停用策略</span></el-button>
             <el-button type="primary" class="loc-btn icon-btn"><img src="../assets/images/icon/btn-icon-h.png" /><span>订阅报告</span></el-button>
             <el-button type="primary" class="loc-btn icon-btn"><img src="../assets/images/icon/btn-icon-i.png" /><span>取消订阅</span></el-button>
           </div>
@@ -98,9 +98,9 @@
                 <img :src="scope.row.status === 0 ? '../assets/images/icon/normal.png' : scope.row.status === 1 ? '../assets/images/icon/warning.png' : '../assets/images/icon/error.png'" />
               </template>
             </el-table-column>
-            <el-table-column prop="type" label="报告类型" min-width="117px"></el-table-column>
+            <el-table-column prop="type" label="订阅状态" min-width="117px"></el-table-column>
             <el-table-column prop="createTime" label="创建时间" min-width="178px"></el-table-column>
-            <el-table-column prop="time" label="创建时间" min-width="294px"></el-table-column>
+            <el-table-column prop="time" label="更新时间" min-width="294px"></el-table-column>
             <el-table-column prop="" label="操作" min-width="104px">
               <template slot-scope="scope">
                 <div style="margin: 6px 0 0 2px;" class="com-hover loc-img-form loc-app-img"></div>
@@ -121,9 +121,11 @@
       </div>
       <div class="loc-right-content" v-if="showDetail === 1">
         <div class="loc-equip-bread">
-          <span class="report-bread-name">可用性报告</span>
+          <span class="report-bread-name">报表管理</span>
           <span class="report-bread-split el-icon-arrow-right"></span>
-          <span class="report-bread-name">网络设备可用状态</span>
+          <span class="report-bread-name">告警统计报告</span>
+          <span class="report-bread-split el-icon-arrow-right"></span>
+          <span class="report-bread-name">资源报告统计</span>
           <span class="report-bread-split el-icon-arrow-right"></span>
           <span class="report-bread-name">新建报告策略</span>
         </div>
@@ -380,13 +382,13 @@
       </div>
       <div class="loc-right-content" v-if="showDetail === 2">
         <div class="loc-equip-bread">
-          <span class="report-bread-name">可用性报告</span>
+          <span class="report-bread-name">报表管理</span>
           <span class="report-bread-split el-icon-arrow-right"></span>
-          <span class="report-bread-name">网络设备可用状态</span>
+          <span class="report-bread-name">资源告警统计报告</span>
+          <span class="report-bread-split el-icon-arrow-right"></span>
+          <span class="report-bread-name">资源告警统计</span>
           <span class="report-bread-split el-icon-arrow-right"></span>
           <span class="report-bread-name">资源报告统计</span>
-          <span class="report-bread-split el-icon-arrow-right"></span>
-          <span class="report-bread-name">资源可用状态</span>
         </div>
         <div class="loc-manage-content report-relative">
           <div class="loc-opera-group report-margin-top">
@@ -421,420 +423,135 @@
       </div>
       <div class="loc-right-content" v-if="showDetail === 3">
         <div class="loc-equip-bread">
-          <span class="report-bread-name">可用性报告</span>
+          <span class="report-bread-name">资源告警统计报告</span>
           <span class="report-bread-split el-icon-arrow-right"></span>
-          <span class="report-bread-name">网络设备可用状态</span>
+          <span class="report-bread-name">资源告警统计</span>
           <span class="report-bread-split el-icon-arrow-right"></span>
-          <span class="report-bread-name">自定义报告查看</span>
+          <span class="report-bread-name">资源报告统计</span>
+          <span class="report-bread-split el-icon-arrow-right"></span>
+          <span class="report-bread-name">日报告-2018/11/14</span>
         </div>
-        <div class="report-top-content loc-main-background">
-          <div class="loc-query-form">
-            <span class="loc-query-name">开始时间</span>
-            <el-select v-model="value" popper-class="loc-main-selectbox" class="loc-main-select report-content"
-              placeholder="-请选择-">
+        <div class="loc-opera-group report-margin-top">
+          <el-button type="primary" class="loc-btn icon-btn"><img src="../assets/images/icon/btn-icon-k.png" /><span>导出词</span></el-button>
+          <el-button type="primary" class="loc-btn icon-btn"><img src="../assets/images/icon/btn-icon-k.png" /><span>导出Excel</span></el-button>
+          <el-button type="primary" class="loc-btn icon-btn"><img src="../assets/images/icon/btn-icon-j.png" /><span>返回</span></el-button>
+        </div>
+        <div class="loc-progress-form loc-main-background">
+          <div class="loc-progress-title">资源2018-10-29 10.35至2018-10-29 10.35时段可用性报告</div>
+          <div class="report-margin-div">
+            <el-table :data="tableData2" size="mini" class="transparent-table transparent-white-table" style="width: 100%">
+              <el-table-column prop="name" label="资源名称" min-width="182px"></el-table-column>
+              <el-table-column prop="cycle" label="报告周期" min-width="176px"></el-table-column>
+              <el-table-column prop="alarm" label="严重告警" min-width="147px"></el-table-column>
+              <el-table-column prop="alarm1" label="重要警告" min-width="147px"></el-table-column>
+              <el-table-column prop="alarm2" label="次要警告" min-width="147px"></el-table-column>
+              <el-table-column prop="alarm3" label="提示警告" min-width="196px"></el-table-column>
+              <el-table-column prop="" label="操作" min-width="104px">
+                <template slot-scope="scope">
+                  <div style="margin: 6px 0 0 2px;" class="com-hover loc-img-form loc-del-img"></div>
+                </template>
+              </el-table-column>
+            </el-table>
+          </div>
+        </div>
+        <div class="loc-progress-form loc-main-background">
+          <div class="loc-progress-title">
+            <span>资源2018年11月13日时段告警图</span>
+            <el-select v-model="value" popper-class="loc-main-selectbox" class="loc-main-select report-progress-select" placeholder="-请选择-">
               <el-option v-for="item in options" :key="item.value" :label="item.label" :value="item.value">
               </el-option>
             </el-select>
           </div>
-          <div class="loc-query-form">
-            <span class="loc-query-name">开始时间</span>
-            <el-date-picker class="report-content loc-date-picker" v-model="value1" type="date" placeholder="-请选择-">
-            </el-date-picker>
-          </div>
-          <div class="loc-query-form">
-            <span class="loc-query-name">结束时间</span>
-            <el-date-picker class="report-content loc-date-picker" v-model="value1" type="date" placeholder="-请选择-">
-            </el-date-picker>
-          </div>
-          <div class="loc-query-form report-btn-form">
-            <el-button class="loc-btn submit-btn" type="primary">生成报告</el-button>
-            <el-button class="loc-btn submit-btn" type="primary">导出词</el-button>
-            <el-button class="loc-btn submit-btn" type="primary">导出Excel</el-button>
-          </div>
-        </div>
-        <el-table :data="tableData2" size="mini" class="transparent-table transparent-white-table" style="width: 100%">
-          <el-table-column prop="name" label="资源名称" min-width="162px"></el-table-column>
-          <el-table-column prop="address" label="资源地址" min-width="157px"></el-table-column>
-          <el-table-column prop="endDate" label="宕机时间" min-width="127px"></el-table-column>
-          <el-table-column prop="useable" label="可用性" min-width="130px"></el-table-column>
-          <el-table-column prop="endTime" label="宕机次数" min-width="127px"></el-table-column>
-          <el-table-column prop="mttr" label="平均恢复前时间（MTTR）" min-width="217px"></el-table-column>
-          <el-table-column prop="mtbf" label="平均故障间隔时间（MTBF）" min-width="220px"></el-table-column>
-        </el-table>
-        <div class="loc-progress-form loc-main-background">
-          <div class="loc-progress-title">资源2018-10-29 10.35至2018-10-29 10.35时段可用性报告</div>
           <div class="loc-progress-group">
             <div class="loc-progress-name">监控系统数据库(172.16.154.122)</div>
             <div class="loc-progress-content">
               <el-progress class="my-progress" :percentage="50" :show-text="false" :stroke-width="10"></el-progress>
             </div>
-            <div class="loc-progress-detail com-txt-right">0.08毫秒</div>
+            <div class="loc-progress-detail com-txt-right">0.08次</div>
           </div>
           <div class="loc-progress-group">
             <div class="loc-progress-name">维也纳-测试1(172.16.154.122)</div>
             <div class="loc-progress-content">
               <el-progress class="my-progress" :percentage="50" :show-text="false" :stroke-width="10"></el-progress>
             </div>
-            <div class="loc-progress-detail com-txt-right">0.08毫秒</div>
+            <div class="loc-progress-detail com-txt-right">0.08次</div>
           </div>
           <div class="loc-progress-group">
             <div class="loc-progress-name">维也纳-测试2(172.16.154.122)</div>
             <div class="loc-progress-content">
               <el-progress class="my-progress" :percentage="50" :show-text="false" :stroke-width="10"></el-progress>
             </div>
-            <div class="loc-progress-detail com-txt-right">0.08毫秒</div>
+            <div class="loc-progress-detail com-txt-right">0.08次</div>
           </div>
           <div class="loc-progress-group">
             <div class="loc-progress-name">WEB服务器(172.16.154.122)</div>
             <div class="loc-progress-content">
               <el-progress class="my-progress" :percentage="50" :show-text="false" :stroke-width="10"></el-progress>
             </div>
-            <div class="loc-progress-detail com-txt-right">0.08毫秒</div>
+            <div class="loc-progress-detail com-txt-right">0.08次</div>
           </div>
           <div class="loc-progress-group">
             <div class="loc-progress-name">监控系统服务器(172.16.154.122)</div>
             <div class="loc-progress-content">
               <el-progress class="my-progress" :percentage="50" :show-text="false" :stroke-width="10"></el-progress>
             </div>
-            <div class="loc-progress-detail com-txt-right">0.08毫秒</div>
+            <div class="loc-progress-detail com-txt-right">0.08次</div>
           </div>
           <div class="loc-progress-group">
             <div class="loc-progress-name">FTP(172.16.154.122)</div>
             <div class="loc-progress-content">
               <el-progress class="my-progress" :percentage="50" :show-text="false" :stroke-width="10"></el-progress>
             </div>
-            <div class="loc-progress-detail com-txt-right">0.08毫秒</div>
+            <div class="loc-progress-detail com-txt-right">0.08次</div>
           </div>
           <div class="loc-progress-group">
             <div class="loc-progress-name">WEB数据库(172.16.154.122)</div>
             <div class="loc-progress-content">
               <el-progress class="my-progress" :percentage="50" :show-text="false" :stroke-width="10"></el-progress>
             </div>
-            <div class="loc-progress-detail com-txt-right">0.08毫秒</div>
+            <div class="loc-progress-detail com-txt-right">0.08次</div>
           </div>
           <div class="loc-progress-group">
             <div class="loc-progress-name">维也纳-测试4(172.16.154.122)</div>
             <div class="loc-progress-content">
               <el-progress class="my-progress" :percentage="50" :show-text="false" :stroke-width="10"></el-progress>
             </div>
-            <div class="loc-progress-detail com-txt-right">0.08毫秒</div>
+            <div class="loc-progress-detail com-txt-right">0.08次</div>
           </div>
           <div class="loc-progress-group">
             <div class="loc-progress-name">核心服务(172.16.154.122)</div>
             <div class="loc-progress-content">
               <el-progress class="my-progress" :percentage="50" :show-text="false" :stroke-width="10"></el-progress>
             </div>
-            <div class="loc-progress-detail com-txt-right">0毫秒</div>
+            <div class="loc-progress-detail com-txt-right">0次</div>
           </div>
           <div class="loc-progress-group">
             <div class="loc-progress-name">测试服务器(172.16.154.122)</div>
             <div class="loc-progress-content">
               <el-progress class="my-progress" :percentage="50" :show-text="false" :stroke-width="10"></el-progress>
             </div>
-            <div class="loc-progress-detail com-txt-right">0.08毫秒</div>
+            <div class="loc-progress-detail com-txt-right">0.08次</div>
           </div>
           <div class="loc-progress-group">
             <div class="loc-progress-name">Apache服务(172.16.154.122)</div>
             <div class="loc-progress-content">
               <el-progress class="my-progress" :percentage="50" :show-text="false" :stroke-width="10"></el-progress>
             </div>
-            <div class="loc-progress-detail com-txt-right">0.08毫秒</div>
+            <div class="loc-progress-detail com-txt-right">0.08次</div>
           </div>
           <div class="loc-progress-group">
             <div class="loc-progress-name">维也纳-测试3(172.16.154.122)</div>
             <div class="loc-progress-content">
               <el-progress class="my-progress" :percentage="50" :show-text="false" :stroke-width="10"></el-progress>
             </div>
-            <div class="loc-progress-detail com-txt-right">0.08毫秒</div>
+            <div class="loc-progress-detail com-txt-right">0.08次</div>
           </div>
           <div class="loc-progress-group">
             <div class="loc-progress-name">采集服务(172.16.154.122)</div>
             <div class="loc-progress-content">
               <el-progress class="my-progress" :percentage="50" :show-text="false" :stroke-width="10"></el-progress>
             </div>
-            <div class="loc-progress-detail com-txt-right">0.08毫秒</div>
-          </div>
-        </div>
-        <div class="loc-progress-form loc-main-background">
-          <div class="loc-progress-title">资源2018-10-29 10.35至2018-10-29 10.35可用性报图</div>
-          <div class="loc-progress-group">
-            <div class="loc-progress-name">监控系统数据库(172.16.154.122)</div>
-            <div class="loc-progress-content">
-              <el-progress class="my-progress" :percentage="50" :show-text="false" :stroke-width="10"></el-progress>
-            </div>
-            <div class="loc-progress-detail">100%</div>
-          </div>
-          <div class="loc-progress-group">
-            <div class="loc-progress-name">维也纳-测试1(172.16.154.122)</div>
-            <div class="loc-progress-content">
-              <el-progress class="my-progress" :percentage="50" :show-text="false" :stroke-width="10"></el-progress>
-            </div>
-            <div class="loc-progress-detail">100%</div>
-          </div>
-          <div class="loc-progress-group">
-            <div class="loc-progress-name">维也纳-测试2(172.16.154.122)</div>
-            <div class="loc-progress-content">
-              <el-progress class="my-progress" :percentage="50" :show-text="false" :stroke-width="10"></el-progress>
-            </div>
-            <div class="loc-progress-detail">100%</div>
-          </div>
-          <div class="loc-progress-group">
-            <div class="loc-progress-name">WEB服务器(172.16.154.122)</div>
-            <div class="loc-progress-content">
-              <el-progress class="my-progress" :percentage="50" :show-text="false" :stroke-width="10"></el-progress>
-            </div>
-            <div class="loc-progress-detail">100%</div>
-          </div>
-          <div class="loc-progress-group">
-            <div class="loc-progress-name">监控系统服务器(172.16.154.122)</div>
-            <div class="loc-progress-content">
-              <el-progress class="my-progress" :percentage="50" :show-text="false" :stroke-width="10"></el-progress>
-            </div>
-            <div class="loc-progress-detail">100%</div>
-          </div>
-          <div class="loc-progress-group">
-            <div class="loc-progress-name">FTP(172.16.154.122)</div>
-            <div class="loc-progress-content">
-              <el-progress class="my-progress" :percentage="50" :show-text="false" :stroke-width="10"></el-progress>
-            </div>
-            <div class="loc-progress-detail">100%</div>
-          </div>
-          <div class="loc-progress-group">
-            <div class="loc-progress-name">WEB数据库(172.16.154.122)</div>
-            <div class="loc-progress-content">
-              <el-progress class="my-progress" :percentage="50" :show-text="false" :stroke-width="10"></el-progress>
-            </div>
-            <div class="loc-progress-detail">100%</div>
-          </div>
-          <div class="loc-progress-group">
-            <div class="loc-progress-name">维也纳-测试4(172.16.154.122)</div>
-            <div class="loc-progress-content">
-              <el-progress class="my-progress" :percentage="50" :show-text="false" :stroke-width="10"></el-progress>
-            </div>
-            <div class="loc-progress-detail">100%</div>
-          </div>
-          <div class="loc-progress-group">
-            <div class="loc-progress-name">核心服务(172.16.154.122)</div>
-            <div class="loc-progress-content">
-              <el-progress class="my-progress" :percentage="50" :show-text="false" :stroke-width="10"></el-progress>
-            </div>
-            <div class="loc-progress-detail">100%</div>
-          </div>
-          <div class="loc-progress-group">
-            <div class="loc-progress-name">测试服务器(172.16.154.122)</div>
-            <div class="loc-progress-content">
-              <el-progress class="my-progress" :percentage="50" :show-text="false" :stroke-width="10"></el-progress>
-            </div>
-            <div class="loc-progress-detail">100%</div>
-          </div>
-          <div class="loc-progress-group">
-            <div class="loc-progress-name">Apache服务(172.16.154.122)</div>
-            <div class="loc-progress-content">
-              <el-progress class="my-progress" :percentage="50" :show-text="false" :stroke-width="10"></el-progress>
-            </div>
-            <div class="loc-progress-detail">100%</div>
-          </div>
-          <div class="loc-progress-group">
-            <div class="loc-progress-name">维也纳-测试3(172.16.154.122)</div>
-            <div class="loc-progress-content">
-              <el-progress class="my-progress" :percentage="50" :show-text="false" :stroke-width="10"></el-progress>
-            </div>
-            <div class="loc-progress-detail">100%</div>
-          </div>
-          <div class="loc-progress-group">
-            <div class="loc-progress-name">采集服务(172.16.154.122)</div>
-            <div class="loc-progress-content">
-              <el-progress class="my-progress" :percentage="50" :show-text="false" :stroke-width="10"></el-progress>
-            </div>
-            <div class="loc-progress-detail">100%</div>
-          </div>
-        </div>
-        <div class="loc-progress-form loc-main-background">
-          <div class="loc-progress-title">资源2018-11-05 05:25至2018-11-05 12:25平均恢复前时间（MTTR）图</div>
-          <div class="loc-progress-group">
-            <div class="loc-progress-name">监控系统数据库(172.16.154.122)</div>
-            <div class="loc-progress-content">
-              <el-progress class="my-progress" :percentage="50" :show-text="false" :stroke-width="10"></el-progress>
-            </div>
-            <div class="loc-progress-detail com-txt-right">0.08毫秒</div>
-          </div>
-          <div class="loc-progress-group">
-            <div class="loc-progress-name">维也纳-测试1(172.16.154.122)</div>
-            <div class="loc-progress-content">
-              <el-progress class="my-progress" :percentage="50" :show-text="false" :stroke-width="10"></el-progress>
-            </div>
-            <div class="loc-progress-detail com-txt-right">0.08毫秒</div>
-          </div>
-          <div class="loc-progress-group">
-            <div class="loc-progress-name">维也纳-测试2(172.16.154.122)</div>
-            <div class="loc-progress-content">
-              <el-progress class="my-progress" :percentage="50" :show-text="false" :stroke-width="10"></el-progress>
-            </div>
-            <div class="loc-progress-detail com-txt-right">0.08毫秒</div>
-          </div>
-          <div class="loc-progress-group">
-            <div class="loc-progress-name">WEB服务器(172.16.154.122)</div>
-            <div class="loc-progress-content">
-              <el-progress class="my-progress" :percentage="50" :show-text="false" :stroke-width="10"></el-progress>
-            </div>
-            <div class="loc-progress-detail com-txt-right">0.08毫秒</div>
-          </div>
-          <div class="loc-progress-group">
-            <div class="loc-progress-name">监控系统服务器(172.16.154.122)</div>
-            <div class="loc-progress-content">
-              <el-progress class="my-progress" :percentage="50" :show-text="false" :stroke-width="10"></el-progress>
-            </div>
-            <div class="loc-progress-detail com-txt-right">0.08毫秒</div>
-          </div>
-          <div class="loc-progress-group">
-            <div class="loc-progress-name">FTP(172.16.154.122)</div>
-            <div class="loc-progress-content">
-              <el-progress class="my-progress" :percentage="50" :show-text="false" :stroke-width="10"></el-progress>
-            </div>
-            <div class="loc-progress-detail com-txt-right">0.08毫秒</div>
-          </div>
-          <div class="loc-progress-group">
-            <div class="loc-progress-name">WEB数据库(172.16.154.122)</div>
-            <div class="loc-progress-content">
-              <el-progress class="my-progress" :percentage="50" :show-text="false" :stroke-width="10"></el-progress>
-            </div>
-            <div class="loc-progress-detail com-txt-right">0.08毫秒</div>
-          </div>
-          <div class="loc-progress-group">
-            <div class="loc-progress-name">维也纳-测试4(172.16.154.122)</div>
-            <div class="loc-progress-content">
-              <el-progress class="my-progress" :percentage="50" :show-text="false" :stroke-width="10"></el-progress>
-            </div>
-            <div class="loc-progress-detail com-txt-right">0.08毫秒</div>
-          </div>
-          <div class="loc-progress-group">
-            <div class="loc-progress-name">核心服务(172.16.154.122)</div>
-            <div class="loc-progress-content">
-              <el-progress class="my-progress" :percentage="50" :show-text="false" :stroke-width="10"></el-progress>
-            </div>
-            <div class="loc-progress-detail com-txt-right">0毫秒</div>
-          </div>
-          <div class="loc-progress-group">
-            <div class="loc-progress-name">测试服务器(172.16.154.122)</div>
-            <div class="loc-progress-content">
-              <el-progress class="my-progress" :percentage="50" :show-text="false" :stroke-width="10"></el-progress>
-            </div>
-            <div class="loc-progress-detail com-txt-right">0.08毫秒</div>
-          </div>
-          <div class="loc-progress-group">
-            <div class="loc-progress-name">Apache服务(172.16.154.122)</div>
-            <div class="loc-progress-content">
-              <el-progress class="my-progress" :percentage="50" :show-text="false" :stroke-width="10"></el-progress>
-            </div>
-            <div class="loc-progress-detail com-txt-right">0.08毫秒</div>
-          </div>
-          <div class="loc-progress-group">
-            <div class="loc-progress-name">维也纳-测试3(172.16.154.122)</div>
-            <div class="loc-progress-content">
-              <el-progress class="my-progress" :percentage="50" :show-text="false" :stroke-width="10"></el-progress>
-            </div>
-            <div class="loc-progress-detail com-txt-right">0.08毫秒</div>
-          </div>
-          <div class="loc-progress-group">
-            <div class="loc-progress-name">采集服务(172.16.154.122)</div>
-            <div class="loc-progress-content">
-              <el-progress class="my-progress" :percentage="50" :show-text="false" :stroke-width="10"></el-progress>
-            </div>
-            <div class="loc-progress-detail com-txt-right">0.08毫秒</div>
-          </div>
-        </div>
-        <div class="loc-progress-form loc-main-background">
-          <div class="loc-progress-title">资源2018-11-05 05:25至2018-11-05 12:25平均故障间隔时间（MTBF）图</div>
-          <div class="loc-progress-group">
-            <div class="loc-progress-name">监控系统数据库(172.16.154.122)</div>
-            <div class="loc-progress-content">
-              <el-progress class="my-progress" :percentage="50" :show-text="false" :stroke-width="10"></el-progress>
-            </div>
-            <div class="loc-progress-detail com-txt-right">0.08毫秒</div>
-          </div>
-          <div class="loc-progress-group">
-            <div class="loc-progress-name">维也纳-测试1(172.16.154.122)</div>
-            <div class="loc-progress-content">
-              <el-progress class="my-progress" :percentage="50" :show-text="false" :stroke-width="10"></el-progress>
-            </div>
-            <div class="loc-progress-detail com-txt-right">0.08毫秒</div>
-          </div>
-          <div class="loc-progress-group">
-            <div class="loc-progress-name">维也纳-测试2(172.16.154.122)</div>
-            <div class="loc-progress-content">
-              <el-progress class="my-progress" :percentage="50" :show-text="false" :stroke-width="10"></el-progress>
-            </div>
-            <div class="loc-progress-detail com-txt-right">0.08毫秒</div>
-          </div>
-          <div class="loc-progress-group">
-            <div class="loc-progress-name">WEB服务器(172.16.154.122)</div>
-            <div class="loc-progress-content">
-              <el-progress class="my-progress" :percentage="50" :show-text="false" :stroke-width="10"></el-progress>
-            </div>
-            <div class="loc-progress-detail com-txt-right">0.08毫秒</div>
-          </div>
-          <div class="loc-progress-group">
-            <div class="loc-progress-name">监控系统服务器(172.16.154.122)</div>
-            <div class="loc-progress-content">
-              <el-progress class="my-progress" :percentage="50" :show-text="false" :stroke-width="10"></el-progress>
-            </div>
-            <div class="loc-progress-detail com-txt-right">0.08毫秒</div>
-          </div>
-          <div class="loc-progress-group">
-            <div class="loc-progress-name">FTP(172.16.154.122)</div>
-            <div class="loc-progress-content">
-              <el-progress class="my-progress" :percentage="50" :show-text="false" :stroke-width="10"></el-progress>
-            </div>
-            <div class="loc-progress-detail com-txt-right">0.08毫秒</div>
-          </div>
-          <div class="loc-progress-group">
-            <div class="loc-progress-name">WEB数据库(172.16.154.122)</div>
-            <div class="loc-progress-content">
-              <el-progress class="my-progress" :percentage="50" :show-text="false" :stroke-width="10"></el-progress>
-            </div>
-            <div class="loc-progress-detail com-txt-right">0.08毫秒</div>
-          </div>
-          <div class="loc-progress-group">
-            <div class="loc-progress-name">维也纳-测试4(172.16.154.122)</div>
-            <div class="loc-progress-content">
-              <el-progress class="my-progress" :percentage="50" :show-text="false" :stroke-width="10"></el-progress>
-            </div>
-            <div class="loc-progress-detail com-txt-right">0.08毫秒</div>
-          </div>
-          <div class="loc-progress-group">
-            <div class="loc-progress-name">核心服务(172.16.154.122)</div>
-            <div class="loc-progress-content">
-              <el-progress class="my-progress" :percentage="50" :show-text="false" :stroke-width="10"></el-progress>
-            </div>
-            <div class="loc-progress-detail com-txt-right">0毫秒</div>
-          </div>
-          <div class="loc-progress-group">
-            <div class="loc-progress-name">测试服务器(172.16.154.122)</div>
-            <div class="loc-progress-content">
-              <el-progress class="my-progress" :percentage="50" :show-text="false" :stroke-width="10"></el-progress>
-            </div>
-            <div class="loc-progress-detail com-txt-right">0.08毫秒</div>
-          </div>
-          <div class="loc-progress-group">
-            <div class="loc-progress-name">Apache服务(172.16.154.122)</div>
-            <div class="loc-progress-content">
-              <el-progress class="my-progress" :percentage="50" :show-text="false" :stroke-width="10"></el-progress>
-            </div>
-            <div class="loc-progress-detail com-txt-right">0.08毫秒</div>
-          </div>
-          <div class="loc-progress-group">
-            <div class="loc-progress-name">维也纳-测试3(172.16.154.122)</div>
-            <div class="loc-progress-content">
-              <el-progress class="my-progress" :percentage="50" :show-text="false" :stroke-width="10"></el-progress>
-            </div>
-            <div class="loc-progress-detail com-txt-right">0.08毫秒</div>
-          </div>
-          <div class="loc-progress-group">
-            <div class="loc-progress-name">采集服务(172.16.154.122)</div>
-            <div class="loc-progress-content">
-              <el-progress class="my-progress" :percentage="50" :show-text="false" :stroke-width="10"></el-progress>
-            </div>
-            <div class="loc-progress-detail com-txt-right">0.08毫秒</div>
+            <div class="loc-progress-detail com-txt-right">0.08次</div>
           </div>
         </div>
       </div>
@@ -894,6 +611,6 @@
 <script src="../assets/js/vue/vue.dev.js"></script>
 <!-- <script src="../assets/js/echart/vue-echart.js"></script> -->
 <script src="../assets/js/element-ui/index.js"></script>
-<script src="./report-available/report-available.js"></script>
+<script src="./report-alarm/report-alarm.js"></script>
 
 </html>
