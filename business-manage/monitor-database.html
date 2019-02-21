@@ -268,18 +268,20 @@
           <el-col :span="12">
             <div class="grid-content bg-purple" style="height:285px">
               <p class="p-title" style="margin-bottom:20px;">提示信息</p>
-              <el-row :gutter="20">
-                <el-col :span="8" v-for="(item, index) in database_array" :key="index">
-                  <div class="left-img-right-text">
-                    <img src="../assets/images/icon/database.png" />
-                    <ul>
-                      <li>{{item.label}}</li>
-                      <li>表数据 : {{item.count}}</li>
-                      <li>大小 : {{item.size}}</li>
-                    </ul>
-                  </div>
-                </el-col>
-              </el-row>
+              <div style="height:211px; overflow:auto;">
+                <el-row :gutter="20">
+                  <el-col :span="8" v-for="(item, index) in database_array" :key="index">
+                    <div class="left-img-right-text">
+                      <img src="../assets/images/icon/database.png" />
+                      <ul>
+                        <li>{{item.label}}</li>
+                        <li>表数据 : {{item.count}}</li>
+                        <li>大小 : {{item.size}}</li>
+                      </ul>
+                    </div>
+                  </el-col>
+                </el-row>
+              </div>
             </div>
           </el-col>
         </el-row>

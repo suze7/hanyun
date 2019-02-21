@@ -192,36 +192,40 @@
         <el-col :span="8">
           <div class="grid-content bg-purple" style="height:285px">
             <p class="p-title" style="margin-bottom:20px;">内存</p>
-            <div class="left-img-right-text" v-for="(item, index) in database_array" :key="index">
-              <div>
-                <img style="margin-top:25%;" :src="item.imgUrl" />
+            <div style="height:211px; overflow:auto;">
+              <div class="left-img-right-text" v-for="(item, index) in database_array" :key="index">
+                <div>
+                  <img style="margin-top:25%;" :src="item.imgUrl" />
+                </div>
+                <ul>
+                  <li>{{item.label}}</li>
+                  <li>总内存 : {{item.count}} | 已使用 {{item.size}}</li>
+                  <li>使用率 : {{item.count}}%</li>
+                  <li>
+                    <el-progress :percentage="item.count" :show-text="false" color="#FFC555"></el-progress>
+                  </li>
+                </ul>
               </div>
-              <ul>
-                <li>{{item.label}}</li>
-                <li>总内存 : {{item.count}} | 已使用 {{item.size}}</li>
-                <li>使用率 : {{item.count}}%</li>
-                <li>
-                  <el-progress :percentage="item.count" :show-text="false" color="#FFC555"></el-progress>
-                </li>
-              </ul>
             </div>
           </div>
         </el-col>
         <el-col :span="8">
           <div class="grid-content bg-purple" style="height:285px">
             <p class="p-title" style="margin-bottom:20px;">硬盘</p>
-            <div class="left-img-right-text" v-for="(item, index) in storage_array" :key="index">
-              <div>
-                <img style="margin-top:25%;" :src="item.imgUrl" />
+            <div style="height:211px; overflow:auto;">
+              <div class="left-img-right-text" v-for="(item, index) in storage_array" :key="index">
+                <div>
+                  <img style="margin-top:25%;" :src="item.imgUrl" />
+                </div>
+                <ul>
+                  <li>{{item.label}}</li>
+                  <li>总内存 : {{item.count}} | 已使用 {{item.size}}</li>
+                  <li>使用率 : {{item.count}}%</li>
+                  <li>
+                    <el-progress :percentage="item.count" :show-text="false" color="#FFC555"></el-progress>
+                  </li>
+                </ul>
               </div>
-              <ul>
-                <li>{{item.label}}</li>
-                <li>总内存 : {{item.count}} | 已使用 {{item.size}}</li>
-                <li>使用率 : {{item.count}}%</li>
-                <li>
-                  <el-progress :percentage="item.count" :show-text="false" color="#FFC555"></el-progress>
-                </li>
-              </ul>
             </div>
           </div>
         </el-col>
@@ -246,7 +250,7 @@
         <el-col :span="24">
           <div class="grid-content bg-purple">
             <el-table :data="cpu_tableData" size="mini" class="transparent-table transparent-white-table" style="width: 100%">
-              <el-table-column type="index" label="序号" :index="indexMethod"></el-table-column>
+              <el-table-column type="index" label="序号" width="120"></el-table-column>
               <el-table-column prop="name" sortable label="CPU名称" class-name="com-txt-overflow"></el-table-column>
             </el-table>
           </div>

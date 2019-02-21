@@ -400,17 +400,18 @@ var app = new Vue({
       switch (obj.name) {
         case '监控系统数据库':
           url = `./monitor-database.html?page=${obj.name}`;
-          window.open(url, '_blank', `width=${screenWidth}, height=${screenHeight-100},top=0,left=0,toolbar=no,menubar=no,location=no,status=no`);
+          window.open(url, '_blank', `width=${screenWidth}, height=${screenHeight - 100},top=0,left=0,toolbar=no,menubar=no,location=no,status=no`);
           break;
         case '核心服务':
           url = `./core-service.html?page=${obj.name}`;
-          window.open(url, '_blank', `width=${screenWidth}, height=${screenHeight-100},top=0,left=0,toolbar=no,menubar=no,location=no,status=no`);
+          window.open(url, '_blank', `width=${screenWidth}, height=${screenHeight - 100},top=0,left=0,toolbar=no,menubar=no,location=no,status=no`);
           break;
         case '采集服务':
 
           break;
         case 'WEB数据库':
-
+          url = `./web-service.html?page=${obj.name}`;
+          window.open(url, '_blank', `width=${screenWidth}, height=${screenHeight - 100},top=0,left=0,toolbar=no,menubar=no,location=no,status=no`);
           break;
         case '监控数据服务器':
 

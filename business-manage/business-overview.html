@@ -9,8 +9,8 @@
   <link href="../assets/css/base.css" rel="stylesheet" />
   <link href="../assets/js/element-ui/index.css" rel="stylesheet" />
   <link href="../assets/css/theme/main-theme.css" rel="stylesheet" />
+  <link href="../assets/css/style.css" rel="stylesheet" />
   <!-- <link href="../assets/css/theme/light-theme.css" rel="stylesheet" /> -->
-  <link rel="stylesheet" href="./common-business.css">
   <link href="./business-overview/business-overview.css" rel="stylesheet" />
 </head>
 
@@ -120,7 +120,7 @@
       </div>
     </div>
 
-    <div v-else-if="radio1==='资源告警'" style="margin-top:20px">
+    <div v-else-if="radio1==='资源告警'" style="margin-top:20px;">
       <el-table :data="alarm_tableData" size="mini" class="transparent-table transparent-white-table" style="width: 100%">
         <el-table-column label="级别" sortable class-name="com-txt-overflow" width="88px">
           <template slot-scope="scope">

@@ -22,10 +22,12 @@ var app = new Vue({
       value: '',
       database_array: [
         { id: '1', label: 'INFORMATION_SCHEMA', imgUrl: '../assets/images/icon/storage.png', count: 62, size: '163.23MB' },
-        { id: '2', label: 'MySQL', imgUrl: '../assets/images/icon/cpu.png', count: 62, size: '163.23KB' }
+        { id: '2', label: 'MySQL', imgUrl: '../assets/images/icon/cpu.png', count: 62, size: '163.23KB' },
+        { id: '2', label: 'MySQL', imgUrl: '../assets/images/icon/cpu.png', count: 62, size: '163.23KB' },
       ],
       storage_array: [
         { id: '1', label: 'INFORMATION_SCHEMA', imgUrl: '../assets/images/icon/local.png', count: 62, size: '163.23MB' },
+        { id: '2', label: 'MySQL', imgUrl: '../assets/images/icon/local.png', count: 62, size: '163.23KB' },
         { id: '2', label: 'MySQL', imgUrl: '../assets/images/icon/local.png', count: 62, size: '163.23KB' }
       ],
       editTimeDialog: false,
