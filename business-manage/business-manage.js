@@ -52,7 +52,7 @@ var app = new Vue({
     toRoute(menu) {
       window.location.href = menu.url;
     },
-    setMenuList: function() {
+    setMenuList: function () {
       this.menuList = [
         {
           name: '首页',
@@ -155,10 +155,13 @@ var app = new Vue({
       let title = '业务资源详情';
       let screenWidth = window.screen.width;
       let screenHeight = window.screen.height;
+      console.log(screenWidth, screenHeight);
+      console.log(screenWidth, screenHeight);
       let url = `./business-overview.html?id=${obj.business_id}`;
+      // return;
       if (screenHeight <= 768) {
         // if (url) {
-        window.open(url, title, `width=${screenWidth}, height=${screenHeight} - 50,top=20,left=30,toolbar=no,menubar=no,scrollbars=no,resizable=no,location=no,status=no`);
+        window.open(url, title, `width=${screenWidth}, height=${screenHeight-100},top=0,left=0,toolbar=no,menubar=no,scrollbars=no,resizable=no,location=no,status=no`);
         // }
       } else {
         let height = 850;

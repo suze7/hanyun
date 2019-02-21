@@ -3,7 +3,6 @@ var app = new Vue({
   el: '#homeIndex',
   data() {
     return {
-      overview: true,
       radio1: '业务总览',
       radio2: '1H',
       radio3: '总览',
@@ -14,19 +13,20 @@ var app = new Vue({
       },
       options: [
         { value: 'CPU使用率', label: 'CPU使用率' },
-        { value: 'Heap space', label: 'Heap space' },
-        { value: 'PermGen space', label: 'PermGen space' },
-        { value: '平均请求次数（秒）', label: '平均请求次数（秒）' },
-        { value: '当前会话数', label: '当前会话数' },
-        { value: '当前活动线程数', label: '当前活动线程数' },
-        { value: '平均响应时间', label: '平均响应时间' },
+        { value: '系统平均负载', label: '系统平均负载' },
+        { value: '物理内存使用率', label: '物理内存使用率' },
+        { value: '交换内存使用率', label: '交换内存使用率' },
+        { value: 'Swap交换情况', label: 'Swap交换情况' },
         { value: '响应时长', label: '响应时长' }
       ],
       value: '',
       database_array: [
-        { id: '1', label: 'INFORMATION_SCHEMA', count: 62, size: '163.23MB' },
-        { id: '2', label: 'MySQL', count: 62, size: '163.23KB' },
-        { id: '3', label: '网络', count: 62, size: '163.23MB' }
+        { id: '1', label: 'INFORMATION_SCHEMA', imgUrl: '../assets/images/icon/storage.png', count: 62, size: '163.23MB' },
+        { id: '2', label: 'MySQL', imgUrl: '../assets/images/icon/cpu.png', count: 62, size: '163.23KB' }
+      ],
+      storage_array: [
+        { id: '1', label: 'INFORMATION_SCHEMA', imgUrl: '../assets/images/icon/local.png', count: 62, size: '163.23MB' },
+        { id: '2', label: 'MySQL', imgUrl: '../assets/images/icon/local.png', count: 62, size: '163.23KB' }
       ],
       editTimeDialog: false,
       time: {
@@ -56,6 +56,11 @@ var app = new Vue({
         { name: '/net-server', host_name: 'localhost', route: '/net-server', servlet: '0', },
         { name: '/net-server', host_name: 'localhost', route: '/net-server', servlet: '0', },
       ],
+      cpu_tableData: [
+        { name: '/', host_name: '本地主机', route: '网络服务器', servlet: '0', },
+        { name: '网络服务器', host_name: '本地主机', route: '网络服务器', servlet: '0', },
+        { name: 'Intel(R) Xeon(R) CPU E5-2682 v4 @ 2.50GHz', host_name: 'localhost', route: '/net-server', servlet: '0', },
+      ],
       connect_tableData: [
         { name: 'HTTP-NIO-BOBO', ip: '127.0.0.1', port: '4200', agreement: 'http/1.1', operator: '内部', plan: 'http', status: '已启动', busy_line: '0', current_line: '0', },
         { name: 'AJP-NIO-9090', ip: '127.0.0.1', port: '4200', agreement: 'http/1.1', operator: '内部', plan: 'http', status: '已启动', busy_line: '0', current_line: '0', },
@@ -78,64 +83,24 @@ var app = new Vue({
   },
   mounted() {
     this.getBusinessUsingRight();
-    this.drawWaveBall();
   },
   methods: {
     togglePage(evt) {
       console.log(evt);
       switch (evt) {
         case '总览':
-          this.overview = true;
+          
           break;
-        case '资源告警':
-          this.overview = false;
+        case '资源定位':
+          
           break;
-        default:
+        case '拓扑定位':
+          
+          break;
+        case '关注定位':
+          
           break;
       }
-    },
-    toggleBtn(evt) {
-      console.log(evt);
-      // switch (evt) {
-      //   case '业务总览':
-      //     this.overview = true;
-      //     break;
-      //   case 'WEB应用':
-      //     this.overview = false;
-      //     break;
-      //   case '连接器':
-      //     this.overview = false;
-      //     break;
-      //   default:
-      //     break;
-      // }
-    },
-    drawWaveBall() {
-      let cnt1 = document.getElementById("count1");
-      let water1 = document.getElementById("water1");
-      let percent1 = cnt1.innerText;
-      let interval1;
-      // let cnt2 = document.getElementById("count2");
-      // let water2 = document.getElementById("water2");
-      // let percent2 = cnt2.innerText;
-      // let interval2;
-      interval1 = setInterval(function () {
-        percent1++;
-        cnt1.innerHTML = percent1;
-        water1.style.transform = 'translate(0' + ',' + (100 - percent1) + '%)';
-        if (percent1 == 58) {
-          clearInterval(interval1);
-        }
-      }, 30);
-      // interval2 = setInterval(function () {
-      //   percent2++;
-      //   cnt2.innerHTML = percent2;
-      //   water2.style.transform = 'translate(0' + ',' + (100 - percent2) + '%)';
-      //   if (percent2 == 58) {
-      //     clearInterval(interval2);
-      //   }
-      //   console.log(percent2);
-      // }, 30);
     },
     toggleTime(evt) {
       console.log(evt);
@@ -150,7 +115,7 @@ var app = new Vue({
     },
     /* 业务可用率 */
     getBusinessUsingRight() {
-      // cpu使用率
+      // 内存使用率
       this.multiple_pie.gauge = {
         tooltip: {
           formatter: "{a} <br/>{b} : {c}%"
@@ -159,14 +124,6 @@ var app = new Vue({
           {
             name: '业务指标',
             type: 'gauge',
-            // startAngle: -180,
-            // endAngle: 180,
-            // axisLine: {
-            //   show: false,
-            // },
-            // axisTick: {
-            //   show: false,
-            // },
             detail: { formatter: '{value}%' },
             data: [{ value: 50, name: '完成率' }]
           }
