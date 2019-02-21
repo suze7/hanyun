@@ -145,7 +145,7 @@
             </template>
           </el-table-column>
           <el-table-column prop="healthy" label="健康度" class-name="com-txt-overflow"></el-table-column>
-          <el-table-column label="健康状态" class-name="com-txt-overflow">
+          <el-table-column label="健康状态" sortable class-name="com-txt-overflow">
             <template slot-scope="scope">
               <img v-if="scope.row.status === '1'" src="../assets/images/icon/normal.png" />
               <img v-if="scope.row.status === '2'" src="../assets/images/icon/warning.png" />

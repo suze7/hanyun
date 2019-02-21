@@ -16,7 +16,7 @@
 </head>
 
 <body class="app">
-  <div id="homeIndex" style="height: 100%;">
+  <div id="homeIndex">
     <div v-if="overview">
       <el-radio-group v-model="radio1" size="small">
         <el-radio-button label="业务总览"></el-radio-button>
@@ -288,30 +288,46 @@
       </div>
     </div>
     <div v-else>
-      <el-table :data="alarm_tableData" size="mini" class="transparent-table transparent-white-table" style="width: 100%">
-        <el-table-column label="级别" sortable class-name="com-txt-overflow" width="88px">
-          <template slot-scope="scope">
-            <img v-if="scope.row.alarm_status === '1'" src="../assets/images/icon/normal.png" />
-            <img v-if="scope.row.alarm_status === '2'" src="../assets/images/icon/warning.png" />
-            <img v-if="scope.row.alarm_status === '0'" src="../assets/images/icon/error.png" />
-          </template>
-        </el-table-column>
-        <el-table-column prop="alarm_name" sortable sortable label="告警名称" class-name="com-txt-overflow"></el-table-column>
-        <el-table-column prop="alarm_type" sortable label="告警类型" class-name="com-txt-overflow"></el-table-column>
-        <el-table-column prop="alarm_status" sortable label="告警状态" class-name="com-txt-overflow"></el-table-column>
-        <el-table-column prop="safety_level" sortable label="保障等级" class-name="com-txt-overflow"></el-table-column>
-        <el-table-column prop="product_time" sortable label="产生时间" class-name="com-txt-overflow"></el-table-column>
-        <el-table-column prop="continued_time" sortable label="已持续时间" class-name="com-txt-overflow"></el-table-column>
-        <el-table-column prop="confirmor" sortable label="确认人" class-name="com-txt-overflow"></el-table-column>
-        <el-table-column prop="confirm_time" sortable label="确认时间" class-name="com-txt-overflow"></el-table-column>
-        <el-table-column prop="alarm_content" label="告警内容" class-name="com-txt-overflow"></el-table-column>
-      </el-table>
+      <el-row>
+        <el-col>
+          <div class="grid-content bg-purple">
+            <el-table :data="alarm_tableData" size="mini" class="transparent-table transparent-white-table" style="width: 100%">
+              <el-table-column label="级别" sortable class-name="com-txt-overflow" width="88px">
+                <template slot-scope="scope">
+                  <img v-if="scope.row.alarm_status === '1'" src="../assets/images/icon/normal.png" />
+                  <img v-if="scope.row.alarm_status === '2'" src="../assets/images/icon/warning.png" />
+                  <img v-if="scope.row.alarm_status === '0'" src="../assets/images/icon/error.png" />
+                </template>
+              </el-table-column>
+              <el-table-column prop="alarm_name" sortable sortable label="告警名称" class-name="com-txt-overflow"></el-table-column>
+              <el-table-column prop="alarm_type" sortable label="告警类型" class-name="com-txt-overflow"></el-table-column>
+              <el-table-column prop="alarm_status" sortable label="告警状态" class-name="com-txt-overflow"></el-table-column>
+              <el-table-column prop="safety_level" sortable label="保障等级" class-name="com-txt-overflow"></el-table-column>
+              <el-table-column prop="product_time" sortable label="产生时间" class-name="com-txt-overflow"></el-table-column>
+              <el-table-column prop="continued_time" sortable label="已持续时间" class-name="com-txt-overflow"></el-table-column>
+              <el-table-column prop="confirmor" sortable label="确认人" class-name="com-txt-overflow"></el-table-column>
+              <el-table-column prop="confirm_time" sortable label="确认时间" class-name="com-txt-overflow"></el-table-column>
+              <el-table-column prop="alarm_content" label="告警内容" class-name="com-txt-overflow"></el-table-column>
+            </el-table>
+            <div class="loc-pagination">
+              <div class="my-pagination-group">
+                <div class="my-pagination-btn my-pagination-first com-hover">
+                  首页
+                </div>
+                <el-pagination :pager-count="5" layout="prev, pager, next" :total="1000">
+                </el-pagination>
+                <div class="my-pagination-btn my-pagination-last com-hover">
+                  尾页
+                </div>
+              </div>
+            </div>
+          </div>
+        </el-col>
+      </el-row>
     </div>
-    <div>
-      <el-radio-group v-model="radio3" @change="togglePage">
-        <el-radio-button label="总览"></el-radio-button>
-        <el-radio-button label="资源告警"></el-radio-button>
-      </el-radio-group>
+
+    <div class="toggle-page">
+      <span v-for="(page, index) in page_array" :key="index" @click="togglePage(page)" :class="{active: this_page===page.label}">{{page.label}}</span>
     </div>
 
     <el-dialog title="自定义时间段" :visible.sync="editTimeDialog" width="400px" class="blue-dialog">

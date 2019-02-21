@@ -5,7 +5,6 @@ var app = new Vue({
     return {
       radio1: '业务总览',
       radio2: '1H',
-      radio3: '总览',
       business_data: null,
       multiple_pie: {
         gauge: null,
@@ -74,6 +73,13 @@ var app = new Vue({
         { name: 'HTTP-NIO-BOBO', ip: '127.0.0.1', port: '4200', agreement: 'http/1.1', operator: '内部', plan: 'http', status: '已启动', busy_line: '0', current_line: '0', },
       ],
       isActice: '1H',
+      this_page: '总览',
+      page_array: [
+        { label: '总览', url: '' },
+        { label: '资源定位', url: '', },
+        { label: '拓扑定位', url: '', },
+        { label: '关注定位', url: '', },
+      ],
       signal_info: {
         baseInfo: { status: '0', version: '2021-03-20', start_time: '23天', main_name: 'qingta', setup_folder: 'd:/kugou', system: 'windows' },
         linePool: {},
@@ -88,19 +94,38 @@ var app = new Vue({
   },
   methods: {
     togglePage(evt) {
+      this.this_page = evt.label;
+      switch (evt.label) {
+        case '总览':
+
+          break;
+        case '资源定位':
+
+          break;
+        case '拓扑定位':
+
+          break;
+        case '关注定位':
+
+          break;
+        default:
+          break;
+      }
+    },
+    togglePage(evt) {
       console.log(evt);
       switch (evt) {
         case '总览':
-          
+
           break;
         case '资源定位':
-          
+
           break;
         case '拓扑定位':
-          
+
           break;
         case '关注定位':
-          
+
           break;
       }
     },

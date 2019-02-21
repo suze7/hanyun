@@ -6,7 +6,6 @@ var app = new Vue({
       overview: true,
       radio1: '业务总览',
       radio2: '1H',
-      radio3: '总览',
       business_data: null,
       multiple_pie: {
         pie: null
@@ -52,6 +51,11 @@ var app = new Vue({
         { alarm_id: '11', alarm_name: '物理内存使用率异常', levle: '2', alarm_type: '资源负载检测', alarm_status: '1', safety_level: '2', product_time: '2019-02-04', continued_time: '16分23秒', confirmor: '16', confirm_time: '2019-02-05', alarm_content: '百分比 大于等于 50% 触发 严重' },
       ],
       isActice: '1H',
+      this_page: '总览',
+      page_array: [
+        { label: '总览', url: '' },
+        { label: '资源告警', url: '', }
+      ],
       signal_info: {
         baseInfo: { status: '0', version: '2021-03-20', start_time: '23天', main_name: 'qingta', setup_folder: 'd:/kugou', system: 'windows' },
         linePool: {},
@@ -64,8 +68,8 @@ var app = new Vue({
   },
   methods: {
     togglePage(evt) {
-      console.log(evt);
-      switch (evt) {
+      this.this_page = evt.label;
+      switch (evt.label) {
         case '总览':
           this.overview = true;
           break;

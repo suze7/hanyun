@@ -16,7 +16,7 @@
 </head>
 
 <body class="app">
-  <div id="homeIndex" style="height: 100%;">
+  <div id="homeIndex">
     <div v-if="overview">
       <el-radio-group v-model="radio1" @change="toggleBtn" size="small">
         <el-radio-button label="业务总览"></el-radio-button>
@@ -316,11 +316,8 @@
       </el-row>
     </div>
 
-    <div>
-      <el-radio-group v-model="radio3" @change="togglePage">
-        <el-radio-button label="总览"></el-radio-button>
-        <el-radio-button label="资源告警"></el-radio-button>
-      </el-radio-group>
+    <div class="toggle-page">
+      <span v-for="(page, index) in page_array" :key="index" @click="togglePage(page)" :class="{active: this_page===page.label}">{{page.label}}</span>
     </div>
 
     <el-dialog title="自定义时间段" :visible.sync="editTimeDialog" width="400px" class="blue-dialog">

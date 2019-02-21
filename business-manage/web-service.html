@@ -16,7 +16,7 @@
 </head>
 
 <body class="app">
-  <div id="homeIndex" style="height: 100%;">
+  <div id="homeIndex">
     <el-radio-group v-model="radio1" size="small">
       <el-radio-button label="业务总览"></el-radio-button>
       <el-radio-button label="WEB应用"></el-radio-button>
@@ -273,6 +273,18 @@
               <el-table-column prop="name" sortable label="进流量" class-name="com-txt-overflow"></el-table-column>
               <el-table-column prop="name" sortable label="出流量" class-name="com-txt-overflow"></el-table-column>
             </el-table>
+            <div class="loc-pagination">
+              <div class="my-pagination-group">
+                <div class="my-pagination-btn my-pagination-first com-hover">
+                  首页
+                </div>
+                <el-pagination :pager-count="5" layout="prev, pager, next" :total="1000">
+                </el-pagination>
+                <div class="my-pagination-btn my-pagination-last com-hover">
+                  尾页
+                </div>
+              </div>
+            </div>
           </div>
         </el-col>
       </el-row>
@@ -291,6 +303,18 @@
               <el-table-column prop="name" sortable label="句柄数" class-name="com-txt-overflow"></el-table-column>
               <el-table-column prop="name" sortable label="映像路径" class-name="com-txt-overflow"></el-table-column>
             </el-table>
+            <div class="loc-pagination">
+              <div class="my-pagination-group">
+                <div class="my-pagination-btn my-pagination-first com-hover">
+                  首页
+                </div>
+                <el-pagination :pager-count="5" layout="prev, pager, next" :total="1000">
+                </el-pagination>
+                <div class="my-pagination-btn my-pagination-last com-hover">
+                  尾页
+                </div>
+              </div>
+            </div>
           </div>
         </el-col>
       </el-row>
@@ -306,6 +330,18 @@
               <el-table-column prop="name" sortable label="服务运行状态" class-name="com-txt-overflow"></el-table-column>
               <el-table-column prop="name" sortable label="路径" class-name="com-txt-overflow"></el-table-column>
             </el-table>
+            <div class="loc-pagination">
+              <div class="my-pagination-group">
+                <div class="my-pagination-btn my-pagination-first com-hover">
+                  首页
+                </div>
+                <el-pagination :pager-count="5" layout="prev, pager, next" :total="1000">
+                </el-pagination>
+                <div class="my-pagination-btn my-pagination-last com-hover">
+                  尾页
+                </div>
+              </div>
+            </div>
           </div>
         </el-col>
       </el-row>
@@ -322,6 +358,18 @@
               <el-table-column prop="name" sortable label="已经使用" class-name="com-txt-overflow"></el-table-column>
               <el-table-column prop="name" sortable label="可用空间" class-name="com-txt-overflow"></el-table-column>
             </el-table>
+            <div class="loc-pagination">
+              <div class="my-pagination-group">
+                <div class="my-pagination-btn my-pagination-first com-hover">
+                  首页
+                </div>
+                <el-pagination :pager-count="5" layout="prev, pager, next" :total="1000">
+                </el-pagination>
+                <div class="my-pagination-btn my-pagination-last com-hover">
+                  尾页
+                </div>
+              </div>
+            </div>
           </div>
         </el-col>
       </el-row>
@@ -338,18 +386,25 @@
               <el-table-column prop="name" sortable label="读速率（每秒）" class-name="com-txt-overflow"></el-table-column>
               <el-table-column prop="name" sortable label="写速率（每秒）" class-name="com-txt-overflow"></el-table-column>
             </el-table>
+            <div class="loc-pagination">
+              <div class="my-pagination-group">
+                <div class="my-pagination-btn my-pagination-first com-hover">
+                  首页
+                </div>
+                <el-pagination :pager-count="5" layout="prev, pager, next" :total="1000">
+                </el-pagination>
+                <div class="my-pagination-btn my-pagination-last com-hover">
+                  尾页
+                </div>
+              </div>
+            </div>
           </div>
         </el-col>
       </el-row>
     </div>
 
-    <div>
-      <el-radio-group v-model="radio3" @change="togglePage">
-        <el-radio-button label="总览"></el-radio-button>
-        <el-radio-button label="资源定位"></el-radio-button>
-        <el-radio-button label="拓扑定位"></el-radio-button>
-        <el-radio-button label="关注定位"></el-radio-button>
-      </el-radio-group>
+    <div class="toggle-page">
+      <span v-for="(page, index) in page_array" :key="index" @click="togglePage(page)" :class="{active: this_page===page.label}">{{page.label}}</span>
     </div>
 
     <el-dialog title="自定义时间段" :visible.sync="editTimeDialog" width="400px" class="blue-dialog">
