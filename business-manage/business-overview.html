@@ -9,8 +9,9 @@
   <link href="../assets/css/base.css" rel="stylesheet" />
   <link href="../assets/js/element-ui/index.css" rel="stylesheet" />
   <link href="../assets/css/theme/main-theme.css" rel="stylesheet" />
-  <!-- <link href="../assets/css/theme/light-theme.css" rel="stylesheet" /> -->
+  <link href="../assets/css/style.css" rel="stylesheet" />
   <link rel="stylesheet" href="./common-business.css">
+  <!-- <link href="../assets/css/theme/light-theme.css" rel="stylesheet" /> -->
   <link href="./business-overview/business-overview.css" rel="stylesheet" />
 </head>
 
@@ -24,24 +25,27 @@
 
     <div v-if="radio1==='业务总览'">
       <div class="overview-header">
-        <span>
-          业务名称 : {{business_data.label}}
-        </span>
-        <span>
-          当前健康等级 :
-          <img v-if="business_data.safety_level === '1'" src="../assets/images/icon/normal.png" />
-          <img v-if="business_data.safety_level === '2'" src="../assets/images/icon/warning.png" />
-          <img v-if="business_data.safety_level === '0'" src="../assets/images/icon/error.png" />
-        </span>
-        <span>
-          宕机次数 : {{business_data.label}}
-        </span>
-        <span>
-          MTTR : {{business_data.mttr}}
-        </span>
-        <span>
-          MTBF : {{business_data.mtbf}}
-        </span>
+        <div>
+          <span>
+            业务名称 : {{business_data.label}}
+          </span>
+          <span>
+            当前健康等级 :
+            <img v-if="business_data.safety_level === '1'" src="../assets/images/icon/normal.png" />
+            <img v-if="business_data.safety_level === '2'" src="../assets/images/icon/warning.png" />
+            <img v-if="business_data.safety_level === '0'" src="../assets/images/icon/error.png" />
+          </span>
+          <span>
+            宕机次数 : {{business_data.label}}
+          </span>
+          <span>
+            MTTR : {{business_data.mttr}}
+          </span>
+          <span>
+            MTBF : {{business_data.mtbf}}
+          </span>
+
+        </div>
       </div>
       <div class="aside-statics">
         <div class="aside-left">
@@ -113,36 +117,48 @@
             </ul>
           </div>
           <div class="bottom-charts">
-            <v-chart v-if="isActice === '0'" style="width:1000px; height:200px" :options="multiple_pie.pie3"></v-chart>
-            <v-chart v-else style="width:1000px; height:200px" :options="multiple_pie.pie3"></v-chart>
+            <v-chart v-if="isActice === '0'" style="width:1000px; height:200px" :options="multiple_pie.line1"></v-chart>
+            <v-chart v-else style="width:1000px; height:200px" :options="multiple_pie.line2"></v-chart>
           </div>
         </div>
       </div>
     </div>
 
-    <div v-else-if="radio1==='资源告警'" style="margin-top:20px">
-      <el-table :data="alarm_tableData" size="mini" class="transparent-table transparent-white-table" style="width: 100%">
-        <el-table-column label="级别" sortable class-name="com-txt-overflow" width="88px">
-          <template slot-scope="scope">
-            <img v-if="scope.row.alarm_status === '1'" src="../assets/images/icon/normal.png" />
-            <img v-if="scope.row.alarm_status === '2'" src="../assets/images/icon/warning.png" />
-            <img v-if="scope.row.alarm_status === '0'" src="../assets/images/icon/error.png" />
-          </template>
-        </el-table-column>
-        <el-table-column prop="alarm_name" sortable sortable label="告警名称" class-name="com-txt-overflow"></el-table-column>
-        <el-table-column prop="alarm_type" sortable label="告警类型" class-name="com-txt-overflow"></el-table-column>
-        <el-table-column prop="alarm_status" sortable label="告警状态" class-name="com-txt-overflow"></el-table-column>
-        <el-table-column prop="safety_level" sortable label="保障等级" class-name="com-txt-overflow"></el-table-column>
-        <el-table-column prop="product_time" sortable label="产生时间" class-name="com-txt-overflow"></el-table-column>
-        <el-table-column prop="continued_time" sortable label="已持续时间" class-name="com-txt-overflow"></el-table-column>
-        <el-table-column prop="confirmor" sortable label="确认人" class-name="com-txt-overflow"></el-table-column>
-        <el-table-column prop="confirm_time" sortable label="确认时间" class-name="com-txt-overflow"></el-table-column>
-        <el-table-column prop="alarm_content" label="告警内容" class-name="com-txt-overflow"></el-table-column>
-      </el-table>
+    <div v-else-if="radio1==='资源告警'">
+      <el-row>
+        <el-col>
+          <div class="grid-content bg-purple">
+            <el-table :data="alarm_tableData" size="mini" class="transparent-table transparent-white-table" style="width: 100%">
+              <el-table-column label="级别" sortable class-name="com-txt-overflow" width="88px">
+                <template slot-scope="scope">
+                  <img v-if="scope.row.alarm_status === '1'" src="../assets/images/icon/normal.png" />
+                  <img v-if="scope.row.alarm_status === '2'" src="../assets/images/icon/warning.png" />
+                  <img v-if="scope.row.alarm_status === '0'" src="../assets/images/icon/error.png" />
+                </template>
+              </el-table-column>
+              <el-table-column prop="alarm_name" sortable sortable label="告警名称" class-name="com-txt-overflow"></el-table-column>
+              <el-table-column prop="alarm_type" sortable label="告警类型" class-name="com-txt-overflow"></el-table-column>
+              <el-table-column prop="alarm_status" sortable label="告警状态" class-name="com-txt-overflow"></el-table-column>
+              <el-table-column prop="safety_level" sortable label="保障等级" class-name="com-txt-overflow"></el-table-column>
+              <el-table-column prop="product_time" sortable label="产生时间" class-name="com-txt-overflow"></el-table-column>
+              <el-table-column prop="continued_time" sortable label="已持续时间" class-name="com-txt-overflow"></el-table-column>
+              <el-table-column prop="confirmor" sortable label="确认人" class-name="com-txt-overflow"></el-table-column>
+              <el-table-column prop="confirm_time" sortable label="确认时间" class-name="com-txt-overflow"></el-table-column>
+              <el-table-column prop="alarm_content" label="告警内容" class-name="com-txt-overflow"></el-table-column>
+            </el-table>
+          </div>
+        </el-col>
+      </el-row>
     </div>
 
     <div v-else>
-      <!-- <iframe src="http://47.98.213.184:8080/net-server/business2?id=1#/topo" frameborder="0"></iframe> -->
+      <el-row>
+        <el-col>
+          <div class="grid-content bg-purple">
+            <!-- <iframe src="http://47.98.213.184:8080/net-server/business2?id=1#/topo" frameborder="0"></iframe> -->
+          </div>
+        </el-col>
+      </el-row>
     </div>
   </div>
 

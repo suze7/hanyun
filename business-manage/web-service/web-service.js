@@ -3,31 +3,31 @@ var app = new Vue({
   el: '#homeIndex',
   data() {
     return {
-      overview: true,
       radio1: '业务总览',
       radio2: '1H',
       business_data: null,
       multiple_pie: {
+        gauge: null,
         pie: null
       },
       options: [
-        { value: '打开链接数', label: '打开链接数' },
-        { value: '主键命中率', label: '主键命中率' },
-        { value: '已用键缓冲区大小', label: '已用键缓冲区大小' },
-        { value: '键缓存大小', label: '键缓存大小' },
-        { value: '查询缓存命中率', label: '查询缓存命中率' },
-        { value: '每秒接收请求数', label: '每秒接收请求数' },
-        { value: '等待后获取表锁失败次数', label: '等待后获取表锁失败次数' },
-        { value: '激活线程数', label: '激活线程数' },
+        { value: 'CPU使用率', label: 'CPU使用率' },
+        { value: '系统平均负载', label: '系统平均负载' },
+        { value: '物理内存使用率', label: '物理内存使用率' },
+        { value: '交换内存使用率', label: '交换内存使用率' },
+        { value: 'Swap交换情况', label: 'Swap交换情况' },
         { value: '响应时长', label: '响应时长' }
       ],
       value: '',
       database_array: [
-        { id: '1', label: 'INFORMATION_SCHEMA', count: 62, size: '163.23MB' },
-        { id: '2', label: 'MySQL', count: 62, size: '163.23KB' },
-        { id: '3', label: '网络', count: 62, size: '163.23MB' },
-        { id: '4', label: 'performance_schema', count: 62, size: '163.23GB' },
-        { id: '5', label: 'SYS', count: 62, size: '0.00B' },
+        { id: '1', label: 'INFORMATION_SCHEMA', imgUrl: '../assets/images/icon/storage.png', count: 62, size: '163.23MB' },
+        { id: '2', label: 'MySQL', imgUrl: '../assets/images/icon/cpu.png', count: 62, size: '163.23KB' },
+        { id: '2', label: 'MySQL', imgUrl: '../assets/images/icon/cpu.png', count: 62, size: '163.23KB' },
+      ],
+      storage_array: [
+        { id: '1', label: 'INFORMATION_SCHEMA', imgUrl: '../assets/images/icon/local.png', count: 62, size: '163.23MB' },
+        { id: '2', label: 'MySQL', imgUrl: '../assets/images/icon/local.png', count: 62, size: '163.23KB' },
+        { id: '2', label: 'MySQL', imgUrl: '../assets/images/icon/local.png', count: 62, size: '163.23KB' }
       ],
       editTimeDialog: false,
       time: {
@@ -50,11 +50,35 @@ var app = new Vue({
         { alarm_id: '11', alarm_name: '3物理内存使用率异常', levle: '1', alarm_type: '资源负载检测', alarm_status: '1', safety_level: '2', product_time: '2019-02-04', continued_time: '16分23秒', confirmor: '16', confirm_time: '2019-02-05', alarm_content: '百分比 大于等于 50% 触发 严重' },
         { alarm_id: '11', alarm_name: '物理内存使用率异常', levle: '2', alarm_type: '资源负载检测', alarm_status: '1', safety_level: '2', product_time: '2019-02-04', continued_time: '16分23秒', confirmor: '16', confirm_time: '2019-02-05', alarm_content: '百分比 大于等于 50% 触发 严重' },
       ],
+      web_tableData: [
+        { name: '/', host_name: '本地主机', route: '网络服务器', servlet: '0', },
+        { name: '网络服务器', host_name: '本地主机', route: '网络服务器', servlet: '0', },
+        { name: '/net-server', host_name: 'localhost', route: '/net-server', servlet: '0', },
+        { name: '/net-server', host_name: 'localhost', route: '/net-server', servlet: '0', },
+        { name: '/net-server', host_name: 'localhost', route: '/net-server', servlet: '0', },
+      ],
+      cpu_tableData: [
+        { name: '/', host_name: '本地主机', route: '网络服务器', servlet: '0', },
+        { name: '网络服务器', host_name: '本地主机', route: '网络服务器', servlet: '0', },
+        { name: 'Intel(R) Xeon(R) CPU E5-2682 v4 @ 2.50GHz', host_name: 'localhost', route: '/net-server', servlet: '0', },
+      ],
+      connect_tableData: [
+        { name: 'HTTP-NIO-BOBO', ip: '127.0.0.1', port: '4200', agreement: 'http/1.1', operator: '内部', plan: 'http', status: '已启动', busy_line: '0', current_line: '0', },
+        { name: 'AJP-NIO-9090', ip: '127.0.0.1', port: '4200', agreement: 'http/1.1', operator: '内部', plan: 'http', status: '已启动', busy_line: '0', current_line: '0', },
+        { name: 'HTTP-NIO-BOBO', ip: '127.0.0.1', port: '4200', agreement: 'http/1.1', operator: '内部', plan: 'http', status: '已启动', busy_line: '0', current_line: '0', },
+        { name: 'AJP-NIO-9090', ip: '127.0.0.1', port: '4200', agreement: 'http/1.1', operator: '内部', plan: 'http', status: '已启动', busy_line: '0', current_line: '0', },
+        { name: 'HTTP-NIO-BOBO', ip: '127.0.0.1', port: '4200', agreement: 'http/1.1', operator: '内部', plan: 'http', status: '已启动', busy_line: '0', current_line: '0', },
+        { name: 'AJP-NIO-9090', ip: '127.0.0.1', port: '4200', agreement: 'http/1.1', operator: '内部', plan: 'http', status: '已启动', busy_line: '0', current_line: '0', },
+        { name: 'HTTP-NIO-BOBO', ip: '127.0.0.1', port: '4200', agreement: 'http/1.1', operator: '内部', plan: 'http', status: '已启动', busy_line: '0', current_line: '0', },
+        { name: 'HTTP-NIO-BOBO', ip: '127.0.0.1', port: '4200', agreement: 'http/1.1', operator: '内部', plan: 'http', status: '已启动', busy_line: '0', current_line: '0', },
+      ],
       isActice: '1H',
       this_page: '总览',
       page_array: [
         { label: '总览', url: '' },
-        { label: '资源告警', url: '', }
+        { label: '资源定位', url: '', },
+        { label: '拓扑定位', url: '', },
+        { label: '关注定位', url: '', },
       ],
       signal_info: {
         baseInfo: { status: '0', version: '2021-03-20', start_time: '23天', main_name: 'qingta', setup_folder: 'd:/kugou', system: 'windows' },
@@ -64,6 +88,8 @@ var app = new Vue({
   },
   created() {
     this.business_data = { business_id: '11', label: 'Openstack V3', healthy: '98%', status: '1', safety_level: '2', response: '37ms', busyness: '2%', using: '100%', downtime_cs: '0', downtime_sc: '16分23秒', mttr: '16分23秒', mtbf: '16分23秒', used_capacity: '58.31GB/339.99GB', calc_capacity: '33%' }
+  },
+  mounted() {
     this.getBusinessUsingRight();
   },
   methods: {
@@ -71,12 +97,35 @@ var app = new Vue({
       this.this_page = evt.label;
       switch (evt.label) {
         case '总览':
-          this.overview = true;
+
           break;
-        case '资源告警':
-          this.overview = false;
+        case '资源定位':
+
+          break;
+        case '拓扑定位':
+
+          break;
+        case '关注定位':
+
           break;
         default:
+          break;
+      }
+    },
+    togglePage(evt) {
+      console.log(evt);
+      switch (evt) {
+        case '总览':
+
+          break;
+        case '资源定位':
+
+          break;
+        case '拓扑定位':
+
+          break;
+        case '关注定位':
+
           break;
       }
     },
@@ -93,6 +142,20 @@ var app = new Vue({
     },
     /* 业务可用率 */
     getBusinessUsingRight() {
+      // 内存使用率
+      this.multiple_pie.gauge = {
+        tooltip: {
+          formatter: "{a} <br/>{b} : {c}%"
+        },
+        series: [
+          {
+            name: '业务指标',
+            type: 'gauge',
+            detail: { formatter: '{value}%' },
+            data: [{ value: 50, name: '完成率' }]
+          }
+        ]
+      };
       this.multiple_pie.pie = {
         color: ['#54E8FF'],
         tooltip: {

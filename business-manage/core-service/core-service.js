@@ -6,20 +6,19 @@ var app = new Vue({
       overview: true,
       radio1: '业务总览',
       radio2: '1H',
-      radio3: '总览',
       business_data: null,
       multiple_pie: {
         gauge: null,
         pie: null
       },
       options: [
-        { value: 'CPU使用率', label: '打开链接数' },
-        { value: 'Heap space', label: '主键命中率' },
-        { value: 'PermGen space', label: '已用键缓冲区大小' },
-        { value: '平均请求次数（秒）', label: '键缓存大小' },
-        { value: '当前会话数', label: '查询缓存命中率' },
-        { value: '当前活动线程数', label: '每秒接收请求数' },
-        { value: '平均响应时间', label: '等待后获取表锁失败次数' },
+        { value: 'CPU使用率', label: 'CPU使用率' },
+        { value: 'Heap space', label: 'Heap space' },
+        { value: 'PermGen space', label: 'PermGen space' },
+        { value: '平均请求次数（秒）', label: '平均请求次数（秒）' },
+        { value: '当前会话数', label: '当前会话数' },
+        { value: '当前活动线程数', label: '当前活动线程数' },
+        { value: '平均响应时间', label: '平均响应时间' },
         { value: '响应时长', label: '响应时长' }
       ],
       value: '',
@@ -67,6 +66,11 @@ var app = new Vue({
         { name: 'HTTP-NIO-BOBO', ip: '127.0.0.1', port: '4200', agreement: 'http/1.1', operator: '内部', plan: 'http', status: '已启动', busy_line: '0', current_line: '0', },
       ],
       isActice: '1H',
+      this_page: '总览',
+      page_array: [
+        { label: '总览', url: '' },
+        { label: '资源告警', url: '', }
+      ],
       signal_info: {
         baseInfo: { status: '0', version: '2021-03-20', start_time: '23天', main_name: 'qingta', setup_folder: 'd:/kugou', system: 'windows' },
         linePool: {},
@@ -82,8 +86,8 @@ var app = new Vue({
   },
   methods: {
     togglePage(evt) {
-      console.log(evt);
-      switch (evt) {
+      this.this_page = evt.label;
+      switch (evt.label) {
         case '总览':
           this.overview = true;
           break;
@@ -159,14 +163,14 @@ var app = new Vue({
           {
             name: '业务指标',
             type: 'gauge',
-            startAngle: -180,
-            endAngle: 180,
-            axisLine: {
-              show: false,
-            },
-            axisTick: {
-              show: false,
-            },
+            // startAngle: -180,
+            // endAngle: 180,
+            // axisLine: {
+            //   show: false,
+            // },
+            // axisTick: {
+            //   show: false,
+            // },
             detail: { formatter: '{value}%' },
             data: [{ value: 50, name: '完成率' }]
           }

@@ -12,12 +12,13 @@ var app = new Vue({
         { name: '核心服务', status: '1' },
         { name: '采集服务', status: '2' },
         { name: 'WEB数据库', status: '1' },
-        { name: '监控数据服务器', status: '1' },
+        { name: '监控系统服务器', status: '1' },
         { name: '测试服务器', status: '0' }
       ],
       multiple_pie: {
         pie1: null,
-        pie2: null
+        pie2: null,
+        line: null
       },
       isActice: '0',
       pie3: {
@@ -265,7 +266,7 @@ var app = new Vue({
       for (let i = 0; i < 1000; i++) {
         data.push(this.randomData());
       }
-      this.multiple_pie.pie3 = {
+      this.multiple_pie.line1 = {
         color: ['#54E8FF'],
         tooltip: {
           trigger: 'axis'
@@ -302,6 +303,70 @@ var app = new Vue({
           axisLabel: {
             fontSize: 12,
             formatter: '{value} %'
+          },
+          axisLine: {
+            show: false,
+            lineStyle: {
+              color: '#fff'
+            }
+          },
+          splitLine: {
+            lineStyle: {
+              color: ['#ccc']
+            }
+          },
+          axisTick: {
+            show: false
+          }
+        },
+        series: [
+          {
+            name: '模拟数据',
+            type: 'line',
+            areaStyle: {
+              color: '#304C8E'
+            },
+            data: [11, 31, 15, 23, 52, 16, 20]
+          }
+        ]
+      };
+      this.multiple_pie.line2 = {
+        color: ['#54E8FF'],
+        tooltip: {
+          trigger: 'axis'
+        },
+        grid: {
+          left: '120',
+          right: '20',
+          top: '20',
+          bottom: '20'
+        },
+        xAxis: {
+          type: 'category',
+          boundaryGap: false,
+          data: ['00:00', '02:33', '03:33', '04:33', '05:33', '06:33', '08:33'],
+          axisLabel: {
+            fontSize: 12
+          },
+          axisLine: {
+            lineStyle: {
+              color: '#fff'
+            }
+          },
+          splitLine: {
+            lineStyle: {
+              color: ['#ccc']
+            }
+          },
+          axisTick: {
+            show: false
+          }
+        },
+        yAxis: {
+          type: 'value',
+          axisLabel: {
+            fontSize: 12,
+            formatter: '{value} ms'
           },
           axisLine: {
             show: false,
@@ -400,17 +465,18 @@ var app = new Vue({
       switch (obj.name) {
         case '监控系统数据库':
           url = `./monitor-database.html?page=${obj.name}`;
-          window.open(url, '_blank', `width=${screenWidth}, height=${screenHeight} + 200,top=20,left=30,toolbar=no,menubar=no,location=no,status=no`);
+          window.open(url, '_blank', `width=${screenWidth}, height=${screenHeight - 100},top=0,left=0,toolbar=no,menubar=no,location=no,status=no`);
           break;
         case '核心服务':
           url = `./core-service.html?page=${obj.name}`;
-          window.open(url, '_blank', `width=${screenWidth}, height=${screenHeight} + 200,top=20,left=30,toolbar=no,menubar=no,location=no,status=no`);
+          window.open(url, '_blank', `width=${screenWidth}, height=${screenHeight - 100},top=0,left=0,toolbar=no,menubar=no,location=no,status=no`);
           break;
         case '采集服务':
 
           break;
         case 'WEB数据库':
-
+          url = `./web-service.html?page=${obj.name}`;
+          window.open(url, '_blank', `width=${screenWidth}, height=${screenHeight - 100},top=0,left=0,toolbar=no,menubar=no,location=no,status=no`);
           break;
         case '监控数据服务器':
 
