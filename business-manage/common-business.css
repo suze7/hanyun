@@ -97,3 +97,18 @@
 .toggle-page span:hover {
   background: #1F2B5A;
 }
+/* 左列表-右图表 */
+.left-list-right-echart {
+  margin: 5px 0;
+}
+.left-list-right-echart li {
+  padding: 15px 10px;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+.left-list-right-echart li:hover {
+  background: #1F2B5A;
+}
+.left-list-right-echart li.active {
+  background: #1F2B5A;
+}

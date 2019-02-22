@@ -262,7 +262,7 @@
                   <span v-for="time in time_array" @click="toggleTime(time.name)" :class="{active: isActice === time.name}">{{time.name}}</span>
                 </div>
               </div>
-              <v-chart style="width:100%; height:200px" :options="multiple_pie.pie"></v-chart>
+              <v-chart style="width:100%; height:200px" :options="multiple_pie.line"></v-chart>
             </div>
           </el-col>
           <el-col :span="12">

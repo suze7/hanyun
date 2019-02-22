@@ -146,6 +146,14 @@
               <el-table-column prop="confirm_time" sortable label="确认时间" class-name="com-txt-overflow"></el-table-column>
               <el-table-column prop="alarm_content" label="告警内容" class-name="com-txt-overflow"></el-table-column>
             </el-table>
+            <div class="loc-pagination">
+              <div class="my-pagination-group">
+                <div class="my-pagination-btn my-pagination-first com-hover">首页</div>
+                <el-pagination :pager-count="5" layout="prev, pager, next" :total="1000">
+                </el-pagination>
+                <div class="my-pagination-btn my-pagination-last com-hover">尾页</div>
+              </div>
+            </div>
           </div>
         </el-col>
       </el-row>
