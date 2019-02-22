@@ -1,18 +1,74 @@
-.resource-dialog {
-  padding: 5px 0;
+.system-opera-group {
+  margin: 0 0 12px;
 }
-.oper-search-form {
-  margin-bottom: 20px;
+.sysyem-picture-form {
+  margin: 0 -12px;
+  height: calc(100% - 108px);
 }
-.port-table.el-table .cell {
-  padding: 0 0 0 16px;
+.sysyem-picture-form .system-picture-content {
+  display: inline-block;
+  margin: 11px;
+  padding: 8px 8px 0;
+  background: #1f2c60;
 }
-.opera-group-content {
-  padding-left: 8px;
+.sysyem-picture-form .system-picture-content > .system-picture-img {
+  width: 147px;
+  height: 138px;
 }
-.opera-group-content .img-form {
-  line-height: 28px;
+.sysyem-picture-form .system-picture-content .system-picture-name {
+  line-height: 34px;
 }
-.opera-group-content .img-form img {
+.sysyem-picture-form .system-picture-content .system-picture-name .my-content-checkbox {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 12px;
+}
+.sysyem-picture-form .system-picture-content .system-picture-name .my-content-checkbox .el-checkbox__label {
+  font-size: 100%;
+}
+.system-can-drag {
+  cursor: move;
+}
+.system-active.loc-btn.icon-btn {
+  background: #4054BF;
+  border-color: #4054BF;
+  box-shadow: 0px 0px 33px -4px #000;
+}
+.system-picture-dialog .my-edit-form {
+  padding-top: 0;
+}
+.system-picture-dialog .my-edit-group.my-fill-line {
+  margin: 12px;
+}
+.system-upload-icon {
+  margin: 0 4px 0 0;
+  font-size: 14px;
+}
+.system-content-fill {
+  width: 80% !important;
+}
+.my-upload .el-upload .el-button {
+  padding: 6px 15px;
+  color: #666;
+  background-color: #fff;
+  border-color: #fff;
+}
+.my-upload .el-upload-list {
   vertical-align: middle;
+  display: inline-block;
+}
+.my-upload .el-upload-list li {
+  margin: 0 20px;
+  width: fit-content;
+}
+.my-upload .el-upload-list li:hover {
+  background: none;
+}
+.my-upload .el-upload-list li .el-icon-document,
+.my-upload .el-upload-list li .el-icon-close,
+.my-upload .el-upload-list li a {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.8);
+}
+.my-upload .el-upload-list li .el-icon-close {
+  display: block;
 }

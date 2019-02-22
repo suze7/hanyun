@@ -293,3 +293,66 @@ input[type='text'] {
     }
   }
 }
+
+
+.my-show-list-form {
+  margin: 16px 0 8px;
+  padding: 12px 10px 12px 14px;
+  .my-show-item {
+    position: relative;
+    display: inline-block;
+    margin: 4px 2px;
+    padding: 0 18px 0 8px;
+    height: 30px;
+    line-height: 30px;
+    background: #9DB1FF;
+    font-size: 12px;
+    .my-show-icon {
+      position: absolute;
+      top: 8px;
+      right: 2px;
+      font-size: 16px;
+    }
+  }
+}
+
+.loc-progress-form {
+  margin: 20px 0;
+  padding: 20px 0 10px 0;
+  font-size: 12px;
+  .loc-progress-title {
+    padding: 0 0 18px 20px;
+  }
+  .loc-progress-group {
+    padding: 9px 0;
+    color: rgba(255, 255, 255, .6);
+    .loc-progress-name,
+    .loc-progress-content,
+    .loc-progress-detail {
+      vertical-align: middle;
+      display: inline-block;
+    }
+    .loc-progress-name {
+      margin-right: 10px;
+      width: 200px;
+      text-align: right;
+    }
+    .loc-progress-content {
+      width: calc(100% - 323px);
+    }
+    .loc-progress-detail {
+      margin-left: 12px;
+      min-width: 50px;
+
+    }
+  }
+}
+
+.my-progress {
+  .el-progress-bar__inner {
+    background: linear-gradient(270deg, #54e8ff 0%, #3760ff 100%);
+  }
+  .el-progress-bar__outer {
+    background: rgba(0, 0, 0, .2);
+  }
+}

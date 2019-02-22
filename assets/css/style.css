@@ -299,6 +299,62 @@ input[type='text']:-ms-input-placeholder {
   padding: 0 16px;
   line-height: 32px;
 }
+.my-show-list-form {
+  margin: 16px 0 8px;
+  padding: 12px 10px 12px 14px;
+}
+.my-show-list-form .my-show-item {
+  position: relative;
+  display: inline-block;
+  margin: 4px 2px;
+  padding: 0 18px 0 8px;
+  height: 30px;
+  line-height: 30px;
+  background: #9DB1FF;
+  font-size: 12px;
+}
+.my-show-list-form .my-show-item .my-show-icon {
+  position: absolute;
+  top: 8px;
+  right: 2px;
+  font-size: 16px;
+}
+.loc-progress-form {
+  margin: 20px 0;
+  padding: 20px 0 10px 0;
+  font-size: 12px;
+}
+.loc-progress-form .loc-progress-title {
+  padding: 0 0 18px 20px;
+}
+.loc-progress-form .loc-progress-group {
+  padding: 9px 0;
+  color: rgba(255, 255, 255, 0.6);
+}
+.loc-progress-form .loc-progress-group .loc-progress-name,
+.loc-progress-form .loc-progress-group .loc-progress-content,
+.loc-progress-form .loc-progress-group .loc-progress-detail {
+  vertical-align: middle;
+  display: inline-block;
+}
+.loc-progress-form .loc-progress-group .loc-progress-name {
+  margin-right: 10px;
+  width: 200px;
+  text-align: right;
+}
+.loc-progress-form .loc-progress-group .loc-progress-content {
+  width: calc(100% - 323px);
+}
+.loc-progress-form .loc-progress-group .loc-progress-detail {
+  margin-left: 12px;
+  min-width: 50px;
+}
+.my-progress .el-progress-bar__inner {
+  background: linear-gradient(270deg, #54e8ff 0%, #3760ff 100%);
+}
+.my-progress .el-progress-bar__outer {
+  background: rgba(0, 0, 0, 0.2);
+}
 .loc-app-menu {
   width: 100%;
   height: 80px;
@@ -613,7 +669,7 @@ input[type='text']:-ms-input-placeholder {
 .my-menu .loc-left-icon {
   vertical-align: middle;
   display: inline-block;
-  margin-right: 6px;
+  margin-right: 4px;
   width: 14px;
   height: 14px;
 }
@@ -720,6 +776,24 @@ input[type='text']:-ms-input-placeholder {
 }
 .my-menu .menu-icon4-q {
   background: url(../images/menu/menu-4-q.png) center center no-repeat;
+}
+.my-menu .menu-icon4-r {
+  background: url(../images/menu/menu-4-r.png) center center no-repeat;
+}
+.my-menu .menu-icon4-s {
+  background: url(../images/menu/menu-4-s.png) center center no-repeat;
+}
+.my-menu .menu-icon4-t {
+  background: url(../images/menu/menu-4-t.png) center center no-repeat;
+}
+.my-menu .menu-icon4-u {
+  background: url(../images/menu/menu-4-u.png) center center no-repeat;
+}
+.my-menu .menu-icon4-v {
+  background: url(../images/menu/menu-4-v.png) center center no-repeat;
+}
+.my-menu .menu-icon4-w {
+  background: url(../images/menu/menu-4-w.png) center center no-repeat;
 }
 .loc-date-picker.el-input {
   width: 100%;
