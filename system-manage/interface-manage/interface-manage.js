@@ -8,93 +8,117 @@ var app = new Vue({
     value: '',
     options: [],
     tableData: [{
-      name: '名称名称名称',
-      realName: '系统管理员',
-      status: 1,
-      system: '内置用户',
-      role: '系统管理员',
-      resNum: '2018-10-17 00:44:20',
-      resNum1: '2018-10-17 00:44:20'
+      system: 'xxxxxxxxxxxx',
+      key: 'gvf7ls51k9i07ues3oka',
+      address: 'xxxxxxxxxxxx',
+      status: 3,
+      alarmStatus: 2,
+      moneyStatus: 1,
+      time: '2018-10-17 00:44:20'
     },{
-      name: '名称名称名称',
-      realName: '系统管理员',
-      status: 1,
-      system: '内置用户',
-      role: '系统管理员',
-      resNum: '2018-10-17 00:44:20',
-      resNum1: '2018-10-17 00:44:20'
+      system: 'xxxxxxxxxxxx',
+      key: 'gvf7ls51k9i07ues3oka',
+      address: 'xxxxxxxxxxxx',
+      status: 3,
+      alarmStatus: 2,
+      moneyStatus: 1,
+      time: '2018-10-17 00:44:20'
     },{
-      name: '名称名称名称',
-      realName: '系统管理员',
-      status: 1,
-      system: '内置用户',
-      role: '系统管理员',
-      resNum: '2018-10-17 00:44:20',
-      resNum1: '2018-10-17 00:44:20'
+      system: 'xxxxxxxxxxxx',
+      key: 'gvf7ls51k9i07ues3oka',
+      address: 'xxxxxxxxxxxx',
+      status: 3,
+      alarmStatus: 2,
+      moneyStatus: 1,
+      time: '2018-10-17 00:44:20'
     },{
-      name: '名称名称名称',
-      realName: '系统管理员',
-      status: 1,
-      system: '内置用户',
-      role: '系统管理员',
-      resNum: '2018-10-17 00:44:20',
-      resNum1: '2018-10-17 00:44:20'
+      system: 'xxxxxxxxxxxx',
+      key: 'gvf7ls51k9i07ues3oka',
+      address: 'xxxxxxxxxxxx',
+      status: 3,
+      alarmStatus: 2,
+      moneyStatus: 1,
+      time: '2018-10-17 00:44:20'
     },{
-      name: '名称名称名称',
-      realName: '系统管理员',
-      status: 1,
-      system: '内置用户',
-      role: '系统管理员',
-      resNum: '2018-10-17 00:44:20',
-      resNum1: '2018-10-17 00:44:20'
+      system: 'xxxxxxxxxxxx',
+      key: 'gvf7ls51k9i07ues3oka',
+      address: 'xxxxxxxxxxxx',
+      status: 3,
+      alarmStatus: 2,
+      moneyStatus: 1,
+      time: '2018-10-17 00:44:20'
     },{
-      name: '名称名称名称',
-      realName: '系统管理员',
-      status: 1,
-      system: '内置用户',
-      role: '系统管理员',
-      resNum: '2018-10-17 00:44:20',
-      resNum1: '2018-10-17 00:44:20'
+      system: 'xxxxxxxxxxxx',
+      key: 'gvf7ls51k9i07ues3oka',
+      address: 'xxxxxxxxxxxx',
+      status: 3,
+      alarmStatus: 2,
+      moneyStatus: 1,
+      time: '2018-10-17 00:44:20'
     },{
-      name: '名称名称名称',
-      realName: '系统管理员',
-      status: 1,
-      system: '内置用户',
-      role: '系统管理员',
-      resNum: '2018-10-17 00:44:20',
-      resNum1: '2018-10-17 00:44:20'
+      system: 'xxxxxxxxxxxx',
+      key: 'gvf7ls51k9i07ues3oka',
+      address: 'xxxxxxxxxxxx',
+      status: 3,
+      alarmStatus: 2,
+      moneyStatus: 1,
+      time: '2018-10-17 00:44:20'
     },{
-      name: '名称名称名称',
-      realName: '系统管理员',
-      status: 1,
-      system: '内置用户',
-      role: '系统管理员',
-      resNum: '2018-10-17 00:44:20',
-      resNum1: '2018-10-17 00:44:20'
+      system: 'xxxxxxxxxxxx',
+      key: 'gvf7ls51k9i07ues3oka',
+      address: 'xxxxxxxxxxxx',
+      status: 3,
+      alarmStatus: 2,
+      moneyStatus: 1,
+      time: '2018-10-17 00:44:20'
     },{
-      name: '名称名称名称',
-      realName: '系统管理员',
-      status: 1,
-      system: '内置用户',
-      role: '系统管理员',
-      resNum: '2018-10-17 00:44:20',
-      resNum1: '2018-10-17 00:44:20'
+      system: 'xxxxxxxxxxxx',
+      key: 'gvf7ls51k9i07ues3oka',
+      address: 'xxxxxxxxxxxx',
+      status: 3,
+      alarmStatus: 2,
+      moneyStatus: 1,
+      time: '2018-10-17 00:44:20'
     },{
-      name: '名称名称名称',
-      realName: '系统管理员',
-      status: 1,
-      system: '内置用户',
-      role: '系统管理员',
-      resNum: '2018-10-17 00:44:20',
-      resNum1: '2018-10-17 00:44:20'
+      system: 'xxxxxxxxxxxx',
+      key: 'gvf7ls51k9i07ues3oka',
+      address: 'xxxxxxxxxxxx',
+      status: 3,
+      alarmStatus: 2,
+      moneyStatus: 1,
+      time: '2018-10-17 00:44:20'
     },{
-      name: '名称名称名称',
-      realName: '系统管理员',
-      status: 1,
-      system: '内置用户',
-      role: '系统管理员',
-      resNum: '2018-10-17 00:44:20',
-      resNum1: '2018-10-17 00:44:20'
+      system: 'xxxxxxxxxxxx',
+      key: 'gvf7ls51k9i07ues3oka',
+      address: 'xxxxxxxxxxxx',
+      status: 3,
+      alarmStatus: 2,
+      moneyStatus: 1,
+      time: '2018-10-17 00:44:20'
+    },{
+      system: 'xxxxxxxxxxxx',
+      key: 'gvf7ls51k9i07ues3oka',
+      address: 'xxxxxxxxxxxx',
+      status: 3,
+      alarmStatus: 2,
+      moneyStatus: 1,
+      time: '2018-10-17 00:44:20'
+    },{
+      system: 'xxxxxxxxxxxx',
+      key: 'gvf7ls51k9i07ues3oka',
+      address: 'xxxxxxxxxxxx',
+      status: 3,
+      alarmStatus: 2,
+      moneyStatus: 1,
+      time: '2018-10-17 00:44:20'
+    },{
+      system: 'xxxxxxxxxxxx',
+      key: 'gvf7ls51k9i07ues3oka',
+      address: 'xxxxxxxxxxxx',
+      status: 3,
+      alarmStatus: 2,
+      moneyStatus: 1,
+      time: '2018-10-17 00:44:20'
     }],
   },
   created() {

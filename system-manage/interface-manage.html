@@ -129,12 +129,12 @@
               >
               <el-button type="primary" class="loc-btn icon-btn"
                 ><img src="../assets/images/icon/btn-icon-2.png" /><span
-                  >启用用户</span
+                  >启用</span
                 ></el-button
               >
               <el-button type="primary" class="loc-btn icon-btn"
-                ><img src="../assets/images/icon/btn-icon-n.png" /><span
-                  >屏蔽用户</span
+                ><img src="../assets/images/icon/btn-icon-3.png" /><span
+                  >停用</span
                 ></el-button
               >
             </div>
@@ -150,16 +150,21 @@
                 width="62px"
               ></el-table-column>
               <el-table-column
-                prop="name"
-                label="用户名"
-                min-width="138px"
+                prop="system"
+                label="接入系统"
+                min-width="122px"
               ></el-table-column>
               <el-table-column
-                prop="realName"
-                label="真实姓名"
-                min-width="126px"
+                prop="key"
+                label="API Key"
+                min-width="171px"
               ></el-table-column>
-              <el-table-column prop="status" label="状态" min-width="90px">
+              <el-table-column
+                prop="address"
+                label="系统地址"
+                min-width="142px"
+              ></el-table-column>
+              <el-table-column prop="status" label="状态" min-width="79px">
                 <template slot-scope="scope">
                   <img
                     :src="scope.row.status === 0 ? '../assets/images/icon/normal.png' : scope.row.status === 1 ? '../assets/images/icon/warning.png' : '../assets/images/icon/error.png'"
@@ -167,26 +172,33 @@
                 </template>
               </el-table-column>
               <el-table-column
-                prop="system"
-                label="系统"
-                min-width="117px"
-              ></el-table-column>
+                prop="alarmStatus"
+                label="告警变更通知"
+                min-width="128px"
+              >
+                <template slot-scope="scope">
+                  <img
+                    :src="scope.row.alarmStatus === 0 ? '../assets/images/icon/normal.png' : scope.row.alarmStatus === 1 ? '../assets/images/icon/warning.png' : '../assets/images/icon/error.png'"
+                  />
+                </template>
+              </el-table-column>
               <el-table-column
-                prop="role"
-                label="角色"
-                min-width="126px"
-              ></el-table-column>
+                prop="moneyStatus"
+                label="资产变更通知"
+                min-width="128px"
+              >
+                <template slot-scope="scope">
+                  <img
+                    :src="scope.row.moneyStatus === 0 ? '../assets/images/icon/normal.png' : scope.row.moneyStatus === 1 ? '../assets/images/icon/warning.png' : '../assets/images/icon/error.png'"
+                  />
+                </template>
+              </el-table-column>
               <el-table-column
-                prop="resNum"
-                label="管理资源数"
-                min-width="175px"
+                prop="time"
+                label="最后请求时间"
+                min-width="171px"
               ></el-table-column>
-              <el-table-column
-                prop="resNum1"
-                label="管理资源数"
-                min-width="168px"
-              ></el-table-column>
-              <el-table-column prop="" label="操作" min-width="100px">
+              <el-table-column prop="" label="操作" min-width="104px">
                 <template slot-scope="scope">
                   <el-popover
                     placement="bottom"
@@ -258,39 +270,21 @@
         :before-close="handleClose"
         class="blue-dialog my-edit-dialog"
       >
-        <div class="system-min-dialog">
+        <div class="system-min-dialog system-edit-form">
           <div class="my-edit-group">
-            <span class="my-group-title">用户名称</span>
+            <span class="my-group-title">系统名称</span>
             <div class="my-group-content">
-              <input type="text" placeholder="用户名称" />
+              <input type="text" placeholder="系统名称" />
             </div>
           </div>
           <div class="my-edit-group">
-            <span class="my-group-title">真实姓名</span>
+            <span class="my-group-title">系统地址</span>
             <div class="my-group-content">
-              <input type="text" placeholder="真实姓名" />
+              <input type="text" placeholder="系统地址" />
             </div>
           </div>
           <div class="my-edit-group">
-            <span class="my-group-title">用户角色</span>
-            <div class="my-group-content">
-              <input type="text" placeholder="用户角色" />
-            </div>
-          </div>
-          <div class="my-edit-group">
-            <span class="my-group-title">密码</span>
-            <div class="my-group-content">
-              <input type="text" placeholder="密码" />
-            </div>
-          </div>
-          <div class="my-edit-group">
-            <span class="my-group-title">确认密码</span>
-            <div class="my-group-content">
-              <input type="text" placeholder="确认密码" />
-            </div>
-          </div>
-          <div class="my-edit-group">
-            <span class="my-group-title">启用</span>
+            <span class="my-group-title">启用域</span>
             <div class="my-group-content">
               <span
                 ><el-checkbox class="my-content-checkbox"></el-checkbox
@@ -298,95 +292,31 @@
             </div>
           </div>
           <div class="my-edit-group">
-            <span class="my-group-title">邮件</span>
+            <span class="my-group-title">告警变更通知</span>
             <div class="my-group-content">
-              <input type="text" placeholder="邮件" />
+              <span
+                ><el-checkbox class="my-content-checkbox"></el-checkbox
+              ></span>
             </div>
           </div>
           <div class="my-edit-group">
-            <span class="my-group-title">手机号码</span>
+            <span class="my-group-title">告警通知地址</span>
             <div class="my-group-content">
-              <input type="text" placeholder="手机号码" />
+              <input type="text" placeholder="告警通知地址" />
             </div>
           </div>
           <div class="my-edit-group">
-            <span class="my-group-title">办公电话</span>
+            <span class="my-group-title">资产变更通知</span>
             <div class="my-group-content">
-              <input type="text" placeholder="办公电话" />
+              <span
+                ><el-checkbox class="my-content-checkbox"></el-checkbox
+              ></span>
             </div>
           </div>
           <div class="my-edit-group">
-            <span class="my-group-title">传真</span>
+            <span class="my-group-title">资源通知地址</span>
             <div class="my-group-content">
-              <input type="text" placeholder="传真" />
-            </div>
-          </div>
-          <div class="my-edit-group my-fill-line system-checkbox-form">
-            <span class="my-group-title">访问权限</span>
-            <div class="my-group-content">
-              <div class="system-checkbox-content">
-                <span class="system-checkbox-title">资源组</span>
-                <div class="system-checkbox-text">
-                  <div class="system-checkbox">
-                    <el-checkbox class="my-content-checkbox">全选</el-checkbox>
-                  </div>
-                  <div class="system-checkbox">
-                    <el-checkbox class="my-content-checkbox">默认分组</el-checkbox>
-                  </div>
-                  <div class="system-checkbox">
-                    <el-checkbox class="my-content-checkbox">123456</el-checkbox>
-                  </div>
-                </div>
-              </div>
-              <div class="system-checkbox-content">
-                <span class="system-checkbox-title">管理域</span>
-                <div class="system-checkbox-text">
-                  <div class="system-checkbox">
-                    <el-checkbox class="my-content-checkbox">全选</el-checkbox>
-                  </div>
-                  <div class="system-checkbox">
-                    <el-checkbox class="my-content-checkbox">默认管理域</el-checkbox>
-                  </div>
-                </div>
-              </div>
-              <div class="system-checkbox-content">
-                <span class="system-checkbox-title">业务</span>
-                <div class="system-checkbox-text">
-                  <div class="system-checkbox">
-                    <el-checkbox class="my-content-checkbox">全选</el-checkbox>
-                  </div>
-                  <div class="system-checkbox">
-                    <el-checkbox class="my-content-checkbox">Openstack V3</el-checkbox>
-                  </div>
-                  <div class="system-checkbox">
-                    <el-checkbox class="my-content-checkbox">vCenter5.5</el-checkbox>
-                  </div>
-                  <div class="system-checkbox">
-                    <el-checkbox class="my-content-checkbox">vCenter6.0</el-checkbox>
-                  </div>
-                  <div class="system-checkbox">
-                    <el-checkbox class="my-content-checkbox">SDN</el-checkbox>
-                  </div>
-                  <div class="system-checkbox">
-                    <el-checkbox class="my-content-checkbox">阿里云</el-checkbox>
-                  </div>
-                  <div class="system-checkbox">
-                    <el-checkbox class="my-content-checkbox">京东云</el-checkbox>
-                  </div>
-                  <div class="system-checkbox">
-                    <el-checkbox class="my-content-checkbox">华三云</el-checkbox>
-                  </div>
-                  <div class="system-checkbox">
-                    <el-checkbox class="my-content-checkbox">HMC</el-checkbox>
-                  </div>
-                  <div class="system-checkbox">
-                    <el-checkbox class="my-content-checkbox">vCenter6.0研发</el-checkbox>
-                  </div>
-                  <div class="system-checkbox">
-                    <el-checkbox class="my-content-checkbox">测试</el-checkbox>
-                  </div>
-                </div>
-              </div>
+              <input type="text" placeholder="资源通知地址" />
             </div>
           </div>
         </div>
@@ -411,5 +341,5 @@
   <script src="../assets/js/vue/vue.dev.js"></script>
   <!-- <script src="../assets/js/echart/vue-echart.js"></script> -->
   <script src="../assets/js/element-ui/index.js"></script>
-  <script src="./user-manage/user-manage.js"></script>
+  <script src="./interface-manage/interface-manage.js"></script>
 </html>

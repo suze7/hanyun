@@ -3,112 +3,106 @@ var app = new Vue({
   data: {
     showMenu: true,
     menuList: [],
+    text1: '',
+    options: [
+      {
+        value: '选项1',
+        label: '黄金糕'
+      },
+      {
+        value: '选项2',
+        label: '双皮奶'
+      },
+      {
+        value: '选项3',
+        label: '蚵仔煎'
+      },
+      {
+        value: '选项4',
+        label: '龙须面'
+      },
+      {
+        value: '选项5',
+        label: '北京烤鸭'
+      }
+    ],
+    value: '',
     leftMenuList: null,
     dialogVisible: false,
-    value: '',
-    options: [],
     tableData: [{
-      name: '名称名称名称',
-      realName: '系统管理员',
-      status: 1,
-      system: '内置用户',
-      role: '系统管理员',
-      resNum: '2018-10-17 00:44:20',
-      resNum1: '2018-10-17 00:44:20'
+      oid: '1.3.6.1.4.1.1.1.1.55',
+      resType: 'SNMP设备',
+      company: 'NxNetworks',
+      type: 'NxNetworks M68360',
+      type1: 'NxNetworks网关'
     },{
-      name: '名称名称名称',
-      realName: '系统管理员',
-      status: 1,
-      system: '内置用户',
-      role: '系统管理员',
-      resNum: '2018-10-17 00:44:20',
-      resNum1: '2018-10-17 00:44:20'
+      oid: '1.3.6.1.4.1.1.1.1.55',
+      resType: 'SNMP设备',
+      company: 'NxNetworks',
+      type: 'NxNetworks M68360',
+      type1: 'NxNetworks网关'
     },{
-      name: '名称名称名称',
-      realName: '系统管理员',
-      status: 1,
-      system: '内置用户',
-      role: '系统管理员',
-      resNum: '2018-10-17 00:44:20',
-      resNum1: '2018-10-17 00:44:20'
+      oid: '1.3.6.1.4.1.1.1.1.55',
+      resType: 'SNMP设备',
+      company: 'NxNetworks',
+      type: 'NxNetworks M68360',
+      type1: 'NxNetworks网关'
     },{
-      name: '名称名称名称',
-      realName: '系统管理员',
-      status: 1,
-      system: '内置用户',
-      role: '系统管理员',
-      resNum: '2018-10-17 00:44:20',
-      resNum1: '2018-10-17 00:44:20'
+      oid: '1.3.6.1.4.1.1.1.1.55',
+      resType: 'SNMP设备',
+      company: 'NxNetworks',
+      type: 'NxNetworks M68360',
+      type1: 'NxNetworks网关'
     },{
-      name: '名称名称名称',
-      realName: '系统管理员',
-      status: 1,
-      system: '内置用户',
-      role: '系统管理员',
-      resNum: '2018-10-17 00:44:20',
-      resNum1: '2018-10-17 00:44:20'
+      oid: '1.3.6.1.4.1.1.1.1.55',
+      resType: 'SNMP设备',
+      company: 'NxNetworks',
+      type: 'NxNetworks M68360',
+      type1: 'NxNetworks网关'
     },{
-      name: '名称名称名称',
-      realName: '系统管理员',
-      status: 1,
-      system: '内置用户',
-      role: '系统管理员',
-      resNum: '2018-10-17 00:44:20',
-      resNum1: '2018-10-17 00:44:20'
+      oid: '1.3.6.1.4.1.1.1.1.55',
+      resType: 'SNMP设备',
+      company: 'NxNetworks',
+      type: 'NxNetworks M68360',
+      type1: 'NxNetworks网关'
     },{
-      name: '名称名称名称',
-      realName: '系统管理员',
-      status: 1,
-      system: '内置用户',
-      role: '系统管理员',
-      resNum: '2018-10-17 00:44:20',
-      resNum1: '2018-10-17 00:44:20'
+      oid: '1.3.6.1.4.1.1.1.1.55',
+      resType: 'SNMP设备',
+      company: 'NxNetworks',
+      type: 'NxNetworks M68360',
+      type1: 'NxNetworks网关'
     },{
-      name: '名称名称名称',
-      realName: '系统管理员',
-      status: 1,
-      system: '内置用户',
-      role: '系统管理员',
-      resNum: '2018-10-17 00:44:20',
-      resNum1: '2018-10-17 00:44:20'
+      oid: '1.3.6.1.4.1.1.1.1.55',
+      resType: 'SNMP设备',
+      company: 'NxNetworks',
+      type: 'NxNetworks M68360',
+      type1: 'NxNetworks网关'
     },{
-      name: '名称名称名称',
-      realName: '系统管理员',
-      status: 1,
-      system: '内置用户',
-      role: '系统管理员',
-      resNum: '2018-10-17 00:44:20',
-      resNum1: '2018-10-17 00:44:20'
+      oid: '1.3.6.1.4.1.1.1.1.55',
+      resType: 'SNMP设备',
+      company: 'NxNetworks',
+      type: 'NxNetworks M68360',
+      type1: 'NxNetworks网关'
     },{
-      name: '名称名称名称',
-      realName: '系统管理员',
-      status: 1,
-      system: '内置用户',
-      role: '系统管理员',
-      resNum: '2018-10-17 00:44:20',
-      resNum1: '2018-10-17 00:44:20'
-    },{
-      name: '名称名称名称',
-      realName: '系统管理员',
-      status: 1,
-      system: '内置用户',
-      role: '系统管理员',
-      resNum: '2018-10-17 00:44:20',
-      resNum1: '2018-10-17 00:44:20'
+      oid: '1.3.6.1.4.1.1.1.1.55',
+      resType: 'SNMP设备',
+      company: 'NxNetworks',
+      type: 'NxNetworks M68360',
+      type1: 'NxNetworks网关'
     }],
   },
   created() {
     this.setMenuList();
     this.setLeftMenuList();
-    this.leftMenuList.selectMenu = this.leftMenuList.list[0];
   },
   mounted() {},
   methods: {
     toRoute(menu) {
       window.location.href = menu.url;
     },
-    setMenuList: function () {
-      this.menuList = [{
+    setMenuList: function() {
+      this.menuList = [
+        {
           name: '首页',
           img: '../assets/images/menu/menu-1',
           url: '../index/index.html',
@@ -130,7 +124,7 @@ var app = new Vue({
           name: '资源管理',
           img: '../assets/images/menu/menu-4',
           url: '../resource-manage/resource-manage.html',
-          active: true
+          active: false
         },
         {
           name: '虚拟化',
@@ -172,7 +166,7 @@ var app = new Vue({
           name: '系统管理',
           img: '../assets/images/menu/menu-11',
           url: '../system-manage/system-manage.html',
-          active: false
+          active: true
         }
       ];
     },
@@ -367,9 +361,13 @@ var app = new Vue({
     },
     showDialog() {
       this.dialogVisible = true;
+      
     },
-    handleClose() {},
+    handleClose() {
+      
+    },
     submitDialog() {
+      
       this.dialogVisible = false;
     }
   }

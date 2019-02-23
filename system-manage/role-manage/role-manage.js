@@ -9,92 +9,59 @@ var app = new Vue({
     options: [],
     tableData: [{
       name: '名称名称名称',
-      realName: '系统管理员',
       status: 1,
       system: '内置用户',
-      role: '系统管理员',
-      resNum: '2018-10-17 00:44:20',
-      resNum1: '2018-10-17 00:44:20'
+      describe: '系统管理员'
     },{
       name: '名称名称名称',
-      realName: '系统管理员',
       status: 1,
       system: '内置用户',
-      role: '系统管理员',
-      resNum: '2018-10-17 00:44:20',
-      resNum1: '2018-10-17 00:44:20'
+      describe: '系统管理员'
     },{
       name: '名称名称名称',
-      realName: '系统管理员',
       status: 1,
       system: '内置用户',
-      role: '系统管理员',
-      resNum: '2018-10-17 00:44:20',
-      resNum1: '2018-10-17 00:44:20'
+      describe: '系统管理员'
     },{
       name: '名称名称名称',
-      realName: '系统管理员',
       status: 1,
       system: '内置用户',
-      role: '系统管理员',
-      resNum: '2018-10-17 00:44:20',
-      resNum1: '2018-10-17 00:44:20'
+      describe: '系统管理员'
     },{
       name: '名称名称名称',
-      realName: '系统管理员',
       status: 1,
       system: '内置用户',
-      role: '系统管理员',
-      resNum: '2018-10-17 00:44:20',
-      resNum1: '2018-10-17 00:44:20'
+      describe: '系统管理员'
     },{
       name: '名称名称名称',
-      realName: '系统管理员',
       status: 1,
       system: '内置用户',
-      role: '系统管理员',
-      resNum: '2018-10-17 00:44:20',
-      resNum1: '2018-10-17 00:44:20'
+      describe: '系统管理员'
     },{
       name: '名称名称名称',
-      realName: '系统管理员',
       status: 1,
       system: '内置用户',
-      role: '系统管理员',
-      resNum: '2018-10-17 00:44:20',
-      resNum1: '2018-10-17 00:44:20'
+      describe: '系统管理员'
     },{
       name: '名称名称名称',
-      realName: '系统管理员',
       status: 1,
       system: '内置用户',
-      role: '系统管理员',
-      resNum: '2018-10-17 00:44:20',
-      resNum1: '2018-10-17 00:44:20'
+      describe: '系统管理员'
     },{
       name: '名称名称名称',
-      realName: '系统管理员',
       status: 1,
       system: '内置用户',
-      role: '系统管理员',
-      resNum: '2018-10-17 00:44:20',
-      resNum1: '2018-10-17 00:44:20'
+      describe: '系统管理员'
     },{
       name: '名称名称名称',
-      realName: '系统管理员',
       status: 1,
       system: '内置用户',
-      role: '系统管理员',
-      resNum: '2018-10-17 00:44:20',
-      resNum1: '2018-10-17 00:44:20'
+      describe: '系统管理员'
     },{
       name: '名称名称名称',
-      realName: '系统管理员',
       status: 1,
       system: '内置用户',
-      role: '系统管理员',
-      resNum: '2018-10-17 00:44:20',
-      resNum1: '2018-10-17 00:44:20'
+      describe: '系统管理员'
     }],
   },
   created() {

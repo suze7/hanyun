@@ -191,6 +191,7 @@ input[type='text']:-ms-input-placeholder {
   height: 100%;
 }
 .loc-index-content .loc-right-content .loc-manage-content {
+  position: relative;
   padding: 20px;
   width: 100%;
   height: 100%;

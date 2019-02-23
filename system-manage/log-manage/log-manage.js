@@ -4,98 +4,29 @@ var app = new Vue({
     showMenu: true,
     menuList: [],
     leftMenuList: null,
-    dialogVisible: false,
-    value: '',
-    options: [],
-    tableData: [{
-      name: '名称名称名称',
-      realName: '系统管理员',
-      status: 1,
-      system: '内置用户',
-      role: '系统管理员',
-      resNum: '2018-10-17 00:44:20',
-      resNum1: '2018-10-17 00:44:20'
-    },{
-      name: '名称名称名称',
-      realName: '系统管理员',
-      status: 1,
-      system: '内置用户',
-      role: '系统管理员',
-      resNum: '2018-10-17 00:44:20',
-      resNum1: '2018-10-17 00:44:20'
-    },{
-      name: '名称名称名称',
-      realName: '系统管理员',
-      status: 1,
-      system: '内置用户',
-      role: '系统管理员',
-      resNum: '2018-10-17 00:44:20',
-      resNum1: '2018-10-17 00:44:20'
-    },{
-      name: '名称名称名称',
-      realName: '系统管理员',
-      status: 1,
-      system: '内置用户',
-      role: '系统管理员',
-      resNum: '2018-10-17 00:44:20',
-      resNum1: '2018-10-17 00:44:20'
-    },{
-      name: '名称名称名称',
-      realName: '系统管理员',
-      status: 1,
-      system: '内置用户',
-      role: '系统管理员',
-      resNum: '2018-10-17 00:44:20',
-      resNum1: '2018-10-17 00:44:20'
-    },{
-      name: '名称名称名称',
-      realName: '系统管理员',
-      status: 1,
-      system: '内置用户',
-      role: '系统管理员',
-      resNum: '2018-10-17 00:44:20',
-      resNum1: '2018-10-17 00:44:20'
-    },{
-      name: '名称名称名称',
-      realName: '系统管理员',
-      status: 1,
-      system: '内置用户',
-      role: '系统管理员',
-      resNum: '2018-10-17 00:44:20',
-      resNum1: '2018-10-17 00:44:20'
-    },{
-      name: '名称名称名称',
-      realName: '系统管理员',
-      status: 1,
-      system: '内置用户',
-      role: '系统管理员',
-      resNum: '2018-10-17 00:44:20',
-      resNum1: '2018-10-17 00:44:20'
-    },{
-      name: '名称名称名称',
-      realName: '系统管理员',
-      status: 1,
-      system: '内置用户',
-      role: '系统管理员',
-      resNum: '2018-10-17 00:44:20',
-      resNum1: '2018-10-17 00:44:20'
-    },{
-      name: '名称名称名称',
-      realName: '系统管理员',
-      status: 1,
-      system: '内置用户',
-      role: '系统管理员',
-      resNum: '2018-10-17 00:44:20',
-      resNum1: '2018-10-17 00:44:20'
-    },{
-      name: '名称名称名称',
-      realName: '系统管理员',
-      status: 1,
-      system: '内置用户',
-      role: '系统管理员',
-      resNum: '2018-10-17 00:44:20',
-      resNum1: '2018-10-17 00:44:20'
-    }],
+    options: [
+      {
+        value: '选项1',
+        label: '黄金糕'
+      },
+      {
+        value: '选项2',
+        label: '双皮奶'
+      },
+      {
+        value: '选项3',
+        label: '蚵仔煎'
+      },
+      {
+        value: '选项4',
+        label: '龙须面'
+      },
+      {
+        value: '选项5',
+        label: '北京烤鸭'
+      }
+    ],
+    value: ''
   },
   created() {
     this.setMenuList();
@@ -364,13 +295,6 @@ var app = new Vue({
     },
     toggleShowMenu() {
       this.showMenu = !this.showMenu;
-    },
-    showDialog() {
-      this.dialogVisible = true;
-    },
-    handleClose() {},
-    submitDialog() {
-      this.dialogVisible = false;
     }
   }
 });

@@ -29,127 +29,138 @@ var app = new Vue({
     value: '',
     leftMenuList: null,
     dialogVisible: false,
-    tableData: [{
-      spec: true,
-      name: '1监控系统数据库',
-      IP: '172.16.154.122',
-      type1: '2数据库',
-      type2: 'MySql',
-      level: '三级保障',
-      area: '默认管理域',
-      healthStatus: 0,
-      manageStatus: 1,
-      accessStatus: 2,
-      time: '5分钟'
-    },{
-      spec: false,
-      name: '2监控系统数据库',
-      IP: '172.16.154.122',
-      type1: '1数据库',
-      type2: 'MySql',
-      level: '三级保障',
-      area: '默认管理域',
-      healthStatus: 1,
-      manageStatus: 2,
-      accessStatus: 0,
-      time: '5分钟'
-    },{
-      spec: false,
-      name: '3监控系统数据库',
-      IP: '172.16.154.122',
-      type1: '3数据库',
-      type2: 'MySql',
-      level: '三级保障',
-      area: '默认管理域',
-      healthStatus: 2,
-      manageStatus: 0,
-      accessStatus: 1,
-      time: '5分钟'
-    },{
-      spec: true,
-      name: '1监控系统数据库',
-      IP: '172.16.154.122',
-      type1: '2数据库',
-      type2: 'MySql',
-      level: '三级保障',
-      area: '默认管理域',
-      healthStatus: 0,
-      manageStatus: 1,
-      accessStatus: 2,
-      time: '5分钟'
-    },{
-      spec: false,
-      name: '2监控系统数据库',
-      IP: '172.16.154.122',
-      type1: '1数据库',
-      type2: 'MySql',
-      level: '三级保障',
-      area: '默认管理域',
-      healthStatus: 1,
-      manageStatus: 2,
-      accessStatus: 0,
-      time: '5分钟'
-    },{
-      spec: false,
-      name: '3监控系统数据库',
-      IP: '172.16.154.122',
-      type1: '3数据库',
-      type2: 'MySql',
-      level: '三级保障',
-      area: '默认管理域',
-      healthStatus: 2,
-      manageStatus: 0,
-      accessStatus: 1,
-      time: '5分钟'
-    },{
-      spec: true,
-      name: '1监控系统数据库',
-      IP: '172.16.154.122',
-      type1: '2数据库',
-      type2: 'MySql',
-      level: '三级保障',
-      area: '默认管理域',
-      healthStatus: 0,
-      manageStatus: 1,
-      accessStatus: 2,
-      time: '5分钟'
-    },{
-      spec: false,
-      name: '2监控系统数据库',
-      IP: '172.16.154.122',
-      type1: '1数据库',
-      type2: 'MySql',
-      level: '三级保障',
-      area: '默认管理域',
-      healthStatus: 1,
-      manageStatus: 2,
-      accessStatus: 0,
-      time: '5分钟'
-    },{
-      spec: false,
-      name: '3监控系统数据库',
-      IP: '172.16.154.122',
-      type1: '3数据库',
-      type2: 'MySql',
-      level: '三级保障',
-      area: '默认管理域',
-      healthStatus: 2,
-      manageStatus: 0,
-      accessStatus: 1,
-      time: '5分钟'
-    },{
-      spec: false,
-      name: '3监控系统数据库',
-      IP: '172.16.154.122',
-      type1: '3数据库',
-      type2: 'MySql',
-      level: '三级保障',
-      area: '默认管理域',
-      healthStatus: 2,
-      manageStatus: 0,
-      accessStatus: 1,
-      time: '5分钟'
-    }],
+    tableData: [
+      {
+        spec: true,
+        name: '1监控系统数据库',
+        IP: '172.16.154.122',
+        type1: '2数据库',
+        type2: 'MySql',
+        level: '三级保障',
+        area: '默认管理域',
+        healthStatus: 0,
+        manageStatus: 1,
+        accessStatus: 2,
+        time: '5分钟'
+      },
+      {
+        spec: false,
+        name: '2监控系统数据库',
+        IP: '172.16.154.122',
+        type1: '1数据库',
+        type2: 'MySql',
+        level: '三级保障',
+        area: '默认管理域',
+        healthStatus: 1,
+        manageStatus: 2,
+        accessStatus: 0,
+        time: '5分钟'
+      },
+      {
+        spec: false,
+        name: '3监控系统数据库',
+        IP: '172.16.154.122',
+        type1: '3数据库',
+        type2: 'MySql',
+        level: '三级保障',
+        area: '默认管理域',
+        healthStatus: 2,
+        manageStatus: 0,
+        accessStatus: 1,
+        time: '5分钟'
+      },
+      {
+        spec: true,
+        name: '1监控系统数据库',
+        IP: '172.16.154.122',
+        type1: '2数据库',
+        type2: 'MySql',
+        level: '三级保障',
+        area: '默认管理域',
+        healthStatus: 0,
+        manageStatus: 1,
+        accessStatus: 2,
+        time: '5分钟'
+      },
+      {
+        spec: false,
+        name: '2监控系统数据库',
+        IP: '172.16.154.122',
+        type1: '1数据库',
+        type2: 'MySql',
+        level: '三级保障',
+        area: '默认管理域',
+        healthStatus: 1,
+        manageStatus: 2,
+        accessStatus: 0,
+        time: '5分钟'
+      },
+      {
+        spec: false,
+        name: '3监控系统数据库',
+        IP: '172.16.154.122',
+        type1: '3数据库',
+        type2: 'MySql',
+        level: '三级保障',
+        area: '默认管理域',
+        healthStatus: 2,
+        manageStatus: 0,
+        accessStatus: 1,
+        time: '5分钟'
+      },
+      {
+        spec: true,
+        name: '1监控系统数据库',
+        IP: '172.16.154.122',
+        type1: '2数据库',
+        type2: 'MySql',
+        level: '三级保障',
+        area: '默认管理域',
+        healthStatus: 0,
+        manageStatus: 1,
+        accessStatus: 2,
+        time: '5分钟'
+      },
+      {
+        spec: false,
+        name: '2监控系统数据库',
+        IP: '172.16.154.122',
+        type1: '1数据库',
+        type2: 'MySql',
+        level: '三级保障',
+        area: '默认管理域',
+        healthStatus: 1,
+        manageStatus: 2,
+        accessStatus: 0,
+        time: '5分钟'
+      },
+      {
+        spec: false,
+        name: '3监控系统数据库',
+        IP: '172.16.154.122',
+        type1: '3数据库',
+        type2: 'MySql',
+        level: '三级保障',
+        area: '默认管理域',
+        healthStatus: 2,
+        manageStatus: 0,
+        accessStatus: 1,
+        time: '5分钟'
+      },
+      {
+        spec: false,
+        name: '3监控系统数据库',
+        IP: '172.16.154.122',
+        type1: '3数据库',
+        type2: 'MySql',
+        level: '三级保障',
+        area: '默认管理域',
+        healthStatus: 2,
+        manageStatus: 0,
+        accessStatus: 1,
+        time: '5分钟'
+      }
+    ]
   },
   created() {
     this.setMenuList();
@@ -272,19 +283,22 @@ var app = new Vue({
                 name: '网络设备',
                 iconClass: '',
                 canTouch: true,
-                children: [{
-                  id: '2-2-1',
-                  name: '网络设备1',
-                  iconClass: '',
-                  canTouch: true,
-                  num: ''
-                },{
-                  id: '2-2-2',
-                  name: '网络设备2',
-                  iconClass: '',
-                  canTouch: true,
-                  num: '1'
-                }]
+                children: [
+                  {
+                    id: '2-2-1',
+                    name: '网络设备1',
+                    iconClass: '',
+                    canTouch: true,
+                    num: ''
+                  },
+                  {
+                    id: '2-2-2',
+                    name: '网络设备2',
+                    iconClass: '',
+                    canTouch: true,
+                    num: '1'
+                  }
+                ]
               }
             ]
           },
@@ -333,13 +347,9 @@ var app = new Vue({
     },
     showDialog() {
       this.dialogVisible = true;
-      
     },
-    handleClose() {
-      
-    },
+    handleClose() {},
     submitDialog() {
-      
       this.dialogVisible = false;
     }
   }

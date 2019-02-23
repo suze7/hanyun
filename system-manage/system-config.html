@@ -113,7 +113,70 @@
         </div>
         <div class="loc-right-content">
           <div class="loc-manage-content">
-            <div class="loc-opera-group system-opera-group">
+            <div class="loc-search-form">
+              <div class="loc-query-form">
+                <p class="loc-query-name">OID</p>
+                <input
+                  placeholder="OID"
+                  class="loc-input"
+                  v-model="text1"
+                  :class="{'loc-input-active': text1}"
+                />
+              </div>
+              <div class="loc-query-form">
+                <p class="loc-query-name">资源类型</p>
+                <el-select
+                  v-model="value"
+                  popper-class="loc-main-selectbox"
+                  class="loc-main-select"
+                  placeholder="-请选择-"
+                >
+                  <el-option
+                    v-for="item in options"
+                    :key="item.value"
+                    :label="item.label"
+                    :value="item.value"
+                  >
+                  </el-option>
+                </el-select>
+              </div>
+              <div class="loc-query-form">
+                <p class="loc-query-name">厂商</p>
+                <input
+                  placeholder="OID"
+                  class="loc-input"
+                  v-model="text1"
+                  :class="{'loc-input-active': text1}"
+                />
+              </div>
+              <div class="loc-query-form">
+                <p class="loc-query-name">型号</p>
+                <input
+                  placeholder="型号"
+                  class="loc-input"
+                  v-model="text1"
+                  :class="{'loc-input-active': text1}"
+                />
+              </div>
+              <div class="loc-query-form">
+                <p class="loc-query-name">型号</p>
+                <input
+                  placeholder="型号"
+                  class="loc-input"
+                  v-model="text1"
+                  :class="{'loc-input-active': text1}"
+                />
+              </div>
+              <div class="loc-query-btn">
+                <el-button class="loc-btn submit-btn" type="primary"
+                  >搜索</el-button
+                >
+                <el-button class="loc-btn reset-btn" type="primary"
+                  >重置</el-button
+                >
+              </div>
+            </div>
+            <div class="loc-opera-group">
               <el-button
                 type="primary"
                 class="loc-btn icon-btn"
@@ -125,16 +188,6 @@
               <el-button type="primary" class="loc-btn icon-btn"
                 ><img src="../assets/images/icon/btn-icon-6.png" /><span
                   >删除</span
-                ></el-button
-              >
-              <el-button type="primary" class="loc-btn icon-btn"
-                ><img src="../assets/images/icon/btn-icon-2.png" /><span
-                  >启用用户</span
-                ></el-button
-              >
-              <el-button type="primary" class="loc-btn icon-btn"
-                ><img src="../assets/images/icon/btn-icon-n.png" /><span
-                  >屏蔽用户</span
                 ></el-button
               >
             </div>
@@ -150,43 +203,31 @@
                 width="62px"
               ></el-table-column>
               <el-table-column
-                prop="name"
-                label="用户名"
-                min-width="138px"
+                prop="oid"
+                label="OID"
+                min-width="202px"
               ></el-table-column>
               <el-table-column
-                prop="realName"
-                label="真实姓名"
-                min-width="126px"
-              ></el-table-column>
-              <el-table-column prop="status" label="状态" min-width="90px">
-                <template slot-scope="scope">
-                  <img
-                    :src="scope.row.status === 0 ? '../assets/images/icon/normal.png' : scope.row.status === 1 ? '../assets/images/icon/warning.png' : '../assets/images/icon/error.png'"
-                  />
-                </template>
-              </el-table-column>
-              <el-table-column
-                prop="system"
-                label="系统"
-                min-width="117px"
+                prop="resType"
+                label="资源类型"
+                min-width="153px"
               ></el-table-column>
               <el-table-column
-                prop="role"
-                label="角色"
-                min-width="126px"
+                prop="company"
+                label="厂商"
+                min-width="165px"
               ></el-table-column>
               <el-table-column
-                prop="resNum"
-                label="管理资源数"
-                min-width="175px"
+                prop="type"
+                label="类型"
+                min-width="207px"
               ></el-table-column>
               <el-table-column
-                prop="resNum1"
-                label="管理资源数"
-                min-width="168px"
+                prop="type1"
+                label="系别"
+                min-width="213px"
               ></el-table-column>
-              <el-table-column prop="" label="操作" min-width="100px">
+              <el-table-column prop="" label="操作" min-width="104px">
                 <template slot-scope="scope">
                   <el-popover
                     placement="bottom"
@@ -251,142 +292,112 @@
       </div>
 
       <el-dialog
-        title="添加管理域"
+        title="添加资源类型配置"
         :visible.sync="dialogVisible"
         width="1080px"
         :show-close="false"
         :before-close="handleClose"
         class="blue-dialog my-edit-dialog"
       >
-        <div class="system-min-dialog">
+        <div>
           <div class="my-edit-group">
-            <span class="my-group-title">用户名称</span>
+            <span class="my-group-title">IP地址</span>
             <div class="my-group-content">
-              <input type="text" placeholder="用户名称" />
+              <input type="text" placeholder="IP地址" />
             </div>
           </div>
           <div class="my-edit-group">
-            <span class="my-group-title">真实姓名</span>
+            <span class="my-group-title">读共同体名</span>
             <div class="my-group-content">
-              <input type="text" placeholder="真实姓名" />
+              <input type="text" placeholder="读共同体名" />
             </div>
           </div>
           <div class="my-edit-group">
-            <span class="my-group-title">用户角色</span>
+            <span class="my-group-title">SNMP端口</span>
             <div class="my-group-content">
-              <input type="text" placeholder="用户角色" />
+              <input type="text" placeholder="SNMP端口" />
             </div>
           </div>
           <div class="my-edit-group">
-            <span class="my-group-title">密码</span>
+            <span class="my-group-title">管理域</span>
             <div class="my-group-content">
-              <input type="text" placeholder="密码" />
+              <el-select
+                v-model="value"
+                popper-class="loc-main-selectbox loc-white-selectbox"
+                class="loc-main-select loc-white-select"
+                placeholder="-请选择-"
+              >
+                <el-option
+                  v-for="item in options"
+                  :key="item.value"
+                  :label="item.label"
+                  :value="item.value"
+                >
+                </el-option>
+              </el-select>
             </div>
           </div>
           <div class="my-edit-group">
-            <span class="my-group-title">确认密码</span>
+            <span class="my-group-title">资源类型</span>
             <div class="my-group-content">
-              <input type="text" placeholder="确认密码" />
+              <el-select
+                v-model="value"
+                popper-class="loc-main-selectbox loc-white-selectbox"
+                class="loc-main-select loc-white-select"
+                placeholder="-请选择-"
+              >
+                <el-option
+                  v-for="item in options"
+                  :key="item.value"
+                  :label="item.label"
+                  :value="item.value"
+                >
+                </el-option>
+              </el-select>
             </div>
           </div>
           <div class="my-edit-group">
-            <span class="my-group-title">启用</span>
+            <span class="my-group-title">厂商</span>
             <div class="my-group-content">
-              <span
-                ><el-checkbox class="my-content-checkbox"></el-checkbox
-              ></span>
+              <input type="text" placeholder="厂商" />
             </div>
           </div>
           <div class="my-edit-group">
-            <span class="my-group-title">邮件</span>
+            <span class="my-group-title">型号</span>
             <div class="my-group-content">
-              <input type="text" placeholder="邮件" />
+              <el-select
+                v-model="value"
+                popper-class="loc-main-selectbox loc-white-selectbox"
+                class="loc-main-select loc-white-select"
+                placeholder="-请选择-"
+              >
+                <el-option
+                  v-for="item in options"
+                  :key="item.value"
+                  :label="item.label"
+                  :value="item.value"
+                >
+                </el-option>
+              </el-select>
             </div>
           </div>
           <div class="my-edit-group">
-            <span class="my-group-title">手机号码</span>
+            <span class="my-group-title">资源类型</span>
             <div class="my-group-content">
-              <input type="text" placeholder="手机号码" />
-            </div>
-          </div>
-          <div class="my-edit-group">
-            <span class="my-group-title">办公电话</span>
-            <div class="my-group-content">
-              <input type="text" placeholder="办公电话" />
-            </div>
-          </div>
-          <div class="my-edit-group">
-            <span class="my-group-title">传真</span>
-            <div class="my-group-content">
-              <input type="text" placeholder="传真" />
-            </div>
-          </div>
-          <div class="my-edit-group my-fill-line system-checkbox-form">
-            <span class="my-group-title">访问权限</span>
-            <div class="my-group-content">
-              <div class="system-checkbox-content">
-                <span class="system-checkbox-title">资源组</span>
-                <div class="system-checkbox-text">
-                  <div class="system-checkbox">
-                    <el-checkbox class="my-content-checkbox">全选</el-checkbox>
-                  </div>
-                  <div class="system-checkbox">
-                    <el-checkbox class="my-content-checkbox">默认分组</el-checkbox>
-                  </div>
-                  <div class="system-checkbox">
-                    <el-checkbox class="my-content-checkbox">123456</el-checkbox>
-                  </div>
-                </div>
-              </div>
-              <div class="system-checkbox-content">
-                <span class="system-checkbox-title">管理域</span>
-                <div class="system-checkbox-text">
-                  <div class="system-checkbox">
-                    <el-checkbox class="my-content-checkbox">全选</el-checkbox>
-                  </div>
-                  <div class="system-checkbox">
-                    <el-checkbox class="my-content-checkbox">默认管理域</el-checkbox>
-                  </div>
-                </div>
-              </div>
-              <div class="system-checkbox-content">
-                <span class="system-checkbox-title">业务</span>
-                <div class="system-checkbox-text">
-                  <div class="system-checkbox">
-                    <el-checkbox class="my-content-checkbox">全选</el-checkbox>
-                  </div>
-                  <div class="system-checkbox">
-                    <el-checkbox class="my-content-checkbox">Openstack V3</el-checkbox>
-                  </div>
-                  <div class="system-checkbox">
-                    <el-checkbox class="my-content-checkbox">vCenter5.5</el-checkbox>
-                  </div>
-                  <div class="system-checkbox">
-                    <el-checkbox class="my-content-checkbox">vCenter6.0</el-checkbox>
-                  </div>
-                  <div class="system-checkbox">
-                    <el-checkbox class="my-content-checkbox">SDN</el-checkbox>
-                  </div>
-                  <div class="system-checkbox">
-                    <el-checkbox class="my-content-checkbox">阿里云</el-checkbox>
-                  </div>
-                  <div class="system-checkbox">
-                    <el-checkbox class="my-content-checkbox">京东云</el-checkbox>
-                  </div>
-                  <div class="system-checkbox">
-                    <el-checkbox class="my-content-checkbox">华三云</el-checkbox>
-                  </div>
-                  <div class="system-checkbox">
-                    <el-checkbox class="my-content-checkbox">HMC</el-checkbox>
-                  </div>
-                  <div class="system-checkbox">
-                    <el-checkbox class="my-content-checkbox">vCenter6.0研发</el-checkbox>
-                  </div>
-                  <div class="system-checkbox">
-                    <el-checkbox class="my-content-checkbox">测试</el-checkbox>
-                  </div>
-                </div>
-              </div>
+              <el-select
+                v-model="value"
+                popper-class="loc-main-selectbox loc-white-selectbox"
+                class="loc-main-select loc-white-select"
+                placeholder="-请选择-"
+              >
+                <el-option
+                  v-for="item in options"
+                  :key="item.value"
+                  :label="item.label"
+                  :value="item.value"
+                >
+                </el-option>
+              </el-select>
             </div>
           </div>
         </div>
@@ -411,5 +422,5 @@
   <script src="../assets/js/vue/vue.dev.js"></script>
   <!-- <script src="../assets/js/echart/vue-echart.js"></script> -->
   <script src="../assets/js/element-ui/index.js"></script>
-  <script src="./user-manage/user-manage.js"></script>
+  <script src="./system-config/system-config.js"></script>
 </html>
