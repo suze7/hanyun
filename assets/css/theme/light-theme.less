@@ -384,6 +384,22 @@ textarea,
   }
 }
 
+.my-radio {
+  .el-radio__input.is-checked {
+    .el-radio__inner {
+      border-color: #3498db;
+    }
+  }
+  .el-radio__label {
+    display: none;
+  }
+  .el-radio__inner::after {
+    width: 6px;
+    height: 6px;
+    background: #fff;
+  }
+}
+
 .loc-equip-bread {
   color: #999;
 }

@@ -7,8 +7,8 @@
   <link href="../assets/css/base.css" rel="stylesheet" />
   <link href="../assets/js/element-ui/index.css" rel="stylesheet" />
   <link href="../assets/css/style.css" rel="stylesheet" />
-  <link href="../assets/css/theme/main-theme.css" rel="stylesheet" />
-  <!-- <link href="../assets/css/theme/light-theme.css" rel="stylesheet" /> -->
+  <!-- <link href="../assets/css/theme/main-theme.css" rel="stylesheet" /> -->
+  <link href="../assets/css/theme/light-theme.css" rel="stylesheet" />
   <link href="./index.css" rel="stylesheet" />
 </head>
 
@@ -146,100 +146,7 @@
               <el-button class="loc-btn reset-btn" type="primary">导出</el-button>
             </div>
           </div>
-          <!-- <el-table :data="tableData" size="mini" class="transparent-table transparent-white-table" style="width: 100%">
-            <el-table-column class-name="my-checkbox" type="selection" width="46"></el-table-column>
-            <el-table-column prop="name" label="名称" sortable min-width="124px">
-              <template slot-scope="scope">
-                <i class="my-table-special" v-if="scope.row.spec"></i>
-                <p style="color: #97c1ff">{{ scope.row.name }}</p>
-              </template>
-            </el-table-column>
-            <el-table-column prop="IP" label="IP" sortable min-width="119px">
-              <template slot-scope="scope">
-                <p style="color: #97c1ff">{{ scope.row.IP }}</p>
-              </template>
-            </el-table-column>
-            <el-table-column prop="type1" label="类别" sortable min-width="76px"></el-table-column>
-            <el-table-column prop="type2" label="类型" sortable min-width="90px"></el-table-column>
-            <el-table-column prop="level" label="保障等级" sortable min-width="97px"></el-table-column>
-            <el-table-column prop="area" label="管理域" sortable min-width="110px"></el-table-column>
-            <el-table-column prop="healthStatus" label="健康状态" min-width="81px" class-name="com-txt-center no-padding">
-              <template slot="header" slot-scope="scope">
-                <span>健康状态</span>
-                <el-popover placement="bottom-end" trigger="click" class="my-popover" popper-class="my-popover-content">
-                  <div>
-                    <div class="my-popover-item com-hover">全部</div>
-                    <div class="my-popover-item com-hover">正常
-                      <el-checkbox class="my-content-checkbox"></el-checkbox>
-                    </div>
-                  </div>
-                  <i slot="reference" class="com-hover el-icon-arrow-down"></i>
-                </el-popover>
-              </template>
-              <template slot-scope="scope">
-                <img :src="scope.row.healthStatus === 0 ? '../assets/images/icon/normal.png' : scope.row.healthStatus === 1 ? '../assets/images/icon/warning.png' : '../assets/images/icon/error.png'" />
-              </template>
-            </el-table-column>
-            <el-table-column prop="manageStatus" label="管理状态" min-width="81px" class-name="com-txt-center no-padding">
-              <template slot="header" slot-scope="scope">
-                <span>管理状态</span>
-                <el-popover placement="bottom-end" trigger="click" class="my-popover" popper-class="my-popover-content">
-                  <div>
-                    <div class="my-popover-item com-hover">全部</div>
-                    <div class="my-popover-item com-hover">正常
-                      <el-checkbox class="my-content-checkbox"></el-checkbox>
-                    </div>
-                  </div>
-                  <i slot="reference" class="com-hover el-icon-arrow-down"></i>
-                </el-popover>
-              </template>
-              <template slot-scope="scope">
-                <img :src="scope.row.manageStatus === 0 ? '../assets/images/icon/normal.png' : scope.row.manageStatus === 1 ? '../assets/images/icon/warning.png' : '../assets/images/icon/error.png'" />
-              </template>
-            </el-table-column>
-            <el-table-column prop="accessStatus" label="通断状态" min-width="81px" class-name="com-txt-center no-padding">
-              <template slot="header" slot-scope="scope">
-                <span>通断状态</span>
-                <el-popover placement="bottom-end" trigger="click" class="my-popover" popper-class="my-popover-content">
-                  <div>
-                    <div class="my-popover-item com-hover">全部</div>
-                    <div class="my-popover-item com-hover">正常
-                      <el-checkbox class="my-content-checkbox"></el-checkbox>
-                    </div>
-                  </div>
-                  <i slot="reference" class="com-hover el-icon-arrow-down"></i>
-                </el-popover>
-              </template>
-              <template slot-scope="scope">
-                <img :src="scope.row.accessStatus === 0 ? '../assets/images/icon/normal.png' : scope.row.accessStatus === 1 ? '../assets/images/icon/warning.png' : '../assets/images/icon/error.png'" />
-              </template>
-            </el-table-column>
-            <el-table-column prop="time" label="轮询周期" min-width="100px"></el-table-column>
-            <el-table-column prop="" label="操作" min-width="98px">
-              <template slot-scope="scope">
-                <el-popover placement="bottom" trigger="click" class="my-popover" popper-class="my-popover-content my-popover-left">
-                  <div>
-                    <div class="my-popover-item com-hover">查看</div>
-                    <div class="my-popover-item com-hover">编辑</div>
-                    <div class="my-popover-item com-hover">删除</div>
-                    <div class="my-popover-item com-hover">
-                      <el-popover placement="left" trigger="hover" class="my-popover" popper-class="my-popover-content">
-                        <div>
-                          <div class="my-popover-item com-hover">查看</div>
-                          <div class="my-popover-item com-hover">编辑</div>
-                          <div class="my-popover-item com-hover">删除</div>
-                          <div class="my-popover-item com-hover">删除</div>
-                        </div>
-                        <div slot="reference">设置 <span style="float: right;line-height: 16px;" class="el-icon-arrow-right"></span></div>
-                      </el-popover>
-                    </div>
-                  </div>
-                  <img slot="reference" class="com-hover" style="margin: 6px 0 0 2px;" src="../assets/images/icon/opera.png" />
-                </el-popover>
-              </template>
-            </el-table-column>
-          </el-table> -->
-          <div class="loc-pagination">
+          <div class="loc-pagination report-ava-footer">
             <div class="my-pagination-group">
               <div class="my-pagination-btn my-pagination-first com-hover">首页</div>
               <el-pagination :pager-count="5" layout="prev, pager, next" :total="1000">

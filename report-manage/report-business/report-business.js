@@ -246,6 +246,8 @@ var app = new Vue({
   created() {
     this.setMenuList();
     this.setLeftMenuList();
+    this.leftMenuList.selectMenu = this.leftMenuList.list[7].children[0];
+    this.leftMenuList.openMenu = this.leftMenuList.list[7].id;
   },
   mounted() {},
   methods: {
@@ -331,7 +333,7 @@ var app = new Vue({
             id: '1',
             name: '性能分析列表',
             iconClass: 'menu-icon4-l',
-            canTouch: false, //点开却不会选中
+            canTouch: true,
           },
           {
             id: '2',
@@ -429,9 +431,9 @@ var app = new Vue({
     selectedLeftMenu(menu) {
       if (menu.canTouch) {
         this.leftMenuList.selectMenu = menu;
+        this.afterSelect(menu);
       }
       if (menu.children) {
-        console.log(menu);
         if (this.leftMenuList.openMenu === menu.id) {
           let mList = this.leftMenuList.openMenu.split('-');
           if (mList.length > 1) {
@@ -443,6 +445,25 @@ var app = new Vue({
         } else {
           this.leftMenuList.openMenu = menu.id;
         }
+      }
+    },
+    afterSelect(menu) {
+      if (menu.id === '1') {
+        window.location.href = './report-manage.html';
+      } else if (menu.id === '2') {
+        window.location.href = './sort-manage.html';
+      } else if (menu.id === '3-1') {
+        window.location.href = './report-available.html';
+      } else if (menu.id === '4-1') {
+        window.location.href = './report-alarm.html';
+      } else if (menu.id === '5-1') {
+        window.location.href = './report-topn.html';
+      } else if (menu.id === '6-1') {
+        window.location.href = './report-type.html';
+      } else if (menu.id === '7-1') {
+        window.location.href = './report-resource.html';
+      } else if (menu.id === '8-1') {
+        window.location.href = './report-business.html';
       }
     },
     toggleShowMenu() {

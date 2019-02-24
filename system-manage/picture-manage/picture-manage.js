@@ -5,7 +5,8 @@ var app = new Vue({
     showMenu: true,
     menuList: [],
     text1: '',
-    options: [{
+    options: [
+      {
         value: '选项1',
         label: '黄金糕'
       },
@@ -29,55 +30,68 @@ var app = new Vue({
     value: '',
     leftMenuList: null,
     dialogVisible: false,
-    dataList: [{
-      id: 1,
-      text: '图片1',
-      img: '../assets/images/1.jpg'
-    }, {
-      id: 2,
-      text: '图片2',
-      img: '../assets/images/logo.png'
-    }, {
-      id: 3,
-      text: '图片3',
-      img: '../assets/images/1.jpg'
-    }, {
-      id: 4,
-      text: '图片4',
-      img: '../assets/images/logo.png'
-    }, {
-      id: 5,
-      text: '图片5',
-      img: '../assets/images/1.jpg'
-    }, {
-      id: 6,
-      text: '图片6',
-      img: '../assets/images/1.jpg'
-    }, {
-      id: 7,
-      text: '图片7',
-      img: '../assets/images/1.jpg'
-    }, {
-      id: 8,
-      text: '图片8',
-      img: '../assets/images/1.jpg'
-    }, {
-      id: 9,
-      text: '图片9',
-      img: '../assets/images/1.jpg'
-    }, {
-      id: 10,
-      text: '图片10',
-      img: '../assets/images/1.jpg'
-    }, {
-      id: 11,
-      text: '图片11',
-      img: '../assets/images/1.jpg'
-    }, {
-      id: 12,
-      text: '图片12',
-      img: '../assets/images/1.jpg'
-    }],
+    dataList: [
+      {
+        id: 1,
+        text: '图片1',
+        img: '../assets/images/1.jpg'
+      },
+      {
+        id: 2,
+        text: '图片2',
+        img: '../assets/images/logo.png'
+      },
+      {
+        id: 3,
+        text: '图片3',
+        img: '../assets/images/1.jpg'
+      },
+      {
+        id: 4,
+        text: '图片4',
+        img: '../assets/images/logo.png'
+      },
+      {
+        id: 5,
+        text: '图片5',
+        img: '../assets/images/1.jpg'
+      },
+      {
+        id: 6,
+        text: '图片6',
+        img: '../assets/images/1.jpg'
+      },
+      {
+        id: 7,
+        text: '图片7',
+        img: '../assets/images/1.jpg'
+      },
+      {
+        id: 8,
+        text: '图片8',
+        img: '../assets/images/1.jpg'
+      },
+      {
+        id: 9,
+        text: '图片9',
+        img: '../assets/images/1.jpg'
+      },
+      {
+        id: 10,
+        text: '图片10',
+        img: '../assets/images/1.jpg'
+      },
+      {
+        id: 11,
+        text: '图片11',
+        img: '../assets/images/1.jpg'
+      },
+      {
+        id: 12,
+        text: '图片12',
+        img: '../assets/images/1.jpg'
+      }
+    ],
     canDrag: {
       sort: false
     }
@@ -85,14 +99,17 @@ var app = new Vue({
   created() {
     this.setMenuList();
     this.setLeftMenuList();
+    this.leftMenuList.selectMenu = this.leftMenuList.list[1].children[1];
+    this.leftMenuList.openMenu = this.leftMenuList.list[1].id;
   },
   mounted() {},
   methods: {
     toRoute(menu) {
       window.location.href = menu.url;
     },
-    setMenuList: function () {
-      this.menuList = [{
+    setMenuList: function() {
+      this.menuList = [
+        {
           name: '首页',
           img: '../assets/images/menu/menu-1',
           url: '../index/index.html',
@@ -314,9 +331,9 @@ var app = new Vue({
     selectedLeftMenu(menu) {
       if (menu.canTouch) {
         this.leftMenuList.selectMenu = menu;
+        this.afterSelect(menu);
       }
       if (menu.children) {
-        console.log(menu);
         if (this.leftMenuList.openMenu === menu.id) {
           let mList = this.leftMenuList.openMenu.split('-');
           if (mList.length > 1) {
@@ -330,16 +347,50 @@ var app = new Vue({
         }
       }
     },
+    afterSelect(menu) {
+      if (menu.id === '1-1') {
+        window.location.href = './system-manage.html';
+      } else if (menu.id === '1-2') {
+        window.location.href = './role-manage.html';
+      } else if (menu.id === '1-3') {
+        window.location.href = './ad-config.html';
+      } else if (menu.id === '2-1') {
+        window.location.href = './sort-manage.html';
+      } else if (menu.id === '2-2') {
+        window.location.href = './picture-manage.html';
+      } else if (menu.id === '3-1') {
+        window.location.href = './trap-config.html';
+      } else if (menu.id === '3-2') {
+        window.location.href = './log-config.html';
+      } else if (menu.id === '3-3') {
+        window.location.href = './windows-config.html';
+      } else if (menu.id === '3-4') {
+        window.location.href = './aix-config.html';
+      } else if (menu.id === '4-1') {
+        window.location.href = './email-config.html';
+      } else if (menu.id === '4-2') {
+        window.location.href = './message-config.html';
+      } else if (menu.id === '5-1') {
+        window.location.href = './system-config.html';
+      } else if (menu.id === '5-2') {
+        window.location.href = './distributed-manage.html';
+      } else if (menu.id === '5-3') {
+        window.location.href = './params-config.html';
+      } else if (menu.id === '5-4') {
+        window.location.href = './interface-manage.html';
+      } else if (menu.id === '6-1') {
+        window.location.href = './opera-log.html';
+      } else if (menu.id === '6-2') {
+        window.location.href = './log-manage.html';
+      }
+    },
     toggleShowMenu() {
       this.showMenu = !this.showMenu;
     },
     showDialog() {
       this.dialogVisible = true;
-
     },
-    handleClose() {
-
-    },
+    handleClose() {},
     submitDialog() {
       this.dialogVisible = false;
     },

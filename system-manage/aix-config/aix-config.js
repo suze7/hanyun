@@ -4,103 +4,35 @@ var app = new Vue({
     showMenu: true,
     menuList: [],
     leftMenuList: null,
-    dialogVisible: false,
-    value: '',
-    options: [],
-    tableData: [{
-      name: '名称名称名称',
-      realName: '系统管理员',
-      status: 1,
-      system: '内置用户',
-      role: '系统管理员',
-      resNum: '2018-10-17 00:44:20',
-      resNum1: '2018-10-17 00:44:20'
-    },{
-      name: '名称名称名称',
-      realName: '系统管理员',
-      status: 1,
-      system: '内置用户',
-      role: '系统管理员',
-      resNum: '2018-10-17 00:44:20',
-      resNum1: '2018-10-17 00:44:20'
-    },{
-      name: '名称名称名称',
-      realName: '系统管理员',
-      status: 1,
-      system: '内置用户',
-      role: '系统管理员',
-      resNum: '2018-10-17 00:44:20',
-      resNum1: '2018-10-17 00:44:20'
-    },{
-      name: '名称名称名称',
-      realName: '系统管理员',
-      status: 1,
-      system: '内置用户',
-      role: '系统管理员',
-      resNum: '2018-10-17 00:44:20',
-      resNum1: '2018-10-17 00:44:20'
-    },{
-      name: '名称名称名称',
-      realName: '系统管理员',
-      status: 1,
-      system: '内置用户',
-      role: '系统管理员',
-      resNum: '2018-10-17 00:44:20',
-      resNum1: '2018-10-17 00:44:20'
-    },{
-      name: '名称名称名称',
-      realName: '系统管理员',
-      status: 1,
-      system: '内置用户',
-      role: '系统管理员',
-      resNum: '2018-10-17 00:44:20',
-      resNum1: '2018-10-17 00:44:20'
-    },{
-      name: '名称名称名称',
-      realName: '系统管理员',
-      status: 1,
-      system: '内置用户',
-      role: '系统管理员',
-      resNum: '2018-10-17 00:44:20',
-      resNum1: '2018-10-17 00:44:20'
-    },{
-      name: '名称名称名称',
-      realName: '系统管理员',
-      status: 1,
-      system: '内置用户',
-      role: '系统管理员',
-      resNum: '2018-10-17 00:44:20',
-      resNum1: '2018-10-17 00:44:20'
-    },{
-      name: '名称名称名称',
-      realName: '系统管理员',
-      status: 1,
-      system: '内置用户',
-      role: '系统管理员',
-      resNum: '2018-10-17 00:44:20',
-      resNum1: '2018-10-17 00:44:20'
-    },{
-      name: '名称名称名称',
-      realName: '系统管理员',
-      status: 1,
-      system: '内置用户',
-      role: '系统管理员',
-      resNum: '2018-10-17 00:44:20',
-      resNum1: '2018-10-17 00:44:20'
-    },{
-      name: '名称名称名称',
-      realName: '系统管理员',
-      status: 1,
-      system: '内置用户',
-      role: '系统管理员',
-      resNum: '2018-10-17 00:44:20',
-      resNum1: '2018-10-17 00:44:20'
-    }],
+    options: [
+      {
+        value: '选项1',
+        label: '黄金糕'
+      },
+      {
+        value: '选项2',
+        label: '双皮奶'
+      },
+      {
+        value: '选项3',
+        label: '蚵仔煎'
+      },
+      {
+        value: '选项4',
+        label: '龙须面'
+      },
+      {
+        value: '选项5',
+        label: '北京烤鸭'
+      }
+    ],
+    value: ''
   },
   created() {
     this.setMenuList();
     this.setLeftMenuList();
-    this.leftMenuList.selectMenu = this.leftMenuList.list[0];
+    this.leftMenuList.selectMenu = this.leftMenuList.list[2].children[3];
+    this.leftMenuList.openMenu = this.leftMenuList.list[2].id;
   },
   mounted() {},
   methods: {
@@ -347,30 +279,44 @@ var app = new Vue({
       }
     },
     afterSelect(menu) {
-      // if (this.leftMenuList.selectMenu.id.indexOf(menu.id) === 0) {
-      //   return;
-      // }
-      // if (menu.id === '1' || menu.id.indexOf('1-') === 0) {
-      //   window.location.href = './resource-manage.html';
-      // } else if (menu.id === '2' || menu.id.indexOf('2-') === 0) {
-      //   window.location.href = './resource-list.html';
-      // } else if (menu.id === '3') {
-      //   window.location.href = './port-manage.html';
-      // } else if (menu.id === '4') {
-      //   window.location.href = './VLAN-manage.html';
-      // } else if (menu.id === '5') {
-      //   window.location.href = './link-manage.html';
-      // }
+      if (menu.id === '1-1') {
+        window.location.href = './system-manage.html';
+      } else if (menu.id === '1-2') {
+        window.location.href = './role-manage.html';
+      } else if (menu.id === '1-3') {
+        window.location.href = './ad-config.html';
+      } else if (menu.id === '2-1') {
+        window.location.href = './sort-manage.html';
+      } else if (menu.id === '2-2') {
+        window.location.href = './picture-manage.html';
+      } else if (menu.id === '3-1') {
+        window.location.href = './trap-config.html';
+      } else if (menu.id === '3-2') {
+        window.location.href = './log-config.html';
+      } else if (menu.id === '3-3') {
+        window.location.href = './windows-config.html';
+      } else if (menu.id === '3-4') {
+        window.location.href = './aix-config.html';
+      } else if (menu.id === '4-1') {
+        window.location.href = './email-config.html';
+      } else if (menu.id === '4-2') {
+        window.location.href = './message-config.html';
+      } else if (menu.id === '5-1') {
+        window.location.href = './system-config.html';
+      } else if (menu.id === '5-2') {
+        window.location.href = './distributed-manage.html';
+      } else if (menu.id === '5-3') {
+        window.location.href = './params-config.html';
+      } else if (menu.id === '5-4') {
+        window.location.href = './interface-manage.html';
+      } else if (menu.id === '6-1') {
+        window.location.href = './opera-log.html';
+      } else if (menu.id === '6-2') {
+        window.location.href = './log-manage.html';
+      }
     },
     toggleShowMenu() {
       this.showMenu = !this.showMenu;
-    },
-    showDialog() {
-      this.dialogVisible = true;
-    },
-    handleClose() {},
-    submitDialog() {
-      this.dialogVisible = false;
     }
   }
 });
