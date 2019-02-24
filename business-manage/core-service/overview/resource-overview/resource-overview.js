@@ -3,42 +3,29 @@ var app = new Vue({
   el: '#homeIndex',
   data() {
     return {
-      radio1: '业务总览',
       radio2: '1H',
       business_data: null,
       multiple_pie: {
         gauge: null,
-        line: null
-      },
-      init_page: {
-        show_cpu: true,
-        show_newwork: true,
-        show_process: true,
-        show_service: true,
-        show_disk: true,
-        show_storage: true
+        pie: null
       },
       options: [
         { value: 'CPU使用率', label: 'CPU使用率' },
-        { value: '系统平均负载', label: '系统平均负载' },
-        { value: '物理内存使用率', label: '物理内存使用率' },
-        { value: '交换内存使用率', label: '交换内存使用率' },
-        { value: 'Swap交换情况', label: 'Swap交换情况' },
+        { value: 'Heap space', label: 'Heap space' },
+        { value: 'PermGen space', label: 'PermGen space' },
+        { value: '平均请求次数（秒）', label: '平均请求次数（秒）' },
+        { value: '当前会话数', label: '当前会话数' },
+        { value: '当前活动线程数', label: '当前活动线程数' },
+        { value: '平均响应时间', label: '平均响应时间' },
         { value: '响应时长', label: '响应时长' }
       ],
       value: '',
       database_array: [
-        { id: '1', label: 'INFORMATION_SCHEMA', imgUrl: '../assets/images/icon/storage.png', count: 62, size: '163.23MB' },
-        { id: '2', label: 'MySQL', imgUrl: '../assets/images/icon/cpu.png', count: 62, size: '163.23KB' },
-        { id: '2', label: 'MySQL', imgUrl: '../assets/images/icon/cpu.png', count: 62, size: '163.23KB' },
-      ],
-      storage_array: [
-        { id: '1', label: 'INFORMATION_SCHEMA', imgUrl: '../assets/images/icon/local.png', count: 62, size: '163.23MB' },
-        { id: '2', label: 'MySQL', imgUrl: '../assets/images/icon/local.png', count: 62, size: '163.23KB' },
-        { id: '2', label: 'MySQL', imgUrl: '../assets/images/icon/local.png', count: 62, size: '163.23KB' }
+        { id: '1', label: 'INFORMATION_SCHEMA', count: 62, size: '163.23MB' },
+        { id: '2', label: 'MySQL', count: 62, size: '163.23KB' },
+        { id: '3', label: '网络', count: 62, size: '163.23MB' }
       ],
       editTimeDialog: false,
-      deleteDialog: false,
       time: {
         value1: '',
         value2: ''
@@ -59,43 +46,6 @@ var app = new Vue({
         { alarm_id: '11', alarm_name: '3物理内存使用率异常', levle: '1', alarm_type: '资源负载检测', alarm_status: '1', safety_level: '2', product_time: '2019-02-04', continued_time: '16分23秒', confirmor: '16', confirm_time: '2019-02-05', alarm_content: '百分比 大于等于 50% 触发 严重' },
         { alarm_id: '11', alarm_name: '物理内存使用率异常', levle: '2', alarm_type: '资源负载检测', alarm_status: '1', safety_level: '2', product_time: '2019-02-04', continued_time: '16分23秒', confirmor: '16', confirm_time: '2019-02-05', alarm_content: '百分比 大于等于 50% 触发 严重' },
       ],
-      web_tableData: [
-        { name: '/', host_name: '本地主机', route: '网络服务器', servlet: '0', },
-        { name: '网络服务器', host_name: '本地主机', route: '网络服务器', servlet: '0', },
-        { name: '/net-server', host_name: 'localhost', route: '/net-server', servlet: '0', },
-        { name: '/net-server', host_name: 'localhost', route: '/net-server', servlet: '0', },
-        { name: '/net-server', host_name: 'localhost', route: '/net-server', servlet: '0', },
-      ],
-      cpu_tableData: [
-        { name: '/', host_name: '本地主机', route: '网络服务器', servlet: '0', },
-        { name: '网络服务器', host_name: '本地主机', route: '网络服务器', servlet: '0', },
-        { name: 'Intel(R) Xeon(R) CPU E5-2682 v4 @ 2.50GHz', host_name: 'localhost', route: '/net-server', servlet: '0', },
-      ],
-      network_tableData: [
-        { name: '/', host_name: '本地主机', route: '网络服务器', servlet: '0', },
-        { name: '网络服务器', host_name: '本地主机', route: '网络服务器', servlet: '0', },
-        { name: 'Intel(R) Xeon(R) CPU E5-2682 v4 @ 2.50GHz', host_name: 'localhost', route: '/net-server', servlet: '0', },
-      ],
-      process_tableData: [
-        { name: '/', host_name: '本地主机', route: '网络服务器', servlet: '0', },
-        { name: '网络服务器', host_name: '本地主机', route: '网络服务器', servlet: '0', },
-        { name: 'Intel(R) Xeon(R) CPU E5-2682 v4 @ 2.50GHz', host_name: 'localhost', route: '/net-server', servlet: '0', },
-      ],
-      service_tableData: [
-        { name: '/', host_name: '本地主机', route: '网络服务器', servlet: '0', },
-        { name: '网络服务器', host_name: '本地主机', route: '网络服务器', servlet: '0', },
-        { name: 'Intel(R) Xeon(R) CPU E5-2682 v4 @ 2.50GHz', host_name: 'localhost', route: '/net-server', servlet: '0', },
-      ],
-      disk_tableData: [
-        { name: '/', host_name: '本地主机', route: '网络服务器', servlet: '0', },
-        { name: '网络服务器', host_name: '本地主机', route: '网络服务器', servlet: '0', },
-        { name: 'Intel(R) Xeon(R) CPU E5-2682 v4 @ 2.50GHz', host_name: 'localhost', route: '/net-server', servlet: '0', },
-      ],
-      storage_tableData: [
-        { name: '/', host_name: '本地主机', route: '网络服务器', servlet: '0', },
-        { name: '网络服务器', host_name: '本地主机', route: '网络服务器', servlet: '0', },
-        { name: 'Intel(R) Xeon(R) CPU E5-2682 v4 @ 2.50GHz', host_name: 'localhost', route: '/net-server', servlet: '0', },
-      ],
       connect_tableData: [
         { name: 'HTTP-NIO-BOBO', ip: '127.0.0.1', port: '4200', agreement: 'http/1.1', operator: '内部', plan: 'http', status: '已启动', busy_line: '0', current_line: '0', },
         { name: 'AJP-NIO-9090', ip: '127.0.0.1', port: '4200', agreement: 'http/1.1', operator: '内部', plan: 'http', status: '已启动', busy_line: '0', current_line: '0', },
@@ -107,22 +57,19 @@ var app = new Vue({
         { name: 'HTTP-NIO-BOBO', ip: '127.0.0.1', port: '4200', agreement: 'http/1.1', operator: '内部', plan: 'http', status: '已启动', busy_line: '0', current_line: '0', },
       ],
       isActice: '1H',
-      this_page: '总览',
+      tab_array: [
+        { label: '业务总览', url: './resource-overview.html', active: true },
+        { label: 'WEB应用', url: './web-app.html', active: false },
+        { label: '连接器', url: './connection.html', active: false }
+      ],
       page_array: [
-        { label: '总览', url: '' },
-        { label: '资源告警', url: '', },
-        { label: '拓扑定位', url: '', },
-        { label: '关注定位', url: '', },
+        { label: '总览', url: './resource-overview.html', active: true },
+        { label: '资源告警', url: '../resource-alarm/resource-alarm.html', active: false }
       ],
       signal_info: {
         baseInfo: { status: '0', version: '2021-03-20', start_time: '23天', main_name: 'qingta', setup_folder: 'd:/kugou', system: 'windows' },
         linePool: {},
       },
-      cpuData: {
-        echart_title: 'WEB应用',
-        isActice: '1H',
-      },
-      addFocusDialog: false,
     }
   },
   created() {
@@ -130,63 +77,45 @@ var app = new Vue({
   },
   mounted() {
     this.getBusinessUsingRight();
+    this.drawWaveBall();
   },
   methods: {
     togglePage(evt) {
-      // console.log(evt.label);
-      if (evt.label !== '总览') {
-        this.radio1 = '';
-      } else {
-        this.radio1 = '业务总览';
-      }
-      this.this_page = evt.label;
-      switch (evt.label) {
-        case '总览':
-
-          break;
-        case '资源告警':
-
-          break;
-        case '拓扑定位':
-
-          break;
-        case '关注定位':
-
-          break;
-        default:
-          break;
-      }
+      window.location.href = evt.url;
     },
-    changeTab(str) {
-      this.init_page = {
-        show_cpu: true,
-        show_newwork: true,
-        show_process: true,
-        show_service: true,
-        show_disk: true,
-        show_storage: true
-      }
-      if (this.radio1 !== '') {
-        this.this_page = '总览'
-      }
-      switch (str) {
-        case '':
-
-          break;
-      }
+    toggleTab(evt) {
+      window.location.href = evt.url;
     },
-    showPage_cpu(evt) {
-      console.log(evt);
-      this.init_page.show_cpu = false;
-    },
-    deleteProcess(obj) {
-      console.log(obj);
-      this.deleteDialog = true;
+    drawWaveBall() {
+      let cnt1 = document.getElementById("count1");
+      let water1 = document.getElementById("water1");
+      let percent1 = cnt1.innerText;
+      let interval1;
+      // let cnt2 = document.getElementById("count2");
+      // let water2 = document.getElementById("water2");
+      // let percent2 = cnt2.innerText;
+      // let interval2;
+      interval1 = setInterval(function () {
+        percent1++;
+        cnt1.innerHTML = percent1;
+        water1.style.transform = 'translate(0' + ',' + (100 - percent1) + '%)';
+        if (percent1 == 58) {
+          clearInterval(interval1);
+        }
+      }, 30);
+      // interval2 = setInterval(function () {
+      //   percent2++;
+      //   cnt2.innerHTML = percent2;
+      //   water2.style.transform = 'translate(0' + ',' + (100 - percent2) + '%)';
+      //   if (percent2 == 58) {
+      //     clearInterval(interval2);
+      //   }
+      //   console.log(percent2);
+      // }, 30);
     },
     toggleTime(evt) {
       console.log(evt);
       this.isActice = evt;
-      this.cpuData.isActice = evt;
       switch (evt) {
         case '自定义':
           this.editTimeDialog = true;
@@ -195,11 +124,9 @@ var app = new Vue({
           break;
       }
     },
-    showAddFocusDialog() {
-      this.addFocusDialog = true;
-    },
+    /* 业务可用率 */
     getBusinessUsingRight() {
-      // 内存使用率
+      // cpu使用率
       this.multiple_pie.gauge = {
         tooltip: {
           formatter: "{a} <br/>{b} : {c}%"
@@ -208,12 +135,20 @@ var app = new Vue({
           {
             name: '业务指标',
             type: 'gauge',
+            // startAngle: -180,
+            // endAngle: 180,
+            // axisLine: {
+            //   show: false,
+            // },
+            // axisTick: {
+            //   show: false,
+            // },
             detail: { formatter: '{value}%' },
             data: [{ value: 50, name: '完成率' }]
           }
         ]
       };
-      this.multiple_pie.line = {
+      this.multiple_pie.pie = {
         color: ['#54E8FF'],
         tooltip: {
           trigger: 'axis'

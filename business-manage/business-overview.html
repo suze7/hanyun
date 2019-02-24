@@ -17,11 +17,15 @@
 
 <body class="app">
   <div id="homeIndex" style="height: 100%;">
-    <el-radio-group v-model="radio1" @change="toggleBtn" size="small">
+    <!-- <el-radio-group v-model="radio1" @change="toggleBtn" size="small">
       <el-radio-button label="业务总览"></el-radio-button>
       <el-radio-button label="资源告警"></el-radio-button>
       <el-radio-button label="业务拓扑"></el-radio-button>
-    </el-radio-group>
+    </el-radio-group> -->
+
+    <div class="top-tab-toggle">
+      <span v-for="(tab, index) in tab_array" :key="index" @click="toggleTab(tab)" :class="{active: this_tab===tab.label}">{{tab.label}}</span>
+    </div>
 
     <div v-if="radio1==='业务总览'">
       <div class="overview-header">

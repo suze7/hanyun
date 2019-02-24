@@ -3,8 +3,6 @@ var app = new Vue({
   el: '#homeIndex',
   data() {
     return {
-      overview: true,
-      radio1: '业务总览',
       radio2: '1H',
       business_data: null,
       multiple_pie: {
@@ -66,10 +64,14 @@ var app = new Vue({
         { name: 'HTTP-NIO-BOBO', ip: '127.0.0.1', port: '4200', agreement: 'http/1.1', operator: '内部', plan: 'http', status: '已启动', busy_line: '0', current_line: '0', },
       ],
       isActice: '1H',
-      this_page: '总览',
+      tab_array: [
+        { label: '业务总览', url: './resource-overview.html', active: false },
+        { label: 'WEB应用', url: './web-app.html', active: false },
+        { label: '连接器', url: './connection.html', active: true }
+      ],
       page_array: [
-        { label: '总览', url: '' },
-        { label: '资源告警', url: '', }
+        { label: '总览', url: './resource-overview.html', active: true },
+        { label: '资源告警', url: '../resource-alarm/resource-alarm.html', active: false }
       ],
       signal_info: {
         baseInfo: { status: '0', version: '2021-03-20', start_time: '23天', main_name: 'qingta', setup_folder: 'd:/kugou', system: 'windows' },
@@ -81,65 +83,14 @@ var app = new Vue({
     this.business_data = { business_id: '11', label: 'Openstack V3', healthy: '98%', status: '1', safety_level: '2', response: '37ms', busyness: '2%', using: '100%', downtime_cs: '0', downtime_sc: '16分23秒', mttr: '16分23秒', mtbf: '16分23秒', used_capacity: '58.31GB/339.99GB', calc_capacity: '33%' }
   },
   mounted() {
-    this.getBusinessUsingRight();
-    this.drawWaveBall();
+    // this.getBusinessUsingRight();
   },
   methods: {
     togglePage(evt) {
-      this.this_page = evt.label;
-      switch (evt.label) {
-        case '总览':
-          this.overview = true;
-          break;
-        case '资源告警':
-          this.overview = false;
-          break;
-        default:
-          break;
-      }
+      window.location.href = evt.url;
     },
-    toggleBtn(evt) {
-      console.log(evt);
-      // switch (evt) {
-      //   case '业务总览':
-      //     this.overview = true;
-      //     break;
-      //   case 'WEB应用':
-      //     this.overview = false;
-      //     break;
-      //   case '连接器':
-      //     this.overview = false;
-      //     break;
-      //   default:
-      //     break;
-      // }
-    },
-    drawWaveBall() {
-      let cnt1 = document.getElementById("count1");
-      let water1 = document.getElementById("water1");
-      let percent1 = cnt1.innerText;
-      let interval1;
-      // let cnt2 = document.getElementById("count2");
-      // let water2 = document.getElementById("water2");
-      // let percent2 = cnt2.innerText;
-      // let interval2;
-      interval1 = setInterval(function () {
-        percent1++;
-        cnt1.innerHTML = percent1;
-        water1.style.transform = 'translate(0' + ',' + (100 - percent1) + '%)';
-        if (percent1 == 58) {
-          clearInterval(interval1);
-        }
-      }, 30);
-      // interval2 = setInterval(function () {
-      //   percent2++;
-      //   cnt2.innerHTML = percent2;
-      //   water2.style.transform = 'translate(0' + ',' + (100 - percent2) + '%)';
-      //   if (percent2 == 58) {
-      //     clearInterval(interval2);
-      //   }
-      //   console.log(percent2);
-      // }, 30);
+    toggleTab(evt) {
+      window.location.href = evt.url;
     },
     toggleTime(evt) {
       console.log(evt);

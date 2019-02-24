@@ -15,6 +15,12 @@ var app = new Vue({
         { name: '监控系统服务器', status: '1' },
         { name: '测试服务器', status: '0' }
       ],
+      this_tab: '业务总览',
+      tab_array: [
+        { label: '业务总览', url: '' },
+        { label: '资源告警', url: '', },
+        { label: '业务拓扑', url: '', }
+      ],
       multiple_pie: {
         pie1: null,
         pie2: null,
@@ -45,6 +51,10 @@ var app = new Vue({
     this.getBusinessUsingRight();
   },
   methods: {
+    toggleTab(evt) {
+      this.radio1 = evt.label;
+      this.this_tab = evt.label;
+    },
     getAlarmStatics() {
       this.alarm_statics = {
         color: ['#FFE259'],
@@ -458,24 +468,23 @@ var app = new Vue({
     },
     openNewPage(obj) {
       console.log(obj);
-      let title = '业务资源详情';
       let screenWidth = window.screen.width;
       let screenHeight = window.screen.height;
       let url = '';
       switch (obj.name) {
         case '监控系统数据库':
-          url = `./monitor-database.html?page=${obj.name}`;
+          url = `./monitor-database/overview/business-overview.html?page=${obj.name}`;
           window.open(url, '_blank', `width=${screenWidth}, height=${screenHeight - 100},top=0,left=0,toolbar=no,menubar=no,location=no,status=no`);
           break;
         case '核心服务':
-          url = `./core-service.html?page=${obj.name}`;
+          url = `./core-service/overview/resource-overview.html?page=${obj.name}`;
           window.open(url, '_blank', `width=${screenWidth}, height=${screenHeight - 100},top=0,left=0,toolbar=no,menubar=no,location=no,status=no`);
           break;
         case '采集服务':
 
           break;
         case 'WEB数据库':
-          url = `./web-service.html?page=${obj.name}`;
+          url = `./web-service/overview/resource-overview.html?page=${obj.name}`;
           window.open(url, '_blank', `width=${screenWidth}, height=${screenHeight - 100},top=0,left=0,toolbar=no,menubar=no,location=no,status=no`);
           break;
         case '监控数据服务器':
@@ -487,10 +496,6 @@ var app = new Vue({
         default:
           break;
       }
-    },
-    /* tab切换 */
-    toggleBtn(evt) {
-      console.log(evt);
     },
     /* 告警统计切换 */
     alarmToggle(type) {

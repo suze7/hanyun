@@ -76,6 +76,24 @@
 .left-right-table tr td:last-child {
   background: #222B66;
 }
+/* 顶部tab切换 */
+.top-tab-toggle {
+  display: inline-block;
+  border: 1px solid #5074FF;
+  border-radius: 3px;
+}
+.top-tab-toggle span {
+  display: inline-block;
+  border-right: 1px solid #5074FF;
+  padding: 8px 10px;
+  cursor: pointer;
+}
+.top-tab-toggle span:last-child {
+  border-right: none;
+}
+.top-tab-toggle span.active {
+  background: #5074FF;
+}
 /* 底部页面切换按钮 */
 .toggle-page {
   width: 100%;
