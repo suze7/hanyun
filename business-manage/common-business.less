@@ -83,6 +83,24 @@
     }
   }
 }
+/* 顶部tab切换 */
+.top-tab-toggle {
+  display: inline-block;
+  border:1px solid #5074FF;
+  border-radius:3px;
+  span {
+    display: inline-block;
+    border-right:1px solid #5074FF;
+    padding: 8px 10px;
+    cursor: pointer;
+    &:last-child {
+      border-right:none;
+    }
+    &.active {
+      background:#5074FF;
+    }
+  }
+}
 /* 底部页面切换按钮 */
 .toggle-page {
   width:100%;
