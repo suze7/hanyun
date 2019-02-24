@@ -544,6 +544,10 @@ input[type='text']:-ms-input-placeholder {
 .my-pagination-group .my-pagination-last {
   border-radius: 0 4px 4px 0;
 }
+.my-popover .active {
+  color: #409EFF;
+  font-weight: 700;
+}
 .my-popover-content {
   padding: 0;
   min-width: 82px;
@@ -581,6 +585,36 @@ input[type='text']:-ms-input-placeholder {
 .my-popover-content .my-content-checkbox .is-checked .el-checkbox__inner {
   border: 0;
   background: url(../images/icon/checkbox.png) center center no-repeat;
+}
+.my-popover-content .popover-edit-right {
+  padding: 16px 16px 0;
+}
+.my-popover-content .popover-edit-right .loc-date-picker,
+.my-popover-content .popover-edit-right .loc-main-select,
+.my-popover-content .popover-edit-right .loc-input {
+  vertical-align: middle;
+  margin: 0 4px;
+}
+.my-popover-content .popover-edit-right .loc-input {
+  width: 60px;
+}
+.my-popover-content .popover-edit-right .loc-date-picker {
+  width: 118px;
+}
+.my-popover-content .popover-edit-right .loc-main-select {
+  width: 80px;
+}
+.my-popover-content .popover-edit-right .loc-main-select input {
+  height: 28px !important;
+}
+.my-popover-content .popover-edit-right .popover-edit-content {
+  margin-bottom: 8px;
+}
+.my-popover-content .popver-edit-footer {
+  margin: 16px;
+}
+.my-popover-content .popver-edit-footer .el-button + .el-button {
+  margin-left: 4px;
 }
 .el-dropdown-link {
   cursor: pointer;
@@ -809,15 +843,8 @@ input[type='text']:-ms-input-placeholder {
 .loc-date-picker.el-input .el-input__prefix .el-input__icon {
   line-height: 26px;
 }
-.loc-date-picker.el-input .el-icon-date,
-.loc-date-picker.el-input .el-icon-time {
-  background: url(../images/icon/icon-date.png) center center no-repeat;
-}
-.loc-date-picker.el-input .el-icon-date::before,
-.loc-date-picker.el-input .el-icon-time::before,
-.loc-date-picker.el-input .el-icon-date::after,
-.loc-date-picker.el-input .el-icon-time::after {
-  display: none;
+.loc-date-picker.el-input .el-icon-circle-close {
+  line-height: 28px;
 }
 .loc-date-drop .el-input__inner {
   border: 1px solid #c0c4cc;

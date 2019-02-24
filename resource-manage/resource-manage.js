@@ -26,6 +26,10 @@ var app = new Vue({
       }
     ],
     value: '',
+    value1: null,
+    checkValue: false,
+    radio: 1,
+    checked: false,
     leftMenuList: null,
     dialogVisible: false,
     tableData: [{
@@ -325,11 +329,8 @@ var app = new Vue({
       }
     },
     afterSelect(menu) {
-      if (this.leftMenuList.selectMenu.id.indexOf(menu.id) === 0) {
-        return;
-      }
       if (menu.id === '1' || menu.id.indexOf('1-') === 0) {
-        window.location.href = './resource-manage.html';
+        // window.location.href = './resource-manage.html';
       } else if (menu.id === '2' || menu.id.indexOf('2-') === 0) {
         window.location.href = './resource-list.html';
       } else if (menu.id === '3') {

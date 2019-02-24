@@ -236,6 +236,13 @@
   }
 }
 
+.my-popover {
+  .active {
+    color: #409EFF;
+    font-weight: 700;
+  }
+}
+
 // 下拉内容
 .my-popover-content {
   padding: 0;
@@ -274,6 +281,36 @@
         border: 0;
         background: url(../images/icon/checkbox.png) center center no-repeat;
       }
+    }
+  }
+  .popover-edit-right {
+    padding: 16px 16px 0;
+    .loc-date-picker,
+    .loc-main-select,
+    .loc-input {
+      vertical-align: middle;
+      margin: 0 4px;
+    }
+    .loc-input {
+      width: 60px;
+    }
+    .loc-date-picker {
+      width: 118px;
+    }
+    .loc-main-select {
+      width: 80px;
+      input {
+        height: 28px !important;
+      }
+    }
+    .popover-edit-content {
+      margin-bottom: 8px;
+    }
+  }
+  .popver-edit-footer {
+    margin: 16px;
+    .el-button+.el-button {
+      margin-left: 4px;
     }
   }
 }
@@ -529,13 +566,16 @@
       line-height: 26px;
     }
   }
-  .el-icon-date,
-  .el-icon-time {
-    &::before,
-    &::after {
-      display: none;
-    }
-    background: url(../images/icon/icon-date.png) center center no-repeat;
+  // .el-icon-date,
+  // .el-icon-time {
+  //   &::before,
+  //   &::after {
+  //     display: none;
+  //   }
+  //   background: url(../images/icon/icon-date.png) center center no-repeat;
+  // }
+  .el-icon-circle-close {
+    line-height: 28px;
   }
 }
 
