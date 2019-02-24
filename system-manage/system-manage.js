@@ -3,177 +3,113 @@ var app = new Vue({
   data: {
     showMenu: true,
     menuList: [],
-    text1: '',
-    options: [
-      {
-        value: '选项1',
-        label: '黄金糕'
-      },
-      {
-        value: '选项2',
-        label: '双皮奶'
-      },
-      {
-        value: '选项3',
-        label: '蚵仔煎'
-      },
-      {
-        value: '选项4',
-        label: '龙须面'
-      },
-      {
-        value: '选项5',
-        label: '北京烤鸭'
-      }
-    ],
-    value: '',
     leftMenuList: null,
     dialogVisible: false,
-    tableData: [
-      {
-        spec: true,
-        name: '1监控系统数据库',
-        IP: '172.16.154.122',
-        type1: '2数据库',
-        type2: 'MySql',
-        level: '三级保障',
-        area: '默认管理域',
-        healthStatus: 0,
-        manageStatus: 1,
-        accessStatus: 2,
-        time: '5分钟'
-      },
-      {
-        spec: false,
-        name: '2监控系统数据库',
-        IP: '172.16.154.122',
-        type1: '1数据库',
-        type2: 'MySql',
-        level: '三级保障',
-        area: '默认管理域',
-        healthStatus: 1,
-        manageStatus: 2,
-        accessStatus: 0,
-        time: '5分钟'
-      },
-      {
-        spec: false,
-        name: '3监控系统数据库',
-        IP: '172.16.154.122',
-        type1: '3数据库',
-        type2: 'MySql',
-        level: '三级保障',
-        area: '默认管理域',
-        healthStatus: 2,
-        manageStatus: 0,
-        accessStatus: 1,
-        time: '5分钟'
-      },
-      {
-        spec: true,
-        name: '1监控系统数据库',
-        IP: '172.16.154.122',
-        type1: '2数据库',
-        type2: 'MySql',
-        level: '三级保障',
-        area: '默认管理域',
-        healthStatus: 0,
-        manageStatus: 1,
-        accessStatus: 2,
-        time: '5分钟'
-      },
-      {
-        spec: false,
-        name: '2监控系统数据库',
-        IP: '172.16.154.122',
-        type1: '1数据库',
-        type2: 'MySql',
-        level: '三级保障',
-        area: '默认管理域',
-        healthStatus: 1,
-        manageStatus: 2,
-        accessStatus: 0,
-        time: '5分钟'
-      },
-      {
-        spec: false,
-        name: '3监控系统数据库',
-        IP: '172.16.154.122',
-        type1: '3数据库',
-        type2: 'MySql',
-        level: '三级保障',
-        area: '默认管理域',
-        healthStatus: 2,
-        manageStatus: 0,
-        accessStatus: 1,
-        time: '5分钟'
-      },
-      {
-        spec: true,
-        name: '1监控系统数据库',
-        IP: '172.16.154.122',
-        type1: '2数据库',
-        type2: 'MySql',
-        level: '三级保障',
-        area: '默认管理域',
-        healthStatus: 0,
-        manageStatus: 1,
-        accessStatus: 2,
-        time: '5分钟'
-      },
-      {
-        spec: false,
-        name: '2监控系统数据库',
-        IP: '172.16.154.122',
-        type1: '1数据库',
-        type2: 'MySql',
-        level: '三级保障',
-        area: '默认管理域',
-        healthStatus: 1,
-        manageStatus: 2,
-        accessStatus: 0,
-        time: '5分钟'
-      },
-      {
-        spec: false,
-        name: '3监控系统数据库',
-        IP: '172.16.154.122',
-        type1: '3数据库',
-        type2: 'MySql',
-        level: '三级保障',
-        area: '默认管理域',
-        healthStatus: 2,
-        manageStatus: 0,
-        accessStatus: 1,
-        time: '5分钟'
-      },
-      {
-        spec: false,
-        name: '3监控系统数据库',
-        IP: '172.16.154.122',
-        type1: '3数据库',
-        type2: 'MySql',
-        level: '三级保障',
-        area: '默认管理域',
-        healthStatus: 2,
-        manageStatus: 0,
-        accessStatus: 1,
-        time: '5分钟'
-      }
-    ]
+    value: '',
+    options: [],
+    tableData: [{
+      name: '名称名称名称',
+      realName: '系统管理员',
+      status: 1,
+      system: '内置用户',
+      role: '系统管理员',
+      resNum: '2018-10-17 00:44:20',
+      resNum1: '2018-10-17 00:44:20'
+    },{
+      name: '名称名称名称',
+      realName: '系统管理员',
+      status: 1,
+      system: '内置用户',
+      role: '系统管理员',
+      resNum: '2018-10-17 00:44:20',
+      resNum1: '2018-10-17 00:44:20'
+    },{
+      name: '名称名称名称',
+      realName: '系统管理员',
+      status: 1,
+      system: '内置用户',
+      role: '系统管理员',
+      resNum: '2018-10-17 00:44:20',
+      resNum1: '2018-10-17 00:44:20'
+    },{
+      name: '名称名称名称',
+      realName: '系统管理员',
+      status: 1,
+      system: '内置用户',
+      role: '系统管理员',
+      resNum: '2018-10-17 00:44:20',
+      resNum1: '2018-10-17 00:44:20'
+    },{
+      name: '名称名称名称',
+      realName: '系统管理员',
+      status: 1,
+      system: '内置用户',
+      role: '系统管理员',
+      resNum: '2018-10-17 00:44:20',
+      resNum1: '2018-10-17 00:44:20'
+    },{
+      name: '名称名称名称',
+      realName: '系统管理员',
+      status: 1,
+      system: '内置用户',
+      role: '系统管理员',
+      resNum: '2018-10-17 00:44:20',
+      resNum1: '2018-10-17 00:44:20'
+    },{
+      name: '名称名称名称',
+      realName: '系统管理员',
+      status: 1,
+      system: '内置用户',
+      role: '系统管理员',
+      resNum: '2018-10-17 00:44:20',
+      resNum1: '2018-10-17 00:44:20'
+    },{
+      name: '名称名称名称',
+      realName: '系统管理员',
+      status: 1,
+      system: '内置用户',
+      role: '系统管理员',
+      resNum: '2018-10-17 00:44:20',
+      resNum1: '2018-10-17 00:44:20'
+    },{
+      name: '名称名称名称',
+      realName: '系统管理员',
+      status: 1,
+      system: '内置用户',
+      role: '系统管理员',
+      resNum: '2018-10-17 00:44:20',
+      resNum1: '2018-10-17 00:44:20'
+    },{
+      name: '名称名称名称',
+      realName: '系统管理员',
+      status: 1,
+      system: '内置用户',
+      role: '系统管理员',
+      resNum: '2018-10-17 00:44:20',
+      resNum1: '2018-10-17 00:44:20'
+    },{
+      name: '名称名称名称',
+      realName: '系统管理员',
+      status: 1,
+      system: '内置用户',
+      role: '系统管理员',
+      resNum: '2018-10-17 00:44:20',
+      resNum1: '2018-10-17 00:44:20'
+    }],
   },
   created() {
     this.setMenuList();
     this.setLeftMenuList();
+    this.leftMenuList.selectMenu = this.leftMenuList.list[0].children[0];
+    this.leftMenuList.openMenu = this.leftMenuList.list[0].id;
   },
   mounted() {},
   methods: {
     toRoute(menu) {
       window.location.href = menu.url;
     },
-    setMenuList: function() {
-      this.menuList = [
-        {
+    setMenuList: function () {
+      this.menuList = [{
           name: '首页',
           img: '../assets/images/menu/menu-1',
           url: '../index/index.html',
@@ -195,7 +131,7 @@ var app = new Vue({
           name: '资源管理',
           img: '../assets/images/menu/menu-4',
           url: '../resource-manage/resource-manage.html',
-          active: false
+          active: true
         },
         {
           name: '虚拟化',
@@ -237,30 +173,34 @@ var app = new Vue({
           name: '系统管理',
           img: '../assets/images/menu/menu-11',
           url: '../system-manage/system-manage.html',
-          active: true
+          active: false
         }
       ];
     },
-    setLeftMenuList: function() {
+    setLeftMenuList: function () {
       this.leftMenuList = {
         openMenu: null,
         selectMenu: null,
-        list: [
-          {
+        list: [{
             id: '1',
-            name: '自定义分组',
-            iconClass: 'menu-icon4-1',
+            name: '用户管理',
+            iconClass: 'menu-icon4-r',
             canTouch: false, //点开却不会选中
-            children: [
-              {
+            children: [{
                 id: '1-1',
-                name: '自定义',
+                name: '系统用户',
                 iconClass: '',
                 canTouch: true
               },
               {
                 id: '1-2',
-                name: '自定义1',
+                name: '角色管理',
+                iconClass: '',
+                canTouch: true
+              },
+              {
+                id: '1-3',
+                name: 'AD配置',
                 iconClass: '',
                 canTouch: true
               }
@@ -268,67 +208,132 @@ var app = new Vue({
           },
           {
             id: '2',
-            name: '资源列表',
-            iconClass: 'menu-icon4-2',
+            name: '图库管理',
+            iconClass: 'menu-icon4-s',
             canTouch: true,
-            children: [
-              {
+            children: [{
                 id: '2-1',
-                name: '全部资源',
+                name: '分类管理',
                 iconClass: '',
                 canTouch: true
               },
               {
                 id: '2-2',
-                name: '网络设备',
+                name: '图库分类',
                 iconClass: '',
-                canTouch: true,
-                children: [
-                  {
-                    id: '2-2-1',
-                    name: '网络设备1',
-                    iconClass: '',
-                    canTouch: true,
-                    num: ''
-                  },
-                  {
-                    id: '2-2-2',
-                    name: '网络设备2',
-                    iconClass: '',
-                    canTouch: true,
-                    num: '1'
-                  }
-                ]
+                canTouch: true
               }
             ]
           },
           {
             id: '3',
-            name: '端口管理',
-            iconClass: 'menu-icon4-3',
-            canTouch: true
+            name: '系统监听器',
+            iconClass: 'menu-icon4-t',
+            canTouch: true,
+            children: [{
+                id: '3-1',
+                name: '陷阱解析配置',
+                iconClass: '',
+                canTouch: true
+              },
+              {
+                id: '3-2',
+                name: '系统日志解析配置',
+                iconClass: '',
+                canTouch: true
+              },
+              {
+                id: '3-3',
+                name: '的Windows事件配置',
+                iconClass: '',
+                canTouch: true
+              },
+              {
+                id: '3-4',
+                name: 'AIX错误日志配置',
+                iconClass: '',
+                canTouch: true
+              }
+            ]
           },
           {
             id: '4',
-            name: 'VLAN管理',
-            iconClass: 'menu-icon4-4',
-            canTouch: true
+            name: '推送配置',
+            iconClass: 'menu-icon4-u',
+            canTouch: true,
+            children: [{
+                id: '4-1',
+                name: '邮件配置',
+                iconClass: '',
+                canTouch: true
+              },
+              {
+                id: '4-2',
+                name: '短信配置',
+                iconClass: '',
+                canTouch: true
+              }
+            ]
           },
           {
             id: '5',
-            name: '链路管理',
-            iconClass: 'menu-icon4-5',
-            canTouch: true
-          }
+            name: '系统配置',
+            iconClass: 'menu-icon4-v',
+            canTouch: true,
+            children: [{
+                id: '5-1',
+                name: '资源类型管理',
+                iconClass: '',
+                canTouch: true
+              },
+              {
+                id: '5-2',
+                name: '分布式管理',
+                iconClass: '',
+                canTouch: true
+              },
+              {
+                id: '5-3',
+                name: '系统参数配置',
+                iconClass: '',
+                canTouch: true
+              },
+              {
+                id: '5-4',
+                name: '接口管理',
+                iconClass: '',
+                canTouch: true
+              }
+            ]
+          },
+          {
+            id: '6',
+            name: '系统审计',
+            iconClass: 'menu-icon4-w',
+            canTouch: true,
+            children: [{
+                id: '6-1',
+                name: '操作日志',
+                iconClass: '',
+                canTouch: true
+              },
+              {
+                id: '6-2',
+                name: '日志管理',
+                iconClass: '',
+                canTouch: true
+              }
+            ]
+          },
         ]
       };
     },
     selectedLeftMenu(menu) {
       if (menu.canTouch) {
         this.leftMenuList.selectMenu = menu;
+        this.afterSelect(menu);
       }
       if (menu.children) {
-        console.log(menu);
         if (this.leftMenuList.openMenu === menu.id) {
           let mList = this.leftMenuList.openMenu.split('-');
           if (mList.length > 1) {
@@ -340,6 +345,43 @@ var app = new Vue({
         } else {
           this.leftMenuList.openMenu = menu.id;
         }
+      }
+    },
+    afterSelect(menu) {
+      if (menu.id === '1-1') {
+        window.location.href = './system-manage.html';
+      } else if (menu.id === '1-2') {
+        window.location.href = './role-manage.html';
+      } else if (menu.id === '1-3') {
+        window.location.href = './ad-config.html';
+      } else if (menu.id === '2-1') {
+        window.location.href = './sort-manage.html';
+      } else if (menu.id === '2-2') {
+        window.location.href = './picture-manage.html';
+      } else if (menu.id === '3-1') {
+        window.location.href = './trap-config.html';
+      } else if (menu.id === '3-2') {
+        window.location.href = './log-config.html';
+      } else if (menu.id === '3-3') {
+        window.location.href = './windows-config.html';
+      } else if (menu.id === '3-4') {
+        window.location.href = './aix-config.html';
+      } else if (menu.id === '4-1') {
+        window.location.href = './email-config.html';
+      } else if (menu.id === '4-2') {
+        window.location.href = './message-config.html';
+      } else if (menu.id === '5-1') {
+        window.location.href = './system-config.html';
+      } else if (menu.id === '5-2') {
+        window.location.href = './distributed-manage.html';
+      } else if (menu.id === '5-3') {
+        window.location.href = './params-config.html';
+      } else if (menu.id === '5-4') {
+        window.location.href = './interface-manage.html';
+      } else if (menu.id === '6-1') {
+        window.location.href = './opera-log.html';
+      } else if (menu.id === '6-2') {
+        window.location.href = './log-manage.html';
       }
     },
     toggleShowMenu() {

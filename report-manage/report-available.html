@@ -7,8 +7,10 @@
   <link href="../assets/css/base.css" rel="stylesheet" />
   <link href="../assets/js/element-ui/index.css" rel="stylesheet" />
   <link href="../assets/css/style.css" rel="stylesheet" />
-  <link href="../assets/css/theme/main-theme.css" rel="stylesheet" />
-  <!-- <link href="../assets/css/theme/light-theme.css" rel="stylesheet" /> -->
+  <!-- <link href="../assets/css/theme/main-theme.css" rel="stylesheet" />
+  <link href="./theme/main-theme.css" rel="stylesheet" /> -->
+  <link href="../assets/css/theme/light-theme.css" rel="stylesheet" />
+  <link href="./theme/light-theme.css" rel="stylesheet" />
   <link href="./index.css" rel="stylesheet" />
 </head>
 
@@ -154,7 +156,7 @@
             <div class="report-opera-group">
               <el-button type="primary" @click="showDialog" class="loc-btn icon-btn"><img src="../assets/images/icon/btn-icon-1.png" /><span>选择资源</span></el-button>
             </div>
-            <div class="my-show-list-form loc-main-background">
+            <div class="my-show-list-form report-main-background">
               <div class="my-show-item">
                 <span>WEB(172.16.154.125)</span>
                 <i class="my-show-icon el-icon-close com-hover"></i>
@@ -452,15 +454,17 @@
             <el-button class="loc-btn submit-btn" type="primary">导出Excel</el-button>
           </div>
         </div>
-        <el-table :data="tableData2" size="mini" class="transparent-table transparent-white-table" style="width: 100%">
-          <el-table-column prop="name" label="资源名称" min-width="162px"></el-table-column>
-          <el-table-column prop="address" label="资源地址" min-width="157px"></el-table-column>
-          <el-table-column prop="endDate" label="宕机时间" min-width="127px"></el-table-column>
-          <el-table-column prop="useable" label="可用性" min-width="130px"></el-table-column>
-          <el-table-column prop="endTime" label="宕机次数" min-width="127px"></el-table-column>
-          <el-table-column prop="mttr" label="平均恢复前时间（MTTR）" min-width="217px"></el-table-column>
-          <el-table-column prop="mtbf" label="平均故障间隔时间（MTBF）" min-width="220px"></el-table-column>
-        </el-table>
+        <div class="report-top-table">
+          <el-table :data="tableData2" size="mini" class="transparent-table transparent-white-table" style="width: 100%">
+            <el-table-column prop="name" label="资源名称" min-width="154px"></el-table-column>
+            <el-table-column prop="address" label="资源地址" min-width="151px"></el-table-column>
+            <el-table-column prop="endDate" label="宕机时间" min-width="120px"></el-table-column>
+            <el-table-column prop="useable" label="可用性" min-width="124px"></el-table-column>
+            <el-table-column prop="endTime" label="宕机次数" min-width="121px"></el-table-column>
+            <el-table-column prop="mttr" label="平均恢复前时间（MTTR）" min-width="211px"></el-table-column>
+            <el-table-column prop="mtbf" label="平均故障间隔时间（MTBF）" min-width="214px"></el-table-column>
+          </el-table>
+        </div>
         <div class="loc-progress-form loc-main-background">
           <div class="loc-progress-title">资源2018-10-29 10.35至2018-10-29 10.35时段可用性报告</div>
           <div class="loc-progress-group">

@@ -85,6 +85,8 @@ var app = new Vue({
   created() {
     this.setMenuList();
     this.setLeftMenuList();
+    this.leftMenuList.selectMenu = this.leftMenuList.list[5].children[0];
+    this.leftMenuList.openMenu = this.leftMenuList.list[5].id;
   },
   mounted() {},
   methods: {
@@ -315,9 +317,9 @@ var app = new Vue({
     selectedLeftMenu(menu) {
       if (menu.canTouch) {
         this.leftMenuList.selectMenu = menu;
+        this.afterSelect(menu);
       }
       if (menu.children) {
-        console.log(menu);
         if (this.leftMenuList.openMenu === menu.id) {
           let mList = this.leftMenuList.openMenu.split('-');
           if (mList.length > 1) {
@@ -329,6 +331,43 @@ var app = new Vue({
         } else {
           this.leftMenuList.openMenu = menu.id;
         }
+      }
+    },
+    afterSelect(menu) {
+      if (menu.id === '1-1') {
+        window.location.href = './system-manage.html';
+      } else if (menu.id === '1-2') {
+        window.location.href = './role-manage.html';
+      } else if (menu.id === '1-3') {
+        window.location.href = './ad-config.html';
+      } else if (menu.id === '2-1') {
+        window.location.href = './sort-manage.html';
+      } else if (menu.id === '2-2') {
+        window.location.href = './picture-manage.html';
+      } else if (menu.id === '3-1') {
+        window.location.href = './trap-config.html';
+      } else if (menu.id === '3-2') {
+        window.location.href = './log-config.html';
+      } else if (menu.id === '3-3') {
+        window.location.href = './windows-config.html';
+      } else if (menu.id === '3-4') {
+        window.location.href = './aix-config.html';
+      } else if (menu.id === '4-1') {
+        window.location.href = './email-config.html';
+      } else if (menu.id === '4-2') {
+        window.location.href = './message-config.html';
+      } else if (menu.id === '5-1') {
+        window.location.href = './system-config.html';
+      } else if (menu.id === '5-2') {
+        window.location.href = './distributed-manage.html';
+      } else if (menu.id === '5-3') {
+        window.location.href = './params-config.html';
+      } else if (menu.id === '5-4') {
+        window.location.href = './interface-manage.html';
+      } else if (menu.id === '6-1') {
+        window.location.href = './opera-log.html';
+      } else if (menu.id === '6-2') {
+        window.location.href = './log-manage.html';
       }
     },
     toggleShowMenu() {

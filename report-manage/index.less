@@ -14,10 +14,10 @@
     font-size: 12px;
 
     .report-bread-split {
-      transform: scale(.8);
+      transform: scale(0.8);
     }
 
-    +div.loc-manage-content {
+    + div.loc-manage-content {
       height: calc(100% - 32px);
     }
   }
@@ -45,7 +45,6 @@
 
       .my-group-title {
         min-width: auto;
-        color: #fff;
       }
 
       .my-group-content {
@@ -79,7 +78,6 @@
     padding: 0 18px 0 8px;
     height: 30px;
     line-height: 30px;
-    background: #9DB1FF;
     font-size: 12px;
     .my-show-icon {
       position: absolute;
@@ -99,7 +97,6 @@
   }
   .loc-progress-group {
     padding: 9px 0;
-    color: rgba(255, 255, 255, .6);
     .loc-progress-name,
     .loc-progress-content,
     .loc-progress-detail {
@@ -117,19 +114,10 @@
     .loc-progress-detail {
       margin-left: 12px;
       min-width: 50px;
-
     }
   }
 }
 
-.my-progress {
-  .el-progress-bar__inner {
-    background: linear-gradient(270deg, #54e8ff 0%, #3760ff 100%);
-  }
-  .el-progress-bar__outer {
-    background: rgba(0, 0, 0, .2);
-  }
-}
 
 .report-tab-form {
   padding-top: 8px;
@@ -150,8 +138,6 @@
   width: 80px;
   line-height: 24px;
   .report-checkbox {
-    color: #fff;
-
     .el-checkbox__label {
       padding-left: 8px;
       font-size: 12px;
@@ -167,19 +153,15 @@
 .report-edit-content {
   margin-bottom: 20px;
   line-height: 24px;
-
   input {
     margin: 0 4px;
     padding: 0;
   }
-
   .el-radio__input {
     vertical-align: middle;
   }
-
   .report-content-name {
     margin-left: 6px;
-    color: rgba(255, 255, 255, .8);
   }
 }
 
@@ -211,7 +193,7 @@
 
 .report-ava-reset {
   vertical-align: middle;
-  margin-left: 36px; 
+  margin-left: 36px;
 }
 
 .report-dialog-table {
@@ -235,7 +217,7 @@
     height: 60px;
     .report-btn-form {
       float: right;
-      .el-button+.el-button {
+      .el-button + .el-button {
         margin-left: 6px;
       }
     }
@@ -274,14 +256,14 @@
 
 .report-margin-table {
   margin: 8px 0 16px;
-  input[type="text"] {
+  input[type='text'] {
     width: 64px;
     height: 24px;
   }
 }
 
 .report-type-table {
-  margin-bottom: 20px; 
+  margin-bottom: 20px;
 }
 
 .report-select-tip {
@@ -304,3 +286,4 @@
     }
   }
 }
+
