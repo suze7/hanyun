@@ -14,9 +14,14 @@ var app = new Vue({
         { label: '硬盘IO', url: './storage.html', active: false }
       ],
       process_tableData: [
-        { name: '/', host_name: '本地主机', route: '网络服务器', servlet: '0', },
-        { name: '网络服务器', host_name: '本地主机', route: '网络服务器', servlet: '0', },
-        { name: 'Intel(R) Xeon(R) CPU E5-2682 v4 @ 2.50GHz', host_name: 'localhost', route: '/net-server', servlet: '0', },
+        { pid: '125', name: '/', cpu_using: '0.02%', memory: '460kB', memory_using: '0.22%', line_count: 5, handle: 2, ghost_route: '/sbin/mingetty/dev/tty2', command_line: '/sbin/mingetty/dev/tty2' },
+        { pid: '125', name: '/', cpu_using: '0.02%', memory: '460kB', memory_using: '0.22%', line_count: 5, handle: 2, ghost_route: '/sbin/mingetty/dev/tty2', command_line: '/sbin/mingetty/dev/tty2' },
+        { pid: '125', name: '/', cpu_using: '0.02%', memory: '460kB', memory_using: '0.22%', line_count: 5, handle: 2, ghost_route: '/sbin/mingetty/dev/tty2', command_line: '/sbin/mingetty/dev/tty2' },
+        { pid: '125', name: '/', cpu_using: '0.02%', memory: '460kB', memory_using: '0.22%', line_count: 5, handle: 2, ghost_route: '/sbin/mingetty/dev/tty2', command_line: '/sbin/mingetty/dev/tty2' },
+        { pid: '125', name: '/', cpu_using: '0.02%', memory: '460kB', memory_using: '0.22%', line_count: 5, handle: 2, ghost_route: '/sbin/mingetty/dev/tty2', command_line: '/sbin/mingetty/dev/tty2' },
+        { pid: '125', name: '/', cpu_using: '0.02%', memory: '460kB', memory_using: '0.22%', line_count: 5, handle: 2, ghost_route: '/sbin/mingetty/dev/tty2', command_line: '/sbin/mingetty/dev/tty2' },
+        { pid: '125', name: '/', cpu_using: '0.02%', memory: '460kB', memory_using: '0.22%', line_count: 5, handle: 2, ghost_route: '/sbin/mingetty/dev/tty2', command_line: '/sbin/mingetty/dev/tty2' },
+        { pid: '125', name: '/', cpu_using: '0.02%', memory: '460kB', memory_using: '0.22%', line_count: 5, handle: 2, ghost_route: '/sbin/mingetty/dev/tty2', command_line: '/sbin/mingetty/dev/tty2' },
       ],
       isActice: '1H',
       page_array: [

@@ -5,8 +5,78 @@ var app = new Vue({
     return {
       business_data: null,
       multiple_pie: {
-        gauge: null,
-        line: null
+        gauge: {
+          tooltip: {
+            formatter: "{a} <br/>{b} : {c}%"
+          },
+          series: [
+            {
+              name: '业务指标',
+              type: 'gauge',
+              detail: { formatter: '{value}%' },
+              data: [{ value: 50, name: '完成率' }]
+            }
+          ]
+        },
+        line: {
+          color: ['#54E8FF'],
+          tooltip: {
+            trigger: 'axis'
+          },
+          grid: {
+            left: '50',
+            right: '20',
+            top: '20',
+            bottom: '20'
+          },
+          xAxis: {
+            type: 'category',
+            boundaryGap: false,
+            data: ['00:00', '02:33', '03:33', '04:33', '05:33', '06:33', '08:33'],
+            axisLabel: {
+              fontSize: 12
+            },
+            axisLine: {
+              lineStyle: {
+                color: '#fff'
+              }
+            },
+            axisTick: {
+              show: false
+            }
+          },
+          yAxis: {
+            type: 'value',
+            axisLabel: {
+              fontSize: 12,
+              formatter: '{value}'
+            },
+            axisLine: {
+              show: false,
+              lineStyle: {
+                color: '#fff'
+              }
+            },
+            splitLine: {
+              lineStyle: {
+                color: ['#eee']
+              }
+            },
+            axisTick: {
+              show: false
+            }
+          },
+          series: [
+            {
+              name: '模拟数据',
+              type: 'line',
+              areaStyle: {
+                color: '#304C8E'
+              },
+              data: [11, 31, 15, 23, 52, 16, 20]
+            }
+          ]
+        }
       },
       tab_array: [
         { label: '业务总览', url: './resource-overview.html', active: true },
@@ -70,7 +140,6 @@ var app = new Vue({
     this.business_data = { business_id: '11', label: 'Openstack V3', healthy: '98%', status: '1', safety_level: '2', response: '37ms', busyness: '2%', using: '100%', downtime_cs: '0', downtime_sc: '16分23秒', mttr: '16分23秒', mtbf: '16分23秒', used_capacity: '58.31GB/339.99GB', calc_capacity: '33%' }
   },
   mounted() {
-    this.getBusinessUsingRight();
   },
   methods: {
     togglePage(evt) {
@@ -79,99 +148,19 @@ var app = new Vue({
     toggleTab(evt) {
       window.location.href = evt.url;
     },
-    deleteProcess(obj) {
-      console.log(obj);
-      this.deleteDialog = true;
-    },
     toggleTime(evt) {
-      console.log(evt);
       this.isActice = evt;
       this.cpuData.isActice = evt;
       switch (evt) {
+        case '1H':
+          this.multiple_pie.line.xAxis.data = [];
+          break;
         case '自定义':
           this.editTimeDialog = true;
           break;
         default:
           break;
       }
-    },
-    showAddFocusDialog() {
-      this.addFocusDialog = true;
-    },
-    getBusinessUsingRight() {
-      // 内存使用率
-      this.multiple_pie.gauge = {
-        tooltip: {
-          formatter: "{a} <br/>{b} : {c}%"
-        },
-        series: [
-          {
-            name: '业务指标',
-            type: 'gauge',
-            detail: { formatter: '{value}%' },
-            data: [{ value: 50, name: '完成率' }]
-          }
-        ]
-      };
-      this.multiple_pie.line = {
-        color: ['#54E8FF'],
-        tooltip: {
-          trigger: 'axis'
-        },
-        grid: {
-          left: '50',
-          right: '20',
-          top: '20',
-          bottom: '20'
-        },
-        xAxis: {
-          type: 'category',
-          boundaryGap: false,
-          data: ['00:00', '02:33', '03:33', '04:33', '05:33', '06:33', '08:33'],
-          axisLabel: {
-            fontSize: 12
-          },
-          axisLine: {
-            lineStyle: {
-              color: '#fff'
-            }
-          },
-          axisTick: {
-            show: false
-          }
-        },
-        yAxis: {
-          type: 'value',
-          axisLabel: {
-            fontSize: 12,
-            formatter: '{value}'
-          },
-          axisLine: {
-            show: false,
-            lineStyle: {
-              color: '#fff'
-            }
-          },
-          splitLine: {
-            lineStyle: {
-              color: ['#eee']
-            }
-          },
-          axisTick: {
-            show: false
-          }
-        },
-        series: [
-          {
-            name: '模拟数据',
-            type: 'line',
-            areaStyle: {
-              color: '#304C8E'
-            },
-            data: [11, 31, 15, 23, 52, 16, 20]
-          }
-        ]
-      };
     },
   }
 });

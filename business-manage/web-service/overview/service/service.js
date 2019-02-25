@@ -14,9 +14,10 @@ var app = new Vue({
         { label: '硬盘IO', url: './storage.html', active: false }
       ],
       service_tableData: [
-        { name: '/', host_name: '本地主机', route: '网络服务器', servlet: '0', },
-        { name: '网络服务器', host_name: '本地主机', route: '网络服务器', servlet: '0', },
-        { name: 'Intel(R) Xeon(R) CPU E5-2682 v4 @ 2.50GHz', host_name: 'localhost', route: '/net-server', servlet: '0', },
+        { name: '应用层网关服务', desc: '如果此服务被停止，进程外请求不到将得不到处理', current_status: '0', run_status: '1', route: 'C:\window\system32' },
+        { name: '应用标示', desc: '如果此服务被停止，进程外请求不到将得不到处理', current_status: '1', run_status: '0', route: 'C:\window\system32' },
+        { name: '应用标示', desc: '如果此服务被停止，进程外请求不到将得不到处理', current_status: '0', run_status: '1', route: 'C:\window\system32' },
+        { name: '应用层网关服务', desc: '如果此服务被停止，进程外请求不到将得不到处理', current_status: '2', run_status: '2', route: 'C:\window\system32' },
       ],
       page_array: [
         { label: '总览', url: './resource-overview.html', active: true },
@@ -29,7 +30,7 @@ var app = new Vue({
   created() {
     this.business_data = { business_id: '11', label: 'Openstack V3', healthy: '98%', status: '1', safety_level: '2', response: '37ms', busyness: '2%', using: '100%', downtime_cs: '0', downtime_sc: '16分23秒', mttr: '16分23秒', mtbf: '16分23秒', used_capacity: '58.31GB/339.99GB', calc_capacity: '33%' }
   },
-  mounted() {},
+  mounted() { },
   methods: {
     togglePage(evt) {
       window.location.href = evt.url;
