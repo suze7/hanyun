@@ -5,16 +5,75 @@ var app = new Vue({
     return {
       business_data: null,
       multiple_pie: {
+        tooltip: {},
         gauge: {
           tooltip: {
-            formatter: "{a} <br/>{b} : {c}%"
+            formatter: "{c}%"
           },
           series: [
             {
               name: '业务指标',
               type: 'gauge',
-              detail: { formatter: '{value}%' },
-              data: [{ value: 50, name: '完成率' }]
+              startAngle: 180,
+              radius: "50%",
+              center: ['50%', '80%'],
+              endAngle: 0,
+              axisLine: {
+                lineStyle: {
+                  width: 3,
+                  color: [[1, '#000']],
+                }
+              },
+              pointer: {
+                show: false
+              },
+              axisTick: {
+                show: false
+              },
+              splitLine: {
+                show: false
+              },
+              axisLabel: {
+                show: false
+              },
+              detail: { show: false, formatter: '{value}%' },
+              data: [{ value: 48, name: '' }]
+            }, {
+              name: '业务指标',
+              type: 'gauge',
+              startAngle: 180,
+              endAngle: 0,
+              center: ['50%', '80%'],
+              radius: "100%",
+              axisLine: {
+                lineStyle: {
+                  width: 3,
+                  color: [[0.48, '#0aa'], [1, '#000']],
+                }
+              },
+              pointer: {
+                width: 5
+              },
+              axisTick: {
+                show: false
+              },
+              splitLine: {
+                show: false
+              },
+              axisLabel: {
+                show: false
+              },
+              itemStyle: {
+                color: "yellow",
+                shadowBlur: 10,
+                shadowColor: "#0aa",
+              },
+              markPoint: {
+                symbol: 'circle',
+                symbolSize: 10,
+              },
+              detail: { show: false },
+              data: [{ value: 48, name: '' }]
             }
           ]
         },
@@ -138,8 +197,10 @@ var app = new Vue({
   },
   created() {
     this.business_data = { business_id: '11', label: 'Openstack V3', healthy: '98%', status: '1', safety_level: '2', response: '37ms', busyness: '2%', using: '100%', downtime_cs: '0', downtime_sc: '16分23秒', mttr: '16分23秒', mtbf: '16分23秒', used_capacity: '58.31GB/339.99GB', calc_capacity: '33%' }
-  },
-  mounted() {
+    console.log(this.multiple_pie.gauge.series[0].axisLine.lineStyle.color);
+    console.log(this.multiple_pie.gauge.series[0].data);
+    this.multiple_pie.gauge.series[1].axisLine.lineStyle.color[0][0] = 68 / 100;
+    this.multiple_pie.gauge.series[1].data[0].value = (68 / 100) * 100;
   },
   methods: {
     togglePage(evt) {

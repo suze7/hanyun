@@ -149,20 +149,13 @@ var app = new Vue({
       console.log('确认新增');
     },
     openNewWindow(obj) {
-      // console.log(obj);
-      // sessionStorage.setItem('businessData', JSON.stringify(obj));
-      // console.log(sessionStorage.getItem('businessData'));
       let title = '业务资源详情';
       let screenWidth = window.screen.width;
       let screenHeight = window.screen.height;
-      console.log(screenWidth, screenHeight);
-      console.log(screenWidth, screenHeight);
+      // console.log(screenWidth, screenHeight);
       let url = `./business-overview.html?id=${obj.business_id}`;
-      // return;
       if (screenHeight <= 768) {
-        // if (url) {
-        window.open(url, title, `width=${screenWidth}, height=${screenHeight-100},top=0,left=0,toolbar=no,menubar=no,scrollbars=no,resizable=no,location=no,status=no`);
-        // }
+        window.open(url, title, `width=${screenWidth}, height=${screenHeight - 100},top=0,left=0,toolbar=no,menubar=no,scrollbars=no,resizable=no,location=no,status=no`);
       } else {
         let height = 850;
         let width = 1366;
@@ -174,10 +167,7 @@ var app = new Vue({
         if (left < 0) {
           left = 0;
         }
-        // if (url) {
         window.open(url, title, `height=${height},width=${width},top=20,left=30,toolbar=no,menubar=no,scrollbars=no,resizable=no,location=no,status=no`);
-        // window.open(url, title, `height=${height},width=${width},top=${top},left=${left},toolbar=no,menubar=no,scrollbars=no,resizable=no,location=no,status=no`);
-        // }
       }
     },
     /* 业务响应速度 */
@@ -354,140 +344,6 @@ var app = new Vue({
           show: false
         }],
         series: this.createCanvas(data)
-      }
-      /* 注释方案2 */
-      {
-        // let labelTop = {
-        //   show: true,
-        //   color: '#fff',
-        //   position: 'center',
-        //   formatter: '{b}',
-        //   textStyle: {
-        //     baseline: 'bottom'
-        //   }
-        // };
-        // let labelFromatter = {
-        //   formatter: function (params) {
-        //     return 100 - params.value + '%'
-        //   },
-        //   textStyle: {
-        //     baseline: 'top'
-        //   }
-        // };
-        // let labelBottom = {
-        //   normal: {
-        //     color: '#101E43',
-        //   },
-        //   emphasis: {
-        //     color: 'rgba(0,0,0,0)'
-        //   }
-        // };
-        // let labelPos = {
-        //   show: true,
-        //   color: '#fff',
-        //   position: 'center'
-        // }
-
-        // this.multiple_pie = {
-        //   color: ['#FFE259'],
-        //   series: [{
-        //     type: 'pie',
-        //     center: ['50', '80'],
-        //     radius: [26, 35],
-        //     x: '0%',
-        //     label: labelFromatter,
-        //     data: [{
-        //       name: 'other',
-        //       value: 75,
-        //       itemStyle: labelBottom,
-        //       label: labelPos,
-        //       labelLine: {
-        //         show: false
-        //       }
-        //     },
-        //     {
-        //       name: '剧情',
-        //       value: 25,
-        //       label: labelTop,
-        //       labelLine: {
-        //         show: false
-        //       }
-        //     }]
-        //   },
-        //   {
-        //     type: 'pie',
-        //     center: ['200', '80'],
-        //     radius: [26, 35],
-        //     x: '20%', // for funnel
-        //     label: labelFromatter,
-        //     data: [{
-        //       name: 'other',
-        //       value: 76,
-        //       itemStyle: labelBottom,
-        //       label: labelPos,
-        //       labelLine: {
-        //         show: false
-        //       }
-        //     },
-        //     {
-        //       name: '奇幻',
-        //       value: 24,
-        //       label: labelTop,
-        //       labelLine: {
-        //         show: false
-        //       }
-        //     }]
-        //   },
-        //   {
-        //     type: 'pie',
-        //     center: ['10%', '55%'],
-        //     radius: [26, 35],
-        //     x: '40%', // for funnel
-        //     label: labelFromatter,
-        //     data: [{
-        //       name: 'other',
-        //       value: 86,
-        //       itemStyle: labelBottom,
-        //       label: labelPos,
-        //       labelLine: {
-        //         show: false
-        //       }
-        //     },
-        //     {
-        //       name: '爱情',
-        //       value: 14,
-        //       label: labelTop,
-        //       labelLine: {
-        //         show: false
-        //       }
-        //     }]
-        //   },
-        //   {
-        //     type: 'pie',
-        //     center: ['30%', '55%'],
-        //     radius: [26, 35],
-        //     x: '60%',
-        //     label: labelFromatter,
-        //     data: [{
-        //       name: 'other',
-        //       value: 89,
-        //       itemStyle: labelBottom,
-        //       label: labelPos,
-        //       labelLine: {
-        //         show: false
-        //       }
-        //     },
-        //     {
-        //       name: '惊悚',
-        //       value: 11,
-        //       label: labelTop,
-        //       labelLine: {
-        //         show: false
-        //       }
-        //     }]
-        //   }
-        //   ]
-        // }
       }
     },
   }

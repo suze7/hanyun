@@ -6,7 +6,77 @@ var app = new Vue({
       radio2: '1H',
       business_data: null,
       multiple_pie: {
-        gauge: null,
+        gauge: {
+          tooltip: {
+            formatter: "{c}%"
+          },
+          series: [
+            {
+              name: '业务指标',
+              type: 'gauge',
+              startAngle: 180,
+              radius: "50%",
+              center: ['50%', '80%'],
+              endAngle: 0,
+              axisLine: {
+                lineStyle: {
+                  width: 3,
+                  color: [[1, '#000']],
+                }
+              },
+              pointer: {
+                show: false
+              },
+              axisTick: {
+                show: false
+              },
+              splitLine: {
+                show: false
+              },
+              axisLabel: {
+                show: false
+              },
+              detail: { show: false, formatter: '{value}%' },
+              data: [{ value: 48, name: '' }]
+            }, {
+              name: '业务指标',
+              type: 'gauge',
+              startAngle: 180,
+              endAngle: 0,
+              center: ['50%', '80%'],
+              radius: "100%",
+              axisLine: {
+                lineStyle: {
+                  width: 3,
+                  color: [[0.48, '#0aa'], [1, '#000']],
+                }
+              },
+              pointer: {
+                width: 5
+              },
+              axisTick: {
+                show: false
+              },
+              splitLine: {
+                show: false
+              },
+              axisLabel: {
+                show: false
+              },
+              itemStyle: {
+                color: "yellow",
+                shadowBlur: 10,
+                shadowColor: "#0aa",
+              },
+              markPoint: {
+                symbol: 'circle',
+                symbolSize: 10,
+              },
+              detail: { show: false },
+              data: [{ value: 48, name: '' }]
+            }
+          ]
+        },
         pie: null
       },
       options: [
@@ -74,6 +144,8 @@ var app = new Vue({
   },
   created() {
     this.business_data = { business_id: '11', label: 'Openstack V3', healthy: '98%', status: '1', safety_level: '2', response: '37ms', busyness: '2%', using: '100%', downtime_cs: '0', downtime_sc: '16分23秒', mttr: '16分23秒', mtbf: '16分23秒', used_capacity: '58.31GB/339.99GB', calc_capacity: '33%' }
+    this.multiple_pie.gauge.series[1].axisLine.lineStyle.color[0][0] = 68 / 100;
+    this.multiple_pie.gauge.series[1].data[0].value = (68 / 100) * 100;
   },
   mounted() {
     this.getBusinessUsingRight();
@@ -91,10 +163,10 @@ var app = new Vue({
       let water1 = document.getElementById("water1");
       let percent1 = cnt1.innerText;
       let interval1;
-      // let cnt2 = document.getElementById("count2");
-      // let water2 = document.getElementById("water2");
-      // let percent2 = cnt2.innerText;
-      // let interval2;
+      let cnt2 = document.getElementById("count2");
+      let water2 = document.getElementById("water2");
+      let percent2 = cnt2.innerText;
+      let interval2;
       interval1 = setInterval(function () {
         percent1++;
         cnt1.innerHTML = percent1;
@@ -103,15 +175,15 @@ var app = new Vue({
           clearInterval(interval1);
         }
       }, 30);
-      // interval2 = setInterval(function () {
-      //   percent2++;
-      //   cnt2.innerHTML = percent2;
-      //   water2.style.transform = 'translate(0' + ',' + (100 - percent2) + '%)';
-      //   if (percent2 == 58) {
-      //     clearInterval(interval2);
-      //   }
-      //   console.log(percent2);
-      // }, 30);
+      interval2 = setInterval(function () {
+        percent2++;
+        cnt2.innerHTML = percent2;
+        water2.style.transform = 'translate(0' + ',' + (100 - percent2) + '%)';
+        if (percent2 == 58) {
+          clearInterval(interval2);
+        }
+        console.log(percent2);
+      }, 30);
     },
     toggleTime(evt) {
       console.log(evt);
@@ -126,28 +198,6 @@ var app = new Vue({
     },
     /* 业务可用率 */
     getBusinessUsingRight() {
-      // cpu使用率
-      this.multiple_pie.gauge = {
-        tooltip: {
-          formatter: "{a} <br/>{b} : {c}%"
-        },
-        series: [
-          {
-            name: '业务指标',
-            type: 'gauge',
-            // startAngle: -180,
-            // endAngle: 180,
-            // axisLine: {
-            //   show: false,
-            // },
-            // axisTick: {
-            //   show: false,
-            // },
-            detail: { formatter: '{value}%' },
-            data: [{ value: 50, name: '完成率' }]
-          }
-        ]
-      };
       this.multiple_pie.pie = {
         color: ['#54E8FF'],
         tooltip: {

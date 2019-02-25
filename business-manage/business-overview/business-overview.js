@@ -5,58 +5,7 @@ var app = new Vue({
     return {
       radio1: '业务总览',
       business_data: null,
-      alarm_statics: null,
-      business_using: null,
-      alarm_object: [
-        { name: '监控系统数据库', status: '0' },
-        { name: '核心服务', status: '1' },
-        { name: '采集服务', status: '2' },
-        { name: 'WEB数据库', status: '1' },
-        { name: '监控系统服务器', status: '1' },
-        { name: '测试服务器', status: '0' }
-      ],
-      this_tab: '业务总览',
-      tab_array: [
-        { label: '业务总览', url: '' },
-        { label: '资源告警', url: '', },
-        { label: '业务拓扑', url: '', }
-      ],
-      multiple_pie: {
-        pie1: null,
-        pie2: null,
-        line: null
-      },
-      isActice: '0',
-      pie3: {
-        now: +new Date(2018, 5, 3),
-        oneDay: 12 * 3600 * 1000,
-        value: Math.random() * 1000
-      },
-      alarm_tableData: [
-        { alarm_id: '11', alarm_name: '2物理内存使用率异常', levle: '1', alarm_type: '资源负载检测', alarm_status: '1', safety_level: '2', product_time: '2019-02-04', continued_time: '16分23秒', confirmor: '16', confirm_time: '2019-02-05', alarm_content: '百分比 大于等于 50% 触发 严重' },
-        { alarm_id: '11', alarm_name: '物理内存使用率异常', levle: '1', alarm_type: '资源负载检测', alarm_status: '1', safety_level: '1', product_time: '2019-02-04', continued_time: '16分23秒', confirmor: '16', confirm_time: '2019-02-05', alarm_content: '百分比 大于等于 50% 触发 严重' },
-        { alarm_id: '11', alarm_name: '1物理内存使用率异常', levle: '0', alarm_type: '资源负载检测', alarm_status: '1', safety_level: '2', product_time: '2019-02-04', continued_time: '16分23秒', confirmor: '16', confirm_time: '2019-02-05', alarm_content: '百分比 大于等于 50% 触发 严重' },
-        { alarm_id: '11', alarm_name: '物理内存使用率异常', levle: '1', alarm_type: '资源负载检测', alarm_status: '1', safety_level: '0', product_time: '2019-02-04', continued_time: '16分23秒', confirmor: '16', confirm_time: '2019-02-05', alarm_content: '百分比 大于等于 50% 触发 严重' },
-        { alarm_id: '11', alarm_name: '3物理内存使用率异常', levle: '1', alarm_type: '资源负载检测', alarm_status: '1', safety_level: '2', product_time: '2019-02-04', continued_time: '16分23秒', confirmor: '16', confirm_time: '2019-02-05', alarm_content: '百分比 大于等于 50% 触发 严重' },
-        { alarm_id: '11', alarm_name: '物理内存使用率异常', levle: '2', alarm_type: '资源负载检测', alarm_status: '1', safety_level: '2', product_time: '2019-02-04', continued_time: '16分23秒', confirmor: '16', confirm_time: '2019-02-05', alarm_content: '百分比 大于等于 50% 触发 严重' },
-      ],
-    }
-  },
-  created() {
-    this.business_data = { business_id: '11', label: 'Openstack V3', healthy: '98%', status: '1', safety_level: '2', response: '37ms', busyness: '2%', using: '100%', downtime_cs: '0', downtime_sc: '16分23秒', mttr: '16分23秒', mtbf: '16分23秒', used_capacity: '58.31GB/339.99GB', calc_capacity: '33%' }
-    // this.business_data = JSON.parse(sessionStorage.getItem('businessData'));
-    console.log(this.business_data);
-    this.getAlarmStatics();
-    this.getBusinessUsing();
-    this.getBusinessUsingRight();
-  },
-  methods: {
-    toggleTab(evt) {
-      this.radio1 = evt.label;
-      this.this_tab = evt.label;
-    },
-    getAlarmStatics() {
-      this.alarm_statics = {
+      alarm_statics: {
         color: ['#FFE259'],
         tooltip: {
           trigger: 'item',
@@ -110,11 +59,8 @@ var app = new Vue({
             hoverAnimation: false
           }]
         }
-      }
-    },
-    /* 业务可用率 - 中 */
-    getBusinessUsing() {
-      this.business_using = {
+      },
+      business_using: {
         tooltip: {
           trigger: 'item',
           formatter: "{b}%"
@@ -176,7 +122,50 @@ var app = new Vue({
           }
         }],
         color: ['#0aa', '#101E43'],
-      }
+      },
+      alarm_object: [
+        { name: '监控系统数据库', status: '0' },
+        { name: '核心服务', status: '1' },
+        { name: '采集服务', status: '2' },
+        { name: 'WEB数据库', status: '1' },
+        { name: '监控系统服务器', status: '1' },
+        { name: '测试服务器', status: '0' }
+      ],
+      this_tab: '业务总览',
+      tab_array: [
+        { label: '业务总览', url: '' },
+        { label: '资源告警', url: '', },
+        { label: '业务拓扑', url: '', }
+      ],
+      multiple_pie: {
+        pie1: null,
+        pie2: null,
+        line: null
+      },
+      isActice: '0',
+      pie3: {
+        now: +new Date(2018, 5, 3),
+        oneDay: 12 * 3600 * 1000,
+        value: Math.random() * 1000
+      },
+      alarm_tableData: [
+        { alarm_id: '11', alarm_name: '2物理内存使用率异常', levle: '1', alarm_type: '资源负载检测', alarm_status: '1', safety_level: '2', product_time: '2019-02-04', continued_time: '16分23秒', confirmor: '16', confirm_time: '2019-02-05', alarm_content: '百分比 大于等于 50% 触发 严重' },
+        { alarm_id: '11', alarm_name: '物理内存使用率异常', levle: '1', alarm_type: '资源负载检测', alarm_status: '1', safety_level: '1', product_time: '2019-02-04', continued_time: '16分23秒', confirmor: '16', confirm_time: '2019-02-05', alarm_content: '百分比 大于等于 50% 触发 严重' },
+        { alarm_id: '11', alarm_name: '1物理内存使用率异常', levle: '0', alarm_type: '资源负载检测', alarm_status: '1', safety_level: '2', product_time: '2019-02-04', continued_time: '16分23秒', confirmor: '16', confirm_time: '2019-02-05', alarm_content: '百分比 大于等于 50% 触发 严重' },
+        { alarm_id: '11', alarm_name: '物理内存使用率异常', levle: '1', alarm_type: '资源负载检测', alarm_status: '1', safety_level: '0', product_time: '2019-02-04', continued_time: '16分23秒', confirmor: '16', confirm_time: '2019-02-05', alarm_content: '百分比 大于等于 50% 触发 严重' },
+        { alarm_id: '11', alarm_name: '3物理内存使用率异常', levle: '1', alarm_type: '资源负载检测', alarm_status: '1', safety_level: '2', product_time: '2019-02-04', continued_time: '16分23秒', confirmor: '16', confirm_time: '2019-02-05', alarm_content: '百分比 大于等于 50% 触发 严重' },
+        { alarm_id: '11', alarm_name: '物理内存使用率异常', levle: '2', alarm_type: '资源负载检测', alarm_status: '1', safety_level: '2', product_time: '2019-02-04', continued_time: '16分23秒', confirmor: '16', confirm_time: '2019-02-05', alarm_content: '百分比 大于等于 50% 触发 严重' },
+      ],
+    }
+  },
+  created() {
+    this.business_data = { business_id: '11', label: 'Openstack V3', healthy: '98%', status: '1', safety_level: '2', response: '37ms', busyness: '2%', using: '100%', downtime_cs: '0', downtime_sc: '16分23秒', mttr: '16分23秒', mtbf: '16分23秒', used_capacity: '58.31GB/339.99GB', calc_capacity: '33%' }
+    this.getBusinessUsingRight();
+  },
+  methods: {
+    toggleTab(evt) {
+      this.radio1 = evt.label;
+      this.this_tab = evt.label;
     },
     /* 业务可用率 - 右 */
     getBusinessUsingRight() {
@@ -404,56 +393,6 @@ var app = new Vue({
           }
         ]
       };
-      // this.multiple_pie.pie3 = {
-      //   color: ['#54E8FF'],
-      //   grid: {
-      //     left: '150',
-      //     right: '50',
-      //     top: '50',
-      //     bottom: '50'
-      //   },
-      //   tooltip: {
-      //     trigger: 'axis',
-      //     formatter: function (params) {
-      //       params = params[0];
-      //       var date = new Date(params.name);
-      //       return date.getDate() + '/' + (date.getMonth() + 1) + '/' + date.getFullYear() + ' : ' + params.value[1];
-      //     },
-      //     axisPointer: {
-      //       animation: false
-      //     }
-      //   },
-      //   xAxis: {
-      //     type: 'time',
-      //     splitLine: {
-      //       show: false
-      //     },
-      //     axisLine: {
-      //       lineStyle: {
-      //         color: '#fff'
-      //       }
-      //     }
-      //   },
-      //   yAxis: {
-      //     type: 'value',
-      //     boundaryGap: [0, '100%'],
-      //     splitLine: {
-      //       show: false
-      //     },
-      //     axisLine: {
-      //       lineStyle: {
-      //         color: '#fff'
-      //       }
-      //     }
-      //   },
-      //   series: [{
-      //     name: '模拟数据',
-      //     type: 'line',
-      //     showSymbol: false,
-      //     hoverAnimation: false,
-      //     data: data
-      //   }]
-      // };
     },
     randomData() {
       this.pie3.now = new Date(+this.pie3.now + this.pie3.oneDay);
@@ -481,17 +420,19 @@ var app = new Vue({
           window.open(url, '_blank', `width=${screenWidth}, height=${screenHeight - 100},top=0,left=0,toolbar=no,menubar=no,location=no,status=no`);
           break;
         case '采集服务':
-
+          url = `./core-service/overview/resource-overview.html?page=${obj.name}`;
+          window.open(url, '_blank', `width=${screenWidth}, height=${screenHeight - 100},top=0,left=0,toolbar=no,menubar=no,location=no,status=no`);
           break;
         case 'WEB数据库':
+          url = `./monitor-database/overview/business-overview.html?page=${obj.name}`;
+          window.open(url, '_blank', `width=${screenWidth}, height=${screenHeight - 100},top=0,left=0,toolbar=no,menubar=no,location=no,status=no`);
+          break;
+        case '监控系统服务器':
           url = `./web-service/overview/resource-overview.html?page=${obj.name}`;
           window.open(url, '_blank', `width=${screenWidth}, height=${screenHeight - 100},top=0,left=0,toolbar=no,menubar=no,location=no,status=no`);
           break;
-        case '监控数据服务器':
-
-          break;
         case '测试服务器':
-
+          
           break;
         default:
           break;
