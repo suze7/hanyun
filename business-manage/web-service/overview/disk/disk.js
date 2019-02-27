@@ -177,6 +177,11 @@ var app = new Vue({
     this.business_data = { business_id: '11', label: 'Openstack V3', healthy: '98%', status: '1', safety_level: '2', response: '37ms', busyness: '2%', using: '100%', downtime_cs: '0', downtime_sc: '16分23秒', mttr: '16分23秒', mtbf: '16分23秒', used_capacity: '58.31GB/339.99GB', calc_capacity: '33%' }
   },
   mounted() {
+    if (window.location.href.indexOf('?param') !== -1) {
+      if (window.location.href.split('?param=')[1] === 'true') {
+        this.init_page.show_disk = false;
+      }
+    }
   },
   methods: {
     togglePage(evt) {

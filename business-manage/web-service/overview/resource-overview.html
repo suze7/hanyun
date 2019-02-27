@@ -185,7 +185,7 @@
         <div class="grid-content bg-purple" style="height:285px">
           <p class="p-title" style="margin-bottom:20px;">内存</p>
           <div style="height:211px; overflow:auto;">
-            <div class="left-img-right-text" v-for="(item, index) in database_array" :key="index">
+            <div class="left-img-right-text" v-for="(item, index) in database_array" :key="index" @click="goToDisk(item);">
               <div>
                 <img style="margin-top:25%;" :src="item.imgUrl" />
               </div>

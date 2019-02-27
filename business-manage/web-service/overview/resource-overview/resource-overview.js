@@ -214,7 +214,7 @@ var app = new Vue({
       this.cpuData.isActice = evt;
       switch (evt) {
         case '1H':
-          this.multiple_pie.line.xAxis.data = [];
+          // this.multiple_pie.line.xAxis.data = [];
           break;
         case '自定义':
           this.editTimeDialog = true;
@@ -223,5 +223,9 @@ var app = new Vue({
           break;
       }
     },
+    goToDisk(obj) {
+      console.log(obj);
+      window.location.href = './disk.html?param=true';
+    }
   }
 });

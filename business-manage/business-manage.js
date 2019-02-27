@@ -69,7 +69,7 @@ var app = new Vue({
           }
         },
         series: [{
-          barWidth: '30%',
+          barWidth: '25%',
           data: [120, 200, 150, 80, 70],
           type: 'bar',
           itemStyle: {
@@ -233,10 +233,6 @@ var app = new Vue({
     /* 确认新建业务 */
     confirmAddBus() {
       console.log('确认新增');
-    },
-    /* 椭圆运动 */
-    runingOval() {
-
     },
     openNewWindow(obj) {
       let screenWidth = window.screen.width;

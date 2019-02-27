@@ -40,7 +40,11 @@
 }
 .left-img-right-text {
   display: flex;
-  margin: 0 0 20px 0;
+  padding: 0 0 15px 10px;
+}
+.left-img-right-text:hover {
+  background: #1B2352;
+  cursor: pointer;
 }
 .left-img-right-text img {
   margin-right: 8px;
