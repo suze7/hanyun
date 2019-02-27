@@ -104,9 +104,17 @@
             <el-table-column class-name="my-checkbox com-txt-center" type="selection" width="46"></el-table-column>
             <el-table-column prop="name" label="链路名称" min-width="123px"></el-table-column>
             <el-table-column prop="IP" label="源端口名称" min-width="123px"></el-table-column>
-            <el-table-column prop="type1" label="源设备名称" min-width="84px"></el-table-column>
+            <el-table-column prop="type1" label="源设备名称" min-width="84px">
+              <template slot-scope="scope">
+                <p class="com-txt-overflow loc-table-color" style="cursor: pointer;" @click="openWindow(scope.row)">{{ scope.row.type1 }}</p>
+              </template>
+            </el-table-column>
             <el-table-column prop="type2" label="目标端口名称" min-width="90px"></el-table-column>
-            <el-table-column prop="level" label="目标设备名称" min-width="90px"></el-table-column>
+            <el-table-column prop="level" label="目标设备名称" min-width="90px">
+              <template slot-scope="scope">
+                <p class="com-txt-overflow loc-table-color" style="cursor: pointer;" @click="openWindow(scope.row)">{{ scope.row.level }}</p>
+              </template>
+            </el-table-column>
             <el-table-column prop="healthStatus" label="链路状态" min-width="66px">
               <template slot-scope="scope">
                 <img v-if="scope.row.healthStatus === 0" src="../assets/images/icon/normal.png" />

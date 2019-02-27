@@ -108,12 +108,12 @@
           <el-table :data="tableData" size="mini" class="transparent-table transparent-white-table" style="width: 100%">
             <el-table-column class-name="com-txt-overflow" prop="number" label="VLAN号" sortable min-width="102px">
               <template slot-scope="scope">
-                <p class="com-txt-overflow loc-table-color">{{ scope.row.number }}</p>
+                <p class="com-txt-overflow loc-table-color" style="cursor: pointer;" @click="openWindow(scope.row)">{{ scope.row.number }}</p>
               </template>
             </el-table-column>
             <el-table-column class-name="com-txt-overflow" prop="name" label="VLAN名称" sortable min-width="102px">
               <template slot-scope="scope">
-                <p class="com-txt-overflow loc-table-color">{{ scope.row.name }}</p>
+                <p class="com-txt-overflow loc-table-color" style="cursor: pointer;" @click="openWindow(scope.row)">{{ scope.row.name }}</p>
               </template>
             </el-table-column>
             <el-table-column class-name="com-txt-overflow" prop="type" label="VLAN类型" min-width="104px"></el-table-column>

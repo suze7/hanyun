@@ -130,12 +130,12 @@
             <el-table-column prop="name" label="名称" sortable min-width="124px">
               <template slot-scope="scope">
                 <i class="my-table-special" v-if="scope.row.spec"></i>
-                <p class="loc-table-color">{{ scope.row.name }}</p>
+                <p class="loc-table-color" style="cursor: pointer;" @click="openWindow(scope.row)">{{ scope.row.name }}</p>
               </template>
             </el-table-column>
             <el-table-column prop="IP" label="IP" sortable min-width="119px">
               <template slot-scope="scope">
-                <p class="loc-table-color">{{ scope.row.IP }}</p>
+                <p class="loc-table-color" style="cursor: pointer;" @click="openWindow(scope.row)">{{ scope.row.IP }}</p>
               </template>
             </el-table-column>
             <el-table-column prop="type1" label="类别" sortable min-width="76px"></el-table-column>

@@ -77,7 +77,65 @@ var app = new Vue({
             }
           ]
         },
-        pie: null
+        pie: {
+          color: ['#54E8FF'],
+          tooltip: {
+            trigger: 'axis'
+          },
+          grid: {
+            left: '50',
+            right: '20',
+            top: '20',
+            bottom: '20'
+          },
+          xAxis: {
+            type: 'category',
+            boundaryGap: false,
+            data: ['00:00', '02:33', '03:33', '04:33', '05:33', '06:33', '08:33'],
+            axisLabel: {
+              fontSize: 12
+            },
+            axisLine: {
+              lineStyle: {
+                color: '#fff'
+              }
+            },
+            axisTick: {
+              show: false
+            }
+          },
+          yAxis: {
+            type: 'value',
+            axisLabel: {
+              fontSize: 12,
+              formatter: '{value}'
+            },
+            axisLine: {
+              show: false,
+              lineStyle: {
+                color: '#fff'
+              }
+            },
+            splitLine: {
+              lineStyle: {
+                color: ['#eee']
+              }
+            },
+            axisTick: {
+              show: false
+            }
+          },
+          series: [
+            {
+              name: '模拟数据',
+              type: 'line',
+              areaStyle: {
+                color: '#304C8E'
+              },
+              data: [11, 31, 15, 23, 52, 16, 20]
+            }
+          ]
+        }
       },
       options: [
         { value: 'CPU使用率', label: 'CPU使用率' },
@@ -148,7 +206,6 @@ var app = new Vue({
     this.multiple_pie.gauge.series[1].data[0].value = (68 / 100) * 100;
   },
   mounted() {
-    this.getBusinessUsingRight();
     this.drawWaveBall();
   },
   methods: {
@@ -182,81 +239,20 @@ var app = new Vue({
         if (percent2 == 58) {
           clearInterval(interval2);
         }
-        console.log(percent2);
       }, 30);
     },
     toggleTime(evt) {
-      console.log(evt);
       this.isActice = evt;
       switch (evt) {
+        case '1H':
+
+          break;
         case '自定义':
           this.editTimeDialog = true;
           break;
         default:
           break;
       }
-    },
-    /* 业务可用率 */
-    getBusinessUsingRight() {
-      this.multiple_pie.pie = {
-        color: ['#54E8FF'],
-        tooltip: {
-          trigger: 'axis'
-        },
-        grid: {
-          left: '50',
-          right: '20',
-          top: '20',
-          bottom: '20'
-        },
-        xAxis: {
-          type: 'category',
-          boundaryGap: false,
-          data: ['00:00', '02:33', '03:33', '04:33', '05:33', '06:33', '08:33'],
-          axisLabel: {
-            fontSize: 12
-          },
-          axisLine: {
-            lineStyle: {
-              color: '#fff'
-            }
-          },
-          axisTick: {
-            show: false
-          }
-        },
-        yAxis: {
-          type: 'value',
-          axisLabel: {
-            fontSize: 12,
-            formatter: '{value}'
-          },
-          axisLine: {
-            show: false,
-            lineStyle: {
-              color: '#fff'
-            }
-          },
-          splitLine: {
-            lineStyle: {
-              color: ['#eee']
-            }
-          },
-          axisTick: {
-            show: false
-          }
-        },
-        series: [
-          {
-            name: '模拟数据',
-            type: 'line',
-            areaStyle: {
-              color: '#304C8E'
-            },
-            data: [11, 31, 15, 23, 52, 16, 20]
-          }
-        ]
-      };
     },
   }
 });

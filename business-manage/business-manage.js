@@ -28,8 +28,103 @@ var app = new Vue({
         { business_id: '77', label: '华三云', healthy: '98%', status: '1', response: '37ms', busyness: '2%', using: '100%', downtime_cs: '0', downtime_sc: '16分23秒', mttr: '16分23秒', mtbf: '16分23秒', used_capacity: '58.31GB/339.99GB', calc_capacity: '33%' },
       ],
       radio1: '储存容量',
-      bus_responseSpeed: null,
-      bus_alarmTime: null,
+      bus_responseSpeed: {
+        tooltip: {
+          trigger: 'axis',
+        },
+        grid: {
+          left: '0',
+          right: '0',
+          top: '10',
+          bottom: '40',
+          containLabel: true,
+          borderColor: '#eee'
+        },
+        xAxis: {
+          data: ['Openstack V3', 'vCenter5.5', 'vCenter6.0', 'SDN', '阿里云'],
+          axisLabel: {
+            // interval: 0,
+            rotate: 40,
+            textStyle: {
+              color: '#eee'
+            }
+          },
+          axisLine: {
+            lineStyle: {
+              color: '#eee',
+            }
+          }
+        },
+        yAxis: {
+          axisLine: {
+            show: false
+          },
+          axisTick: {
+            show: false
+          },
+          axisLabel: {
+            textStyle: {
+              color: '#eee'
+            }
+          }
+        },
+        series: [{
+          barWidth: '30%',
+          data: [120, 200, 150, 80, 70],
+          type: 'bar',
+          itemStyle: {
+            normal: {
+              barBorderRadius: [15],
+              color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+                { offset: 0, color: '#1BECEC' },
+                { offset: 1, color: '#14B1B1' }
+              ])
+            }
+          }
+        }]
+      },
+      bus_alarmTime: {
+        color: ['#69F0AE', '#FF5252', '#FFAB40', '#E4E429', '#1CEFEF'],
+        tooltip: {
+          trigger: 'item',
+          formatter: "{b} <br /> {c} ({d}%)"
+        },
+        legend: {
+          bottom: 10,
+          left: 'center',
+          icon: 'circle',
+          itemWidth: 6,
+          itemHeight: 6,
+          padding: [0, 10],
+          textStyle: {
+            color: '#fff',
+            padding: [2, 14, 2, 4]
+          },
+          data: ['正常', '严重', '重要', '次要', '提示']
+        },
+        series: [
+          {
+            type: 'pie',
+            radius: ['50%', '70%'],
+            avoidLabelOverlap: false,
+            label: {
+              color: '#fff',
+            },
+            labelLine: {
+              lineStyle: {
+                color: '#fff',
+              }
+            },
+            data: [
+              { value: 335, name: '正常' },
+              { value: 310, name: '严重' },
+              { value: 234, name: '重要' },
+              { value: 135, name: '次要' },
+              { value: 1548, name: '提示' }
+            ]
+          }
+        ]
+      },
       multiple_pie: null,
       addBusiDialog: false,
       business_form: {
@@ -44,8 +139,6 @@ var app = new Vue({
   },
   mounted() {
     this.setMenuList();
-    this.getResponse();
-    this.getAlarmTimes();
     this.toggleBtn();
   },
   methods: {
@@ -122,13 +215,6 @@ var app = new Vue({
         }
       ];
     },
-    changeHomeMenu(cmd, data) {
-      if (cmd === '移除') {
-        data.show = false;
-        return;
-      }
-      data.menuType = cmd;
-    },
     showDialog(str) {
       /* 新建业务 */
       console.log(str);
@@ -148,130 +234,30 @@ var app = new Vue({
     confirmAddBus() {
       console.log('确认新增');
     },
+    /* 椭圆运动 */
+    runingOval() {
+
+    },
     openNewWindow(obj) {
-      let title = '业务资源详情';
       let screenWidth = window.screen.width;
       let screenHeight = window.screen.height;
       // console.log(screenWidth, screenHeight);
       let url = `./business-overview.html?id=${obj.business_id}`;
-      if (screenHeight <= 768) {
-        window.open(url, title, `width=${screenWidth}, height=${screenHeight - 100},top=0,left=0,toolbar=no,menubar=no,scrollbars=no,resizable=no,location=no,status=no`);
-      } else {
-        let height = 850;
-        let width = 1366;
-        let top = (screenHeight - height) / 2 * 0.8;
-        if (top < 0) {
-          top = 0;
-        }
-        let left = (screenWidth - width) / 2;
-        if (left < 0) {
-          left = 0;
-        }
-        window.open(url, title, `height=${height},width=${width},top=20,left=30,toolbar=no,menubar=no,scrollbars=no,resizable=no,location=no,status=no`);
-      }
-    },
-    /* 业务响应速度 */
-    getResponse() {
-      this.bus_responseSpeed = {
-        tooltip: {
-          trigger: 'axis',
-        },
-        grid: {
-          left: '0',
-          right: '0',
-          top: '10',
-          bottom: '40',
-          containLabel: true,
-          borderColor: '#eee'
-        },
-        xAxis: {
-          data: ['Openstack V3', 'vCenter5.5', 'vCenter6.0', 'SDN', '阿里云'],
-          axisLabel: {
-            // interval: 0,
-            rotate: 40,
-            textStyle: {
-              color: '#eee'
-            }
-          },
-          axisLine: {
-            lineStyle: {
-              color: '#eee',
-            }
-          }
-        },
-        yAxis: {
-          axisLine: {
-            show: false
-          },
-          axisTick: {
-            show: false
-          },
-          axisLabel: {
-            textStyle: {
-              color: '#eee'
-            }
-          }
-        },
-        series: [{
-          barWidth: '30%',
-          data: [120, 200, 150, 80, 70],
-          type: 'bar',
-          itemStyle: {
-            normal: {
-              barBorderRadius: [15],
-              color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
-                { offset: 0, color: '#1BECEC' },
-                { offset: 1, color: '#14B1B1' }
-              ])
-            }
-          }
-        }]
-      };
-    },
-    /* 业务告警次数 */
-    getAlarmTimes() {
-      this.bus_alarmTime = {
-        color: ['#69F0AE', '#FF5252', '#FFAB40', '#E4E429', '#1CEFEF'],
-        tooltip: {
-          trigger: 'item',
-          formatter: "{b} <br /> {c} ({d}%)"
-        },
-        legend: {
-          bottom: 10,
-          left: 'center',
-          icon: 'circle',
-          itemWidth: 6,
-          itemHeight: 6,
-          padding: [0, 10],
-          textStyle: {
-            color: '#fff',
-            padding: [2, 14, 2, 4]
-          },
-          data: ['正常', '严重', '重要', '次要', '提示']
-        },
-        series: [
-          {
-            type: 'pie',
-            radius: ['50%', '70%'],
-            avoidLabelOverlap: false,
-            label: {
-              color: '#fff',
-            },
-            labelLine: {
-              lineStyle: {
-                color: '#fff',
-              }
-            },
-            data: [
-              { value: 335, name: '正常' },
-              { value: 310, name: '严重' },
-              { value: 234, name: '重要' },
-              { value: 135, name: '次要' },
-              { value: 1548, name: '提示' }
-            ]
-          }
-        ]
-      }
+      window.open(url, '_blank', `width=${screenWidth}, height=${screenHeight - 100},top=0,left=0,toolbar=no,menubar=no,scrollbars=no,resizable=no,location=no,status=no`);
+      // if (screenHeight <= 768) {
+      // } else {
+      //   let height = 850;
+      //   let width = 1366;
+      //   let top = (screenHeight - height) / 2 * 0.8;
+      //   if (top < 0) {
+      //     top = 0;
+      //   }
+      //   let left = (screenWidth - width) / 2;
+      //   if (left < 0) {
+      //     left = 0;
+      //   }
+      //   window.open(url, '_blank', `height=${height - 100},width=${width},top=20,left=30,toolbar=no,menubar=no,scrollbars=no,resizable=no,location=no,status=no`);
+      // }
     },
     createCanvas(data) {
       /* 方案1 */
