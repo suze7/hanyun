@@ -130,10 +130,6 @@ var app = new Vue({
       console.log(evt);
       this.init_page.show_newwork = false;
     },
-    deleteProcess(obj) {
-      console.log(obj);
-      this.deleteDialog = true;
-    },
     toggleEcharts(evt) {
       this.cpuData.echart_title = evt.label;
     },
