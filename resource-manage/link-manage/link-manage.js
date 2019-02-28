@@ -342,7 +342,7 @@ var app = new Vue({
     openWindow(e) {
       let screenWidth = window.screen.width;
       let screenHeight = window.screen.height;
-      let url = `../business-manage/web-service/overview/resource-overview.html?id=${e.name}`;
+      let url = `../business-manage/database/overview/resource-overview.html?id=${e.name}`;
       window.open(url, '_blank', `width=${screenWidth}, height=${screenHeight - 100},top=0,left=0,toolbar=no,menubar=no,scrollbars=no,resizable=no,location=no,status=no`);
     },
     toggleShowMenu() {
