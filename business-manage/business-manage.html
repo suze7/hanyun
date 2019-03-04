@@ -69,10 +69,22 @@
       <div class="aside-center">
         <div class="bus-health" style="padding:0px;">
           <span>业务健康</span>
-          <div>
-            <div class="big-cicle">
+          <div style="position:relative;">
+            <div class="line-path" id="line_path">
+            </div>
+            <div class="line-value">
+              {{ball_data.healthy}}
+              <span class="down-triangle"></span>
+            </div>
+            <ul class="run-ball">
+              <li v-for="ball in business_tableData" @click="openNewWindow(ball);" :style="{left: ball.left, top: ball.top, cursor:'pointer'}">
+                <img :src="ball.img_url" alt="">
+                <p>{{ball.label}}</p>
+              </li>
+            </ul>
+          </div>
+          <!-- <div class="big-cicle">
               <div class="inline-cicle">
-                <!-- 140 * Math.PI -->
                 <ul>
                   <li style="transform: translate(-15px, 40px);">1</li>
                   <li style="transform: translate(66px, -5px);">2</li>
@@ -86,35 +98,36 @@
                   <li style="transform: translate(93px, 100px);">10</li>
                 </ul>
               </div>
-            </div>
-          </div>
+            </div> -->
         </div>
         <div style="margin-top:20px;" class="bus-runing-state">
           <span>业务运行情况</span>
-          <table>
-            <tr>
-              <th>名称</th>
-              <th>健康度</th>
-              <th>状态</th>
-              <th>响应时间</th>
-              <th>繁忙度</th>
-              <th>可用率</th>
-            </tr>
-            <tr v-for="state in business_tableData">
-              <td>
-                <span style="cursor:pointer;" @click="openNewWindow(state)">{{state.label}}</span>
-              </td>
-              <td>{{state.health}}</td>
-              <td>
-                <img v-if="state.status === '1'" src="../assets/images/icon/normal.png" />
-                <img v-if="state.status === '2'" src="../assets/images/icon/warning.png" />
-                <img v-if="state.status === '0'" src="../assets/images/icon/error.png" />
-              </td>
-              <td>{{state.response}}</td>
-              <td>{{state.busyness}}</td>
-              <td>{{state.using}}</td>
-            </tr>
-          </table>
+          <div style="height:240px; overflow:auto;">
+            <table>
+              <tr>
+                <th>名称</th>
+                <th>健康度</th>
+                <th>状态</th>
+                <th>响应时间</th>
+                <th>繁忙度</th>
+                <th>可用率</th>
+              </tr>
+              <tr v-for="state in business_tableData">
+                <td>
+                  <span style="cursor:pointer;" @click="openNewWindow(state)">{{state.label}}</span>
+                </td>
+                <td>{{state.health}}</td>
+                <td>
+                  <img v-if="state.status === '1'" src="../assets/images/icon/normal.png" />
+                  <img v-if="state.status === '2'" src="../assets/images/icon/warning.png" />
+                  <img v-if="state.status === '0'" src="../assets/images/icon/error.png" />
+                </td>
+                <td>{{state.response}}</td>
+                <td>{{state.busyness}}</td>
+                <td>{{state.using}}</td>
+              </tr>
+            </table>
+          </div>
         </div>
       </div>
       <div class="aside-right">
