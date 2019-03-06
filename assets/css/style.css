@@ -19,6 +19,13 @@
 .com-clear {
   clear: both;
 }
+.com-txt-important {
+  margin: 0 4px 0 0;
+  color: #ff5555;
+}
+.is-require {
+  border: 1px solid #f56c6c;
+}
 body {
   font-size: 14px;
 }
@@ -447,12 +454,15 @@ input[type='text']:-ms-input-placeholder {
   height: 40px;
   background: none;
 }
-.transparent-table.el-table tr:nth-child(odd):hover td,
 .transparent-table.el-table tr:nth-child(odd) td {
   background: transparent;
 }
 .transparent-table.el-table tr td {
   border: 0;
+}
+.transparent-table.el-table tr.el-table__row:nth-child(even):hover td,
+.transparent-table.el-table tr.el-table__row:nth-child(odd):hover td {
+  background: rgba(0, 0, 0, 0.2);
 }
 .transparent-table.el-table th {
   height: 40px;
@@ -568,6 +578,10 @@ input[type='text']:-ms-input-placeholder {
   padding: 8px;
   line-height: 16px;
   font-size: 12px;
+}
+.my-popover-content .my-popover-item:hover,
+.my-popover-content .my-popover-item.active {
+  background: rgba(0, 0, 0, 0.2);
 }
 .my-popover-content .my-content-checkbox {
   float: right;

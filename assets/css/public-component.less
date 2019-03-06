@@ -114,13 +114,20 @@
       height: 40px;
       background: none;
       &:nth-child(odd) {
-        &:hover td,
         td {
           background: transparent;
         }
       }
       td {
         border: 0;
+      }
+      &.el-table__row:nth-child(even),
+      &.el-table__row:nth-child(odd) {
+        &:hover {
+          td {
+            background: rgba(0, 0, 0, 0.2);
+          }
+        }
       }
     }
     th {
@@ -263,6 +270,10 @@
     padding: 8px;
     line-height: 16px;
     font-size: 12px;
+    &:hover,
+    &.active {
+      background: rgba(0, 0, 0, 0.2);
+    }
   }
   .my-content-checkbox {
     float: right;
