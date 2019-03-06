@@ -70,35 +70,20 @@
         <div class="bus-health" style="padding:0px;">
           <span>业务健康</span>
           <div style="position:relative;">
-            <div class="line-path" id="line_path">
-            </div>
-            <div class="line-value">
-              {{ball_data.healthy}}
-              <span class="down-triangle"></span>
-            </div>
-            <ul class="run-ball">
-              <li v-for="ball in business_tableData" @click="openNewWindow(ball);" :style="{left: ball.left, top: ball.top, cursor:'pointer'}">
-                <img :src="ball.img_url" alt="">
-                <p>{{ball.label}}</p>
-              </li>
-            </ul>
-          </div>
-          <!-- <div class="big-cicle">
-              <div class="inline-cicle">
-                <ul>
-                  <li style="transform: translate(-15px, 40px);">1</li>
-                  <li style="transform: translate(66px, -5px);">2</li>
-                  <li style="transform: translate(122px, -15px);">3</li>
-                  <li style="transform: translate(187.5px, -20px);">4</li>
-                  <li style="transform: translate(253.5px, -15px);">5</li>
-                  <li style="transform: translate(319px, -5px);">6</li>
-                  <li style="transform: translate(385px, 40px);">7</li>
-                  <li style="transform: translate(280px, 100px);">8</li>
-                  <li style="transform: translate(187.5px, 105px);">9</li>
-                  <li style="transform: translate(93px, 100px);">10</li>
-                </ul>
+            <div class="line-path" id="line_path"></div>
+            <div class="big-cicle">
+              <div class="line-value">
+                {{ball_data.healthy}}
+                <span class="down-triangle"></span>
               </div>
-            </div> -->
+              <ul class="run-ball">
+                <li v-for="ball in business_tableData" @click="openNewWindow(ball);" :style="{left: ball.left, top: ball.top, cursor:'pointer'}">
+                  <img :src="ball.img_url" alt="" :style="{width: ball.width, height: ball.height}">
+                  <p>{{ball.label}}</p>
+                </li>
+              </ul>
+            </div>
+          </div>
         </div>
         <div style="margin-top:20px;" class="bus-runing-state">
           <span>业务运行情况</span>

@@ -19,16 +19,16 @@ var app = new Vue({
         { label1: '次要', value1: '', label2: '重要', value2: '' }
       ],
       business_tableData: [
-        { business_id: '11', label: 'Openstack V3', img_url: '../assets/images/icon/1.1.1.png', left: 0, top: 0, healthy: '91%', status: '1', response: '37ms', busyness: '2%', using: '100%', downtime_cs: '0', downtime_sc: '16分23秒', mttr: '16分23秒', mtbf: '16分23秒', used_capacity: '58.31GB/339.99GB', calc_capacity: '33%' },
-        { business_id: '22', label: 'vCenter5.5', img_url: '../assets/images/icon/1.1.2.png', left: 0, top: 0, healthy: '92%', status: '1', response: '37ms', busyness: '2%', using: '100%', downtime_cs: '0', downtime_sc: '16分23秒', mttr: '16分23秒', mtbf: '16分23秒', used_capacity: '58.31GB/339.99GB', calc_capacity: '33%' },
-        { business_id: '33', label: 'vCenter6.0', img_url: '../assets/images/icon/1.1.1.png', left: 0, top: 0, healthy: '93%', status: '0', response: '37ms', busyness: '2%', using: '100%', downtime_cs: '0', downtime_sc: '16分23秒', mttr: '16分23秒', mtbf: '16分23秒', used_capacity: '58.31GB/339.99GB', calc_capacity: '33%' },
-        { business_id: '44', label: 'SDN', healthy: '94%', img_url: '../assets/images/icon/1.1.2.png', left: 0, top: 0, status: '1', response: '37ms', busyness: '2%', using: '100%', downtime_cs: '0', downtime_sc: '16分23秒', mttr: '16分23秒', mtbf: '16分23秒', used_capacity: '58.31GB/339.99GB', calc_capacity: '33%' },
-        { business_id: '55', label: '阿里云', healthy: '95%', img_url: '../assets/images/icon/1.1.1.png', left: 0, top: 0, status: '2', response: '37ms', busyness: '2%', using: '100%', downtime_cs: '0', downtime_sc: '16分23秒', mttr: '16分23秒', mtbf: '16分23秒', used_capacity: '58.31GB/339.99GB', calc_capacity: '33%' },
-        { business_id: '66', label: '京东云', healthy: '96%', img_url: '../assets/images/icon/1.1.1.png', left: 0, top: 0, status: '1', response: '37ms', busyness: '2%', using: '100%', downtime_cs: '0', downtime_sc: '16分23秒', mttr: '16分23秒', mtbf: '16分23秒', used_capacity: '58.31GB/339.99GB', calc_capacity: '33%' },
-        { business_id: '77', label: '华三云', healthy: '97%', img_url: '../assets/images/icon/1.1.2.png', left: 0, top: 0, status: '1', response: '37ms', busyness: '2%', using: '100%', downtime_cs: '0', downtime_sc: '16分23秒', mttr: '16分23秒', mtbf: '16分23秒', used_capacity: '58.31GB/339.99GB', calc_capacity: '33%' },
-        { business_id: '88', label: '华云', healthy: '98%', img_url: '../assets/images/icon/1.1.1.png', left: 0, top: 0, status: '1', response: '37ms', busyness: '2%', using: '100%', downtime_cs: '0', downtime_sc: '16分23秒', mttr: '16分23秒', mtbf: '16分23秒', used_capacity: '58.31GB/339.99GB', calc_capacity: '33%' },
-        { business_id: '99', label: '腾讯云', healthy: '99%', img_url: '../assets/images/icon/1.1.2.png', left: 0, top: 0, status: '1', response: '37ms', busyness: '2%', using: '100%', downtime_cs: '0', downtime_sc: '16分23秒', mttr: '16分23秒', mtbf: '16分23秒', used_capacity: '58.31GB/339.99GB', calc_capacity: '33%' },
-        { business_id: '00', label: '百度云', healthy: '100%', img_url: '../assets/images/icon/1.1.1.png', left: 0, top: 0, status: '1', response: '37ms', busyness: '2%', using: '100%', downtime_cs: '0', downtime_sc: '16分23秒', mttr: '16分23秒', mtbf: '16分23秒', used_capacity: '58.31GB/339.99GB', calc_capacity: '33%' },
+        { business_id: '11', label: 'Openstack V3', img_url: '../assets/images/icon/1.1.1.png', width: 0, height: 0, left: 0, top: 0, healthy: '91%', status: '1', response: '37ms', busyness: '2%', using: '100%', downtime_cs: '0', downtime_sc: '16分23秒', mttr: '16分23秒', mtbf: '16分23秒', used_capacity: '58.31GB/339.99GB', calc_capacity: '33%' },
+        { business_id: '22', label: 'vCenter5.5', img_url: '../assets/images/icon/1.1.2.png', width: 0, height: 0, left: 0, top: 0, healthy: '92%', status: '1', response: '37ms', busyness: '2%', using: '100%', downtime_cs: '0', downtime_sc: '16分23秒', mttr: '16分23秒', mtbf: '16分23秒', used_capacity: '58.31GB/339.99GB', calc_capacity: '33%' },
+        { business_id: '33', label: 'vCenter6.0', img_url: '../assets/images/icon/1.1.1.png', width: 0, height: 0, left: 0, top: 0, healthy: '93%', status: '0', response: '37ms', busyness: '2%', using: '100%', downtime_cs: '0', downtime_sc: '16分23秒', mttr: '16分23秒', mtbf: '16分23秒', used_capacity: '58.31GB/339.99GB', calc_capacity: '33%' },
+        { business_id: '44', label: 'SDN', healthy: '94%', img_url: '../assets/images/icon/1.1.2.png', width: 0, height: 0, left: 0, top: 0, status: '1', response: '37ms', busyness: '2%', using: '100%', downtime_cs: '0', downtime_sc: '16分23秒', mttr: '16分23秒', mtbf: '16分23秒', used_capacity: '58.31GB/339.99GB', calc_capacity: '33%' },
+        { business_id: '55', label: '阿里云', healthy: '95%', img_url: '../assets/images/icon/1.1.1.png', width: 0, height: 0, left: 0, top: 0, status: '2', response: '37ms', busyness: '2%', using: '100%', downtime_cs: '0', downtime_sc: '16分23秒', mttr: '16分23秒', mtbf: '16分23秒', used_capacity: '58.31GB/339.99GB', calc_capacity: '33%' },
+        { business_id: '66', label: '京东云', healthy: '96%', img_url: '../assets/images/icon/1.1.1.png', width: 0, height: 0, left: 0, top: 0, status: '1', response: '37ms', busyness: '2%', using: '100%', downtime_cs: '0', downtime_sc: '16分23秒', mttr: '16分23秒', mtbf: '16分23秒', used_capacity: '58.31GB/339.99GB', calc_capacity: '33%' },
+        { business_id: '77', label: '华三云', healthy: '97%', img_url: '../assets/images/icon/1.1.2.png', width: 0, height: 0, left: 0, top: 0, status: '1', response: '37ms', busyness: '2%', using: '100%', downtime_cs: '0', downtime_sc: '16分23秒', mttr: '16分23秒', mtbf: '16分23秒', used_capacity: '58.31GB/339.99GB', calc_capacity: '33%' },
+        { business_id: '88', label: '华云', healthy: '98%', img_url: '../assets/images/icon/1.1.1.png', width: 0, height: 0, left: 0, top: 0, status: '1', response: '37ms', busyness: '2%', using: '100%', downtime_cs: '0', downtime_sc: '16分23秒', mttr: '16分23秒', mtbf: '16分23秒', used_capacity: '58.31GB/339.99GB', calc_capacity: '33%' },
+        { business_id: '99', label: '腾讯云', healthy: '99%', img_url: '../assets/images/icon/1.1.2.png', width: 0, height: 0, left: 0, top: 0, status: '1', response: '37ms', busyness: '2%', using: '100%', downtime_cs: '0', downtime_sc: '16分23秒', mttr: '16分23秒', mtbf: '16分23秒', used_capacity: '58.31GB/339.99GB', calc_capacity: '33%' },
+        { business_id: '00', label: '百度云', healthy: '100%', img_url: '../assets/images/icon/1.1.1.png', width: 0, height: 0, left: 0, top: 0, status: '1', response: '37ms', busyness: '2%', using: '100%', downtime_cs: '0', downtime_sc: '16分23秒', mttr: '16分23秒', mtbf: '16分23秒', used_capacity: '58.31GB/339.99GB', calc_capacity: '33%' },
       ],
       radio1: '储存容量',
       bus_responseSpeed: {
@@ -268,16 +268,19 @@ var app = new Vue({
       }
     },
     runBall() {
+      let allpers;
       let dotLeft = 210;
       let doTop = 60;
       let ahd = 360 / this.ball_data.count * Math.PI / 180;
       this.ball_data.speed += 35;
       this.ball_data.speed = this.ball_data.speed < 360 ? this.ball_data.speed : 35;
       let ainhd = this.ball_data.speed * Math.PI / 180;
-      // let allpers = (Math.cos((ahd*index+ainhd))*b+dotTop)/totTop;
       this.business_tableData.forEach((v, i) => {
-        // v.width = 0;
-        // v.height = 0;
+        allpers = (Math.cos((ahd*i+ainhd))*80+doTop)/(doTop+100);
+        let wpers = Math.max(0.6, allpers);
+        // console.log(wpers, allpers);
+        v.width = wpers * 48 + 'px';
+        v.height = wpers * 48 + 'px';
         v.left = Math.sin(ahd * i + ainhd) * 180 + dotLeft + 'px';
         v.top = Math.cos(ahd * i + ainhd) * 80 + doTop + 'px';
       });
