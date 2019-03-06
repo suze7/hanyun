@@ -240,7 +240,7 @@ var app = new Vue({
         this.runBall();
         index --;
         index = index < 0 ? 9 : index;
-        console.log(index);
+        // console.log(index);
         this.ball_data.healthy = this.business_tableData[index].healthy;
       }, 3000);
       if (el) {
@@ -282,7 +282,7 @@ var app = new Vue({
     },
     showDialog(str) {
       /* 新建业务 */
-      console.log(str);
+      // console.log(str);
       switch (str) {
         case 'dialog':
           this.addBusiDialog = true;
