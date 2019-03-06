@@ -262,6 +262,12 @@ var app = new Vue({
         this.business_tableData[i].top = y + 'px';
       }
     },
+    onBlurInput(evt, str) {
+      console.log(evt.target.type);
+      if (!str) {
+        evt.target.style.border = '1px solid #f00';
+      }
+    },
     runBall() {
       let allpers;
       let dotLeft = 210;
