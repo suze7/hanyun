@@ -145,7 +145,7 @@ var app = new Vue({
         rad: 0,
         run: null,
         time: 2000,
-        healthy: '0%'
+        healthy: null
       }
     }
   },
@@ -231,11 +231,17 @@ var app = new Vue({
     /* 椭圆运动 */
     ballInit() {
       this.drawBall(0, 180, 80, this.ball_data.count);
+      this.ball_data.healthy = this.business_tableData[this.business_tableData.length - 1].healthy;
       this.ball_data.rad = (Math.PI / 180) * Math.round(360 / this.ball_data.count);
       let el = document.getElementById('line_path');
       this.runBall();
+      let index = 9;
       this.ball_data.run = setInterval(() => {
         this.runBall();
+        index --;
+        index = index < 0 ? 9 : index;
+        console.log(index);
+        this.ball_data.healthy = this.business_tableData[index].healthy;
       }, 3000);
       if (el) {
         el.addEventListener("mouseover", () => {
@@ -254,17 +260,6 @@ var app = new Vue({
         let y = oy + r * Math.cos(this.ball_data.rad * i);
         this.business_tableData[i].left = x + 'px';
         this.business_tableData[i].top = y + 'px';
-        // this.ball_data.ball_array.push(
-        //   {
-        //     name: 'ball' + i,
-        //     width: 0,
-        //     height: 0,
-        //     left: x + 'px',
-        //     top: y + 'px',
-        //     bgcolor: i > 4 ? '#f00' : '#0aa',
-        //     allpers: 0
-        //   }
-        // );
       }
     },
     runBall() {
@@ -276,7 +271,7 @@ var app = new Vue({
       this.ball_data.speed = this.ball_data.speed < 360 ? this.ball_data.speed : 35;
       let ainhd = this.ball_data.speed * Math.PI / 180;
       this.business_tableData.forEach((v, i) => {
-        allpers = (Math.cos((ahd*i+ainhd))*80+doTop)/(doTop+100);
+        allpers = (Math.cos((ahd * i + ainhd)) * 80 + doTop) / (doTop + 100);
         let wpers = Math.max(0.6, allpers);
         // console.log(wpers, allpers);
         v.width = wpers * 48 + 'px';
@@ -284,7 +279,6 @@ var app = new Vue({
         v.left = Math.sin(ahd * i + ainhd) * 180 + dotLeft + 'px';
         v.top = Math.cos(ahd * i + ainhd) * 80 + doTop + 'px';
       });
-      // this.ball_data.healthy = this.business_tableData[i].healthy;
     },
     showDialog(str) {
       /* 新建业务 */

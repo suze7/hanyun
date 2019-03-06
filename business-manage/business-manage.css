@@ -137,6 +137,9 @@
 }
 .line-value {
   position: absolute;
+  width: 74px;
+  height: 42px;
+  box-sizing: border-box;
   padding: 15px 25px;
   margin: 0 auto;
   background: #9DABDF;
