@@ -134,3 +134,10 @@
 .left-list-right-echart li.active {
   background: #1F2B5A;
 }
+.fa {
+  font-size: 10px;
+  margin-right: 5px;
+}
+.fa .fa-asterisk {
+  color: #f00;
+}

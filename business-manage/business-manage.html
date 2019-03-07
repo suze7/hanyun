@@ -202,26 +202,26 @@
         <el-form-item label="">
           <table>
             <tr>
-              <td><i class="fa fa-asterisk">&nbsp;</i>名称</td>
+              <td><i class="required-icon">*</i>名称</td>
               <td width="8"></td>
               <!-- <el-input v-model="business_form.name"></el-input> -->
               <td>
                 <input v-model="business_form.name" @blur="onBlurInput($event, business_form.name)" placeholder="名称">
               </td>
               <td width="40"></td>
-              <td>厂商</td>
+              <td><i class="required-icon">*</i>厂商</td>
               <td width="8"></td>
               <td>
                 <input v-model="business_form.name" @blur="onBlurInput($event, business_form.name)" placeholder="厂商">
               </td>
               <td width="40"></td>
-              <td>厂商</td>
+              <td><i class="required-icon">*</i>厂商</td>
               <td width="8"></td>
               <td>
                 <input v-model="business_form.name" @blur="onBlurInput($event, business_form.name)" placeholder="厂商">
               </td>
               <td width="40"></td>
-              <td>责任人</td>
+              <td><i class="required-icon">*</i>责任人</td>
               <td width="8"></td>
               <td>
                 <input v-model="business_form.name" @blur="onBlurInput($event, business_form.name)" placeholder="责任人">
@@ -236,7 +236,7 @@
         <el-form-item>
           <table>
             <tr v-for="resource in resource_list">
-              <td class="text-right">{{resource.label1}}</td>
+              <td class="text-right"><i class="required-icon">*</i>{{resource.label1}}</td>
               <td width="32"></td>
               <td>权值</td>
               <td width="8"></td>
@@ -245,7 +245,7 @@
                 <!-- <input v-model="business_form.name" placeholder="权值"> -->
               </td>
               <td width="120"></td>
-              <td class="text-right">{{resource.label2}}</td>
+              <td class="text-right"><i class="required-icon">*</i>{{resource.label2}}</td>
               <td width="32"></td>
               <td>权值</td>
               <td width="8"></td>
@@ -261,7 +261,7 @@
         <el-form-item label="">
           <table>
             <tr v-for="level in health_levels">
-              <td class="text-center">{{level.label1}}</td>
+              <td class="text-center"><i class="required-icon">*</i>{{level.label1}}</td>
               <td width="32"></td>
               <td>健康度小于</td>
               <td width="8"></td>
@@ -269,7 +269,7 @@
                 <input v-model="level.value1" @blur="onBlurInput($event, level.value1)" :placeholder="level.label1"> %
               </td>
               <td width="120"></td>
-              <td class="text-center">{{level.label2}}</td>
+              <td class="text-center"><i class="required-icon">*</i>{{level.label2}}</td>
               <td width="32"></td>
               <td>健康小于</td>
               <td width="8"></td>
