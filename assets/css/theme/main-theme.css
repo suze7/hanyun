@@ -141,7 +141,6 @@ body {
 .loc-table-color {
   color: #97c1ff;
 }
-.transparent-table.el-table tr:nth-child(even):hover td,
 .transparent-table.el-table tr:nth-child(even) td {
   background: rgba(0, 0, 0, 0.1);
 }
@@ -165,7 +164,6 @@ body {
 .transparent-table.gray-table tr td {
   border-top: 1px solid #8190b8;
 }
-.transparent-white-table.el-table tr:nth-child(even):hover td,
 .transparent-white-table.el-table tr:nth-child(even) td {
   background: rgba(255, 255, 255, 0.1);
 }

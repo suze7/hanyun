@@ -126,7 +126,6 @@ textarea,
 .loc-table-color {
   color: #3498db;
 }
-.transparent-table.el-table tr:nth-child(even):hover td,
 .transparent-table.el-table tr:nth-child(even) td {
   background: #f8f8f8;
 }
@@ -151,7 +150,6 @@ textarea,
 .transparent-table.gray-table tr td {
   border-top: 1px solid #e7e7e7;
 }
-.transparent-white-table.el-table tr:nth-child(even):hover td,
 .transparent-white-table.el-table tr:nth-child(even) td {
   background: #f8f8f8;
 }
