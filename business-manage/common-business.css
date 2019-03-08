@@ -1,5 +1,5 @@
 #homeIndex {
-  min-width: 1366px;
+  width: 1366px;
   padding: 20px 30px;
   font-size: 12px;
 }
@@ -133,11 +133,4 @@
 }
 .left-list-right-echart li.active {
   background: #1F2B5A;
-}
-.fa {
-  font-size: 10px;
-  margin-right: 5px;
-}
-.fa .fa-asterisk {
-  color: #f00;
 }
