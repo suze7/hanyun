@@ -10,6 +10,7 @@
   <link href="../assets/css/theme/main-theme.css" rel="stylesheet" />
   <!-- <link href="../assets/css/theme/light-theme.css" rel="stylesheet" /> -->
   <link href="./index.css" rel="stylesheet" />
+  <link rel="stylesheet" href="../assets/css/font-awesome.css">
 </head>
 
 <body class="app">
@@ -90,8 +91,8 @@
             </div>
           </div>
           <div class="loc-opera-group alarm-opera-group">
-            <el-button type="primary" class="loc-btn icon-btn" @click="showDialog"><img src="../assets/images/icon/btn-icon-1.png" /><span>添加阈值方案</span></el-button>
-            <el-button type="primary" class="loc-btn icon-btn"><img src="../assets/images/icon/btn-icon-6.png" /><span>批量删除</span></el-button>
+            <el-button type="primary" class="loc-btn icon-btn" @click="showDialog"><i class="fa fa-plus-circle"></i><span>添加阈值方案</span></el-button>
+            <el-button type="primary" class="loc-btn icon-btn"><i class="fa fa-trash"></i><span>批量删除</span></el-button>
           </div>
           <el-table :data="tableData" size="mini" class="transparent-table transparent-white-table" style="width: 100%">
             <el-table-column class-name="my-checkbox" type="selection" width="42px"></el-table-column>
@@ -101,8 +102,10 @@
             <el-table-column prop="other" label="描述" class-name="com-txt-overflow" min-width="620px"></el-table-column>
             <el-table-column label="操作" class-name="com-txt-overflow" min-width="90px">
               <template slot-scope="scope">
-                <div style="margin: 6px 0 0 2px;" class="com-hover loc-img-form loc-write-img"></div>
-                <div style="margin: 6px 0 0 2px;" class="com-hover loc-img-form loc-del-img"></div>
+                <i class="fa fa-pencil com-hover"></i>
+                <i class="fa fa-trash com-hover"></i>
+                <!-- <div style="margin: 6px 0 0 2px;" class="com-hover loc-img-form loc-write-img"></div>
+                <div style="margin: 6px 0 0 2px;" class="com-hover loc-img-form loc-del-img"></div> -->
               </template>
             </el-table-column>
           </el-table>

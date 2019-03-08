@@ -235,19 +235,19 @@ var app = new Vue({
           {
             id: '1',
             name: '当前告警',
-            iconClass: 'menu-icon4-9',
+            iconClass: 'fa fa-desktop',
             canTouch: true
           },
           {
             id: '2',
             name: '历史告警',
-            iconClass: 'menu-icon4-a',
+            iconClass: 'fa fa-desktop',
             canTouch: true
           },
           {
             id: '3',
             name: '阈值管理',
-            iconClass: 'menu-icon4-b',
+            iconClass: 'fa fa-desktop',
             canTouch: false, //点开却不会选中
             children: [
               {
@@ -267,7 +267,7 @@ var app = new Vue({
           {
             id: '4',
             name: '策略管理',
-            iconClass: 'menu-icon4-c',
+            iconClass: 'fa fa-desktop',
             canTouch: false, //点开却不会选中
             children: [
               {
@@ -293,19 +293,19 @@ var app = new Vue({
           {
             id: '5',
             name: '系统日志',
-            iconClass: 'menu-icon4-d',
+            iconClass: 'fa fa-desktop',
             canTouch: true
           },
           {
             id: '6',
             name: '窗口事件',
-            iconClass: 'menu-icon4-e',
+            iconClass: 'fa fa-desktop',
             canTouch: true
           },
           {
             id: '7',
             name: 'AIX错误日志',
-            iconClass: 'menu-icon4-f',
+            iconClass: 'fa fa-desktop',
             canTouch: true
           }
         ]
