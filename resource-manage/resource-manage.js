@@ -240,7 +240,7 @@ var app = new Vue({
         list: [{
             id: '1',
             name: '自定义分组',
-            iconClass: 'menu-icon4-1',
+            iconClass: 'fa fa-folder-open',
             canTouch: true, //点开却不会选中
             children: [{
                 id: '1-1',
@@ -259,7 +259,7 @@ var app = new Vue({
           {
             id: '2',
             name: '资源列表',
-            iconClass: 'menu-icon4-2',
+            iconClass: 'fa fa-list-alt',
             canTouch: true,
             children: [{
                 id: '2-1',
