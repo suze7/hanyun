@@ -291,19 +291,19 @@ var app = new Vue({
           {
             id: '3',
             name: '端口管理',
-            iconClass: 'menu-icon4-3',
+            iconClass: 'fa fa-youtube-square',
             canTouch: true
           },
           {
             id: '4',
             name: 'VLAN管理',
-            iconClass: 'menu-icon4-4',
+            iconClass: 'fa fa-vimeo',
             canTouch: true
           },
           {
             id: '5',
             name: '链路管理',
-            iconClass: 'menu-icon4-5',
+            iconClass: 'fa fa-random',
             canTouch: true
           }
         ]

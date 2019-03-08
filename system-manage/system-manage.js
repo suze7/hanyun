@@ -131,7 +131,7 @@ var app = new Vue({
           name: '资源管理',
           img: '../assets/images/menu/menu-4',
           url: '../resource-manage/resource-manage.html',
-          active: true
+          active: false
         },
         {
           name: '虚拟化',
@@ -173,7 +173,7 @@ var app = new Vue({
           name: '系统管理',
           img: '../assets/images/menu/menu-11',
           url: '../system-manage/system-manage.html',
-          active: false
+          active: true
         }
       ];
     },
@@ -184,7 +184,7 @@ var app = new Vue({
         list: [{
             id: '1',
             name: '用户管理',
-            iconClass: 'menu-icon4-r',
+            iconClass: 'fa fa-user-o',
             canTouch: false, //点开却不会选中
             children: [{
                 id: '1-1',
@@ -209,7 +209,7 @@ var app = new Vue({
           {
             id: '2',
             name: '图库管理',
-            iconClass: 'menu-icon4-s',
+            iconClass: 'fa fa-file-image-o',
             canTouch: true,
             children: [{
                 id: '2-1',
@@ -228,7 +228,7 @@ var app = new Vue({
           {
             id: '3',
             name: '系统监听器',
-            iconClass: 'menu-icon4-t',
+            iconClass: 'fa fa-desktop',
             canTouch: true,
             children: [{
                 id: '3-1',
@@ -259,7 +259,7 @@ var app = new Vue({
           {
             id: '4',
             name: '推送配置',
-            iconClass: 'menu-icon4-u',
+            iconClass: 'fa fa-send',
             canTouch: true,
             children: [{
                 id: '4-1',
@@ -278,7 +278,7 @@ var app = new Vue({
           {
             id: '5',
             name: '系统配置',
-            iconClass: 'menu-icon4-v',
+            iconClass: 'fa fa-desktop',
             canTouch: true,
             children: [{
                 id: '5-1',
@@ -309,7 +309,7 @@ var app = new Vue({
           {
             id: '6',
             name: '系统审计',
-            iconClass: 'menu-icon4-w',
+            iconClass: 'fa fa-desktop',
             canTouch: true,
             children: [{
                 id: '6-1',

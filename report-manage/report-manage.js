@@ -118,19 +118,19 @@ var app = new Vue({
           {
             id: '1',
             name: '性能分析列表',
-            iconClass: 'menu-icon4-l',
+            iconClass: 'fa fa-desktop',
             canTouch: false, //点开却不会选中
           },
           {
             id: '2',
             name: '报告分类管理',
-            iconClass: 'menu-icon4-2',
+            iconClass: 'fa fa-desktop',
             canTouch: true
           },
           {
             id: '3',
             name: '可用性报告',
-            iconClass: 'menu-icon4-m',
+            iconClass: 'fa fa-desktop',
             canTouch: false,
             children: [
               {
@@ -144,7 +144,7 @@ var app = new Vue({
           {
             id: '4',
             name: '告警统计报告',
-            iconClass: 'menu-icon4-n',
+            iconClass: 'fa fa-desktop',
             canTouch: false,
             children: [
               {
@@ -158,7 +158,7 @@ var app = new Vue({
           {
             id: '5',
             name: 'TOPN报告',
-            iconClass: 'menu-icon4-o',
+            iconClass: 'fa fa-desktop',
             canTouch: false,
             children: [
               {
@@ -172,7 +172,7 @@ var app = new Vue({
           {
             id: '6',
             name: '类别报告',
-            iconClass: 'menu-icon4-g',
+            iconClass: 'fa fa-desktop',
             canTouch: false,
             children: [
               {
@@ -186,7 +186,7 @@ var app = new Vue({
           {
             id: '7',
             name: '资源性能报告',
-            iconClass: 'menu-icon4-p',
+            iconClass: 'fa fa-desktop',
             canTouch: false,
             children: [
               {
@@ -200,7 +200,7 @@ var app = new Vue({
           {
             id: '8',
             name: '业务报告',
-            iconClass: 'menu-icon4-q',
+            iconClass: 'fa fa-desktop',
             canTouch: false,
             children: [
               {

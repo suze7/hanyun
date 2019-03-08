@@ -165,7 +165,7 @@ var app = new Vue({
           {
             id: '1',
             name: 'IP地址管理',
-            iconClass: 'menu-icon4-i',
+            iconClass: 'fa fa-desktop',
             canTouch: false, //点开却不会选中
             children: [
               {
@@ -215,19 +215,19 @@ var app = new Vue({
           {
             id: '2',
             name: '配置组管理',
-            iconClass: 'menu-icon4-g',
+            iconClass: 'fa fa-desktop',
             canTouch: true
           },
           {
             id: '3',
             name: '设备管理',
-            iconClass: 'menu-icon4-h',
+            iconClass: 'fa fa-desktop',
             canTouch: true
           },
           {
             id: '4',
             name: '告警管理',
-            iconClass: 'menu-icon4-9',
+            iconClass: 'fa fa-desktop',
             canTouch: true
           }
         ]

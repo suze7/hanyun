@@ -197,19 +197,19 @@ var app = new Vue({
           {
             id: '1',
             name: '存储总览',
-            iconClass: 'menu-icon4-6',
+            iconClass: 'fa fa-television',
             canTouch: true //点开却不会选中
           },
           {
             id: '2',
             name: '存储拓扑',
-            iconClass: 'menu-icon4-6',
+            iconClass: 'fa fa-television',
             canTouch: true
           },
           {
             id: '3',
             name: '存储列表',
-            iconClass: 'menu-icon4-7',
+            iconClass: 'fa fa-database ',
             canTouch: false,
             children: [
               {
@@ -235,7 +235,7 @@ var app = new Vue({
           {
             id: '4',
             name: '虚拟化TOPN',
-            iconClass: 'menu-icon4-8',
+            iconClass: 'fa fa-exclamation-triangle',
             canTouch: true
           }
         ]
