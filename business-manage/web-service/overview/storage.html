@@ -13,6 +13,7 @@
   <!-- <link href="../../../assets/css/theme/light-theme.css" rel="stylesheet" /> -->
   <link rel="stylesheet" href="./../../common-business.css">
   <link href="./resource-overview/web-service.css" rel="stylesheet" />
+  <link rel="stylesheet" href="../../../assets/css/font-awesome.css">
 </head>
 
 <body class="app">
@@ -86,9 +87,12 @@
               </el-col>
               <el-col :span="5">
                 管理状态 :
-                <img v-if="business_data.status === '1'" src="../../../assets/images/icon/normal.png" />
+                <i class="fa fa-check-circle" v-if="business_data.status === '1'" style="color:#69F0AE;"></i>
+                <i class="fa fa-exclamation-circle" v-if="business_data.status === '2'" style="color:#FF9E54;"></i>
+                <i class="fa fa-times-circle" v-if="business_data.status === '0'" style="color:#f00;"></i>
+                <!-- <img v-if="business_data.status === '1'" src="../../../assets/images/icon/normal.png" />
                 <img v-if="business_data.status === '2'" src="../../../assets/images/icon/warning.png" />
-                <img v-if="business_data.status === '0'" src="../../../assets/images/icon/error.png" />
+                <img v-if="business_data.status === '0'" src="../../../assets/images/icon/error.png" /> -->
               </el-col>
             </el-row>
             <el-row style="margin-top:10px;">
@@ -100,9 +104,12 @@
               </el-col>
               <el-col :span="5">
                 运行状态 :
-                <img v-if="business_data.status === '1'" src="../../../assets/images/icon/normal.png" />
+                <i class="fa fa-check-circle" v-if="business_data.status === '1'" style="color:#69F0AE;"></i>
+                <i class="fa fa-exclamation-circle" v-if="business_data.status === '2'" style="color:#FF9E54;"></i>
+                <i class="fa fa-times-circle" v-if="business_data.status === '0'" style="color:#f00;"></i>
+                <!-- <img v-if="business_data.status === '1'" src="../../../assets/images/icon/normal.png" />
                 <img v-if="business_data.status === '2'" src="../../../assets/images/icon/warning.png" />
-                <img v-if="business_data.status === '0'" src="../../../assets/images/icon/error.png" />
+                <img v-if="business_data.status === '0'" src="../../../assets/images/icon/error.png" /> -->
               </el-col>
               <el-col :span="4">
                 进流量 :56MB

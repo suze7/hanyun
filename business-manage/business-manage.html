@@ -105,9 +105,12 @@
                 </td>
                 <td>{{state.health}}</td>
                 <td>
-                  <img v-if="state.status === '1'" src="../assets/images/icon/normal.png" />
+                  <i class="fa fa-check-circle" v-if="state.status === '1'" style="color:#69F0AE;" aria-hidden="true"></i>
+                  <i class="fa fa-exclamation-circle" v-if="state.status === '2'" style="color:#FF9E54;" aria-hidden="true"></i>
+                  <i class="fa fa-times-circle" v-if="state.status === '0'" style="color:#f00;" aria-hidden="true"></i>
+                  <!-- <img v-if="state.status === '1'" src="../assets/images/icon/normal.png" />
                   <img v-if="state.status === '2'" src="../assets/images/icon/warning.png" />
-                  <img v-if="state.status === '0'" src="../assets/images/icon/error.png" />
+                  <img v-if="state.status === '0'" src="../assets/images/icon/error.png" /> -->
                 </td>
                 <td>{{state.response}}</td>
                 <td>{{state.busyness}}</td>

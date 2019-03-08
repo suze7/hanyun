@@ -12,6 +12,7 @@
   <link href="../../../assets/css/style.css" rel="stylesheet" />
   <!-- <link href="../../assets/css/theme/light-theme.css" rel="stylesheet" /> -->
   <link rel="stylesheet" href="./../../common-business.css">
+  <link rel="stylesheet" href="../../../assets/css/font-awesome.css">
 </head>
 
 <body class="app">
@@ -22,9 +23,12 @@
           <el-table :data="alarm_tableData" size="mini" class="transparent-table transparent-white-table" style="width: 100%">
             <el-table-column label="级别" sortable class-name="com-txt-overflow" width="88px">
               <template slot-scope="scope">
-                <img v-if="scope.row.alarm_status === '1'" src="../../../assets/images/icon/normal.png" />
+                <i class="fa fa-check-circle" v-if="scope.row.alarm_status === '1'" style="color:#69F0AE;"></i>
+                <i class="fa fa-exclamation-circle" v-if="scope.row.alarm_status === '2'" style="color:#FF9E54;"></i>
+                <i class="fa fa-times-circle" v-if="scope.row.alarm_status === '0'" style="color:#f00;"></i>
+                <!-- <img v-if="scope.row.alarm_status === '1'" src="../../../assets/images/icon/normal.png" />
                 <img v-if="scope.row.alarm_status === '2'" src="../../../assets/images/icon/warning.png" />
-                <img v-if="scope.row.alarm_status === '0'" src="../../../assets/images/icon/error.png" />
+                <img v-if="scope.row.alarm_status === '0'" src="../../../assets/images/icon/error.png" /> -->
               </template>
             </el-table-column>
             <el-table-column prop="alarm_name" sortable sortable label="告警名称" class-name="com-txt-overflow"></el-table-column>

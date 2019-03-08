@@ -310,7 +310,7 @@ var app = new Vue({
       let screenHeight = window.screen.height;
       // console.log(screenWidth, screenHeight);
       let url = `./business-overview.html?id=${obj.business_id}`;
-      window.open(url, '_blank', `width=${screenWidth}, height=${screenHeight - 100},top=0,left=0,toolbar=no,menubar=no,scrollbars=no,resizable=no,location=no,status=no`);
+      window.open(url, '_blank', `width=1366, height=668,top=0,left=0,toolbar=no,menubar=no,scrollbars=no,resizable=no,location=no,status=no`);
       // if (screenHeight <= 768) {
       // } else {
       //   let height = 850;
