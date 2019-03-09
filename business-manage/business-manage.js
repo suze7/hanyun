@@ -263,9 +263,12 @@ var app = new Vue({
       }
     },
     onBlurInput(evt, str) {
-      console.log(evt.target.type);
       if (!str) {
         evt.target.style.border = '1px solid #f00';
+        evt.target.style.boxShadow = '0 0 3px #f00';
+      } else {
+        evt.target.style.border = '1px solid #519dcf';
+        evt.target.style.boxShadow = '0 0 3px #519dcf';
       }
     },
     runBall() {
@@ -303,7 +306,15 @@ var app = new Vue({
     },
     /* 确认新建业务 */
     confirmAddBus() {
-      console.log('确认新增');
+      if (this.business_form.name == '' || this.business_form.name == undefined) {
+        this.$message.error('请完整填写输入框！');
+        return false;
+      } else {
+        this.$message({
+          type: 'success',
+          message: '新增成功！'
+        });
+      }
     },
     openNewWindow(obj) {
       let screenWidth = window.screen.width;

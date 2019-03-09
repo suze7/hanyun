@@ -5,25 +5,25 @@ var app = new Vue({
     menuList: [],
     text1: '',
     options: [{
-        value: '选项1',
-        label: '黄金糕'
-      },
-      {
-        value: '选项2',
-        label: '双皮奶'
-      },
-      {
-        value: '选项3',
-        label: '蚵仔煎'
-      },
-      {
-        value: '选项4',
-        label: '龙须面'
-      },
-      {
-        value: '选项5',
-        label: '北京烤鸭'
-      }
+      value: '选项1',
+      label: '黄金糕'
+    },
+    {
+      value: '选项2',
+      label: '双皮奶'
+    },
+    {
+      value: '选项3',
+      label: '蚵仔煎'
+    },
+    {
+      value: '选项4',
+      label: '龙须面'
+    },
+    {
+      value: '选项5',
+      label: '北京烤鸭'
+    }
     ],
     value: '',
     value1: null,
@@ -159,78 +159,78 @@ var app = new Vue({
     this.setLeftMenuList();
     this.leftMenuList.selectMenu = this.leftMenuList.list[0];
   },
-  mounted() {},
+  mounted() { },
   methods: {
     toRoute(menu) {
       window.location.href = menu.url;
     },
     setMenuList: function () {
       this.menuList = [{
-          name: '首页',
-          img: '../assets/images/menu/menu-1',
-          url: '../index/index.html',
-          active: false
-        },
-        {
-          name: '拓扑管理',
-          img: '../assets/images/menu/menu-2',
-          url: '../topology-manage/topology-manage.html',
-          active: false
-        },
-        {
-          name: '业务管理',
-          img: '../assets/images/menu/menu-3',
-          url: '../business-manage/business-manage.html',
-          active: false
-        },
-        {
-          name: '资源管理',
-          img: '../assets/images/menu/menu-4',
-          url: '../resource-manage/resource-manage.html',
-          active: true
-        },
-        {
-          name: '虚拟化',
-          img: '../assets/images/menu/menu-5',
-          url: '../virtualization/virtualization.html',
-          active: false
-        },
-        {
-          name: '存储管理',
-          img: '../assets/images/menu/menu-6',
-          url: '../storage-manage/storage-manage.html',
-          active: false
-        },
-        {
-          name: '告警管理',
-          img: '../assets/images/menu/menu-7',
-          url: '../alarm-manage/alarm-manage.html',
-          active: false
-        },
-        {
-          name: '智能工具',
-          img: '../assets/images/menu/menu-8',
-          url: '../intelligent-tools/intelligent-tools.html',
-          active: false
-        },
-        {
-          name: '巡检管理',
-          img: '../assets/images/menu/menu-9',
-          url: '../patrol-manage/patrol-report.html',
-          active: false
-        },
-        {
-          name: '报表管理',
-          img: '../assets/images/menu/menu-10',
-          url: '../report-manage/report-manage.html',
-          active: false
-        },
-        {
-          name: '系统管理',
-          img: '../assets/images/menu/menu-11',
-          url: '../system-manage/system-manage.html',
-          active: false
-        }
+        name: '首页',
+        img: '../assets/images/menu/menu-1',
+        url: '../index/index.html',
+        active: false
+      },
+      {
+        name: '拓扑管理',
+        img: '../assets/images/menu/menu-2',
+        url: '../topology-manage/topology-manage.html',
+        active: false
+      },
+      {
+        name: '业务管理',
+        img: '../assets/images/menu/menu-3',
+        url: '../business-manage/business-manage.html',
+        active: false
+      },
+      {
+        name: '资源管理',
+        img: '../assets/images/menu/menu-4',
+        url: '../resource-manage/resource-manage.html',
+        active: true
+      },
+      {
+        name: '虚拟化',
+        img: '../assets/images/menu/menu-5',
+        url: '../virtualization/virtualization.html',
+        active: false
+      },
+      {
+        name: '存储管理',
+        img: '../assets/images/menu/menu-6',
+        url: '../storage-manage/storage-manage.html',
+        active: false
+      },
+      {
+        name: '告警管理',
+        img: '../assets/images/menu/menu-7',
+        url: '../alarm-manage/alarm-manage.html',
+        active: false
+      },
+      {
+        name: '智能工具',
+        img: '../assets/images/menu/menu-8',
+        url: '../intelligent-tools/intelligent-tools.html',
+        active: false
+      },
+      {
+        name: '巡检管理',
+        img: '../assets/images/menu/menu-9',
+        url: '../patrol-manage/patrol-report.html',
+        active: false
+      },
+      {
+        name: '报表管理',
+        img: '../assets/images/menu/menu-10',
+        url: '../report-manage/report-manage.html',
+        active: false
+      },
+      {
+        name: '系统管理',
+        img: '../assets/images/menu/menu-11',
+        url: '../system-manage/system-manage.html',
+        active: false
+      }
       ];
     },
     setLeftMenuList: function () {
@@ -238,74 +238,74 @@ var app = new Vue({
         openMenu: null,
         selectMenu: null,
         list: [{
-            id: '1',
-            name: '自定义分组',
-            iconClass: 'fa fa-folder-open',
-            canTouch: true, //点开却不会选中
-            children: [{
-                id: '1-1',
-                name: '自定义',
-                iconClass: '',
-                canTouch: true
-              },
-              {
-                id: '1-2',
-                name: '自定义1',
-                iconClass: '',
-                canTouch: true
-              }
-            ]
-          },
-          {
-            id: '2',
-            name: '资源列表',
-            iconClass: 'fa fa-list-alt',
-            canTouch: true,
-            children: [{
-                id: '2-1',
-                name: '全部资源',
-                iconClass: '',
-                canTouch: true
-              },
-              {
-                id: '2-2',
-                name: '网络设备',
-                iconClass: '',
-                canTouch: true,
-                children: [{
-                  id: '2-2-1',
-                  name: '网络设备1',
-                  iconClass: '',
-                  canTouch: true,
-                  num: ''
-                }, {
-                  id: '2-2-2',
-                  name: '网络设备2',
-                  iconClass: '',
-                  canTouch: true,
-                  num: '1'
-                }]
-              }
-            ]
-          },
-          {
-            id: '3',
-            name: '端口管理',
-            iconClass: 'fa fa-youtube-square',
+          id: '1',
+          name: '自定义分组',
+          iconClass: 'fa fa-folder-open',
+          canTouch: true, //点开却不会选中
+          children: [{
+            id: '1-1',
+            name: '自定义',
+            iconClass: '',
             canTouch: true
           },
           {
-            id: '4',
-            name: 'VLAN管理',
-            iconClass: 'fa fa-vimeo',
-            canTouch: true
-          },
-          {
-            id: '5',
-            name: '链路管理',
-            iconClass: 'fa fa-random',
+            id: '1-2',
+            name: '自定义1',
+            iconClass: '',
             canTouch: true
           }
+          ]
+        },
+        {
+          id: '2',
+          name: '资源列表',
+          iconClass: 'fa fa-list-alt',
+          canTouch: true,
+          children: [{
+            id: '2-1',
+            name: '全部资源',
+            iconClass: '',
+            canTouch: true
+          },
+          {
+            id: '2-2',
+            name: '网络设备',
+            iconClass: '',
+            canTouch: true,
+            children: [{
+              id: '2-2-1',
+              name: '网络设备1',
+              iconClass: '',
+              canTouch: true,
+              num: ''
+            }, {
+              id: '2-2-2',
+              name: '网络设备2',
+              iconClass: '',
+              canTouch: true,
+              num: '1'
+            }]
+          }
+          ]
+        },
+        {
+          id: '3',
+          name: '端口管理',
+          iconClass: 'fa fa-youtube-square',
+          canTouch: true
+        },
+        {
+          id: '4',
+          name: 'VLAN管理',
+          iconClass: 'fa fa-vimeo',
+          canTouch: true
+        },
+        {
+          id: '5',
+          name: '链路管理',
+          iconClass: 'fa fa-random',
+          canTouch: true
+        }
         ]
       };
     },
@@ -357,9 +357,26 @@ var app = new Vue({
     handleClose() {
 
     },
+    onBlurInput(evt, str) {
+      if (!str) {
+        evt.target.style.border = '1px solid #f00';
+        evt.target.style.boxShadow = '0 0 3px #f00';
+      } else {
+        evt.target.style.border = '1px solid #519dcf';
+        evt.target.style.boxShadow = '0 0 3px #519dcf';
+      }
+    },
     submitDialog() {
-
-      this.dialogVisible = false;
+      if (1) {
+        this.$message.error('请完整填写输入框！');
+        return false;
+      } else {
+        this.dialogVisible = false;
+        this.$message({
+          type: 'success',
+          message: '新增成功！'
+        });
+      }
     }
   }
 });

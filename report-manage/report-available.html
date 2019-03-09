@@ -140,15 +140,15 @@
           <div class="my-edit-form">
             <p class="my-edit-title">基本信息</p>
             <div class="my-edit-group">
-              <span class="my-group-title">报告策略名称</span>
+              <span class="my-group-title"><i class="required-icon">*</i>报告策略名称</span>
               <div class="my-group-content">
-                <input placeholder="报告策略名称" class="loc-input" v-model="text1" />
+                <input placeholder="报告策略名称" @blur="onBlurInput($event, '')" class="loc-input" v-model="text1" />
               </div>
             </div>
             <div class="my-edit-group">
-              <span class="my-group-title">报告策略描述</span>
+              <span class="my-group-title"><i class="required-icon">*</i>报告策略描述</span>
               <div class="my-group-content my-long-content">
-                <input placeholder="报告策略名称" class="loc-input" v-model="text1" />
+                <input placeholder="报告策略名称" @blur="onBlurInput($event, '')" class="loc-input" v-model="text1" />
               </div>
             </div>
             <div class="my-edit-group">
@@ -855,15 +855,15 @@
       <div class="resource-dialog">
         <div>
           <div class="my-edit-group">
-            <span class="my-group-title">资源名称</span>
+            <span class="my-group-title"><i class="required-icon">*</i>资源名称</span>
             <div class="my-group-content">
-              <input type="text" placeholder="资源名称" />
+              <input type="text" @blur="onBlurInput($event, '')" placeholder="资源名称" />
             </div>
           </div>
           <div class="my-edit-group">
-            <span class="my-group-title">IP地址</span>
+            <span class="my-group-title"><i class="required-icon">*</i>IP地址</span>
             <div class="my-group-content">
-              <input type="text" placeholder="IP地址" />
+              <input type="text" @blur="onBlurInput($event, '')" placeholder="IP地址" />
             </div>
           </div>
           <el-button class="loc-btn reset-btn report-ava-reset">重置</el-button>

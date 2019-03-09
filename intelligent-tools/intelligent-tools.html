@@ -136,27 +136,27 @@
       <div class="equip-dialog">
         <div class="my-edit-form">
           <div class="my-edit-group">
-            <span class="my-group-title">部门名称</span>
+            <span class="my-group-title"><i class="required-icon">*</i>部门名称</span>
             <div class="my-group-content">
-              <input type="text" placeholder="部门名称" />
+              <input type="text" @blur="onBlurInput($event, '')" placeholder="部门名称" />
             </div>
           </div>
           <div class="my-edit-group">
-            <span class="my-group-title">位置</span>
+            <span class="my-group-title"><i class="required-icon">*</i>位置</span>
             <div class="my-group-content">
-              <input type="text" placeholder="位置" />
+              <input type="text" @blur="onBlurInput($event, '')" placeholder="位置" />
             </div>
           </div>
           <div class="my-edit-group">
-            <span class="my-group-title">绑定设备</span>
+            <span class="my-group-title"><i class="required-icon">*</i>绑定设备</span>
             <div class="my-group-content">
-              <input type="text" placeholder="绑定设备" />
+              <input type="text" @blur="onBlurInput($event, '')" placeholder="绑定设备" />
             </div>
           </div>
         </div>
         <div class="my-edit-form">
           <div class="my-edit-group my-fill-line">
-            <span class="my-group-title">网段类型</span>
+            <span class="my-group-title"><i class="required-icon">*</i>网段类型</span>
             <div class="my-group-content my-group-fill equip-radio-content">
               <el-radio class="my-simple-radio" v-model="radio" label="1">子网</el-radio>
               <el-radio class="my-simple-radio" v-model="radio" label="2">IP地段</el-radio>
@@ -167,19 +167,19 @@
           <div class="my-edit-group">
             <span class="my-group-title">子网段</span>
             <div class="my-group-content">
-              <input type="text" />
+              <input type="text" @blur="onBlurInput($event, '')" />
             </div>
           </div>
           <div class="my-edit-group">
-            <span class="my-group-title">子网掩码</span>
+            <span class="my-group-title"><i class="required-icon">*</i>子网掩码</span>
             <div class="my-group-content">
-              <input type="text" />
+              <input type="text" @blur="onBlurInput($event, '')" />
             </div>
           </div>
           <div class="my-edit-group">
-            <span class="my-group-title">标签</span>
+            <span class="my-group-title"><i class="required-icon">*</i>标签</span>
             <div class="my-group-content">
-              <input type="text" />
+              <input type="text" @blur="onBlurInput($event, '')" />
             </div>
           </div>
         </div>
@@ -187,19 +187,19 @@
           <div class="my-edit-group">
             <span class="my-group-title">起始地址</span>
             <div class="my-group-content">
-              <input type="text" />
+              <input type="text" @blur="onBlurInput($event, '')" />
             </div>
           </div>
           <div class="my-edit-group">
             <span class="my-group-title">结束地址</span>
             <div class="my-group-content">
-              <input type="text" />
+              <input type="text" @blur="onBlurInput($event, '')" />
             </div>
           </div>
           <div class="my-edit-group">
             <span class="my-group-title">标签</span>
             <div class="my-group-content">
-              <input type="text" />
+              <input type="text" @blur="onBlurInput($event, '')" />
             </div>
           </div>
         </div>

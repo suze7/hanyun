@@ -147,21 +147,21 @@
         </div>
         <div class="my-edit-form" v-if="radio === '1'">
           <div class="my-edit-group">
-            <span class="my-group-title">子网段</span>
+            <span class="my-group-title"><i class="required-icon">*</i>子网段</span>
             <div class="my-group-content">
-              <input type="text" />
+              <input type="text" @blur="onBlurInput($event, '')" />
             </div>
           </div>
           <div class="my-edit-group">
-            <span class="my-group-title">子网掩码</span>
+            <span class="my-group-title"><i class="required-icon">*</i>子网掩码</span>
             <div class="my-group-content">
-              <input type="text" />
+              <input type="text" @blur="onBlurInput($event, '')" />
             </div>
           </div>
           <div class="my-edit-group">
-            <span class="my-group-title">标签</span>
+            <span class="my-group-title"><i class="required-icon">*</i>标签</span>
             <div class="my-group-content">
-              <input type="text" />
+              <input type="text" @blur="onBlurInput($event, '')" />
             </div>
           </div>
         </div>
@@ -169,19 +169,19 @@
           <div class="my-edit-group">
             <span class="my-group-title">起始地址</span>
             <div class="my-group-content">
-              <input type="text" />
+              <input type="text" @blur="onBlurInput($event, '')" />
             </div>
           </div>
           <div class="my-edit-group">
-            <span class="my-group-title">结束地址</span>
+            <span class="my-group-title"><i class="required-icon">*</i>结束地址</span>
             <div class="my-group-content">
-              <input type="text" />
+              <input type="text" @blur="onBlurInput($event, '')" />
             </div>
           </div>
           <div class="my-edit-group">
-            <span class="my-group-title">标签</span>
+            <span class="my-group-title"><i class="required-icon">*</i>标签</span>
             <div class="my-group-content">
-              <input type="text" />
+              <input type="text" @blur="onBlurInput($event, '')" />
             </div>
           </div>
         </div>

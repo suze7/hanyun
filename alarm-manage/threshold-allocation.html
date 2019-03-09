@@ -153,19 +153,19 @@
           </div>
         </div>
         <div class="my-edit-group my-fill-line">
-          <span class="my-group-title">阈值方案名称</span>
+          <span class="my-group-title"><i class="required-icon">*</i>阈值方案名称</span>
           <div class="my-group-content">
-            <input type="text" placeholder="阈值方案名称" />
+            <input @blur="onBlurInput($event, '')" type="text" placeholder="阈值方案名称" />
           </div>
         </div>
         <div class="my-edit-group my-fill-line">
           <span class="my-group-title">描述</span>
           <div class="my-group-content alarm-textarea">
-            <textarea placeholder="描述......."></textarea>
+            <textarea @blur="onBlurInput($event, '')" placeholder="描述......."></textarea>
           </div>
         </div>
         <div class="my-edit-group my-fill-line">
-          <span class="my-group-title">描述</span>
+          <span class="my-group-title"><i class="required-icon">*</i>描述</span>
           <div class="my-group-content my-group-fill alarm-radio-content">
             <el-radio class="my-simple-radio" v-model="radio" label="1">容量</el-radio>
             <el-radio class="my-simple-radio" v-model="radio" label="2">包速率</el-radio>
@@ -179,7 +179,7 @@
           </div>
         </div>
         <div class="my-edit-group my-fill-line alarm-edit-group">
-          <span class="my-group-title">规则</span>
+          <span class="my-group-title"><i class="required-icon">*</i>规则</span>
           <div class="my-group-content">
             <el-select v-model="value" popper-class="loc-main-selectbox loc-white-selectbox" class="loc-main-select loc-white-select"
               placeholder="请选择">
@@ -188,7 +188,7 @@
             </el-select>
           </div>
           <div class="my-group-content">
-            <input type="text" />
+            <input type="text" @blur="onBlurInput($event, '')" />
           </div>
           <div class="my-group-content">
             <el-select v-model="value" popper-class="loc-main-selectbox loc-white-selectbox" class="loc-main-select loc-white-select"
@@ -211,7 +211,7 @@
             </el-select>
           </div>
           <div class="my-group-content">
-            <input type="text" />
+            <input type="text" @blur="onBlurInput($event, '')" />
           </div>
           <div class="my-group-content">
             <el-select v-model="value" popper-class="loc-main-selectbox loc-white-selectbox" class="loc-main-select loc-white-select"
@@ -234,7 +234,7 @@
             </el-select>
           </div>
           <div class="my-group-content">
-            <input type="text" />
+            <input type="text" @blur="onBlurInput($event, '')" />
           </div>
           <div class="my-group-content">
             <el-select v-model="value" popper-class="loc-main-selectbox loc-white-selectbox" class="loc-main-select loc-white-select"
@@ -257,7 +257,7 @@
             </el-select>
           </div>
           <div class="my-group-content">
-            <input type="text" />
+            <input type="text" @blur="onBlurInput($event, '')" />
           </div>
           <div class="my-group-content">
             <el-select v-model="value" popper-class="loc-main-selectbox loc-white-selectbox" class="loc-main-select loc-white-select"
@@ -280,7 +280,7 @@
             </el-select>
           </div>
           <div class="my-group-content">
-            <input type="text" />
+            <input type="text" @blur="onBlurInput($event, '')" />
           </div>
           <div class="my-group-content">
             <el-select v-model="value" popper-class="loc-main-selectbox loc-white-selectbox" class="loc-main-select loc-white-select"

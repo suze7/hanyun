@@ -472,6 +472,16 @@ var app = new Vue({
     setShowDetail(flag) {
       this.showDetail = flag;
     },
+    /* 输入框失焦点 */
+    onBlurInput(evt, str) {
+      if (!str) {
+        evt.target.style.border = '1px solid #f00';
+        evt.target.style.boxShadow = '0 0 3px #f00';
+      } else {
+        evt.target.style.border = '1px solid #519dcf';
+        evt.target.style.boxShadow = '0 0 3px #519dcf';
+      }
+    },
     changeTab(num) {
       this.tabNum = num;
     },

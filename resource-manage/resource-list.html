@@ -223,7 +223,8 @@
                       </el-popover>
                     </div>
                   </div>
-                  <div slot="reference" style="margin: 6px 0 0 2px;" class="com-hover loc-img-form loc-opera-img"></div>
+                  <i slot="reference" class="fa fa-cog com-hover"></i>
+                  <!-- <div slot="reference" style="margin: 6px 0 0 2px;" class="com-hover loc-img-form loc-opera-img"></div> -->
                 </el-popover>
               </template>
             </el-table-column>
@@ -248,7 +249,7 @@
           <div class="my-edit-group">
             <span class="my-group-title">资源类别</span>
             <div class="my-group-content">
-              <el-select v-model="value" popper-class="loc-main-selectbox loc-white-selectbox" class="loc-main-select loc-white-select"
+              <el-select v-model="value" popper-class="loc-main-selectbox loc-white-selectbox" @change="selectChange" class="loc-main-select loc-white-select"
                 placeholder="-请选择-">
                 <el-option v-for="item in options" :key="item.value" :label="item.label" :value="item.value">
                 </el-option>
@@ -269,19 +270,19 @@
         <div class="my-edit-form">
           <p class="my-edit-title">基本信息</p>
           <div class="my-edit-group">
-            <span class="my-group-title">资源名称</span>
+            <span class="my-group-title"><i class="required-icon">*</i>资源名称</span>
             <div class="my-group-content">
-              <input type="text" placeholder="资源名称" />
+              <input type="text" @blur="onBlurInput($event, '22')" placeholder="资源名称" />
             </div>
           </div>
           <div class="my-edit-group">
             <span class="my-group-title">IP地址</span>
             <div class="my-group-content">
-              <input type="text" placeholder="IP地址" />
+              <input type="text" @blur="onBlurInput($event, '')" placeholder="IP地址" />
             </div>
           </div>
           <div class="my-edit-group">
-            <span class="my-group-title">管理域</span>
+            <span class="my-group-title"><i class="required-icon">*</i>管理域</span>
             <div class="my-group-content">
               <el-select v-model="value" popper-class="loc-main-selectbox loc-white-selectbox" class="loc-main-select loc-white-select"
                 placeholder="-请选择-">
@@ -291,7 +292,7 @@
             </div>
           </div>
           <div class="my-edit-group">
-            <span class="my-group-title">资源组</span>
+            <span class="my-group-title"><i class="required-icon">*</i>资源组</span>
             <div class="my-group-content">
               <el-select v-model="value" popper-class="loc-main-selectbox loc-white-selectbox" class="loc-main-select loc-white-select"
                 placeholder="-请选择-">
@@ -321,27 +322,27 @@
         <div class="my-edit-form">
           <p class="my-edit-title">访问配置</p>
           <div class="my-edit-group">
-            <span class="my-group-title">访问协议</span>
+            <span class="my-group-title"><i class="required-icon">*</i>访问协议</span>
             <div class="my-group-content">
-              <input type="text" placeholder="访问协议" />
+              <input type="text" @blur="onBlurInput($event, '')" placeholder="访问协议" />
             </div>
           </div>
           <div class="my-edit-group">
-            <span class="my-group-title">SNMP端口</span>
+            <span class="my-group-title"><i class="required-icon">*</i>SNMP端口</span>
             <div class="my-group-content">
-              <input type="text" placeholder="SNMP端口" />
+              <input type="text" @blur="onBlurInput($event, '')" placeholder="SNMP端口" />
             </div>
           </div>
           <div class="my-edit-group">
-            <span class="my-group-title">重试次数</span>
+            <span class="my-group-title"><i class="required-icon">*</i>重试次数</span>
             <div class="my-group-content">
-              <input type="text" placeholder="重试次数" />
+              <input type="text" @blur="onBlurInput($event, '')" placeholder="重试次数" />
             </div>
           </div>
           <div class="my-edit-group">
-            <span class="my-group-title">访问协议</span>
+            <span class="my-group-title"><i class="required-icon">*</i>访问协议</span>
             <div class="my-group-content">
-              <input type="text" placeholder="访问协议" />
+              <input type="text" @blur="onBlurInput($event, '')" placeholder="访问协议" />
             </div>
           </div>
         </div>

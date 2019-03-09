@@ -140,15 +140,15 @@
           <div class="my-edit-form">
             <p class="my-edit-title">基本信息</p>
             <div class="my-edit-group">
-              <span class="my-group-title">报告策略名称</span>
+              <span class="my-group-title"><i class="required-icon">*</i>报告策略名称</span>
               <div class="my-group-content">
-                <input placeholder="报告策略名称" class="loc-input" v-model="text1" />
+                <input placeholder="报告策略名称" @blur="onBlurInput($event, '')" class="loc-input" v-model="text1" />
               </div>
             </div>
             <div class="my-edit-group">
-              <span class="my-group-title">报告策略描述</span>
+              <span class="my-group-title"><i class="required-icon">*</i>报告策略描述</span>
               <div class="my-group-content my-long-content">
-                <input placeholder="报告策略名称" class="loc-input" v-model="text1" />
+                <input placeholder="报告策略名称" @blur="onBlurInput($event, '')" class="loc-input" v-model="text1" />
               </div>
             </div>
             <div class="my-edit-group">

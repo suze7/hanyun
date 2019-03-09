@@ -151,7 +151,8 @@
                       </el-popover>
                     </div>
                   </div>
-                  <div slot="reference" style="margin: 6px 0 0 2px;" class="com-hover loc-img-form loc-opera-img"></div>
+                  <i slot="reference" class="fa fa-cog com-hover"></i>
+                  <!-- <div slot="reference" style="margin: 6px 0 0 2px;" class="com-hover loc-img-form loc-opera-img"></div> -->
                 </el-popover>
               </template>
             </el-table-column>
@@ -172,7 +173,7 @@
       class="blue-dialog my-edit-dialog">
       <div class="resource-dialog">
         <div class="my-edit-group">
-          <span class="my-group-title">资源名称</span>
+          <span class="my-group-title"><i class="required-icon">*</i>资源名称</span>
           <div class="my-group-content">
             <el-select v-model="value" popper-class="loc-main-selectbox loc-white-selectbox" class="loc-main-select loc-white-select"
               placeholder="-请选择-">
@@ -182,7 +183,7 @@
           </div>
         </div>
         <div class="my-edit-group">
-          <span class="my-group-title">源设备</span>
+          <span class="my-group-title"><i class="required-icon">*</i>源设备</span>
           <div class="my-group-content">
             <el-select v-model="value" popper-class="loc-main-selectbox loc-white-selectbox" class="loc-main-select loc-white-select"
               placeholder="-请选择-">
@@ -192,7 +193,7 @@
           </div>
         </div>
         <div class="my-edit-group">
-          <span class="my-group-title">目标设备</span>
+          <span class="my-group-title"><i class="required-icon">*</i>目标设备</span>
           <div class="my-group-content">
             <el-select v-model="value" popper-class="loc-main-selectbox loc-white-selectbox" class="loc-main-select loc-white-select"
               placeholder="-请选择-">
@@ -202,15 +203,15 @@
           </div>
         </div>
         <div class="my-edit-group">
-          <span class="my-group-title">源端口</span>
+          <span class="my-group-title"><i class="required-icon">*</i>源端口</span>
           <div class="my-group-content">
-            <input type="text" placeholder="源端口" />
+            <input type="text" @blur="onBlurInput($event, '')" placeholder="源端口" />
           </div>
         </div>
         <div class="my-edit-group">
-          <span class="my-group-title">目标端口</span>
+          <span class="my-group-title"><i class="required-icon">*</i>目标端口</span>
           <div class="my-group-content">
-            <input type="text" placeholder="目标端口" />
+            <input type="text" @blur="onBlurInput($event, '')" placeholder="目标端口" />
           </div>
         </div>
       </div>

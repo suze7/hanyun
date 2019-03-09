@@ -118,15 +118,15 @@
         <div class="my-edit-form">
           <p class="my-edit-title">基本信息</p>
           <div class="my-edit-group">
-            <span class="my-group-title">策略名称</span>
+            <span class="my-group-title"><i class="required-icon">*</i>策略名称</span>
             <div class="my-group-content">
-              <input type="text" placeholder="策略名称" />
+              <input type="text" @blur="onBlurInput($event, '')" placeholder="策略名称" />
             </div>
           </div>
           <div class="my-edit-group">
-            <span class="my-group-title">策略描述</span>
+            <span class="my-group-title"><i class="required-icon">*</i>策略描述</span>
             <div class="my-group-content" style="width: 540px">
-              <input type="text" placeholder="策略描述" />
+              <input type="text" @blur="onBlurInput($event, '')" placeholder="策略描述" />
             </div>
           </div>
         </div>
@@ -165,7 +165,7 @@
               <span class="my-group-title">启用<el-checkbox class="my-checkbox alarm-checkbox" v-model="checked"></el-checkbox></span>
             </div>
             <div class="my-edit-group my-fill-line">
-              <span class="my-group-title">起始时段</span>
+              <span class="my-group-title"><i class="required-icon">*</i>起始时段</span>
               <div class="my-group-content">
                 <el-select v-model="value" popper-class="loc-main-selectbox loc-white-selectbox" class="loc-main-select loc-white-select"
                   placeholder="请选择">
@@ -184,7 +184,7 @@
               <span class="alarm-content-last">分</span>
             </div>
             <div class="my-edit-group my-fill-line">
-              <span class="my-group-title">结束时段</span>
+              <span class="my-group-title"><i class="required-icon">*</i>结束时段</span>
               <div class="my-group-content">
                 <el-select v-model="value" popper-class="loc-main-selectbox loc-white-selectbox" class="loc-main-select loc-white-select"
                   placeholder="请选择">
@@ -203,7 +203,7 @@
               <span class="alarm-content-last">分</span>
             </div>
             <div class="my-edit-group my-fill-line">
-              <span class="my-group-title">告警策略</span>
+              <span class="my-group-title"><i class="required-icon">*</i>告警策略</span>
               <div class="my-group-content">
                 <el-select v-model="value" popper-class="loc-main-selectbox loc-white-selectbox" class="loc-main-select loc-white-select"
                   placeholder="请选择">

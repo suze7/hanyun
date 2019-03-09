@@ -143,9 +143,9 @@
       <div class="equip-padding-dialog">
         <div class="my-edit-form">
           <div class="my-edit-group">
-            <span class="my-group-title">老化时间周期（天）</span>
+            <span class="my-group-title"><i class="required-icon">*</i>老化时间周期（天）</span>
             <div class="my-group-content">
-              <input type="text" placeholder="90" />
+              <input type="text" @blur="onBlurInput($event, '')" placeholder="90" />
             </div>
           </div>
         </div>

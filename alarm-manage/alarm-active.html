@@ -119,15 +119,15 @@
         <div class="my-edit-form">
           <p class="my-edit-title">基本信息</p>
           <div class="my-edit-group">
-            <span class="my-group-title">动作名称</span>
+            <span class="my-group-title"><i class="required-icon">*</i>动作名称</span>
             <div class="my-group-content">
-              <input type="text" placeholder="策略名称" />
+              <input type="text" @blur="onBlurInput($event, '')" placeholder="策略名称" />
             </div>
           </div>
           <div class="my-edit-group">
-            <span class="my-group-title">动作描述</span>
+            <span class="my-group-title"><i class="required-icon">*</i>动作描述</span>
             <div class="my-group-content" style="width: 532px">
-              <input type="text" placeholder="策略描述" />
+              <input type="text" @blur="onBlurInput($event, '')" placeholder="策略描述" />
             </div>
           </div>
         </div>
@@ -171,7 +171,7 @@
         <div class="my-edit-form">
           <p class="my-edit-title">执行动作</p>
           <div class="my-edit-group">
-            <span class="my-group-title">发送邮件</span>
+            <span class="my-group-title"><i class="required-icon">*</i>发送邮件</span>
             <div class="my-group-content">
               <el-select v-model="value" popper-class="loc-main-selectbox loc-white-selectbox" class="loc-main-select loc-white-select"
                 placeholder="请选择">

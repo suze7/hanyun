@@ -318,9 +318,27 @@ var app = new Vue({
     handleClose() {
       
     },
+    /* 输入框失焦点 */
+    onBlurInput(evt, str) {
+      if (!str) {
+        evt.target.style.border = '1px solid #f00';
+        evt.target.style.boxShadow = '0 0 3px #f00';
+      } else {
+        evt.target.style.border = '1px solid #519dcf';
+        evt.target.style.boxShadow = '0 0 3px #519dcf';
+      }
+    },
     submitDialog() {
-      
-      this.dialogVisible = false;
+      if (1) {
+        this.$message.error('请完整填写输入框！');
+        return false;
+      } else {
+        this.dialogVisible = false;
+        this.$message({
+          type: 'success',
+          message: '新增成功！'
+        });
+      }
     },
     toDetail() {
       window.location.href = './config-manage1.html';

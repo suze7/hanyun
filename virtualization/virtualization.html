@@ -229,7 +229,8 @@
                       </el-popover>
                     </div>
                   </div>
-                  <div slot="reference" style="margin: 6px 0 0 2px;" class="com-hover loc-img-form loc-opera-img"></div>
+                  <i slot="reference" class="fa fa-cog com-hover"></i>
+                  <!-- <div slot="reference" style="margin: 6px 0 0 2px;" class="com-hover loc-img-form loc-opera-img"></div> -->
                 </el-popover>
               </template>
             </el-table-column>
@@ -256,7 +257,7 @@
         <div class="my-edit-form">
           <p class="my-edit-title">资源分类</p>
           <div class="my-edit-group">
-            <span class="my-group-title">资源类别</span>
+            <span class="my-group-title"><i class="required-icon">*</i>资源类别</span>
             <div class="my-group-content">
               <el-select v-model="value" popper-class="loc-main-selectbox loc-white-selectbox" class="loc-main-select loc-white-select"
                 placeholder="-请选择-">
@@ -266,7 +267,7 @@
             </div>
           </div>
           <div class="my-edit-group">
-            <span class="my-group-title">资源类型</span>
+            <span class="my-group-title"><i class="required-icon">*</i>资源类型</span>
             <div class="my-group-content">
               <el-select v-model="value" popper-class="loc-main-selectbox loc-white-selectbox" class="loc-main-select loc-white-select"
                 placeholder="-请选择-">
@@ -279,29 +280,19 @@
         <div class="my-edit-form">
           <p class="my-edit-title">基本信息</p>
           <div class="my-edit-group">
-            <span class="my-group-title">资源名称</span>
+            <span class="my-group-title"><i class="required-icon">*</i>资源名称</span>
             <div class="my-group-content">
-              <input type="text" placeholder="资源名称" />
+              <input type="text" @blur="onBlurInput($event, '')" placeholder="资源名称" />
             </div>
           </div>
           <div class="my-edit-group">
-            <span class="my-group-title">IP地址</span>
+            <span class="my-group-title"><i class="required-icon">*</i>IP地址</span>
             <div class="my-group-content">
-              <input type="text" placeholder="IP地址" />
+              <input type="text" @blur="onBlurInput($event, '')" placeholder="IP地址" />
             </div>
           </div>
           <div class="my-edit-group">
-            <span class="my-group-title">管理域</span>
-            <div class="my-group-content">
-              <el-select v-model="value" popper-class="loc-main-selectbox loc-white-selectbox" class="loc-main-select loc-white-select"
-                placeholder="-请选择-">
-                <el-option v-for="item in options" :key="item.value" :label="item.label" :value="item.value">
-                </el-option>
-              </el-select>
-            </div>
-          </div>
-          <div class="my-edit-group">
-            <span class="my-group-title">资源组</span>
+            <span class="my-group-title"><i class="required-icon">*</i>管理域</span>
             <div class="my-group-content">
               <el-select v-model="value" popper-class="loc-main-selectbox loc-white-selectbox" class="loc-main-select loc-white-select"
                 placeholder="-请选择-">
@@ -311,7 +302,17 @@
             </div>
           </div>
           <div class="my-edit-group">
-            <span class="my-group-title">监控周期</span>
+            <span class="my-group-title"><i class="required-icon">*</i>资源组</span>
+            <div class="my-group-content">
+              <el-select v-model="value" popper-class="loc-main-selectbox loc-white-selectbox" class="loc-main-select loc-white-select"
+                placeholder="-请选择-">
+                <el-option v-for="item in options" :key="item.value" :label="item.label" :value="item.value">
+                </el-option>
+              </el-select>
+            </div>
+          </div>
+          <div class="my-edit-group">
+            <span class="my-group-title"><i class="required-icon">*</i>监控周期</span>
             <div class="my-group-content">
               <el-select v-model="value" popper-class="loc-main-selectbox loc-white-selectbox" class="loc-main-select loc-white-select"
                 placeholder="-请选择-">
@@ -333,13 +334,13 @@
           <div class="my-edit-group">
             <span class="my-group-title">用户名</span>
             <div class="my-group-content">
-              <input type="text" placeholder="用户名" />
+              <input type="text" @blur="onBlurInput($event, '')" placeholder="用户名" />
             </div>
           </div>
           <div class="my-edit-group">
             <span class="my-group-title">密码</span>
             <div class="my-group-content">
-              <input type="password" placeholder="密码" />
+              <input type="password" @blur="onBlurInput($event, '')" placeholder="密码" />
             </div>
           </div>
         </div>
@@ -353,37 +354,37 @@
         </div>
         <div class="my-edit-form" v-if="tabNum === 0">
           <div class="my-edit-group">
-            <span class="my-group-title">读共同体</span>
+            <span class="my-group-title"><i class="required-icon">*</i>读共同体</span>
             <div class="my-group-content">
-              <input type="text" placeholder="读共同体" />
+              <input type="text" @blur="onBlurInput($event, '')" placeholder="读共同体" />
             </div>
           </div>
           <div class="my-edit-group">
-            <span class="my-group-title">资源类型</span>
+            <span class="my-group-title"><i class="required-icon">*</i>资源类型</span>
             <div class="my-group-content">
-              <input type="text" placeholder="资源类型" />
+              <input type="text" @blur="onBlurInput($event, '')" placeholder="资源类型" />
             </div>
           </div>
         </div>
         <div class="my-edit-form" v-if="tabNum === 1">
           <div class="my-edit-group">
-            <span class="my-group-title">读共同体</span>
+            <span class="my-group-title"><i class="required-icon">*</i>读共同体</span>
             <div class="my-group-content">
               <input type="text" placeholder="读共同体" />
             </div>
           </div>
           <div class="my-edit-group">
-            <span class="my-group-title">资源类型</span>
+            <span class="my-group-title"><i class="required-icon">*</i>资源类型</span>
             <div class="my-group-content">
-              <input type="text" placeholder="资源类型" />
+              <input type="text" @blur="onBlurInput($event, '')" placeholder="资源类型" />
             </div>
           </div>
         </div>
         <div class="my-edit-form" v-if="tabNum === 2">
           <div class="my-edit-group">
-            <span class="my-group-title">用户名</span>
+            <span class="my-group-title"><i class="required-icon">*</i>用户名</span>
             <div class="my-group-content">
-              <input type="text" placeholder="用户名" />
+              <input type="text" @blur="onBlurInput($event, '')" placeholder="用户名" />
             </div>
           </div>
           <div class="my-edit-group">
@@ -425,13 +426,13 @@
           <div class="my-edit-group">
             <span class="my-group-title">加密密码</span>
             <div class="my-group-content">
-              <input type="password" placeholder="加密密码" />
+              <input type="password" @blur="onBlurInput($event, '')" placeholder="加密密码" />
             </div>
           </div>
           <div class="my-edit-group">
             <span class="my-group-title">上下文</span>
             <div class="my-group-content" style="width: 464px">
-              <input type="text" placeholder="上下文" />
+              <input type="text" @blur="onBlurInput($event, '')" placeholder="上下文" />
             </div>
           </div>
         </div>

@@ -34,37 +34,37 @@ var app = new Vue({
     tipSelect: [{
       id: 1,
       name: '全部'
-    },{
+    }, {
       id: 2,
       name: '网络设备'
-    },{
+    }, {
       id: 3,
       name: '服务器'
-    },{
+    }, {
       id: 4,
       name: '数据库'
-    },{
+    }, {
       id: 5,
       name: '应用服务器'
-    },{
+    }, {
       id: 6,
       name: '网络服务器'
-    },{
+    }, {
       id: 7,
       name: '邮件服务器'
-    },{
+    }, {
       id: 8,
       name: '中间件'
-    },{
+    }, {
       id: 9,
       name: '存储设备'
-    },{
+    }, {
       id: 10,
       name: '光纤交换机'
-    },{
+    }, {
       id: 11,
       name: '虚拟化'
-    },{
+    }, {
       id: 12,
       name: '通用监控'
     }],
@@ -80,77 +80,77 @@ var app = new Vue({
       type: '未订阅',
       createTime: '2018-10-17 00:44:20',
       time: '2018-10-17 00:44:20'
-    },{
+    }, {
       name: '名称名称名称',
       describe: 'ceve',
       status: 0,
       type: '未订阅',
       createTime: '2018-10-17 00:44:20',
       time: '2018-10-17 00:44:20'
-    },{
+    }, {
       name: '名称名称名称',
       describe: 'ceve',
       status: 0,
       type: '未订阅',
       createTime: '2018-10-17 00:44:20',
       time: '2018-10-17 00:44:20'
-    },{
+    }, {
       name: '名称名称名称',
       describe: 'ceve',
       status: 0,
       type: '未订阅',
       createTime: '2018-10-17 00:44:20',
       time: '2018-10-17 00:44:20'
-    },{
+    }, {
       name: '名称名称名称',
       describe: 'ceve',
       status: 0,
       type: '未订阅',
       createTime: '2018-10-17 00:44:20',
       time: '2018-10-17 00:44:20'
-    },{
+    }, {
       name: '名称名称名称',
       describe: 'ceve',
       status: 0,
       type: '未订阅',
       createTime: '2018-10-17 00:44:20',
       time: '2018-10-17 00:44:20'
-    },{
+    }, {
       name: '名称名称名称',
       describe: 'ceve',
       status: 0,
       type: '未订阅',
       createTime: '2018-10-17 00:44:20',
       time: '2018-10-17 00:44:20'
-    },{
+    }, {
       name: '名称名称名称',
       describe: 'ceve',
       status: 0,
       type: '未订阅',
       createTime: '2018-10-17 00:44:20',
       time: '2018-10-17 00:44:20'
-    },{
+    }, {
       name: '名称名称名称',
       describe: 'ceve',
       status: 0,
       type: '未订阅',
       createTime: '2018-10-17 00:44:20',
       time: '2018-10-17 00:44:20'
-    },{
+    }, {
       name: '名称名称名称',
       describe: 'ceve',
       status: 0,
       type: '未订阅',
       createTime: '2018-10-17 00:44:20',
       time: '2018-10-17 00:44:20'
-    },{
+    }, {
       name: '名称名称名称',
       describe: 'ceve',
       status: 0,
       type: '未订阅',
       createTime: '2018-10-17 00:44:20',
       time: '2018-10-17 00:44:20'
-    },{
+    }, {
       name: '名称名称名称',
       describe: 'ceve',
       status: 0,
@@ -167,7 +167,7 @@ var app = new Vue({
       min: 1,
       maxAvg: 1,
       minAvg: 1
-    },{
+    }, {
       id: 2,
       name: 'WEB服务器',
       attr: '资源负载检测',
@@ -176,7 +176,7 @@ var app = new Vue({
       min: 1,
       maxAvg: 1,
       minAvg: 1
-    },{
+    }, {
       id: 3,
       name: 'WEB服务器',
       attr: '资源负载检测',
@@ -185,7 +185,7 @@ var app = new Vue({
       min: 1,
       maxAvg: 1,
       minAvg: 1
-    },{
+    }, {
       id: 4,
       name: 'WEB服务器',
       attr: '资源负载检测',
@@ -194,7 +194,7 @@ var app = new Vue({
       min: 1,
       maxAvg: 1,
       minAvg: 1
-    },{
+    }, {
       id: 5,
       name: 'WEB服务器',
       attr: '资源负载检测',
@@ -203,7 +203,7 @@ var app = new Vue({
       min: 1,
       maxAvg: 1,
       minAvg: 1
-    },{
+    }, {
       id: 6,
       name: 'WEB服务器',
       attr: '资源负载检测',
@@ -217,11 +217,11 @@ var app = new Vue({
       name: '响应时间',
       unit: '时间',
       type: '资源负载检测',
-    },{
+    }, {
       name: '响应时间',
       unit: '时间',
       type: '资源负载检测',
-    },{
+    }, {
       name: '响应时间',
       unit: '时间',
       type: '资源负载检测',
@@ -249,12 +249,12 @@ var app = new Vue({
     this.leftMenuList.selectMenu = this.leftMenuList.list[5].children[0];
     this.leftMenuList.openMenu = this.leftMenuList.list[5].id;
   },
-  mounted() {},
+  mounted() { },
   methods: {
     toRoute(menu) {
       window.location.href = menu.url;
     },
-    setMenuList: function() {
+    setMenuList: function () {
       this.menuList = [
         {
           name: '首页',
@@ -324,7 +324,7 @@ var app = new Vue({
         }
       ];
     },
-    setLeftMenuList: function() {
+    setLeftMenuList: function () {
       this.leftMenuList = {
         openMenu: null,
         selectMenu: null,
@@ -477,6 +477,16 @@ var app = new Vue({
     },
     changeTab1(num) {
       this.tabNum1 = num;
+    },
+    /* 输入框失焦点 */
+    onBlurInput(evt, str) {
+      if (!str) {
+        evt.target.style.border = '1px solid #f00';
+        evt.target.style.boxShadow = '0 0 3px #f00';
+      } else {
+        evt.target.style.border = '1px solid #519dcf';
+        evt.target.style.boxShadow = '0 0 3px #519dcf';
+      }
     },
     setSelectId(id) {
       this.selectId = id;
