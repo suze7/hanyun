@@ -12,6 +12,7 @@
   <link href="../assets/css/theme/light-theme.css" rel="stylesheet" />
   <link href="./theme/light-theme.css" rel="stylesheet" />
   <link href="./index.css" rel="stylesheet" />
+  <link rel="stylesheet" href="../assets/css/font-awesome.css">
 </head>
 
 <body class="app">
@@ -80,10 +81,11 @@
       <div class="loc-right-content">
         <div class="loc-manage-content">
           <div class="loc-opera-group system-opera-group">
-            <el-button type="primary" class="loc-btn icon-btn" @click="showDialog"><img src="../assets/images/icon/btn-icon-1.png" /><span>添加</span></el-button>
-            <el-button type="primary" :class="{'system-active': canDrag.sort}" class="loc-btn icon-btn" @click="canDrag.sort = !canDrag.sort"><img
-                src="../assets/images/icon/btn-icon-m.png" /><span>移动</span></el-button>
-            <el-button type="primary" class="loc-btn icon-btn"><img src="../assets/images/icon/btn-icon-6.png" /><span>删除</span></el-button>
+            <el-button type="primary" class="loc-btn icon-btn" @click="showDialog"><i class="fa fa-plus-circle"></i><span>添加</span></el-button>
+            <el-button type="primary" :class="{'system-active': canDrag.sort}" class="loc-btn icon-btn" @click="canDrag.sort = !canDrag.sort">
+              <i class="fa fa-arrows"></i><span>移动</span>
+            </el-button>
+            <el-button type="primary" class="loc-btn icon-btn"><i class="fa fa-trash"></i><span>删除</span></el-button>
           </div>
           <div class="sysyem-picture-form">
             <draggable :class="{'system-can-drag': canDrag.sort}" v-model="dataList" :options="canDrag" @end="consoleData(dataList)">

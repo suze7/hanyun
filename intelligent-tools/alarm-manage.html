@@ -120,7 +120,7 @@
 
             <el-button type="primary" class="loc-btn icon-btn"><i class="fa fa-trash"></i><span>从配置组移除</span></el-button>
 
-            <el-button type="primary" class="loc-btn icon-btn"><i class="fa fa-trash"></i><span>清除设备基准</span></el-button>
+            <el-button type="primary" class="loc-btn icon-btn"><i class="fa fa-eraser"></i><span>清除设备基准</span></el-button>
           </div>
           <el-table :data="tableData" size="mini" class="transparent-table transparent-white-table" style="width: 100%">
             <el-table-column class-name="my-checkbox" type="selection" width="46"></el-table-column>
@@ -143,7 +143,10 @@
                 </el-popover>
               </template>
               <template slot-scope="scope">
-                <img :src="scope.row.accessStatus === 0 ? '../assets/images/icon/normal.png' : scope.row.accessStatus === 1 ? '../assets/images/icon/warning.png' : '../assets/images/icon/error.png'" />
+                <i class="fa fa-check-circle" v-if="scope.row.alarmStatus === 0" style="color:#69F0AE;"></i>
+                <i class="fa fa-exclamation-circle" v-if="scope.row.alarmStatus === 1" style="color:#FF9E54;"></i>
+                <i class="fa fa-times-circle" v-if="scope.row.alarmStatus === 2" style="color:#f00;"></i>
+                <!-- <img :src="scope.row.accessStatus === 0 ? '../assets/images/icon/normal.png' : scope.row.accessStatus === 1 ? '../assets/images/icon/warning.png' : '../assets/images/icon/error.png'" /> -->
               </template>
             </el-table-column>
             <el-table-column prop="content" label="告警内容" min-width="296px" class-name="com-txt-overflow"></el-table-column>

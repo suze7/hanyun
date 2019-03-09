@@ -62,7 +62,7 @@ var app = new Vue({
           name: '资源管理',
           img: '../assets/images/menu/menu-4',
           url: '../resource-manage/resource-manage.html',
-          active: true
+          active: false
         },
         {
           name: '虚拟化',
@@ -104,7 +104,7 @@ var app = new Vue({
           name: '系统管理',
           img: '../assets/images/menu/menu-11',
           url: '../system-manage/system-manage.html',
-          active: false
+          active: true
         }
       ];
     },

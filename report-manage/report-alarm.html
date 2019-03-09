@@ -12,6 +12,7 @@
   <link href="../assets/css/theme/light-theme.css" rel="stylesheet" />
   <link href="./theme/light-theme.css" rel="stylesheet" />
   <link href="./index.css" rel="stylesheet" />
+  <link rel="stylesheet" href="../assets/css/font-awesome.css">
 </head>
 
 <body class="app">
@@ -80,12 +81,12 @@
       <div class="loc-right-content" v-if="showDetail === 0">
         <div class="loc-manage-content">
           <div class="loc-opera-group report-margin-top">
-            <el-button type="primary" class="loc-btn icon-btn" @click="setShowDetail(1)"><img src="../assets/images/icon/btn-icon-1.png" /><span>新建报告策略</span></el-button>
-            <el-button type="primary" class="loc-btn icon-btn"><img src="../assets/images/icon/btn-icon-6.png" /><span>删除</span></el-button>
-            <el-button type="primary" class="loc-btn icon-btn"><img src="../assets/images/icon/btn-icon-2.png" /><span>启用策略</span></el-button>
-            <el-button type="primary" class="loc-btn icon-btn"><img src="../assets/images/icon/btn-icon-3.png" /><span>停用策略</span></el-button>
-            <el-button type="primary" class="loc-btn icon-btn"><img src="../assets/images/icon/btn-icon-h.png" /><span>订阅报告</span></el-button>
-            <el-button type="primary" class="loc-btn icon-btn"><img src="../assets/images/icon/btn-icon-i.png" /><span>取消订阅</span></el-button>
+            <el-button type="primary" class="loc-btn icon-btn" @click="setShowDetail(1)"><i class="fa fa-plus-circle"></i><span>新建报告策略</span></el-button>
+            <el-button type="primary" class="loc-btn icon-btn"><i class="fa fa-trash"></i><span>删除</span></el-button>
+            <el-button type="primary" class="loc-btn icon-btn"><i class="fa fa-play-circle"></i><span>启用策略</span></el-button>
+            <el-button type="primary" class="loc-btn icon-btn"><i class="fa fa-pause-circle"></i><span>停用策略</span></el-button>
+            <el-button type="primary" class="loc-btn icon-btn"><i class="fa fa-bookmark"></i><span>订阅报告</span></el-button>
+            <el-button type="primary" class="loc-btn icon-btn"><i class="fa fa-bookmark-o"></i><span>取消订阅</span></el-button>
           </div>
           <el-table :data="tableData" size="mini" class="transparent-table transparent-white-table" style="width: 100%">
             <el-table-column class-name="my-checkbox" type="selection" width="62px"></el-table-column>
@@ -97,7 +98,10 @@
             <el-table-column prop="describe" label="描述" min-width="93px"></el-table-column>
             <el-table-column prop="status" label="策略状态" min-width="117px">
               <template slot-scope="scope">
-                <img :src="scope.row.status === 0 ? '../assets/images/icon/normal.png' : scope.row.status === 1 ? '../assets/images/icon/warning.png' : '../assets/images/icon/error.png'" />
+                <i class="fa fa-check-circle" v-if="scope.row.status === 0" style="color:#69F0AE;"></i>
+                <i class="fa fa-exclamation-circle" v-if="scope.row.status === 1" style="color:#FF9E54;"></i>
+                <i class="fa fa-times-circle" v-if="scope.row.status === 2" style="color:#f00;"></i>
+                <!-- <img :src="scope.row.status === 0 ? '../assets/images/icon/normal.png' : scope.row.status === 1 ? '../assets/images/icon/warning.png' : '../assets/images/icon/error.png'" /> -->
               </template>
             </el-table-column>
             <el-table-column prop="type" label="订阅状态" min-width="117px"></el-table-column>
@@ -105,9 +109,12 @@
             <el-table-column prop="time" label="更新时间" min-width="294px"></el-table-column>
             <el-table-column prop="" label="操作" min-width="104px">
               <template slot-scope="scope">
-                <div style="margin: 6px 0 0 2px;" class="com-hover loc-img-form loc-app-img"></div>
+                <i class="fa fa-th-list com-hover"></i>
+                <i class="fa fa-edit com-hover"></i>
+                <i class="fa fa-trash com-hover"></i>
+                <!-- <div style="margin: 6px 0 0 2px;" class="com-hover loc-img-form loc-app-img"></div>
                 <div style="margin: 6px 0 0 2px;" class="com-hover loc-img-form loc-write-img"></div>
-                <div style="margin: 6px 0 0 2px;" class="com-hover loc-img-form loc-del-img"></div>
+                <div style="margin: 6px 0 0 2px;" class="com-hover loc-img-form loc-del-img"></div> -->
               </template>
             </el-table-column>
           </el-table>
@@ -156,7 +163,7 @@
           <div class="my-edit-form">
             <p class="my-edit-title">资源配置</p>
             <div class="report-opera-group">
-              <el-button type="primary" @click="showDialog" class="loc-btn icon-btn"><img src="../assets/images/icon/btn-icon-1.png" /><span>选择资源</span></el-button>
+              <el-button type="primary" @click="showDialog" class="loc-btn icon-btn"><i class="fa fa-plus-circle"></i><span>选择资源</span></el-button>
             </div>
             <div class="my-show-list-form loc-main-background">
               <div class="my-show-item">
@@ -459,7 +466,8 @@
         <div class="loc-progress-form loc-main-background">
           <div class="loc-progress-title">
             <span>资源2018年11月13日时段告警图</span>
-            <el-select v-model="value" popper-class="loc-main-selectbox" class="loc-main-select report-progress-select" placeholder="-请选择-">
+            <el-select v-model="value" popper-class="loc-main-selectbox" class="loc-main-select report-progress-select"
+              placeholder="-请选择-">
               <el-option v-for="item in options" :key="item.value" :label="item.label" :value="item.value">
               </el-option>
             </el-select>
@@ -585,17 +593,26 @@
             <el-table-column prop="type2" label="报告类型" min-width="90px"></el-table-column>
             <el-table-column prop="healthStatus" label="健康状态" min-width="81px" class-name="com-txt-center no-padding">
               <template slot-scope="scope">
-                <img :src="scope.row.healthStatus === 0 ? '../assets/images/icon/normal.png' : scope.row.healthStatus === 1 ? '../assets/images/icon/warning.png' : '../assets/images/icon/error.png'" />
+                <i class="fa fa-check-circle" v-if="scope.row.healthStatus === 0" style="color:#69F0AE;"></i>
+                <i class="fa fa-exclamation-circle" v-if="scope.row.healthStatus === 1" style="color:#FF9E54;"></i>
+                <i class="fa fa-times-circle" v-if="scope.row.healthStatus === 2" style="color:#f00;"></i>
+                <!-- <img :src="scope.row.healthStatus === 0 ? '../assets/images/icon/normal.png' : scope.row.healthStatus === 1 ? '../assets/images/icon/warning.png' : '../assets/images/icon/error.png'" /> -->
               </template>
             </el-table-column>
             <el-table-column prop="manageStatus" label="管理状态" min-width="81px" class-name="com-txt-center no-padding">
               <template slot-scope="scope">
-                <img :src="scope.row.manageStatus === 0 ? '../assets/images/icon/normal.png' : scope.row.manageStatus === 1 ? '../assets/images/icon/warning.png' : '../assets/images/icon/error.png'" />
+                <i class="fa fa-check-circle" v-if="scope.row.manageStatus === 0" style="color:#69F0AE;"></i>
+                <i class="fa fa-exclamation-circle" v-if="scope.row.manageStatus === 1" style="color:#FF9E54;"></i>
+                <i class="fa fa-times-circle" v-if="scope.row.manageStatus === 2" style="color:#f00;"></i>
+                <!-- <img :src="scope.row.manageStatus === 0 ? '../assets/images/icon/normal.png' : scope.row.manageStatus === 1 ? '../assets/images/icon/warning.png' : '../assets/images/icon/error.png'" /> -->
               </template>
             </el-table-column>
             <el-table-column prop="accessStatus" label="通断状态" min-width="81px" class-name="com-txt-center no-padding">
               <template slot-scope="scope">
-                <img :src="scope.row.accessStatus === 0 ? '../assets/images/icon/normal.png' : scope.row.accessStatus === 1 ? '../assets/images/icon/warning.png' : '../assets/images/icon/error.png'" />
+                <i class="fa fa-check-circle" v-if="scope.row.accessStatus === 0" style="color:#69F0AE;"></i>
+                <i class="fa fa-exclamation-circle" v-if="scope.row.accessStatus === 1" style="color:#FF9E54;"></i>
+                <i class="fa fa-times-circle" v-if="scope.row.accessStatus === 2" style="color:#f00;"></i>
+                <!-- <img :src="scope.row.accessStatus === 0 ? '../assets/images/icon/normal.png' : scope.row.accessStatus === 1 ? '../assets/images/icon/warning.png' : '../assets/images/icon/error.png'" /> -->
               </template>
             </el-table-column>
           </el-table>
