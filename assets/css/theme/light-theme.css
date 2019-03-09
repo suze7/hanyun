@@ -67,10 +67,20 @@ body *::-webkit-scrollbar-thumb {
 input {
   border: 1px solid #e7e7e7;
 }
+input:focus {
+  border: 1px solid #519dcf;
+  box-shadow: 0 0 3px #519dcf;
+}
 textarea,
 .el-input__inner,
 .loc-input {
   border: 1px solid #e7e7e7;
+}
+textarea:focus,
+.el-input__inner:focus,
+.loc-input:focus {
+  border: 1px solid #519dcf;
+  box-shadow: 0 0 3px #519dcf;
 }
 .my-checkbox .el-checkbox__inner:hover {
   border-color: #3498db;
