@@ -37,63 +37,63 @@ var app = new Vue({
       type: '未订阅',
       createTime: '2018-10-17 00:44:20',
       time: '2018-10-17 00:44:20'
-    },{
+    }, {
       name: '名称名称名称',
       describe: 'ceve',
       status: 0,
       type: '未订阅',
       createTime: '2018-10-17 00:44:20',
       time: '2018-10-17 00:44:20'
-    },{
+    }, {
       name: '名称名称名称',
       describe: 'ceve',
       status: 0,
       type: '未订阅',
       createTime: '2018-10-17 00:44:20',
       time: '2018-10-17 00:44:20'
-    },{
+    }, {
       name: '名称名称名称',
       describe: 'ceve',
       status: 0,
       type: '未订阅',
       createTime: '2018-10-17 00:44:20',
       time: '2018-10-17 00:44:20'
-    },{
+    }, {
       name: '名称名称名称',
       describe: 'ceve',
       status: 0,
       type: '未订阅',
       createTime: '2018-10-17 00:44:20',
       time: '2018-10-17 00:44:20'
-    },{
+    }, {
       name: '名称名称名称',
       describe: 'ceve',
       status: 0,
       type: '未订阅',
       createTime: '2018-10-17 00:44:20',
       time: '2018-10-17 00:44:20'
-    },{
+    }, {
       name: '名称名称名称',
       describe: 'ceve',
       status: 0,
       type: '未订阅',
       createTime: '2018-10-17 00:44:20',
       time: '2018-10-17 00:44:20'
-    },{
+    }, {
       name: '名称名称名称',
       describe: 'ceve',
       status: 0,
       type: '未订阅',
       createTime: '2018-10-17 00:44:20',
       time: '2018-10-17 00:44:20'
-    },{
+    }, {
       name: '名称名称名称',
       describe: 'ceve',
       status: 0,
       type: '未订阅',
       createTime: '2018-10-17 00:44:20',
       time: '2018-10-17 00:44:20'
-    },{
+    }, {
       name: '名称名称名称',
       describe: 'ceve',
       status: 0,
@@ -108,63 +108,63 @@ var app = new Vue({
       time: '2018-11-13 00:01:00',
       startTime: '2018-11-13 00:01:00',
       endTime: '2018-11-13 00:01:00'
-    },{
+    }, {
       name: '未阅',
       cycle: '日报告',
       analyse: '否',
       time: '2018-11-13 00:01:00',
       startTime: '2018-11-13 00:01:00',
       endTime: '2018-11-13 00:01:00'
-    },{
+    }, {
       name: '未阅',
       cycle: '日报告',
       analyse: '否',
       time: '2018-11-13 00:01:00',
       startTime: '2018-11-13 00:01:00',
       endTime: '2018-11-13 00:01:00'
-    },{
+    }, {
       name: '未阅',
       cycle: '日报告',
       analyse: '否',
       time: '2018-11-13 00:01:00',
       startTime: '2018-11-13 00:01:00',
       endTime: '2018-11-13 00:01:00'
-    },{
+    }, {
       name: '未阅',
       cycle: '日报告',
       analyse: '否',
       time: '2018-11-13 00:01:00',
       startTime: '2018-11-13 00:01:00',
       endTime: '2018-11-13 00:01:00'
-    },{
+    }, {
       name: '未阅',
       cycle: '日报告',
       analyse: '否',
       time: '2018-11-13 00:01:00',
       startTime: '2018-11-13 00:01:00',
       endTime: '2018-11-13 00:01:00'
-    },{
+    }, {
       name: '未阅',
       cycle: '日报告',
       analyse: '否',
       time: '2018-11-13 00:01:00',
       startTime: '2018-11-13 00:01:00',
       endTime: '2018-11-13 00:01:00'
-    },{
+    }, {
       name: '未阅',
       cycle: '日报告',
       analyse: '否',
       time: '2018-11-13 00:01:00',
       startTime: '2018-11-13 00:01:00',
       endTime: '2018-11-13 00:01:00'
-    },{
+    }, {
       name: '未阅',
       cycle: '日报告',
       analyse: '否',
       time: '2018-11-13 00:01:00',
       startTime: '2018-11-13 00:01:00',
       endTime: '2018-11-13 00:01:00'
-    },{
+    }, {
       name: '未阅',
       cycle: '日报告',
       analyse: '否',
@@ -179,63 +179,63 @@ var app = new Vue({
       alarm1: 1,
       alarm2: 1,
       alarm3: 1
-    },{
+    }, {
       name: '维也纳-测试4',
       cycle: '118.126.110.58',
       alarm: 1,
       alarm1: 1,
       alarm2: 1,
       alarm3: 1
-    },{
+    }, {
       name: '维也纳-测试4',
       cycle: '118.126.110.58',
       alarm: 1,
       alarm1: 1,
       alarm2: 1,
       alarm3: 1
-    },{
+    }, {
       name: '维也纳-测试4',
       cycle: '118.126.110.58',
       alarm: 1,
       alarm1: 1,
       alarm2: 1,
       alarm3: 1
-    },{
+    }, {
       name: '维也纳-测试4',
       cycle: '118.126.110.58',
       alarm: 1,
       alarm1: 1,
       alarm2: 1,
       alarm3: 1
-    },{
+    }, {
       name: '维也纳-测试4',
       cycle: '118.126.110.58',
       alarm: 1,
       alarm1: 1,
       alarm2: 1,
       alarm3: 1
-    },{
+    }, {
       name: '维也纳-测试4',
       cycle: '118.126.110.58',
       alarm: 1,
       alarm1: 1,
       alarm2: 1,
       alarm3: 1
-    },{
+    }, {
       name: '维也纳-测试4',
       cycle: '118.126.110.58',
       alarm: 1,
       alarm1: 1,
       alarm2: 1,
       alarm3: 1
-    },{
+    }, {
       name: '维也纳-测试4',
       cycle: '118.126.110.58',
       alarm: 1,
       alarm1: 1,
       alarm2: 1,
       alarm3: 1
-    },{
+    }, {
       name: '维也纳-测试4',
       cycle: '118.126.110.58',
       alarm: 1,
@@ -251,7 +251,7 @@ var app = new Vue({
       healthStatus: 1,
       manageStatus: 1,
       accessStatus: 2
-    },{
+    }, {
       name: '核心服务',
       IP: '172.16.154.125',
       resType: '标准服务监控',
@@ -259,7 +259,7 @@ var app = new Vue({
       healthStatus: 1,
       manageStatus: 1,
       accessStatus: 2
-    },{
+    }, {
       name: '核心服务',
       IP: '172.16.154.125',
       resType: '标准服务监控',
@@ -267,7 +267,7 @@ var app = new Vue({
       healthStatus: 1,
       manageStatus: 1,
       accessStatus: 2
-    },{
+    }, {
       name: '核心服务',
       IP: '172.16.154.125',
       resType: '标准服务监控',
@@ -275,7 +275,7 @@ var app = new Vue({
       healthStatus: 1,
       manageStatus: 1,
       accessStatus: 2
-    },{
+    }, {
       name: '核心服务',
       IP: '172.16.154.125',
       resType: '标准服务监控',
@@ -283,7 +283,7 @@ var app = new Vue({
       healthStatus: 1,
       manageStatus: 1,
       accessStatus: 2
-    },{
+    }, {
       name: '核心服务',
       IP: '172.16.154.125',
       resType: '标准服务监控',
@@ -291,7 +291,7 @@ var app = new Vue({
       healthStatus: 1,
       manageStatus: 1,
       accessStatus: 2
-    },{
+    }, {
       name: '核心服务',
       IP: '172.16.154.125',
       resType: '标准服务监控',
@@ -299,7 +299,7 @@ var app = new Vue({
       healthStatus: 1,
       manageStatus: 1,
       accessStatus: 2
-    },{
+    }, {
       name: '核心服务',
       IP: '172.16.154.125',
       resType: '标准服务监控',
@@ -307,7 +307,7 @@ var app = new Vue({
       healthStatus: 1,
       manageStatus: 1,
       accessStatus: 2
-    },{
+    }, {
       name: '核心服务',
       IP: '172.16.154.125',
       resType: '标准服务监控',
@@ -337,12 +337,12 @@ var app = new Vue({
     this.leftMenuList.selectMenu = this.leftMenuList.list[3].children[0];
     this.leftMenuList.openMenu = this.leftMenuList.list[3].id;
   },
-  mounted() {},
+  mounted() { },
   methods: {
     toRoute(menu) {
       window.location.href = menu.url;
     },
-    setMenuList: function() {
+    setMenuList: function () {
       this.menuList = [
         {
           name: '首页',
@@ -412,7 +412,7 @@ var app = new Vue({
         }
       ];
     },
-    setLeftMenuList: function() {
+    setLeftMenuList: function () {
       this.leftMenuList = {
         openMenu: null,
         selectMenu: null,
@@ -559,13 +559,13 @@ var app = new Vue({
     },
     showDialog() {
       this.dialogVisible = true;
-      
+
     },
     handleClose() {
-      
+
     },
-     /* 输入框失焦点 */
-     onBlurInput(evt, str) {
+    /* 输入框失焦点 */
+    onBlurInput(evt, str) {
       if (!str) {
         evt.target.style.border = '1px solid #f00';
         evt.target.style.boxShadow = '0 0 3px #f00';

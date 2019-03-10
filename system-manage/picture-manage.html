@@ -116,7 +116,7 @@
       <div class="system-picture-dialog">
         <div class="my-edit-form">
           <div class="my-edit-group my-fill-line">
-            <span class="my-group-title">图片分类</span>
+            <span class="my-group-title"><i class="required-icon">*</i>图片分类</span>
             <div class="my-group-content">
               <el-select v-model="value" popper-class="loc-main-selectbox loc-white-selectbox" class="loc-main-select loc-white-select"
                 placeholder="-请选择-">
@@ -126,7 +126,7 @@
             </div>
           </div>
           <div class="my-edit-group my-fill-line">
-            <span class="my-group-title">图片路径</span>
+            <span class="my-group-title"><i class="required-icon">*</i>图片路径</span>
             <div class="my-group-content system-content-fill">
               <el-upload class="my-upload" :auto-upload="false" action="https://jsonplaceholder.typicode.com/posts/"
                 :multiple="false" :limit="1">

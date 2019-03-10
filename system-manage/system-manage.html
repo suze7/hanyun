@@ -150,37 +150,37 @@
       class="blue-dialog my-edit-dialog">
       <div class="system-min-dialog">
         <div class="my-edit-group">
-          <span class="my-group-title">用户名称</span>
+          <span class="my-group-title"><i class="required-icon">*</i>用户名称</span>
           <div class="my-group-content">
             <input type="text" placeholder="用户名称" />
           </div>
         </div>
         <div class="my-edit-group">
-          <span class="my-group-title">真实姓名</span>
+          <span class="my-group-title"><i class="required-icon">*</i>真实姓名</span>
           <div class="my-group-content">
             <input type="text" placeholder="真实姓名" />
           </div>
         </div>
         <div class="my-edit-group">
-          <span class="my-group-title">用户角色</span>
+          <span class="my-group-title"><i class="required-icon">*</i>用户角色</span>
           <div class="my-group-content">
-            <input type="text" placeholder="用户角色" />
+            <input type="text" @blur="onBlurInput($event, '')" placeholder="用户角色" />
           </div>
         </div>
         <div class="my-edit-group">
-          <span class="my-group-title">密码</span>
+          <span class="my-group-title"><i class="required-icon">*</i>密码</span>
           <div class="my-group-content">
-            <input type="text" placeholder="密码" />
+            <input type="text" @blur="onBlurInput($event, '')" placeholder="密码" />
           </div>
         </div>
         <div class="my-edit-group">
-          <span class="my-group-title">确认密码</span>
+          <span class="my-group-title"><i class="required-icon">*</i>确认密码</span>
           <div class="my-group-content">
-            <input type="text" placeholder="确认密码" />
+            <input type="text" @blur="onBlurInput($event, '')" placeholder="确认密码" />
           </div>
         </div>
         <div class="my-edit-group">
-          <span class="my-group-title">启用</span>
+          <span class="my-group-title"><i class="required-icon">*</i>启用</span>
           <div class="my-group-content">
             <span>
               <el-checkbox class="my-content-checkbox"></el-checkbox>
@@ -188,27 +188,27 @@
           </div>
         </div>
         <div class="my-edit-group">
-          <span class="my-group-title">邮件</span>
+          <span class="my-group-title"><i class="required-icon">*</i>邮件</span>
           <div class="my-group-content">
-            <input type="text" placeholder="邮件" />
+            <input type="text" @blur="onBlurInput($event, '')" placeholder="邮件" />
           </div>
         </div>
         <div class="my-edit-group">
-          <span class="my-group-title">手机号码</span>
+          <span class="my-group-title"><i class="required-icon">*</i>手机号码</span>
           <div class="my-group-content">
-            <input type="text" placeholder="手机号码" />
+            <input type="text" @blur="onBlurInput($event, '')" placeholder="手机号码" />
           </div>
         </div>
         <div class="my-edit-group">
-          <span class="my-group-title">办公电话</span>
+          <span class="my-group-title"><i class="required-icon">*</i>办公电话</span>
           <div class="my-group-content">
-            <input type="text" placeholder="办公电话" />
+            <input type="text" @blur="onBlurInput($event, '')" placeholder="办公电话" />
           </div>
         </div>
         <div class="my-edit-group">
-          <span class="my-group-title">传真</span>
+          <span class="my-group-title"><i class="required-icon">*</i>传真</span>
           <div class="my-group-content">
-            <input type="text" placeholder="传真" />
+            <input type="text" @blur="onBlurInput($event, '')" placeholder="传真" />
           </div>
         </div>
         <div class="my-edit-group my-fill-line system-checkbox-form">

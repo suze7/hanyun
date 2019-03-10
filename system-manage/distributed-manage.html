@@ -162,25 +162,25 @@
       class="blue-dialog my-edit-dialog">
       <div>
         <div class="my-edit-group">
-          <span class="my-group-title">管理域名称</span>
+          <span class="my-group-title"><i class="required-icon">*</i>管理域名称</span>
           <div class="my-group-content">
-            <input type="text" placeholder="管理域名称" />
+            <input type="text" @blur="onBlurInput($event, '')" placeholder="管理域名称" />
           </div>
         </div>
         <div class="my-edit-group">
-          <span class="my-group-title">网络地址</span>
+          <span class="my-group-title"><i class="required-icon">*</i>网络地址</span>
           <div class="my-group-content">
-            <input type="text" placeholder="网络地址" />
+            <input type="text" @blur="onBlurInput($event, '')" placeholder="网络地址" />
           </div>
         </div>
         <div class="my-edit-group">
-          <span class="my-group-title">通讯端口</span>
+          <span class="my-group-title"><i class="required-icon">*</i>通讯端口</span>
           <div class="my-group-content">
-            <input type="text" placeholder="通讯端口" />
+            <input type="text" @blur="onBlurInput($event, '')" placeholder="通讯端口" />
           </div>
         </div>
         <div class="my-edit-group">
-          <span class="my-group-title">管理状态</span>
+          <span class="my-group-title"><i class="required-icon">*</i>管理状态</span>
           <div class="my-group-content">
             <el-select v-model="value" popper-class="loc-main-selectbox loc-white-selectbox" class="loc-main-select loc-white-select"
               placeholder="-请选择-">

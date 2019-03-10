@@ -147,19 +147,19 @@
       class="blue-dialog my-edit-dialog">
       <div class="system-min-dialog">
         <div class="my-edit-group">
-          <span class="my-group-title">角色名称</span>
+          <span class="my-group-title"><i class="required-icon">*</i>角色名称</span>
           <div class="my-group-content">
-            <input type="text" placeholder="角色名称" />
+            <input type="text" @blur="onBlurInput($event, '')" placeholder="角色名称" />
           </div>
         </div>
         <div class="my-edit-group">
-          <span class="my-group-title">描述</span>
+          <span class="my-group-title"><i class="required-icon">*</i>描述</span>
           <div class="my-group-content">
-            <input type="text" placeholder="描述" />
+            <input type="text" @blur="onBlurInput($event, '')" placeholder="描述" />
           </div>
         </div>
         <div class="my-edit-group">
-          <span class="my-group-title">启用</span>
+          <span class="my-group-title"><i class="required-icon">*</i>启用</span>
           <div class="my-group-content">
             <span>
               <el-checkbox class="my-content-checkbox"></el-checkbox>

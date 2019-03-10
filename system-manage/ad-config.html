@@ -122,37 +122,37 @@
           </div>
         </div>
         <div class="my-edit-group">
-          <span class="my-group-title">主机</span>
+          <span class="my-group-title"><i class="required-icon">*</i>主机</span>
           <div class="my-group-content">
-            <input type="text" placeholder="主机" />
+            <input type="text" @blur="onBlurInput($event, '')" placeholder="主机" />
           </div>
         </div>
         <div class="my-edit-group">
-          <span class="my-group-title">端口</span>
+          <span class="my-group-title"><i class="required-icon">*</i>端口</span>
           <div class="my-group-content">
-            <input type="text" placeholder="端口" />
+            <input type="text" @blur="onBlurInput($event, '')" placeholder="端口" />
           </div>
         </div>
         <div class="my-edit-group">
-          <span class="my-group-title">管理账户</span>
+          <span class="my-group-title"><i class="required-icon">*</i>管理账户</span>
           <div class="my-group-content">
-            <input type="text" placeholder="管理账户" />
+            <input type="text" @blur="onBlurInput($event, '')" placeholder="管理账户" />
           </div>
         </div>
         <div class="my-edit-group">
-          <span class="my-group-title">根目录</span>
+          <span class="my-group-title"><i class="required-icon">*</i>根目录</span>
           <div class="my-group-content">
-            <input type="text" placeholder="根目录" />
+            <input type="text" @blur="onBlurInput($event, '')" placeholder="根目录" />
           </div>
         </div>
         <div class="my-edit-group">
-          <span class="my-group-title">密码</span>
+          <span class="my-group-title"><i class="required-icon">*</i>密码</span>
           <div class="my-group-content">
-            <input type="text" placeholder="确认密码" />
+            <input type="text" @blur="onBlurInput($event, '')" placeholder="确认密码" />
           </div>
         </div>
         <div class="my-edit-group">
-          <span class="my-group-title">版本</span>
+          <span class="my-group-title"><i class="required-icon">*</i>版本</span>
           <div class="my-group-content">
             <el-select v-model="value" popper-class="loc-main-selectbox loc-white-selectbox" class="loc-main-select loc-white-select"
               placeholder="-请选择-">
@@ -162,7 +162,7 @@
           </div>
         </div>
         <div class="my-edit-group">
-          <span class="my-group-title">认证</span>
+          <span class="my-group-title"><i class="required-icon">*</i>认证</span>
           <div class="my-group-content">
             <el-select v-model="value" popper-class="loc-main-selectbox loc-white-selectbox" class="loc-main-select loc-white-select"
               placeholder="-请选择-">
@@ -172,33 +172,33 @@
           </div>
         </div>
         <div class="my-edit-group">
-          <span class="my-group-title">工号标识</span>
+          <span class="my-group-title"><i class="required-icon">*</i>工号标识</span>
           <div class="my-group-content">
-            <input type="text" placeholder="工号标识" />
+            <input type="text" @blur="onBlurInput($event, '')" placeholder="工号标识" />
           </div>
         </div>
         <div class="my-edit-group">
-          <span class="my-group-title">邮件标识</span>
+          <span class="my-group-title"><i class="required-icon">*</i>邮件标识</span>
           <div class="my-group-content">
-            <input type="text" placeholder="传真" />
+            <input type="text" @blur="onBlurInput($event, '')" placeholder="传真" />
           </div>
         </div>
         <div class="my-edit-group">
-          <span class="my-group-title">电话标识</span>
+          <span class="my-group-title"><i class="required-icon">*</i>电话标识</span>
           <div class="my-group-content">
-            <input type="text" placeholder="电话标识" />
+            <input type="text" @blur="onBlurInput($event, '')" placeholder="电话标识" />
           </div>
         </div>
         <div class="my-edit-group">
-          <span class="my-group-title">办公电话标识</span>
+          <span class="my-group-title"><i class="required-icon">*</i>办公电话标识</span>
           <div class="my-group-content">
-            <input type="text" placeholder="办公电话标识" />
+            <input type="text" @blur="onBlurInput($event, '')" placeholder="办公电话标识" />
           </div>
         </div>
         <div class="my-edit-group">
           <span class="my-group-title">传真标识</span>
           <div class="my-group-content">
-            <input type="text" placeholder="传真标识" />
+            <input type="text" @blur="onBlurInput($event, '')" placeholder="传真标识" />
           </div>
         </div>
       </div>
