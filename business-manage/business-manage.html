@@ -152,9 +152,12 @@
           <el-table-column prop="healthy" label="健康度" class-name="com-txt-overflow"></el-table-column>
           <el-table-column label="健康状态" sortable class-name="com-txt-overflow">
             <template slot-scope="scope">
-              <img v-if="scope.row.status === '1'" src="../assets/images/icon/normal.png" />
+              <i class="fa fa-check-circle" v-if="scope.row.status === '1'" style="color:#69F0AE;"></i>
+              <i class="fa fa-exclamation-circle" v-if="scope.row.status === '2'" style="color:#FF9E54;"></i>
+              <i class="fa fa-times-circle" v-if="scope.row.status === '0'" style="color:#f00;"></i>
+              <!-- <img v-if="scope.row.status === '1'" src="../assets/images/icon/normal.png" />
               <img v-if="scope.row.status === '2'" src="../assets/images/icon/warning.png" />
-              <img v-if="scope.row.status === '0'" src="../assets/images/icon/error.png" />
+              <img v-if="scope.row.status === '0'" src="../assets/images/icon/error.png" /> -->
             </template>
           </el-table-column>
           <el-table-column prop="response" label="响应时间" class-name="com-txt-overflow"></el-table-column>
