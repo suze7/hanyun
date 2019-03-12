@@ -46,3 +46,42 @@
     border: 1px solid #f56c6c;
   }
 }
+
+.dropdown-detail {
+  width:220px;
+  .user-info {
+    display: flex;
+    padding:18px;
+    align-items:center;
+    background:#4364BD;
+    img {
+      width: 50px;
+      height: 50px;
+      border-radius:50%;
+    }
+    .user-name {
+      margin-left:15px;
+      p {
+        font-size:12px;
+        &:first-child {
+          margin-bottom:5px;
+          font-size:18px;
+        }
+      }
+    }
+  }
+  >span {
+    background:#8694C1;
+    padding:16px;
+    display: block;
+    font-size:12px;
+    border-bottom:1px solid #fff;
+    cursor: pointer;
+    i {
+      margin-right:10px;
+    }
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+}

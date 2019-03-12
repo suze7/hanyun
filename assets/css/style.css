@@ -37,6 +37,44 @@
 .required-icon .is-require {
   border: 1px solid #f56c6c;
 }
+.dropdown-detail {
+  width: 220px;
+}
+.dropdown-detail .user-info {
+  display: flex;
+  padding: 18px;
+  align-items: center;
+  background: #4364BD;
+}
+.dropdown-detail .user-info img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+.dropdown-detail .user-info .user-name {
+  margin-left: 15px;
+}
+.dropdown-detail .user-info .user-name p {
+  font-size: 12px;
+}
+.dropdown-detail .user-info .user-name p:first-child {
+  margin-bottom: 5px;
+  font-size: 18px;
+}
+.dropdown-detail > span {
+  background: #8694C1;
+  padding: 16px;
+  display: block;
+  font-size: 12px;
+  border-bottom: 1px solid #fff;
+  cursor: pointer;
+}
+.dropdown-detail > span i {
+  margin-right: 10px;
+}
+.dropdown-detail > span:last-child {
+  border-bottom: none;
+}
 body {
   font-size: 14px;
 }
