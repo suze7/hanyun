@@ -23,53 +23,37 @@
     </div>
 
     <div class="overview-header">
-      <div>
-        <span>
-          资源名称 : {{business_data.label}}
-        </span>
-        <span>
-          资源类型 : Tomcat的
-        </span>
-        <span>
-          资源类型 : {{business_data.label}}
-        </span>
-        <span>
-          监控周期 : {{business_data.mttr}}
-        </span>
-      </div>
-      <div>
-        <span>
-          管理状态 :
+      <table>
+        <tr>
+          <td>资源名称 : {{business_data.label}}</td>
+          <td>资源类型 : Tomcat的</td>
+          <td>资源名称 : {{business_data.label}}</td>
+          <td>资源名称 : {{business_data.label}}</td>
+        </tr>
+        <tr>
+          <td>
+            管理状态 :
           <i class="fa fa-check-circle" v-if="business_data.safety_level === '1'" style="color:#69F0AE;"></i>
           <i class="fa fa-exclamation-circle" v-if="business_data.safety_level === '2'" style="color:#FF9E54;"></i>
           <i class="fa fa-times-circle" v-if="business_data.safety_level === '0'" style="color:#f00;"></i>
-          <!-- <img v-if="business_data.safety_level === '1'" src="../../../assets/images/icon/normal.png" />
-          <img v-if="business_data.safety_level === '2'" src="../../../assets/images/icon/warning.png" />
-          <img v-if="business_data.safety_level === '0'" src="../../../assets/images/icon/error.png" /> -->
-        </span>
-        <span>
-          通断状态 :
+          </td>
+          <td>
+            通断状态 :
           <i class="fa fa-check-circle" v-if="business_data.safety_level === '1'" style="color:#69F0AE;"></i>
           <i class="fa fa-exclamation-circle" v-if="business_data.safety_level === '2'" style="color:#FF9E54;"></i>
           <i class="fa fa-times-circle" v-if="business_data.safety_level === '0'" style="color:#f00;"></i>
-          <!-- <img v-if="business_data.safety_level === '1'" src="../../../assets/images/icon/normal.png" />
-          <img v-if="business_data.safety_level === '2'" src="../../../assets/images/icon/warning.png" />
-          <img v-if="business_data.safety_level === '0'" src="../../../assets/images/icon/error.png" /> -->
-        </span>
-        <span>
-          所属域 : {{business_data.label}}
-        </span>
-        <span>
-          最后采集时间 : {{business_data.mttr}}
-        </span>
-      </div>
+          </td>
+          <td>所属域 : {{business_data.label}}</td>
+          <td>最后采集时间 : {{business_data.mttr}}</td>
+        </tr>
+      </table>
     </div>
 
     <el-row :gutter="20">
       <el-col :span="8">
         <div class="grid-content bg-purple" style="height:285px;">
           <p class="p-title" style="margin-bottom:20px;">CPU使用率</p>
-          <v-chart style="width:100%; height:200px" :options="multiple_pie.gauge"></v-chart>
+          <v-chart style="width:100%; height:200px" :autoresize="true" :options="multiple_pie.gauge"></v-chart>
         </div>
       </el-col>
       <el-col :span="8">
@@ -267,7 +251,7 @@
               <span v-for="time in time_array" @click="toggleTime(time.name)" :class="{active: isActice === time.name}">{{time.name}}</span>
             </div>
           </div>
-          <v-chart style="width:100%; height:200px" :options="multiple_pie.pie"></v-chart>
+          <v-chart style="width:100%; height:200px" :autoresize="true" :options="multiple_pie.pie"></v-chart>
         </div>
       </el-col>
       <el-col :span="12">

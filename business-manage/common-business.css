@@ -1,32 +1,27 @@
 #homeIndex {
-  width: 1366px;
+  width: 100%;
+  min-width: 1366px;
   padding: 20px 30px;
   font-size: 12px;
 }
 /* 业务总览 - header */
 .overview-header {
-  display: flex;
-  flex-wrap: wrap;
-  align-content: space-between;
   margin: 20px 0;
   background: #2D3982;
-  padding: 16px 20px;
+  padding: 8px 20px;
 }
-.overview-header > div {
-  display: flex;
-  flex-basis: 100%;
-  justify-content: space-around;
-  padding: 5px 0;
-  box-sizing: border-box;
+.overview-header table {
+  width: 100%;
 }
-.overview-header > div > span {
-  margin-right: 56px;
-}
-.overview-header > div > span img {
-  margin: 0 0px -3px 5px;
+.overview-header table tr td {
+  padding: 8px 0 8px 0;
 }
 .grid-content {
   padding: 20px;
+}
+div.echarts {
+  width: 100%;
+  height: 100%;
 }
 .bg-purple {
   background: #2D3982;

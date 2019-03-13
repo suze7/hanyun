@@ -1,7 +1,7 @@
 .aside-main {
   color:#fff;
   padding:20px 30px;
-  width: 1366px;
+  // width: 1366px;
   height:100%;
   margin: 0 auto;
   // display: flex;
@@ -21,15 +21,12 @@
         font-weight: bold;
         margin-bottom:20px;
       }
-      .echarts {
-        width: 100%;
-        height: 90%;
-      }
     }
   }
 }
+
 .aside-left {
-  width: 402px;
+  width: 32%;
   height:314px;
   margin-right:20px;
   .bus-response-speed, .bus-alarm-time {
@@ -38,7 +35,7 @@
   }
 }
 .aside-center {
-  width: 460px;
+  width: 33%;
   height: 314px;
   margin-right:20px;
   /* 业务健康 */
@@ -97,13 +94,17 @@
   }
 }
 .aside-right {
-  width: 402px;
+  width: 32%;
   height:650px;
   /* 告警统计 */
   .alarm-statics {
     width:100%;
     text-align: center;
   }
+}
+div.echarts {
+  width: 100%;
+  height: 100%;
 }
 .single-bar, .single-pie {
   width: 100%;
@@ -177,5 +178,27 @@ ul.run-ball {
     top:80px;
     text-align: center;
     transition: 2s;
+  }
+}
+
+@media screen and (max-width: 1400px) {
+  .aside-main {
+    >div {
+      // width: 32%;
+      &:first-child, &:last-child {
+        width: 31%;
+      }
+      &:nth-child(2n) {
+        width: 34%;
+      }
+    }
+  }
+}
+@media screen and (max-height: 768px) {
+  .aside-main {
+    >div {
+      // height:100%;
+      // width:33%;
+    }
   }
 }

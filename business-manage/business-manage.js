@@ -3,6 +3,8 @@ var app = new Vue({
   el: '#homeIndex',
   data() {
     return {
+      screenWidth: document.body.clientWidth,
+      screenHeight: document.body.clientHeight,
       page_init: true,
       menuList: [],
       resource_list: [
@@ -153,6 +155,8 @@ var app = new Vue({
     this.setMenuList();
     this.toggleBtn();
     this.ballInit();
+    console.log(this.screenWidth);
+    console.log(this.screenHeight);
   },
   methods: {
     toRoute(menu) {
@@ -230,7 +234,7 @@ var app = new Vue({
     },
     /* 椭圆运动 */
     ballInit() {
-      this.drawBall(0, 180, 80, this.ball_data.count);
+      this.drawBall(0, 50, 80, this.ball_data.count);
       this.ball_data.healthy = this.business_tableData[this.business_tableData.length - 1].healthy;
       this.ball_data.rad = (Math.PI / 180) * Math.round(360 / this.ball_data.count);
       let el = document.getElementById('line_path');
@@ -258,8 +262,8 @@ var app = new Vue({
       for (let i = 0; i < this.business_tableData.length; i++) {
         let x = ox + r * Math.sin(this.ball_data.rad * i);
         let y = oy + r * Math.cos(this.ball_data.rad * i);
-        this.business_tableData[i].left = x + 'px';
-        this.business_tableData[i].top = y + 'px';
+        this.business_tableData[i].left = x + '%';
+        this.business_tableData[i].top = y + '%';
       }
     },
     onBlurInput(evt, str) {
@@ -291,7 +295,7 @@ var app = new Vue({
     },
     showDialog(str) {
       /* 新建业务 */
-      // console.log(str);
+      console.log(str);
       switch (str) {
         case 'dialog':
           this.addBusiDialog = true;
@@ -321,21 +325,21 @@ var app = new Vue({
       let screenHeight = window.screen.height;
       // console.log(screenWidth, screenHeight);
       let url = `./business-overview.html?id=${obj.business_id}`;
-      window.open(url, '_blank', `width=1366, height=668,top=0,left=0,toolbar=no,menubar=no,scrollbars=no,resizable=no,location=no,status=no`);
-      // if (screenHeight <= 768) {
-      // } else {
-      //   let height = 850;
-      //   let width = 1366;
-      //   let top = (screenHeight - height) / 2 * 0.8;
-      //   if (top < 0) {
-      //     top = 0;
-      //   }
-      //   let left = (screenWidth - width) / 2;
-      //   if (left < 0) {
-      //     left = 0;
-      //   }
-      //   window.open(url, '_blank', `height=${height - 100},width=${width},top=20,left=30,toolbar=no,menubar=no,scrollbars=no,resizable=no,location=no,status=no`);
-      // }
+      if (screenHeight <= 768) {
+        window.open(url, '_blank', `width=${screenWidth}, height=${screenHeight-100},top=0,left=0,toolbar=no,menubar=no,scrollbars=no,resizable=no,location=no,status=no`);
+      } else {
+        let height = 850;
+        let width = 1366;
+        let top = (screenHeight - height) / 2 * 0.8;
+        if (top < 0) {
+          top = 0;
+        }
+        let left = (screenWidth - width) / 2;
+        if (left < 0) {
+          left = 0;
+        }
+        window.open(url, '_blank', `height=${height - 100},width=${width},top=20,left=30,toolbar=no,menubar=no,scrollbars=no,resizable=no,location=no,status=no`);
+      }
     },
     createCanvas(data) {
       let result = [];

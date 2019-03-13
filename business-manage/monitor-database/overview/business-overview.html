@@ -24,54 +24,32 @@
       </div>
       <div>
         <div class="overview-header">
-          <div>
-            <span>
-              业务名称 : {{business_data.label}}
-            </span>
-            <span>
-              当前健康等级 :
+          <table>
+            <tr>
+              <td>业务名称 : {{business_data.label}}</td>
+              <td>
+                当前健康等级 :
               <i class="fa fa-check-circle" v-if="business_data.safety_level === '1'" style="color:#69F0AE;"></i>
               <i class="fa fa-exclamation-circle" v-if="business_data.safety_level === '2'" style="color:#FF9E54;"></i>
               <i class="fa fa-times-circle" v-if="business_data.safety_level === '0'" style="color:#f00;"></i>
-              <!-- <img v-if="business_data.safety_level === '1'" src="../../../assets/images/icon/normal.png" />
-              <img v-if="business_data.safety_level === '2'" src="../../../assets/images/icon/warning.png" />
-              <img v-if="business_data.safety_level === '0'" src="../../../assets/images/icon/error.png" /> -->
-            </span>
-            <span>
-              宕机次数 : {{business_data.label}}
-            </span>
-            <span>
-              MTTR : {{business_data.mttr}}
-            </span>
-            <span>
-              MTBF : {{business_data.mtbf}}
-            </span>
-          </div>
-          <div>
-            <span>
-              业务名称 : {{business_data.label}}
-            </span>
-            <span>
-              当前健 :
-              <i class="fa fa-check-circle" v-if="business_data.safety_level === '1'" style="color:#69F0AE;"></i>
-              <i class="fa fa-exclamation-circle" v-if="business_data.safety_level === '2'" style="color:#FF9E54;"></i>
-              <i class="fa fa-times-circle" v-if="business_data.safety_level === '0'" style="color:#f00;"></i>
-              <!-- <img v-if="business_data.safety_level === '1'" src="../../../assets/images/icon/normal.png" />
-              <img v-if="business_data.safety_level === '2'" src="../../../assets/images/icon/warning.png" />
-              <img v-if="business_data.safety_level === '0'" src="../../../assets/images/icon/error.png" /> -->
-            </span>
-            <span>
-              宕机次 : {{business_data.label}}
-            </span>
-            <span>
-              MTTR : {{business_data.mttr}}
-            </span>
-            <span>
-              MTBF : {{business_data.mtbf}}
-            </span>
-          </div>
+              </td>
+              <td>宕机次数 : {{business_data.label}}</td>
+              <td>MTTR : {{business_data.mttr}}</td>
+              <td>MTBF : {{business_data.mtbf}}</td>
+            </tr>
+            <tr>
+              <td>业务名称 : {{business_data.label}}</td>
+              <td>当前健康等级 :
+                <i class="fa fa-check-circle" v-if="business_data.safety_level === '1'" style="color:#69F0AE;"></i>
+                <i class="fa fa-exclamation-circle" v-if="business_data.safety_level === '2'" style="color:#FF9E54;"></i>
+                <i class="fa fa-times-circle" v-if="business_data.safety_level === '0'" style="color:#f00;"></i>
+              </td>
+              <td>宕机次 : {{business_data.label}}</td>
+              <td>MTTR : {{business_data.mttr}}</td>
+              <td> MTBF : {{business_data.mtbf}}</td>
+            </tr>
+          </table>
         </div>
-
         <el-row :gutter="20">
           <el-col :span="8">
             <div class="grid-content bg-purple" style="height:285px; text-align: center;">
@@ -272,7 +250,7 @@
                   <span v-for="time in time_array" @click="toggleTime(time.name)" :class="{active: isActice === time.name}">{{time.name}}</span>
                 </div>
               </div>
-              <v-chart style="width:100%; height:200px" :options="multiple_pie.line"></v-chart>
+              <v-chart style="width:100%; height:200px" :autoresize="true" :options="multiple_pie.line"></v-chart>
             </div>
           </el-col>
           <el-col :span="12">

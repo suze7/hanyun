@@ -6,11 +6,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>业务管理</title>
+  <link href="../assets/css/base.css" rel="stylesheet" />
+  <link href="../assets/css/style.css" rel="stylesheet" />
   <link href="../assets/js/element-ui/index.css" rel="stylesheet" />
   <link href="../assets/css/theme/main-theme.css" rel="stylesheet" />
-  <link href="../assets/css/style.css" rel="stylesheet" />
   <link rel="stylesheet" href="./business-manage.css">
-  <link href="../assets/css/base.css" rel="stylesheet" />
   <link rel="stylesheet" href="../assets/css/font-awesome.css">
 
 </head>
@@ -74,11 +74,11 @@
       <div class="aside-left">
         <div class="bus-response-speed">
           <span>业务响应速度</span>
-          <v-chart class="single-bar" :options="bus_responseSpeed"></v-chart>
+          <v-chart class="single-bar" :autoresize="true" :options="bus_responseSpeed"></v-chart>
         </div>
         <div style="margin-top:20px;" class="bus-alarm-time">
           <span>业务告警次数</span>
-          <v-chart class="single-pie" :options="bus_alarmTime"></v-chart>
+          <v-chart class="single-pie" :autoresize="true" :options="bus_alarmTime"></v-chart>
         </div>
       </div>
       <div class="aside-center">
@@ -142,10 +142,10 @@
               <el-radio-button label="计算容量"></el-radio-button>
             </el-radio-group>
             <div v-if="radio1==='储存容量'">
-              <v-chart style="width:362px; height:600px;" :options="multiple_pie"></v-chart>
+              <v-chart style="height:600px;" :autoresize="true" :options="multiple_pie"></v-chart>
             </div>
             <div v-else>
-              <v-chart style="width:362px; height:600px;" :options="multiple_pie"></v-chart>
+              <v-chart style="height:600px;" :autoresize="true" :options="multiple_pie"></v-chart>
             </div>
           </div>
         </div>

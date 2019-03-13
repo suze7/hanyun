@@ -137,8 +137,8 @@
                   <span v-for="time in time_array" @click="toggleTime(time.name)" :class="{active: cpuData.isActice === time.name}">{{time.name}}</span>
                 </div>
 
-                <v-chart v-if="cpuData.echart_title==='使用率'" style="width:100%; height:450px" :options="multiple_pie.line"></v-chart>
-                <v-chart v-if="cpuData.echart_title==='使用情况'" style="width:100%; height:450px" :options="multiple_pie.line2"></v-chart>
+                <v-chart v-if="cpuData.echart_title==='使用率'" :autoresize="true" style="width:100%; height:450px" :options="multiple_pie.line"></v-chart>
+                <v-chart v-if="cpuData.echart_title==='使用情况'" :autoresize="true" style="width:100%; height:450px" :options="multiple_pie.line2"></v-chart>
               </div>
             </el-col>
           </el-row>

@@ -3,6 +3,8 @@ var app = new Vue({
   el: '#homeIndex',
   data() {
     return {
+      // screenWidth: document.body.clientWidth,
+      // screenHeight: document.body.clientHeight,
       radio1: '业务总览',
       business_data: null,
       alarm_statics: {
@@ -161,6 +163,13 @@ var app = new Vue({
   created() {
     this.business_data = { business_id: '11', label: 'Openstack V3', healthy: '98%', status: '1', safety_level: '2', response: '37ms', busyness: '2%', using: '100%', downtime_cs: '0', downtime_sc: '16分23秒', mttr: '16分23秒', mtbf: '16分23秒', used_capacity: '58.31GB/339.99GB', calc_capacity: '33%' }
     this.getBusinessUsingRight();
+    // console.log(screenWidth, screenHeight);
+    window.onresize = (e) => {
+      let screenWidth = document.body.clientWidth;
+      let screenHeight = document.body.clientHeight;
+      console.log(e, e.target.innerHeight, e.target.innerWidth);
+      console.log(screenWidth, screenHeight);
+    }
   },
   methods: {
     toggleTab(evt) {
