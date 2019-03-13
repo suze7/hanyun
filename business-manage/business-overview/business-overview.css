@@ -1,3 +1,7 @@
+.open-btn li {
+  margin: 12px 0;
+  cursor: pointer;
+}
 .bottom-toggle .p-title {
   font-size: 14px;
   margin: 0 0 50px 0;
