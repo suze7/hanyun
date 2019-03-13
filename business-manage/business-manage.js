@@ -277,8 +277,8 @@ var app = new Vue({
     },
     runBall() {
       let allpers;
-      let dotLeft = 210;
-      let doTop = 60;
+      let dotLeft = 45;
+      let doTop = 35;
       let ahd = 360 / this.ball_data.count * Math.PI / 180;
       this.ball_data.speed += 35;
       this.ball_data.speed = this.ball_data.speed < 360 ? this.ball_data.speed : 35;
@@ -289,8 +289,8 @@ var app = new Vue({
         // console.log(wpers, allpers);
         v.width = wpers * 48 + 'px';
         v.height = wpers * 48 + 'px';
-        v.left = Math.sin(ahd * i + ainhd) * 180 + dotLeft + 'px';
-        v.top = Math.cos(ahd * i + ainhd) * 80 + doTop + 'px';
+        v.left = Math.sin(ahd * i + ainhd) * 30 + dotLeft + '%';
+        v.top = Math.cos(ahd * i + ainhd) * 15 + doTop + '%';
       });
     },
     showDialog(str) {
@@ -338,7 +338,7 @@ var app = new Vue({
         if (left < 0) {
           left = 0;
         }
-        window.open(url, '_blank', `height=${height - 100},width=${width},top=20,left=30,toolbar=no,menubar=no,scrollbars=no,resizable=no,location=no,status=no`);
+        window.open(url, '_blank', `height=${height},width=${width},top=20,left=30,toolbar=no,menubar=no,scrollbars=no,resizable=no,location=no,status=no`);
       }
     },
     createCanvas(data) {

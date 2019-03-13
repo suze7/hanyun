@@ -118,7 +118,7 @@ div.echarts {
 }
 .line-path {
   position: absolute;
-  width: 360px;
+  width: 80%;
   height: 160px;
   top: 25px;
   left: 55px;
@@ -140,7 +140,7 @@ div.echarts {
   padding: 15px 25px;
   margin: 0 auto;
   background: #9DABDF;
-  margin-left: 201px;
+  margin-left: 42%;
   border-radius: 5px;
   margin-top: 92px;
 }
