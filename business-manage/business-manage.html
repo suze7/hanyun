@@ -142,10 +142,11 @@
               <el-radio-button label="计算容量"></el-radio-button>
             </el-radio-group>
             <div v-if="radio1==='储存容量'">
-              <v-chart style="height:600px;" :autoresize="true" :options="multiple_pie"></v-chart>
+              <!-- <v-chart style="height:600px;" :autoresize="true" :options="multiple_pie"></v-chart> -->
+              <v-chart style="width: 50%; height:72px;" :autoresize="true" :options="single_pie"></v-chart>
             </div>
             <div v-else>
-              <v-chart style="height:600px;" :autoresize="true" :options="multiple_pie"></v-chart>
+              <v-chart style="width: 72px; height:72px;" :autoresize="true" :options="multiple_pie"></v-chart>
             </div>
           </div>
         </div>

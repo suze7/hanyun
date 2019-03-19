@@ -245,7 +245,6 @@ var app = new Vue({
       this.isActice = evt;
       switch (evt) {
         case '1H':
-
           break;
         case '自定义':
           this.editTimeDialog = true;

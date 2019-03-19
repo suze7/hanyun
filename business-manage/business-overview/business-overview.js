@@ -165,10 +165,11 @@ var app = new Vue({
     this.getBusinessUsingRight();
     // console.log(screenWidth, screenHeight);
     window.onresize = (e) => {
+      // #8190b8
       let screenWidth = document.body.clientWidth;
       let screenHeight = document.body.clientHeight;
-      console.log(e, e.target.innerHeight, e.target.innerWidth);
-      console.log(screenWidth, screenHeight);
+      // console.log(e, e.target.innerHeight, e.target.innerWidth);
+      // console.log(screenWidth, screenHeight);
     }
   },
   methods: {

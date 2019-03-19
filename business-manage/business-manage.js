@@ -131,6 +131,65 @@ var app = new Vue({
         ]
       },
       multiple_pie: null,
+      single_pie: {
+        color: ['#FFE259'],
+        legend: {
+          show: true,
+          right: '20px',
+        },
+        tooltip: {
+          trigger: 'item',
+          formatter: function (params, ticket, callback) {
+            var res = params.name + ' : ' + params.percent + '%';
+            return res;
+          }
+        },
+        xAxis: [{
+          show: false
+        }],
+        yAxis: [{
+          show: false
+        }],
+        series: [{
+          name: '',
+          center: [80, 30],
+          radius: [26, 35],
+          type: 'pie',
+          labelLine: {
+            normal: {
+              show: false
+            }
+          },
+          data: [{
+            value: 48,
+            name: '阿里云',
+            label: {
+              normal: {
+                formatter: '{d} %',
+                position: 'center',
+                show: true,
+                textStyle: {
+                  fontSize: '16',
+                  fontWeight: 'bold',
+                }
+              }
+            }
+          }, {
+            value: (100 - 52),
+            name: '',
+            tooltip: { show: false },
+            itemStyle: {
+              normal: {
+                color: '#aaa'
+              },
+              emphasis: {
+                color: '#aaa'
+              }
+            },
+            hoverAnimation: false
+          }]
+        }]
+      },
       addBusiDialog: false,
       business_form: {
         name: '',
@@ -289,8 +348,8 @@ var app = new Vue({
         // console.log(wpers, allpers);
         v.width = wpers * 48 + 'px';
         v.height = wpers * 48 + 'px';
-        v.left = Math.sin(ahd * i + ainhd) * 30 + dotLeft + '%';
-        v.top = Math.cos(ahd * i + ainhd) * 15 + doTop + '%';
+        v.left = Math.sin(ahd * i + ainhd) * 40 + dotLeft + '%';
+        v.top = Math.cos(ahd * i + ainhd) * 30 + doTop + '%';
       });
     },
     showDialog(str) {
